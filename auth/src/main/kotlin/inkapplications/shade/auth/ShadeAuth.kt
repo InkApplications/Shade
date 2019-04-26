@@ -18,7 +18,7 @@ interface ShadeAuth {
      * @return A bearer token to be used with requests to the Hue API.
      *         These do not appear to expire. Store it safely.
      */
-    suspend fun awaitToken(retries: Int = 50, timeout: Long = 5000): String
+    suspend fun awaitToken(retries: Int = 50, timeout: Long = 5000)
 }
 
 /**
@@ -26,15 +26,18 @@ interface ShadeAuth {
  */
 internal class ApiAuth(
     private val authApi: HueAuthApi,
-    private val config: ShadeConfig
+    private val config: ShadeConfig,
+    private val storage: TokenStorage
 ): ShadeAuth {
-    override suspend fun awaitToken(retries: Int, timeout: Long): String {
+    override suspend fun awaitToken(retries: Int, timeout: Long) {
         repeat(retries) {
             try {
-                return DeviceType(config.appId)
+                DeviceType(config.appId)
                     .let(authApi::createToken)
                     .await()
                     .token
+                    .also { storage.setToken(it) }
+                return
             } catch (error: ShadeApiError) {
                 if (error.hueError.type != 101) throw error
                 delay(timeout)

@@ -13,9 +13,9 @@ class ShadeAuthModule {
      * @param retrofit Client to create hue requests with
      * @param config App-wide configuration
      */
-    fun createAuth(retrofit: Retrofit, config: ShadeConfig): ShadeAuth {
+    fun createAuth(retrofit: Retrofit, config: ShadeConfig, tokenStorage: TokenStorage): ShadeAuth {
         val api = retrofit.create(HueAuthApi::class.java)
 
-        return ApiAuth(api, config)
+        return ApiAuth(api, config, tokenStorage)
     }
 }
