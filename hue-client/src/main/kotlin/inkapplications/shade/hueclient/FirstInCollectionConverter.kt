@@ -1,6 +1,7 @@
 package inkapplications.shade.hueclient
 
 import com.squareup.moshi.Types
+import inkapplications.shade.hueclient.structures.ShadeApiError
 import okhttp3.ResponseBody
 import retrofit2.Converter
 import retrofit2.Retrofit

@@ -2,6 +2,8 @@ package inkapplications.shade.hueclient
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
+import inkapplications.shade.hueclient.structures.ShadeException
+import inkapplications.shade.hueclient.structures.asException
 import retrofit2.Response
 
 /**

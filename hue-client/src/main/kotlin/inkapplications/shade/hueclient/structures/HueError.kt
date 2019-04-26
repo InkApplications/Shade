@@ -1,4 +1,4 @@
-package inkapplications.shade.hueclient
+package inkapplications.shade.hueclient.structures
 
 import com.squareup.moshi.JsonClass
 import java.io.PrintStream

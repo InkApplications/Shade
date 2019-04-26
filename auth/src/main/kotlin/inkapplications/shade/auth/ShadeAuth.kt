@@ -1,9 +1,9 @@
 package inkapplications.shade.auth
 
 import inkapplications.shade.config.ShadeConfig
-import inkapplications.shade.hueclient.ErrorCodes
-import inkapplications.shade.hueclient.ShadeApiError
-import inkapplications.shade.hueclient.ShadeException
+import inkapplications.shade.hueclient.structures.ErrorCodes
+import inkapplications.shade.hueclient.structures.ShadeApiError
+import inkapplications.shade.hueclient.structures.ShadeException
 import kotlinx.coroutines.delay
 
 /**
