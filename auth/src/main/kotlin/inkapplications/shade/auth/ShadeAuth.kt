@@ -1,6 +1,7 @@
 package inkapplications.shade.auth
 
 import inkapplications.shade.config.ShadeConfig
+import inkapplications.shade.hueclient.ErrorCodes
 import inkapplications.shade.hueclient.ShadeApiError
 import inkapplications.shade.hueclient.ShadeException
 import kotlinx.coroutines.delay
@@ -39,7 +40,7 @@ internal class ApiAuth(
                     .also { storage.setToken(it) }
                 return
             } catch (error: ShadeApiError) {
-                if (error.hueError.type != 101) throw error
+                if (error.hueError.type != ErrorCodes.LINK_REQUIRED) throw error
                 delay(timeout)
             }
         }
