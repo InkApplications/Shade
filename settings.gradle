@@ -1,2 +1,4 @@
 include 'auth'
+include 'config'
+include 'hue-client'
 include 'lights'
