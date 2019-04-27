@@ -3,6 +3,7 @@ package inkapplications.shade.hueclient
 import com.squareup.moshi.Moshi
 import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.hueclient.structures.CoordinatesListDeserializer
+import inkapplications.shade.hueclient.structures.InstantDeserializer
 import inkapplications.shade.hueclient.structures.RangeDeserializer
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -17,6 +18,7 @@ class HueClientModule {
     private val moshi = Moshi.Builder()
         .add(CoordinatesListDeserializer)
         .add(RangeDeserializer)
+        .add(InstantDeserializer)
         .build()
 
     fun retrofit(config: ShadeConfig, client: OkHttpClient) = Retrofit.Builder()
