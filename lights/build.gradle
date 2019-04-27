@@ -2,8 +2,10 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-kapt'
 
 dependencies {
-    compile project(":hue-client")
+    compile project(":hue-constructs")
+    implementation project(":hue-serialization")
     compile project(":auth")
+
     compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
     compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutines_version}"
 
@@ -11,4 +13,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.moshi:moshi:1.8.0"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:1.8.0"
+
+    compile "com.squareup.okhttp3:okhttp:3.12.0"
+    compile 'org.threeten:threetenbp:1.3.6:no-tzdb'
 }

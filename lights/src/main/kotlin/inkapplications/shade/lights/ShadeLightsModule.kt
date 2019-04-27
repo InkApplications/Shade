@@ -1,7 +1,16 @@
 package inkapplications.shade.lights
 
+import com.squareup.moshi.Moshi
 import inkapplications.shade.auth.TokenStorage
+import inkapplications.shade.config.ShadeConfig
+import inkapplications.shade.serialization.CoordinatesListDeserializer
+import inkapplications.shade.serialization.InstantDeserializer
+import inkapplications.shade.serialization.RangeDeserializer
+import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
+import inkapplications.shade.serialization.converter.UnitConverterFactory
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 /**
  * Constructs lights services.
@@ -13,7 +22,19 @@ class ShadeLightsModule {
      * @param retrofit Client to create hue requests with
      * @param tokenStorage A place to read/write the auth token used for requests.
      */
-    fun createLights(retrofit: Retrofit, tokenStorage: TokenStorage): ShadeLights {
+    fun createLights(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeLights {
+        val moshi = Moshi.Builder()
+            .add(CoordinatesListDeserializer)
+            .add(InstantDeserializer)
+            .add(RangeDeserializer)
+            .build()
+        val retrofit = Retrofit.Builder()
+            .client(client)
+            .baseUrl(config.baseUrl)
+            .addCallAdapterFactory(ShadeDeferredCallAdapterFactory)
+            .addConverterFactory(UnitConverterFactory)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .build()
         val api = retrofit.create(HueLightsApi::class.java)
 
         return ApiLights(api, tokenStorage)

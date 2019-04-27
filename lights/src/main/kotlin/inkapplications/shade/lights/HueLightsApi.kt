@@ -2,7 +2,7 @@ package inkapplications.shade.lights
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import inkapplications.shade.hueclient.structures.Coordinates
+import inkapplications.shade.constructs.Coordinates
 import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
 import retrofit2.http.Body

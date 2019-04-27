@@ -1,7 +1,7 @@
-package inkapplications.shade.hueclient
+package inkapplications.shade.serialization
 
 import com.squareup.moshi.JsonClass
-import inkapplications.shade.hueclient.structures.HueError
+import inkapplications.shade.constructs.HueError
 
 /**
  * Responses from the Hue API.

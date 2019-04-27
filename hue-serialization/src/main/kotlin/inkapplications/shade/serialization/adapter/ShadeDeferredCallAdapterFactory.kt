@@ -1,5 +1,6 @@
-package inkapplications.shade.hueclient
+package inkapplications.shade.serialization.adapter
 
+import inkapplications.shade.serialization.ErrorParser
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Deferred
 import retrofit2.*
@@ -10,7 +11,7 @@ import java.lang.reflect.Type
 /**
  * A Call Adapter for Deferred that handles API error bodies.
  */
-internal object DeferredCallAdapterFactory: CallAdapter.Factory() {
+object ShadeDeferredCallAdapterFactory: CallAdapter.Factory() {
     override fun get(returnType: Type, nnotations: Array<out Annotation>, retrofit: Retrofit): CallAdapter<*, *>? {
         if (Deferred::class.java != getRawType(returnType)) return null
         if (returnType !is ParameterizedType) throw IllegalStateException("Deferred return type must be parameterized as Deferred<Foo> or Deferred<out Foo>")

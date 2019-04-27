@@ -1,4 +1,4 @@
-package inkapplications.shade.hueclient
+package inkapplications.shade.serialization.converter
 
 import okhttp3.ResponseBody
 import retrofit2.Converter

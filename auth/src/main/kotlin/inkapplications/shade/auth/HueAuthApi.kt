@@ -2,7 +2,7 @@ package inkapplications.shade.auth
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import inkapplications.shade.hueclient.FirstInCollection
+import inkapplications.shade.serialization.converter.FirstInCollection
 import kotlinx.coroutines.Deferred
 import retrofit2.http.Body
 import retrofit2.http.POST

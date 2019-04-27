@@ -1,7 +1,8 @@
-package inkapplications.shade.hueclient
+package inkapplications.shade.serialization.converter
 
 import com.squareup.moshi.Types
-import inkapplications.shade.hueclient.structures.ShadeApiError
+import inkapplications.shade.constructs.ShadeApiError
+import inkapplications.shade.serialization.HueResponse
 import okhttp3.ResponseBody
 import retrofit2.Converter
 import retrofit2.Retrofit
@@ -17,7 +18,7 @@ import java.lang.reflect.Type
 @Target(AnnotationTarget.FUNCTION)
 annotation class FirstInCollection
 
-internal object HueConverterFactory: Converter.Factory() {
+object FirstInCollectionConverterFactory: Converter.Factory() {
     override fun responseBodyConverter(type: Type, annotations: Array<Annotation>, retrofit: Retrofit): Converter<ResponseBody, *>? {
         if (annotations.none { it is FirstInCollection }) return null
 
@@ -26,11 +27,11 @@ internal object HueConverterFactory: Converter.Factory() {
         val listType = Types.newParameterizedType(List::class.java, envelopeType)
         val delegate = retrofit.nextResponseBodyConverter<List<HueResponse<Any>>>(this, listType, annotations)
 
-        return HueResponseConverter(delegate)
+        return FirstInCollectionConverter(delegate)
     }
 }
 
-internal class HueResponseConverter<T>(private val delegate: Converter<ResponseBody, List<HueResponse<T>>>): Converter<ResponseBody, T> {
+private class FirstInCollectionConverter<T>(private val delegate: Converter<ResponseBody, List<HueResponse<T>>>): Converter<ResponseBody, T> {
     override fun convert(value: ResponseBody): T? {
         val response = delegate.convert(value)
         val firstResponse = response?.firstOrNull()

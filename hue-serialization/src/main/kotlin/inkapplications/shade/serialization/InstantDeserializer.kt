@@ -1,4 +1,4 @@
-package inkapplications.shade.hueclient.structures
+package inkapplications.shade.serialization
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson

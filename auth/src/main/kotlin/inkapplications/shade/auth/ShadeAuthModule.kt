@@ -1,7 +1,12 @@
 package inkapplications.shade.auth
 
+import com.squareup.moshi.Moshi
 import inkapplications.shade.config.ShadeConfig
+import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
+import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 /**
  * Constructs Auth resources.
@@ -9,11 +14,18 @@ import retrofit2.Retrofit
 class ShadeAuthModule {
     /**
      * Create a new instance of Shade's Auth Interface.
-     *
-     * @param retrofit Client to create hue requests with
-     * @param config App-wide configuration
      */
-    fun createAuth(retrofit: Retrofit, config: ShadeConfig, tokenStorage: TokenStorage): ShadeAuth {
+    fun createAuth(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeAuth {
+        val moshi = Moshi.Builder().build()
+
+        val retrofit = Retrofit.Builder()
+            .client(client)
+            .baseUrl(config.baseUrl)
+            .addCallAdapterFactory(ShadeDeferredCallAdapterFactory)
+            .addConverterFactory(FirstInCollectionConverterFactory)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .build()
+
         val api = retrofit.create(HueAuthApi::class.java)
 
         return ApiAuth(api, config, tokenStorage)
