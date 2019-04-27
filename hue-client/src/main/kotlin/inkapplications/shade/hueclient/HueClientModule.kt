@@ -25,6 +25,7 @@ class HueClientModule {
         .client(client)
         .baseUrl(config.baseUrl)
         .addCallAdapterFactory(DeferredCallAdapterFactory)
+        .addConverterFactory(UnitConverterFactory)
         .addConverterFactory(HueConverterFactory)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
