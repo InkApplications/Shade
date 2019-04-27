@@ -5,15 +5,30 @@ import com.squareup.moshi.JsonClass
 import inkapplications.shade.hueclient.structures.Coordinates
 import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 /**
  * Hue API endpoints for lights.
  */
 internal interface HueLightsApi {
+    /**
+     * Get a list of all lights known to the hue bridge.
+     */
     @GET("api/{token}/lights")
     fun getLights(@Path("token") token: String): Deferred<Map<String, Light>>
+
+    /**
+     * Set the state of a light.
+     */
+    @PUT("api/{token}/lights/{light}/state")
+    fun setState(
+        @Path("token") token: String,
+        @Path("light") lightId: String,
+        @Body modification: LightStateModification
+    ): Deferred<Unit>
 }
 
 /**
@@ -215,6 +230,96 @@ data class LightState(
     @Json(name="colormode") val colorMode: ColorMode?,
     val mode: String?,
     val reachable: Boolean
+)
+
+/**
+ * Options when modifying the state of a light.
+ *
+ * @property on On/Off state of the light. On=true, Off=false
+ * @property brightness Brightness of the light. This is a scale from
+ *           the minimum brightness the light is capable of, 1, to the
+ *           maximum capable brightness, 254.
+ * @property hue Hue of the light. This is a wrapping value between 0
+ *           and 65535. Note, that hue/sat values are hardware
+ *           dependent which means that programming two devices with
+ *           the same value does not garantuee that they will be the
+ *           same color. Programming 0 and 65535 would mean that the
+ *           light will resemble the color red, 21845 for green and
+ *           43690 for blue.
+ * @property saturation Saturation of the light. 254 is the most
+ *           saturated (colored) and 0 is the least saturated (white).
+ * @property effect The dynamic effect of the light.
+ * @property transitionTime The duration of the transition from the
+ *           light’s current state to the new state. This is given as
+ *           a multiple of 100ms and defaults to 4 (400ms).
+ *           For example, setting `transitiontime:10` will make the
+ *           transition last 1 second.
+ * @property cieColorCoordinates The x and y coordinates of a color
+ *           in CIE color space.
+ *           The first entry is the x coordinate and the second entry
+ *           is the y coordinate. Both x and y are between 0 and 1.
+ *           Using CIE xy, the colors can be the same on all lamps if
+ *           the coordinates are within every lamps gamuts (example:
+ *           “xy”:[0.409,0.5179] is the same color on all lamps). If
+ *           not, the lamp will calculate it’s closest color and use
+ *           that. The CIE xy color is absolute, independent from the
+ *           hardware.
+ * @property colorTemperature The Mired Color temperature of the light.
+ *           2012 connected lights are capable of 153 (6500K) to 500 (2000K).
+ * @property alert The alert effect is a temporary change to the bulb’s state.
+ *           Note that this contains the last alert sent to the light and
+ *           not its current state. i.e. After the breathe cycle has
+ *           finished the bridge does not reset the alert to “none“.
+ * @property brightnessIncrement Increments or decrements the value of the
+ *           brightness.  this is ignored if the bri attribute is provided.
+ *           Any ongoing bri transition is stopped. Setting a value of 0
+ *           also stops any ongoing transition. The bridge will return the
+ *           bri value after the increment is performed.
+ * @property saturationIncrement Increments or decrements the value of
+ *           the saturation. This is ignored if the sat attribute is
+ *           provided. Any ongoing sat transition is stopped.
+ *           Setting a value of 0 also stops any ongoing transition.
+ *           The bridge will return the sat value after the increment
+ *           is performed.
+ * @property hueIncrement Increments or decrements the value of the hue.
+ *           This is ignored if the hue attribute is provided. Any
+ *           ongoing color transition is stopped. Setting a value of 0
+ *           also stops any ongoing transition. The bridge will return
+ *           the hue value after the increment is performed.Note if the
+ *           resulting values are < 0 or > 65535 the result is wrapped.
+ *           For example: `hueIncrement` of 1 on a hue value of 65535
+ *           results in a hue of 0 and `hueIncrement` of -1 on a hue of
+ *           0 results in a hue of 65534.
+ * @property colorTemperatureIncrement Increments or decrements the
+ *           value of the color temperature. This is ignored if the
+ *           temperature attribute is provided. Any ongoing color
+ *           transition is stopped. Setting a value of 0 also stops any
+ *           ongoing transition. The bridge will return the temperature
+ *           value after the increment is performed.
+ * @property cieCoordinateTranslation Translates the coordinates of the
+ *           CIE color. This is ignored if the CIE coordinates attribute
+ *           is provided.
+ *           Any ongoing color transition is stopped. Setting a value
+ *           of 0 also stops any ongoing transition. Will stop at it’s
+ *           gamut boundaries. The bridge will return the xy value after
+ *           the increment is performed. Max value [0.5, 0.5].
+ */
+@JsonClass(generateAdapter = true)
+data class LightStateModification(
+    val on: Boolean? = null,
+    @Json(name="bri") val brightness: Int? = null,
+    val hue: Int? = null,
+    @Json(name="sat") val saturation: Int? = null,
+    val effect: LightEffect? = null,
+    @Json(name="transitiontime") val transitionTime: Int? = null,
+    @Json(name="xy") val cieColorCoordinates: Coordinates? = null,
+    @Json(name="ct") val colorTemperature: Int? = null,
+    val alert: AlertState? = null,
+    @Json(name="bri_inc") val brightnessIncrement: Int? = null,
+    @Json(name="sat_inc") val saturationIncrement: Int? = null,
+    @Json(name="hue_inc") val hueIncrement: Int? = null,
+    @Json(name="ct_inc") val colorTemperatureIncrement: Int? = null,
+    @Json(name="xy_inc") val cieCoordinateTranslation: Coordinates? = null
 )
 
 /**
