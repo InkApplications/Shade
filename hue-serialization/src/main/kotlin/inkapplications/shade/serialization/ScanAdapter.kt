@@ -22,7 +22,7 @@ internal data class NameToken(val name: String)
  * instead of a null value. What the hell? why?
  * Luckily, these only seem to appear in the "find new" device API's.
  */
-object LightScanAdapter: JsonAdapter.Factory {
+object ScanAdapter: JsonAdapter.Factory {
     private val LAST_SCAN_KEY = "lastscan"
 
     override fun create(type: Type, annotations: MutableSet<out Annotation>, moshi: Moshi): JsonAdapter<*>? {

@@ -9,9 +9,9 @@ import org.junit.Assert.*
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZoneOffset
 
-class LightScanAdapterTest {
+class ScanAdapterTest {
     val moshi = Moshi.Builder()
-        .add(LightScanAdapter)
+        .add(ScanAdapter)
         .add(InstantDeserializer)
         .build()
 
