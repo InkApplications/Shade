@@ -8,6 +8,7 @@ import inkapplications.shade.serialization.InstantDeserializer
 import inkapplications.shade.serialization.ScanAdapter
 import inkapplications.shade.serialization.RangeDeserializer
 import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
+import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import inkapplications.shade.serialization.converter.UnitConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -35,6 +36,7 @@ class ShadeLightsModule {
             .baseUrl(config.baseUrl)
             .addCallAdapterFactory(ShadeDeferredCallAdapterFactory)
             .addConverterFactory(UnitConverterFactory)
+            .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
         val api = retrofit.create(HueLightsApi::class.java)

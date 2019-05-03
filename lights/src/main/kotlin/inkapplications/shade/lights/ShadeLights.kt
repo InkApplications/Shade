@@ -27,6 +27,18 @@ interface ShadeLights {
      * @param state Arguments to change about the light.
      */
     suspend fun setLightState(id: String, state: LightStateModification)
+
+    /**
+     * Starts searching for new lights.
+     *
+     * This will search for devices for 40s. After which, devices that
+     * were found can be retrieved through the `getNewLights` method.
+     * The function will not suspend for the full 40s of searching.
+     *
+     * @see #getNewLights
+     * @param deviceIds Serial numbers of devices to search for. (optional)
+     */
+    suspend fun search(vararg deviceIds: String)
 }
 
 /**
@@ -36,9 +48,19 @@ internal class ApiLights(
     private val lightsApi: HueLightsApi,
     private val storage: TokenStorage
 ): ShadeLights {
+
     private suspend fun getToken() = storage.getToken() ?: throw UnauthorizedException()
 
     override suspend fun getLights(): Map<String, Light> = lightsApi.getLights(getToken()).await()
     override suspend fun getNewLights(): Scan = lightsApi.getNewLights(getToken()).await()
     override suspend fun setLightState(id: String, state: LightStateModification) = lightsApi.setState(getToken(), id, state).await()
+
+    override suspend fun search(vararg deviceIds: String) {
+        if (deviceIds.isEmpty()) {
+            lightsApi.searchLights(getToken()).await()
+        } else {
+            val criteria = LightSearchCriteria(deviceIds.toList())
+            lightsApi.searchLights(getToken(), criteria).await()
+        }
+    }
 }
