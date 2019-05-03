@@ -2,6 +2,7 @@ package inkapplications.shade.lights
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
+import inkapplications.shade.constructs.Scan
 
 /**
  * Actions to control lights.
@@ -11,6 +12,13 @@ interface ShadeLights {
      * Gets a list of all lights that have been discovered by the bridge.
      */
     suspend fun getLights(): Map<String, Light>
+
+    /**
+     * Get lights that were discovered the last time a search was performed.
+     *
+     * The list of new lights is always deleted when a new search is started.
+     */
+    suspend fun getNewLights(): Scan
 
     /**
      * Allows the user to turn the light on and off, modify the hue and effects.
@@ -28,15 +36,9 @@ internal class ApiLights(
     private val lightsApi: HueLightsApi,
     private val storage: TokenStorage
 ): ShadeLights {
-    override suspend fun getLights(): Map<String, Light> {
-        val token = storage.getToken() ?: throw UnauthorizedException()
+    private suspend fun getToken() = storage.getToken() ?: throw UnauthorizedException()
 
-        return lightsApi.getLights(token).await()
-    }
-
-    override suspend fun setLightState(id: String, state: LightStateModification) {
-        val token = storage.getToken() ?: throw UnauthorizedException()
-
-        lightsApi.setState(token, id, state).await()
-    }
+    override suspend fun getLights(): Map<String, Light> = lightsApi.getLights(getToken()).await()
+    override suspend fun getNewLights(): Scan = lightsApi.getNewLights(getToken()).await()
+    override suspend fun setLightState(id: String, state: LightStateModification) = lightsApi.setState(getToken(), id, state).await()
 }

@@ -5,6 +5,7 @@ import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.serialization.CoordinatesListDeserializer
 import inkapplications.shade.serialization.InstantDeserializer
+import inkapplications.shade.serialization.ScanAdapter
 import inkapplications.shade.serialization.RangeDeserializer
 import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
 import inkapplications.shade.serialization.converter.UnitConverterFactory
@@ -26,6 +27,7 @@ class ShadeLightsModule {
         val moshi = Moshi.Builder()
             .add(CoordinatesListDeserializer)
             .add(InstantDeserializer)
+            .add(ScanAdapter)
             .add(RangeDeserializer)
             .build()
         val retrofit = Retrofit.Builder()

@@ -1,8 +1,8 @@
 package inkapplications.shade.lights
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.squareup.moshi.*
 import inkapplications.shade.constructs.Coordinates
+import inkapplications.shade.constructs.Scan
 import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
 import retrofit2.http.Body
@@ -29,6 +29,14 @@ internal interface HueLightsApi {
         @Path("light") lightId: String,
         @Body modification: LightStateModification
     ): Deferred<Unit>
+
+    /**
+     * Gets a list of lights that were discovered the last time a
+     * search for new lights was performed. The list of new lights is
+     * always deleted when a new search is started.
+     */
+    @GET("api/{token}/lights/new")
+    fun getNewLights(@Path("token") token: String): Deferred<Scan>
 }
 
 /**
