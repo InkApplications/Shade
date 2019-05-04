@@ -30,6 +30,21 @@ _Coming Soon_
 
 ## Usage (JVM)
 
+### Installation
+
+If you haven’t already, add JitPack to your gradle repositories in 
+your `build.gradle` file:
+
+    repositories {
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+    
+Next, add Shade as a dependency to your `build.gradle` file:
+
+    compile "com.github.Inkapplications.Shade:shade:+" // Replace with exact version
+
 ### Initialize Shade
 
 Connect Shade to your Hue Bridge by providing a config:
