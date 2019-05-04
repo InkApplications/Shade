@@ -23,3 +23,44 @@ provide access to all of them.
  - [ ] Info API
  - [ ] Resource Links API
  - [ ] Capabilities API
+
+## Usage (Android)
+
+_Coming Soon_
+
+## Usage (JVM)
+
+### Initialize Shade
+
+Connect Shade to your Hue Bridge by providing a config:
+
+ - `baseUrl`: The URL of the Hue Hub you want to connect to
+ - `appID`: A Unique ID for your application.
+
+```kotlin
+val config = ShadeConfig(baseUrl = "http://192.168.0.2/", appId = "shade#shade")
+val shade = Shade(config)
+```
+
+### Authenticate with Hue
+
+To authenticate with your hue system call the `awaitToken()` method:
+
+```kotlin
+suspend fun connect() {
+    println("Waiting for token. Press Button on Hue Bridge")
+    shade.auth.awaitToken()
+    println("Authenticated Successfully!")
+}
+```
+
+### Control Lights
+
+```kotlin
+suspend fun turnOffAll() {
+    shade.lights.getLights().forEach { (id, light) ->
+        println("Turning off Light ID: $id, Name: ${light.name}")
+        shade.lights.setLightState(id, LightStateModification(on = false))
+    }
+}
+```
