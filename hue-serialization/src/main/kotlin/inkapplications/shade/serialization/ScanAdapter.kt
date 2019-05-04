@@ -1,16 +1,11 @@
 package inkapplications.shade.serialization
 
 import com.squareup.moshi.*
+import inkapplications.shade.constructs.DeviceAttributes
 import inkapplications.shade.constructs.Scan
 import inkapplications.shade.constructs.ScanReference
 import org.threeten.bp.Instant
 import java.lang.reflect.Type
-
-/**
- * Just wraps Hue's bizarre name object.
- */
-@JsonClass(generateAdapter = true)
-internal data class NameToken(val name: String)
 
 /**
  * Converts Hue's polymorphic-by-key scan results for lights and sensors.
@@ -28,7 +23,7 @@ object ScanAdapter: JsonAdapter.Factory {
     override fun create(type: Type, annotations: MutableSet<out Annotation>, moshi: Moshi): JsonAdapter<*>? {
         if (Types.getRawType(type) != Scan::class.java) return null
 
-        val nameAdapter: JsonAdapter<NameToken> = moshi.adapter(NameToken::class.java)
+        val nameAdapter: JsonAdapter<DeviceAttributes> = moshi.adapter(DeviceAttributes::class.java)
 
         return object: JsonAdapter<Scan>() {
             override fun fromJson(reader: JsonReader): Scan? {
