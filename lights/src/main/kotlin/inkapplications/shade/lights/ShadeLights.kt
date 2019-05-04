@@ -2,6 +2,7 @@ package inkapplications.shade.lights
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
+import inkapplications.shade.constructs.DeviceAttributes
 import inkapplications.shade.constructs.Scan
 
 /**
@@ -47,6 +48,14 @@ interface ShadeLights {
      * @return The current state of the light
      */
     suspend fun getLight(id: String): Light
+
+    /**
+     * Rename a light
+     *
+     * @param id The local ID of the light to be renamed.
+     * @param name The user-readable name to assign to the light.
+     */
+    suspend fun rename(id: String, name: String)
 }
 
 /**
@@ -71,5 +80,11 @@ internal class ApiLights(
             val criteria = LightSearchCriteria(deviceIds.toList())
             lightsApi.searchLights(getToken(), criteria).await()
         }
+    }
+
+    override suspend fun rename(id: String, name: String) {
+        val attributes = DeviceAttributes(name = name)
+
+        lightsApi.setLightAttributes(getToken(), id, attributes).await()
     }
 }

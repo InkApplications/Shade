@@ -2,6 +2,7 @@ package inkapplications.shade.lights
 
 import com.squareup.moshi.*
 import inkapplications.shade.constructs.Coordinates
+import inkapplications.shade.constructs.DeviceAttributes
 import inkapplications.shade.constructs.Scan
 import inkapplications.shade.serialization.converter.FirstInCollection
 import kotlinx.coroutines.Deferred
@@ -76,6 +77,24 @@ internal interface HueLightsApi {
      */
     @GET("/api/{token}/lights/{light}")
     fun getLightAttributes(@Path("token") token: String, @Path("light") lightId: String): Deferred<Light>
+
+    /**
+     * Used to rename lights.
+     *
+     * A light can have its name changed when in any state, including
+     * when it is unreachable or off.
+     *
+     * @param lightId The local ID of the light to set attributes of.
+     * @param attributes The Device Attributes to set.
+     * @return a pretty useless map that just contains the endpoint that was hit.
+     */
+    @PUT("/api/{token}/lights/{light}")
+    @FirstInCollection
+    fun setLightAttributes(
+        @Path("token") token: String,
+        @Path("light") lightId: String,
+        @Body attributes: DeviceAttributes
+    ): Deferred<Map<String, String>>
 }
 
 /**
