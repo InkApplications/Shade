@@ -67,6 +67,15 @@ internal interface HueLightsApi {
     @POST("/api/{token}/lights")
     @FirstInCollection
     fun searchLights(@Path("token") token: String): Deferred<Map<String, String>>
+
+    /**
+     * Gets the attributes and state of a given light.
+     *
+     * @param lightId The local ID of the light to get attributes of.
+     * @return The state of the light.
+     */
+    @GET("/api/{token}/lights/{light}")
+    fun getLightAttributes(@Path("token") token: String, @Path("light") lightId: String): Deferred<Light>
 }
 
 /**

@@ -39,6 +39,14 @@ interface ShadeLights {
      * @param deviceIds Serial numbers of devices to search for. (optional)
      */
     suspend fun search(vararg deviceIds: String)
+
+    /**
+     * Get the state of a specific light.
+     *
+     * @param id The local ID of the light to get the state of.
+     * @return The current state of the light
+     */
+    suspend fun getLight(id: String): Light
 }
 
 /**
@@ -54,6 +62,7 @@ internal class ApiLights(
     override suspend fun getLights(): Map<String, Light> = lightsApi.getLights(getToken()).await()
     override suspend fun getNewLights(): Scan = lightsApi.getNewLights(getToken()).await()
     override suspend fun setLightState(id: String, state: LightStateModification) = lightsApi.setState(getToken(), id, state).await()
+    override suspend fun getLight(id: String): Light = lightsApi.getLightAttributes(getToken(), id).await()
 
     override suspend fun search(vararg deviceIds: String) {
         if (deviceIds.isEmpty()) {
