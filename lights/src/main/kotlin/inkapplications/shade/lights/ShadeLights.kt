@@ -56,6 +56,13 @@ interface ShadeLights {
      * @param name The user-readable name to assign to the light.
      */
     suspend fun rename(id: String, name: String)
+
+    /**
+     * Delete a light.
+     *
+     * @param id The local ID of the light to be deleted
+     */
+    suspend fun delete(id: String)
 }
 
 /**
@@ -86,5 +93,9 @@ internal class ApiLights(
         val attributes = DeviceAttributes(name = name)
 
         lightsApi.setLightAttributes(getToken(), id, attributes).await()
+    }
+
+    override suspend fun delete(id: String) {
+        lightsApi.delete(getToken(), id).await()
     }
 }

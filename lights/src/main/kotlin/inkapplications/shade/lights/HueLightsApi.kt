@@ -95,6 +95,12 @@ internal interface HueLightsApi {
         @Path("light") lightId: String,
         @Body attributes: DeviceAttributes
     ): Deferred<Map<String, String>>
+
+    /**
+     * Deletes a light from the bridge.
+     */
+    @DELETE("/api/{token}/lights/{light}")
+    fun delete(@Path("token") token: String, @Path("light") lightId: String): Deferred<Unit>
 }
 
 /**
