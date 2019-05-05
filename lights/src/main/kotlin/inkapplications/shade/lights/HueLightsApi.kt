@@ -301,7 +301,7 @@ data class LightState(
     val alert: AlertState?,
     @Json(name="colormode") val colorMode: ColorMode?,
     val mode: String?,
-    val reachable: Boolean
+    val reachable: Boolean?
 )
 
 /**
