@@ -6,12 +6,8 @@ import inkapplications.shade.lights.LightState
 
 /**
  * A Group of hue devices.
- *
- * @param type Key to determine what class of group to use.
  */
-sealed class Group(
-    val type: GroupType
-) {
+sealed class Group {
     /**
      * A unique, editable name given to the group.
      */
@@ -48,7 +44,7 @@ sealed class Group(
         @Json(name = "class") val roomType: RoomType,
         val state: GroupState,
         @Json(name = "action") val lastAction: LightState?
-    ): Group(GroupType.ROOM)
+    ): Group()
 
     /**
      * Luminaire Device
@@ -67,7 +63,7 @@ sealed class Group(
         override val lights: List<String>?,
         override val sensors: List<String>?,
         @Json(name = "modelid") val modelId: String
-    ): Group(GroupType.LUMINAIRE)
+    ): Group()
 
     /**
      * LightSource
@@ -88,7 +84,7 @@ sealed class Group(
         override val lights: List<String>?,
         override val sensors: List<String>?,
         @Json(name = "uniqueid") val uuid: String
-    ): Group(GroupType.LIGHTSOURCE)
+    ): Group()
 
     /**
      * Default group type.
@@ -105,7 +101,7 @@ sealed class Group(
         override val name: String,
         override val lights: List<String>?,
         override val sensors: List<String>?
-    ): Group(GroupType.LIGHT_GROUP)
+    ): Group()
 
     /**
      * Entertainment Group
@@ -131,7 +127,7 @@ sealed class Group(
         val recycle: Boolean,
         val stream: StreamInfo,
         val locations: Map<String, List<Float>>
-    ): Group(GroupType.ENTERTAINMENT)
+    ): Group()
 
     /**
      * Zones describe a group of lights that can be controlled together.
@@ -149,7 +145,7 @@ sealed class Group(
         override val name: String,
         override val lights: List<String>?,
         override val sensors: List<String>?
-    ): Group(GroupType.ZONE)
+    ): Group()
 }
 
 /**
