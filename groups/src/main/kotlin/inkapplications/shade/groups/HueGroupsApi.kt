@@ -3,6 +3,23 @@ package inkapplications.shade.groups
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import inkapplications.shade.lights.LightState
+import kotlinx.coroutines.Deferred
+import retrofit2.http.GET
+import retrofit2.http.Path
+
+/**
+ * API Access for Hue's Groups endpoints.
+ */
+internal interface HueGroupsApi {
+    /**
+     * Gets a list of all groups that have been added to the bridge.
+     *
+     * A group is a list of lights that can be created, modified and
+     * deleted by a user.
+     */
+    @GET("api/{token}/groups")
+    fun getAll(@Path("token") token: String): Deferred<Map<String, Group>>
+}
 
 /**
  * A Group of hue devices.
