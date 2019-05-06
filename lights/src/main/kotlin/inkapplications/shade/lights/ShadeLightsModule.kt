@@ -19,9 +19,10 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  */
 class ShadeLightsModule {
     /**
-     * Create a new instance of the lighting interace.
+     * Create a new instance of the lighting interface.
      *
-     * @param retrofit Client to create hue requests with
+     * @param client Client to create hue requests with
+     * @param config App-wide configuration for Shade, used to set up connections.
      * @param tokenStorage A place to read/write the auth token used for requests.
      */
     fun createLights(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeLights {
