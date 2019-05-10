@@ -3,6 +3,7 @@ package inkapplications.shade
 import inkapplications.shade.auth.ShadeAuthModule
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.config.ShadeConfig
+import inkapplications.shade.groups.ShadeGroupsModule
 import inkapplications.shade.lights.ShadeLightsModule
 import okhttp3.OkHttpClient
 
@@ -32,4 +33,9 @@ open class Shade(
      * Services for controlling Lights.
      */
     val lights = ShadeLightsModule().createLights(client,  config, storage)
+
+    /**
+     * Services for controlling Light-Groups
+     */
+    val groups = ShadeGroupsModule().createGroups(client, config, storage)
 }

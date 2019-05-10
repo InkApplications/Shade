@@ -2,6 +2,7 @@ apply plugin: 'kotlin'
 
 dependencies {
     compile project(":lights")
+    compile project(":groups")
     compile project(":auth")
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
