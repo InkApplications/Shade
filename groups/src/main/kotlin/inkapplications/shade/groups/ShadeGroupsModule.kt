@@ -11,7 +11,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 /**
  * Constructs Groups services.
  */
-class GroupsModule {
+class ShadeGroupsModule {
     /**
      * Create new instance of the Groups services.
      *
