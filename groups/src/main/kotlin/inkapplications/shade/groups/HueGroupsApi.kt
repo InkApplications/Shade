@@ -12,6 +12,11 @@ import kotlinx.coroutines.Deferred
 import retrofit2.http.*
 
 /**
+ * A Special group ID containing all lamps known by the bridge.
+ */
+const val GROUP_ALL = "0"
+
+/**
  * API Access for Hue's Groups endpoints.
  */
 internal interface HueGroupsApi {
