@@ -37,6 +37,14 @@ interface ShadeGroups {
      *        If a different type is provided, it will remain unchanged.
      */
     suspend fun updateGroup(id: String, attributes: MutableGroupAttributes)
+
+    /**
+     * Set the light state for an entire group.
+     *
+     * @param id The ID of the group of lights to set the state of
+     * @param state The state to assign to all the lights in the group.
+     */
+    suspend fun setState(id: String, state: GroupStateModification)
 }
 
 /**
@@ -58,5 +66,9 @@ internal class ApiGroups(
 
     override suspend fun updateGroup(id: String, attributes: MutableGroupAttributes) {
         groupsApi.updateGroup(getToken(), id, attributes).await()
+    }
+
+    override suspend fun setState(id: String, state: GroupStateModification) {
+        groupsApi.setState(getToken(), id, state).await()
     }
 }
