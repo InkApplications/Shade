@@ -93,7 +93,14 @@ sealed class Group {
     abstract val lights: List<String>?
 
     /**
-     * Devices grouped by Room
+     * Room Group.
+     *
+     * A group of lights that are physically located in the same place
+     * in the house. Rooms behave similar as light groups, except:
+     * (1) A room can be empty and contain 0 lights,
+     * (2) a light is only allowed in one room and
+     * (3) a room isn’t automatically deleted when all lights in that
+     * room are deleted.
      *
      * @param name A unique, editable name given to the group.
      * @param lights The IDs of the lights that are in the group.
@@ -116,7 +123,13 @@ sealed class Group {
     ): Group()
 
     /**
-     * Luminaire Device
+     * Multisource luminaire group.
+     *
+     * A lighting installation of default groupings of hue lights.
+     * The bridge will pre-install these groups for ease of use.
+     * This type cannot be created manually.  Also, a light can only
+     * be in a maximum of one luminaire group. See multisource
+     * luminaires for more info.
      *
      * There is very little documentation about what this group type
      * is or what its properties are. If you know more, let me know.
@@ -133,7 +146,10 @@ sealed class Group {
     ): Group()
 
     /**
-     * LightSource
+     * Lightsource Group.
+     *
+     * Note: This type has a copy/paste error in Hue's documentation.
+     * As a result, there's no way to know what it does. Do you know?
      *
      * There is very little documentation about what this group type
      * is or what its properties are. If you know more, let me know.
@@ -152,7 +168,11 @@ sealed class Group {
     ): Group()
 
     /**
-     * Default group type.
+     * Light group.
+     *
+     * A group of lights that can be controlled together. This the
+     * default group type that the bridge generates for user created
+     * groups. Default type when no type is given on creation.
      *
      * There is very little documentation about what this group type
      * is or what its properties are. If you know more, let me know.
@@ -167,7 +187,19 @@ sealed class Group {
     ): Group()
 
     /**
-     * Entertainment Group
+     * Represents an entertainment setup
+     *
+     * Entertainment group describe a group of lights that are used in
+     * an entertainment setup. Locations describe the relative position
+     * of the lights in an entertainment setup. E.g. for TV the
+     * position is relative to the TV. Can be used to configure
+     * streaming sessions.
+     *
+     * Entertainment group behave in a similar way as light groups,
+     * with the exception: it can be empty and contain 0 lights. The
+     * group is also not automatically recycled when lights are
+     * deleted. The group of lights can be controlled together as in
+     * LightGroup.
      *
      * There is very little documentation about what this group type
      * is or what its properties are. If you know more, let me know.
@@ -192,6 +224,9 @@ sealed class Group {
 
     /**
      * Zones describe a group of lights that can be controlled together.
+     *
+     * Zones can be empty and contain 0 lights. A light is allowed to
+     * be in multiple zones.
      *
      * No idea how this differs from any other group.
      * There is very little documentation about what this group type
@@ -278,73 +313,6 @@ data class GroupState(
     @Json(name = "all_on") val allOn: Boolean,
     @Json(name = "any_on") val anyOn: Boolean
 )
-
-enum class GroupType {
-    /**
-     * Multisource luminaire group.
-     *
-     * A lighting installation of default groupings of hue lights.
-     * The bridge will pre-install these groups for ease of use.
-     * This type cannot be created manually.  Also, a light can only
-     * be in a maximum of one luminaire group. See multisource
-     * luminaires for more info.
-     */
-    @Json(name = "Luminaire") LUMINAIRE,
-
-    /**
-     * Lightsource Group.
-     *
-     * Note: This type has a copy/paste error in Hue's documentation.
-     * As a result, there's no way to know what it does. Do you know?
-     */
-    @Json(name = "Lightsource") LIGHTSOURCE,
-
-    /**
-     * Light group.
-     *
-     * A group of lights that can be controlled together. This the
-     * default group type that the bridge generates for user created
-     * groups. Default type when no type is given on creation.
-     */
-    @Json(name = "LightGroup") LIGHT_GROUP,
-
-    /**
-     * Room Group.
-     *
-     * A group of lights that are physically located in the same place
-     * in the house. Rooms behave similar as light groups, except:
-     * (1) A room can be empty and contain 0 lights,
-     * (2) a light is only allowed in one room and
-     * (3) a room isn’t automatically deleted when all lights in that
-     * room are deleted.
-     */
-    @Json(name = "Room") ROOM,
-
-    /**
-     * Represents an entertainment setup
-     *
-     * Entertainment group describe a group of lights that are used in
-     * an entertainment setup. Locations describe the relative position
-     * of the lights in an entertainment setup. E.g. for TV the
-     * position is relative to the TV. Can be used to configure
-     * streaming sessions.
-     *
-     * Entertainment group behave in a similar way as light groups,
-     * with the exception: it can be empty and contain 0 lights. The
-     * group is also not automatically recycled when lights are
-     * deleted. The group of lights can be controlled together as in
-     * LightGroupa.
-     */
-    @Json(name = "Entertainment") ENTERTAINMENT,
-
-    /**
-     * Zones describe a group of lights that can be controlled together.
-     *
-     * Zones can be empty and contain 0 lights. A light is allowed to
-     * be in multiple zones.
-     */
-    @Json(name = "Zone") ZONE
-}
 
 /**
  * Attributes of a Light group that are modifiable.
