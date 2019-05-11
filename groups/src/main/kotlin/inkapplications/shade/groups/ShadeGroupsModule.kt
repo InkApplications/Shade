@@ -6,6 +6,7 @@ import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.serialization.CoordinatesListDeserializer
 import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
+import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -32,6 +33,15 @@ class ShadeGroupsModule {
                     .withSubtype(Group.Entertainment::class.java, "Entertainment")
                     .withSubtype(Group.Zone::class.java, "Zone")
             )
+            .add(
+                PolymorphicJsonAdapterFactory.of(MutableGroupAttributes::class.java, "type")
+                    .withSubtype(MutableGroupAttributes.Room::class.java, "Room")
+                    .withSubtype(MutableGroupAttributes.Luminaire::class.java, "Luminaire")
+                    .withSubtype(MutableGroupAttributes.Lightsource::class.java, "Lightsource")
+                    .withSubtype(MutableGroupAttributes.LightGroup::class.java, "LightGroup")
+                    .withSubtype(MutableGroupAttributes.Entertainment::class.java, "Entertainment")
+                    .withSubtype(MutableGroupAttributes.Zone::class.java, "Zone")
+            )
             .add(CoordinatesListDeserializer)
             .build()
 
@@ -39,6 +49,7 @@ class ShadeGroupsModule {
             .client(client)
             .baseUrl(config.baseUrl)
             .addCallAdapterFactory(ShadeDeferredCallAdapterFactory)
+            .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
         val api = retrofit.create(HueGroupsApi::class.java)

@@ -2,9 +2,13 @@ package inkapplications.shade.groups
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import inkapplications.shade.constructs.IdToken
 import inkapplications.shade.lights.LightState
+import inkapplications.shade.serialization.converter.FirstInCollection
 import kotlinx.coroutines.Deferred
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 /**
@@ -19,6 +23,17 @@ internal interface HueGroupsApi {
      */
     @GET("api/{token}/groups")
     fun getAll(@Path("token") token: String): Deferred<Map<String, Group>>
+
+    /**
+     * Creates a new group containing the lights specified and optional name.
+     *
+     * A new group is created in the bridge with the next available id.
+     *
+     * @param group The editable attributes of the group
+     */
+    @POST("api/{token}/groups")
+    @FirstInCollection
+    fun createGroup(@Path("token") token: String, @Body group: MutableGroupAttributes): Deferred<IdToken>
 }
 
 /**
@@ -36,11 +51,6 @@ sealed class Group {
     abstract val lights: List<String>?
 
     /**
-     * The IDs of Hue sensors in the group.
-     */
-    abstract val sensors: List<String>?
-
-    /**
      * Devices grouped by Room
      *
      * @param name A unique, editable name given to the group.
@@ -56,7 +66,7 @@ sealed class Group {
     data class Room(
         override val name: String,
         override val lights: List<String>?,
-        override val sensors: List<String>?,
+        val sensors: List<String>?,
         val recycle: Boolean,
         @Json(name = "class") val roomType: RoomType,
         val state: GroupState,
@@ -71,14 +81,12 @@ sealed class Group {
      *
      * @param name A unique, editable name given to the group.
      * @param lights The IDs of the lights that are in the group.
-     * @param sensors The IDs of Hue sensors in the group.
      * @param modelId Uniquely identifies the hardware model of the luminaire.
      */
     @JsonClass(generateAdapter = true)
     data class Luminaire(
         override val name: String,
         override val lights: List<String>?,
-        override val sensors: List<String>?,
         @Json(name = "modelid") val modelId: String
     ): Group()
 
@@ -90,7 +98,6 @@ sealed class Group {
      *
      * @param name A unique, editable name given to the group.
      * @param lights The IDs of the lights that are in the group.
-     * @param sensors The IDs of Hue sensors in the group.
      * @param uuid Unique Id in AA:BB:CC:DD format for Luminaire
      *        groups or AA:BB:CC:DD-XX format for Lightsource groups,
      *        where XX is the lightsource position.
@@ -99,7 +106,6 @@ sealed class Group {
     data class Lightsource(
         override val name: String,
         override val lights: List<String>?,
-        override val sensors: List<String>?,
         @Json(name = "uniqueid") val uuid: String
     ): Group()
 
@@ -111,13 +117,11 @@ sealed class Group {
      *
      * @param name A unique, editable name given to the group.
      * @param lights The IDs of the lights that are in the group.
-     * @param sensors The IDs of Hue sensors in the group.
      */
     @JsonClass(generateAdapter = true)
     data class LightGroup(
         override val name: String,
-        override val lights: List<String>?,
-        override val sensors: List<String>?
+        override val lights: List<String>?
     ): Group()
 
     /**
@@ -128,7 +132,6 @@ sealed class Group {
      *
      * @param name A unique, editable name given to the group.
      * @param lights The IDs of the lights that are in the group.
-     * @param sensors The IDs of Hue sensors in the group.
      * @param recycle No documentation for this was provided.
      *        If you know what it does, let us know.
      * @param stream Info about streaming state for the group.
@@ -140,7 +143,6 @@ sealed class Group {
     data class Entertainment(
         override val name: String,
         override val lights: List<String>?,
-        override val sensors: List<String>?,
         val recycle: Boolean,
         val stream: StreamInfo,
         val locations: Map<String, List<Float>>
@@ -155,13 +157,11 @@ sealed class Group {
      *
      * @param name A unique, editable name given to the group.
      * @param lights The IDs of the lights that are in the group.
-     * @param sensors The IDs of Hue sensors in the group.
      */
     @JsonClass(generateAdapter = true)
     data class Zone(
         override val name: String,
-        override val lights: List<String>?,
-        override val sensors: List<String>?
+        override val lights: List<String>?
     ): Group()
 }
 
@@ -302,4 +302,105 @@ enum class GroupType {
      * be in multiple zones.
      */
     @Json(name = "Zone") ZONE
+}
+
+/**
+ * Attributes of a Light group that are modifiable.
+ */
+sealed class MutableGroupAttributes {
+    /**
+     * A unique, editable name given to the group. (optional)
+     */
+    abstract val name: String?
+
+    /**
+     * The IDs of the lights that are in the group. (optional)
+     */
+    abstract val lights: Set<String>?
+
+    /**
+     * Attributes of a Luminaire group that are modifiable.
+     *
+     * TODO: Need more information about this object's attributes.
+     *
+     * @param name A unique, editable name given to the group. (optional)
+     * @param lights The IDs of the lights that are in the group. (optional)
+     */
+    @JsonClass(generateAdapter = true)
+    data class Luminaire(
+        override val name: String? = null,
+        override val lights: Set<String>? = null
+    ): MutableGroupAttributes()
+
+    /**
+     * Attributes of a Lightsource group that are modifiable.
+     *
+     * TODO: Need more information about this object's attributes.
+     *
+     * @param name A unique, editable name given to the group. (optional)
+     * @param lights The IDs of the lights that are in the group. (optional)
+     */
+    @JsonClass(generateAdapter = true)
+    data class Lightsource(
+        override val name: String? = null,
+        override val lights: Set<String>? = null
+    ): MutableGroupAttributes()
+
+    /**
+     * Attributes of a Light group that are modifiable.
+     *
+     * TODO: Need more information about this object's attributes.
+     *
+     * @param name A unique, editable name given to the group. (optional)
+     * @param lights The IDs of the lights that are in the group. (optional)
+     */
+    @JsonClass(generateAdapter = true)
+    data class LightGroup(
+        override val name: String? = null,
+        override val lights: Set<String>? = null
+    ): MutableGroupAttributes()
+
+    /**
+     * Attributes of a Room group that are modifiable.
+     *
+     * @param name A unique, editable name given to the group. (optional)
+     * @param lights The IDs of the lights that are in the group. (optional)
+     * @param sensors The IDs of the sensors that are in the group. (optional)
+     * @param roomType Category of Room, default is OTHER
+     */
+    @JsonClass(generateAdapter = true)
+    data class Room(
+        override val name: String? = null,
+        override val lights: Set<String>? = null,
+        val sensors: Set<String>? = null,
+        @Json(name = "class") val roomType: RoomType = RoomType.OTHER
+    ): MutableGroupAttributes()
+
+    /**
+     * Attributes of an entertainment group that are modifiable.
+     *
+     * TODO: Need more information about this object's attributes.
+     *
+     * @param name A unique, editable name given to the group. (optional)
+     * @param lights The IDs of the lights that are in the group. (optional)
+     */
+    @JsonClass(generateAdapter = true)
+    data class Entertainment(
+        override val name: String? = null,
+        override val lights: Set<String>? = null
+    ): MutableGroupAttributes()
+
+    /**
+     * Attributes of an zone group that are modifiable.
+     *
+     * TODO: Need more information about this object's attributes.
+     *
+     * @param name A unique, editable name given to the group. (optional)
+     * @param lights The IDs of the lights that are in the group. (optional)
+     */
+    @JsonClass(generateAdapter = true)
+    data class Zone(
+        override val name: String? = null,
+        override val lights: Set<String>? = null
+    ): MutableGroupAttributes()
 }
