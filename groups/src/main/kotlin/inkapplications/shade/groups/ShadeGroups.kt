@@ -45,6 +45,13 @@ interface ShadeGroups {
      * @param state The state to assign to all the lights in the group.
      */
     suspend fun setState(id: String, state: GroupStateModification)
+
+    /**
+     * Deletes the specified group from the bridge.
+     *
+     * @param id The ID of the group to be permanently deleted.
+     */
+    suspend fun deleteGroup(id: String)
 }
 
 /**
@@ -70,5 +77,9 @@ internal class ApiGroups(
 
     override suspend fun setState(id: String, state: GroupStateModification) {
         groupsApi.setState(getToken(), id, state).await()
+    }
+
+    override suspend fun deleteGroup(id: String) {
+        groupsApi.deleteGroup(getToken(), id).await()
     }
 }

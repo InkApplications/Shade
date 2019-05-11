@@ -7,7 +7,6 @@ import inkapplications.shade.constructs.IdToken
 import inkapplications.shade.lights.AlertState
 import inkapplications.shade.lights.LightEffect
 import inkapplications.shade.lights.LightState
-import inkapplications.shade.lights.LightStateModification
 import inkapplications.shade.serialization.converter.FirstInCollection
 import kotlinx.coroutines.Deferred
 import retrofit2.http.*
@@ -57,12 +56,26 @@ internal interface HueGroupsApi {
         @Body attributes: MutableGroupAttributes
     ): Deferred<Unit>
 
+    /**
+     * Modifies the state of all lights in a group.
+     *
+     * @param groupId The unique ID of the group to update.
+     * @param state The state to assign to all lights in the group.
+     */
     @PUT("/api/{token}/groups/{group}/action")
     fun setState(
         @Path("token") token: String,
         @Path("group") groupId: String,
         @Body state: GroupStateModification
     ): Deferred<Unit>
+
+    /**
+     * Deletes the specified group from the bridge.
+     *
+     * @param groupId The unique ID of the group to delete.
+     */
+    @DELETE("/api/{token}/groups/{group}")
+    fun deleteGroup(@Path("token") token: String, @Path("group") groupId: String): Deferred<Unit>
 }
 
 /**
