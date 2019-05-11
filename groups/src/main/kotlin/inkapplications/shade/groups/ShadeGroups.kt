@@ -2,7 +2,6 @@ package inkapplications.shade.groups
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
-import kotlinx.coroutines.Deferred
 
 /**
  * Access for Hue's various Groups.
@@ -11,7 +10,7 @@ interface ShadeGroups {
     /**
      * Gets a list of all groups that have been added to the bridge.
      */
-    suspend fun getGroups(): Deferred<Map<String, Group>>
+    suspend fun getGroups(): Map<String, Group>
 }
 
 /**
@@ -23,5 +22,5 @@ internal class ApiGroups(
 ): ShadeGroups {
     private suspend fun getToken(): String = storage.getToken() ?: throw UnauthorizedException()
 
-    override suspend fun getGroups(): Deferred<Map<String, Group>> = groupsApi.getAll(getToken())
+    override suspend fun getGroups(): Map<String, Group> = groupsApi.getAll(getToken()).await()
 }
