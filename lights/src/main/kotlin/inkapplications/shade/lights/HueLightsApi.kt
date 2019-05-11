@@ -209,11 +209,25 @@ data class LightStartupConfig(
  *           between 0 and 1.
  *           If the specified coordinates are not in the CIE color space,
  *           the closest color to the coordinates will be chosen.
+ * @property colorTemperature The Mired Color temperature of the light.
+ *           2012 connected lights are capable of 153 (6500K) to 500 (2000K).
+ * @property hue Hue of the light. This is a wrapping value between 0
+ *           and 65535. Note, that hue/sat values are hardware
+ *           dependent which means that programming two devices with
+ *           the same value does not garantuee that they will be the
+ *           same color. Programming 0 and 65535 would mean that the
+ *           light will resemble the color red, 21845 for green and
+ *           43690 for blue.
+ * @property saturation Saturation of the light. 254 is the most
+ *           saturated (colored) and 0 is the least saturated (white).
  */
 @JsonClass(generateAdapter = true)
 data class LightCustomStartupSettings(
-    @Json(name = "bri") val brightness: Int,
-    @Json(name = "xy") val cieColorCoordinates: Coordinates
+    @Json(name = "bri") val brightness: Int?,
+    @Json(name = "xy") val cieColorCoordinates: Coordinates?,
+    @Json(name="ct") val colorTemperature: Int?,
+    val hue: Int?,
+    @Json(name="sat") val saturation: Int?
 )
 
 /**
