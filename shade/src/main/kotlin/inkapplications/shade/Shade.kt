@@ -8,7 +8,7 @@ import inkapplications.shade.lights.ShadeLightsModule
 import okhttp3.OkHttpClient
 
 /**
- * Provides services for accessign the Hue API
+ * Provides services for accessing the Hue API
  *
  * @param config Properties for setting up your connection to the hue bridge.
  * @param storage A service for storing Hue's API token. By default,
