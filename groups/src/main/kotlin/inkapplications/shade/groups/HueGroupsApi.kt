@@ -6,10 +6,7 @@ import inkapplications.shade.constructs.IdToken
 import inkapplications.shade.lights.LightState
 import inkapplications.shade.serialization.converter.FirstInCollection
 import kotlinx.coroutines.Deferred
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 /**
  * API Access for Hue's Groups endpoints.
@@ -42,6 +39,19 @@ internal interface HueGroupsApi {
      */
     @GET("api/{token}/groups/{group}")
     fun getGroup(@Path("token") token: String, @Path("group") groupId: String): Deferred<Group>
+
+    /**
+     * Allows the user to modify the name, light and class membership of a group.
+     *
+     * @param groupId The unique ID of the group to update.
+     * @param attributes The editable attributes to set. Optional data will be unmodified.
+     */
+    @PUT("api/{token}/groups/{group}")
+    fun updateGroup(
+        @Path("token") token: String,
+        @Path("group") groupId: String,
+        @Body attributes: MutableGroupAttributes
+    ): Deferred<Unit>
 }
 
 /**

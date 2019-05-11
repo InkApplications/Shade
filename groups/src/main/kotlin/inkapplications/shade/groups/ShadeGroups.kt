@@ -27,6 +27,16 @@ interface ShadeGroups {
      * @return The Group data
      */
     suspend fun getGroup(id: String): Group
+
+    /**
+     * Update the attributes of a group
+     *
+     * @param id The ID of the group to modify.
+     * @param attributes The attributes to change. If null, these will
+     *        be left unchanged. The type of group is not modifiable.
+     *        If a different type is provided, it will remain unchanged.
+     */
+    suspend fun updateGroup(id: String, attributes: MutableGroupAttributes)
 }
 
 /**
@@ -45,4 +55,8 @@ internal class ApiGroups(
     }
 
     override suspend fun getGroup(id: String): Group = groupsApi.getGroup(getToken(), id).await()
+
+    override suspend fun updateGroup(id: String, attributes: MutableGroupAttributes) {
+        groupsApi.updateGroup(getToken(), id, attributes).await()
+    }
 }
