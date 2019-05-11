@@ -34,6 +34,14 @@ internal interface HueGroupsApi {
     @POST("api/{token}/groups")
     @FirstInCollection
     fun createGroup(@Path("token") token: String, @Body group: MutableGroupAttributes): Deferred<IdToken>
+
+    /**
+     * Get a single group's attributes.
+     *
+     * @param groupId The unique ID of the group to fetch.
+     */
+    @GET("api/{token}/groups/{group}")
+    fun getGroup(@Path("token") token: String, @Path("group") groupId: String): Deferred<Group>
 }
 
 /**

@@ -19,6 +19,14 @@ interface ShadeGroups {
      * @return The ID of the newly created group.
      */
     suspend fun createGroup(group: MutableGroupAttributes): String
+
+    /**
+     * Get a single group by ID
+     *
+     * @param id The ID of the group to fetch
+     * @return The Group data
+     */
+    suspend fun getGroup(id: String): Group
 }
 
 /**
@@ -35,4 +43,6 @@ internal class ApiGroups(
     override suspend fun createGroup(group: MutableGroupAttributes): String {
         return groupsApi.createGroup(getToken(), group).await().id
     }
+
+    override suspend fun getGroup(id: String): Group = groupsApi.getGroup(getToken(), id).await()
 }
