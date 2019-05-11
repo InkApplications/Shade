@@ -1,20 +1,18 @@
 # Shade 🕶
 Shade is an SDK for the Philips Hue API written for Kotlin.
 
-## Experimental!!
-This project is much too new to be relied on.
-Check back soon. 
-I swear I'll write Docs when it's ready. 😎
-(Cause Philips sure as hell didn't)
+## Project Status
 
-### Status
+This project is relatively new, and the Hue API isn't well documented.
+Shade is currently functional, but API's may change as more is learned
+about the Hue API.
 
-Hue has several classes of endpoints. The goal is for this SDK to 
+Hue has several classes of endpoints. The goal is for this SDK to
 provide access to all of them.
 
  - [x] Authentication
  - [x] Lights API
- - [ ] Groups API
+ - [x] Groups API
  - [ ] Schedules API
  - [ ] Scenes API
  - [ ] Sensors API
@@ -78,4 +76,20 @@ suspend fun turnOffAll() {
         shade.lights.setLightState(id, LightStateModification(on = false))
     }
 }
+```
+
+### Groups
+
+Groups can be accessed through Shade's `.groups` service:
+
+```kotlin
+shade.groups.getGroups()
+    .also { println("Found ${it.size} Light Groups") }
+    .forEach { (id, group) -> println("    Group ID: $id, Name: ${group.name}") }
+
+shade.groups.setState("10", GroupStateModification(
+    on = true,
+    colorTemperature = 200,
+    brightness = 100
+))
 ```
