@@ -12,5 +12,5 @@ import org.threeten.bp.format.DateTimeFormatter
  */
 object InstantDeserializer {
     @FromJson fun fromJson(time: String): Instant = LocalDateTime.parse(time).toInstant(ZoneOffset.UTC)
-    @ToJson fun toJson(time: Instant): String = DateTimeFormatter.ISO_DATE_TIME.format(time)
+    @ToJson fun toJson(time: Instant): String = DateTimeFormatter.ISO_DATE_TIME.format(time.atOffset(ZoneOffset.UTC))
 }
