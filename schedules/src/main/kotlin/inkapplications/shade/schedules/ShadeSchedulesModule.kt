@@ -21,11 +21,12 @@ class ShadeSchedulesModule {
      * @param config App-wide configuration for Shade, used to set up connections.
      * @param tokenStorage A place to read/write the auth token used for requests.
      */
-    fun createLights(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeSchedules {
+    fun createSchedule(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeSchedules {
         val moshi = Moshi.Builder()
             .add(InstantDeserializer)
             .add(LocalDateTimeDeserializer)
             .build()
+
         val retrofit = Retrofit.Builder()
             .client(client)
             .baseUrl(config.baseUrl)

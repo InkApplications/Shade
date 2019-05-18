@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
-import org.threeten.bp.LocalTime
+import org.threeten.bp.LocalDateTime
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -36,7 +36,7 @@ data class Schedule(
     val name: String,
     val description: String,
     val command: Command,
-    @Json(name = "localtime") val localTime: LocalTime,
+    @Json(name = "localtime") val localTime: LocalDateTime?,
     val created: Instant?,
     val status: Status?,
     @Json(name = "autodelete") val autoDelete: Boolean?,
