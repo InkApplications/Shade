@@ -2,18 +2,35 @@ package inkapplications.shade.schedules
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import inkapplications.shade.constructs.Command
+import inkapplications.shade.constructs.IdToken
+import inkapplications.shade.serialization.converter.FirstInCollection
 import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
 import org.threeten.bp.LocalDateTime
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 /**
- * API Access for Hue's
+ * API Access for Hue's Schedules
  */
 internal interface HueSchedulesApi {
+    /**
+     * Gets a list of all schedules that have been added to the bridge.
+     */
     @GET("api/{token}/schedules")
     fun getSchedules(@Path("token") token: String): Deferred<Map<String, Schedule>>
+
+    /**
+     * Allows the user to create new schedules.
+     *
+     * The bridge can store up to 100 schedules.
+     */
+    @POST("api/{token}/schedules")
+    @FirstInCollection
+    fun createSchedule(@Path("token") token: String, @Body schedule: ScheduleModification): Deferred<IdToken>
 }
 
 /**
@@ -23,6 +40,7 @@ internal interface HueSchedulesApi {
  * @param description Description of the schedule.
  * @param command Request to execute when the scheduled event occurs.
  * @param localTime Time when the scheduled event will occur.
+ * @param time Time in UTC when the scheduled event will occur.
  * @param created Timestamp when the schedule was created
  * @param status The current execution status of the schedule
  * @param autoDelete If set to true, the schedule will be removed
@@ -37,10 +55,38 @@ data class Schedule(
     val description: String,
     val command: Command,
     @Json(name = "localtime") val localTime: LocalDateTime?,
-    val created: Instant?,
+    @Deprecated("Use LocalTime. This only exists for backwards compatibility")
+    val time: Instant?,
+    val created: Instant,
     val status: Status?,
-    @Json(name = "autodelete") val autoDelete: Boolean?,
+    @Json(name = "autodelete") val autoDelete: Boolean,
     @Json(name = "starttime") val startTime: Instant?
+)
+
+/**
+ * Attributes of a scheduled operation.
+ *
+ * @param name The name of the schedule.
+ * @param description Description of the schedule.
+ * @param command Request to execute when the scheduled event occurs.
+ * @param localTime Time when the scheduled event will occur.
+ * @param status The current execution status of the schedule
+ * @param autoDelete If set to true, the schedule will be removed
+ *        automatically if expired, if set to false it will be
+ *        disabled. Default is true.
+ * @param recycle When true: Resource is automatically deleted when not
+ *        referenced anymore in any resource link. Only on creation of
+ *        resource. “false” when omitted.
+ */
+@JsonClass(generateAdapter = true)
+data class ScheduleModification(
+    val command: Command,
+    @Json(name = "localtime") val localTime: LocalDateTime,
+    val name: String? = null,
+    val description: String? = null,
+    val status: Status? = null,
+    @Json(name = "autodelete") val autoDelete: Boolean? = null,
+    val recycle: Boolean? = null
 )
 
 /**
@@ -53,20 +99,3 @@ enum class Status {
     @Json(name = "enabled") ENABLED,
     @Json(name = "disabled") DISABLED
 }
-
-/**
- * A Request to run to the Hue API when executing a schedule.
- *
- * Apparently this will just run anything. Seems like potential for a
- * hub security vulnerability here via privilege escalation. Have fun!
- *
- * @param address The URL to hit, relative to the baseUrl of the Hue API
- * @param method HTTP method to use when sending the request
- * @param body Body to post with the hue request.
- */
-@JsonClass(generateAdapter = true)
-data class Command(
-    val address: String,
-    val method: String,
-    val body: Any?
-)

@@ -2,6 +2,7 @@ package inkapplications.shade.groups
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import inkapplications.shade.constructs.Command
 import inkapplications.shade.constructs.Coordinates
 import inkapplications.shade.constructs.IdToken
 import inkapplications.shade.lights.AlertState
@@ -15,6 +16,30 @@ import retrofit2.http.*
  * A Special group ID containing all lamps known by the bridge.
  */
 const val GROUP_ALL = "0"
+
+/**
+ * API URL for modifying the state of a Group.
+ */
+private const val HUE_GROUPS_STATE_URL = "api/{token}/groups/{group}/action"
+
+/**
+ * Creates a Command object used for scheduling a future modification.
+ *
+ * @param token The Auth token to use when making the request.
+ * @param group The Group of lights to modify the state of.
+ * @param modification State settings to apply to the group.
+ */
+fun createGroupModificationCommand(
+    token: String,
+    group: String,
+    modification: GroupStateModification
+) = Command(
+    address = HUE_GROUPS_STATE_URL
+        .replace("{token}", token)
+        .replace("{group}", group),
+    method = "PUT",
+    body = modification
+)
 
 /**
  * API Access for Hue's Groups endpoints.
@@ -67,7 +92,7 @@ internal interface HueGroupsApi {
      * @param groupId The unique ID of the group to update.
      * @param state The state to assign to all lights in the group.
      */
-    @PUT("/api/{token}/groups/{group}/action")
+    @PUT(HUE_GROUPS_STATE_URL)
     fun setState(
         @Path("token") token: String,
         @Path("group") groupId: String,
@@ -79,7 +104,7 @@ internal interface HueGroupsApi {
      *
      * @param groupId The unique ID of the group to delete.
      */
-    @DELETE("/api/{token}/groups/{group}")
+    @DELETE("api/{token}/groups/{group}")
     fun deleteGroup(@Path("token") token: String, @Path("group") groupId: String): Deferred<Unit>
 }
 

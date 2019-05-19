@@ -6,6 +6,7 @@ import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.serialization.InstantDeserializer
 import inkapplications.shade.serialization.LocalDateTimeDeserializer
 import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
+import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -31,6 +32,7 @@ class ShadeSchedulesModule {
             .client(client)
             .baseUrl(config.baseUrl)
             .addCallAdapterFactory(ShadeDeferredCallAdapterFactory)
+            .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
         val api = retrofit.create(HueSchedulesApi::class.java)
