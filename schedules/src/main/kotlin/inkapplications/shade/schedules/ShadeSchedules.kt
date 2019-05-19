@@ -37,6 +37,7 @@ interface ShadeSchedules {
      * @param recycle Automatically delete when not referenced anymore
      *        in any resource link. Only on creation of resource.
      *        “false” when omitted.
+     * @return The ID of the schedule that was created.
      */
     suspend fun createGroupSchedule(
         group: String,
@@ -47,7 +48,7 @@ interface ShadeSchedules {
         autoDelete: Boolean? = null,
         status: Status? = null,
         recycle: Boolean? = null
-    )
+    ): String
 
     /**
      * Create a schedule to change a Light's state
@@ -69,6 +70,7 @@ interface ShadeSchedules {
      * @param recycle Automatically delete when not referenced anymore
      *        in any resource link. Only on creation of resource.
      *        “false” when omitted.
+     * @return The ID of the schedule that was created.
      */
     suspend fun createLightSchedule(
         light: String,
@@ -79,7 +81,20 @@ interface ShadeSchedules {
         autoDelete: Boolean? = null,
         status: Status? = null,
         recycle: Boolean? = null
-    )
+    ): String
+
+    /**
+     * Create a generic Schedule.
+     *
+     * This will create a schedule for any command. For common
+     * commands, such as Group and Light state changes, use
+     * the convenience methods provided by this class.
+     *
+     * @see #createLightSchedule
+     * @see #createGroupSchedule
+     * @return The ID of the schedule that was created.
+     */
+    suspend fun createSchedule(modification: ScheduleModification): String
 }
 
 /**
@@ -93,6 +108,8 @@ internal class ApiSchedules(
 
     override suspend fun getSchedules(): Map<String, Schedule> = schedulesApi.getSchedules(getToken()).await()
 
+    override suspend fun createSchedule(modification: ScheduleModification) = schedulesApi.createSchedule(getToken(), modification).await().id
+
     override suspend fun createGroupSchedule(
         group: String,
         modification: GroupStateModification,
@@ -102,9 +119,10 @@ internal class ApiSchedules(
         autoDelete: Boolean?,
         status: Status?,
         recycle: Boolean?
-    ) {
+    ): String {
         val token = getToken()
-        schedulesApi.createSchedule(
+
+        return schedulesApi.createSchedule(
             token,
             ScheduleModification(
                 createGroupModificationCommand(token, group, modification),
@@ -115,7 +133,7 @@ internal class ApiSchedules(
                 autoDelete = autoDelete,
                 recycle = recycle
             )
-        )
+        ).await().id
     }
 
     override suspend fun createLightSchedule(
@@ -127,9 +145,10 @@ internal class ApiSchedules(
         autoDelete: Boolean?,
         status: Status?,
         recycle: Boolean?
-    ) {
+    ): String {
         val token = getToken()
-        schedulesApi.createSchedule(
+
+        return schedulesApi.createSchedule(
             token,
             ScheduleModification(
                 createLightModificationCommand(token, light, modification),
@@ -140,6 +159,6 @@ internal class ApiSchedules(
                 autoDelete = autoDelete,
                 recycle = recycle
             )
-        )
+        ).await().id
     }
 }
