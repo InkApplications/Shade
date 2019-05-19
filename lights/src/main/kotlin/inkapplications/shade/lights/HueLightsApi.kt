@@ -1,6 +1,7 @@
 package inkapplications.shade.lights
 
 import com.squareup.moshi.*
+import inkapplications.shade.constructs.Command
 import inkapplications.shade.constructs.Coordinates
 import inkapplications.shade.constructs.DeviceAttributes
 import inkapplications.shade.constructs.Scan
@@ -8,6 +9,30 @@ import inkapplications.shade.serialization.converter.FirstInCollection
 import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
 import retrofit2.http.*
+
+/**
+ * API URL for modifying the state of a Light.
+ */
+private const val HUE_LIGHTS_STATE_URL = "api/{token}/lights/{light}/state"
+
+/**
+ * Creates a Command object used for scheduling a future modification.
+ *
+ * @param token The Auth token to use when making the request.
+ * @param light The light to modify the state of.
+ * @param modification State settings to apply to the group.
+ */
+fun createLightModificationCommand(
+    token: String,
+    light: String,
+    modification: LightStateModification
+) = Command(
+    address = HUE_LIGHTS_STATE_URL
+        .replace("{token}", token)
+        .replace("{light}", light),
+    method = "PUT",
+    body = modification
+)
 
 /**
  * Hue API endpoints for lights.
@@ -22,7 +47,7 @@ internal interface HueLightsApi {
     /**
      * Set the state of a light.
      */
-    @PUT("api/{token}/lights/{light}/state")
+    @PUT(HUE_LIGHTS_STATE_URL)
     fun setState(
         @Path("token") token: String,
         @Path("light") lightId: String,
@@ -56,7 +81,7 @@ internal interface HueLightsApi {
      * @param criteria Serial numbers of lights to search for.
      * @return a pretty useless map that just contains the endpoint that was hit.
      */
-    @POST("/api/{token}/lights")
+    @POST("api/{token}/lights")
     @FirstInCollection
     fun searchLights(@Path("token") token: String, @Body criteria: LightSearchCriteria): Deferred<Map<String, String>>
 
@@ -65,7 +90,7 @@ internal interface HueLightsApi {
      *
      * @see HueLightsApi.searchLights(StringIndexOutOfBoundsException, LightSearchCriteria)
      */
-    @POST("/api/{token}/lights")
+    @POST("api/{token}/lights")
     @FirstInCollection
     fun searchLights(@Path("token") token: String): Deferred<Map<String, String>>
 
@@ -75,7 +100,7 @@ internal interface HueLightsApi {
      * @param lightId The local ID of the light to get attributes of.
      * @return The state of the light.
      */
-    @GET("/api/{token}/lights/{light}")
+    @GET("api/{token}/lights/{light}")
     fun getLightAttributes(@Path("token") token: String, @Path("light") lightId: String): Deferred<Light>
 
     /**
@@ -88,7 +113,7 @@ internal interface HueLightsApi {
      * @param attributes The Device Attributes to set.
      * @return a pretty useless map that just contains the endpoint that was hit.
      */
-    @PUT("/api/{token}/lights/{light}")
+    @PUT("api/{token}/lights/{light}")
     @FirstInCollection
     fun setLightAttributes(
         @Path("token") token: String,
@@ -99,7 +124,7 @@ internal interface HueLightsApi {
     /**
      * Deletes a light from the bridge.
      */
-    @DELETE("/api/{token}/lights/{light}")
+    @DELETE("api/{token}/lights/{light}")
     fun delete(@Path("token") token: String, @Path("light") lightId: String): Deferred<Unit>
 }
 
