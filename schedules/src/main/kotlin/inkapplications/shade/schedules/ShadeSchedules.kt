@@ -95,6 +95,13 @@ interface ShadeSchedules {
      * @return The ID of the schedule that was created.
      */
     suspend fun createSchedule(modification: ScheduleModification): String
+
+    /**
+     * Get data for a Schedule.
+     *
+     * @param schedule The ID of the schedule to fetch.
+     */
+    suspend fun getSchedule(schedule: String): Schedule
 }
 
 /**
@@ -161,4 +168,6 @@ internal class ApiSchedules(
             )
         ).await().id
     }
+
+    override suspend fun getSchedule(schedule: String): Schedule = schedulesApi.getSchedule(getToken(), schedule).await()
 }

@@ -31,6 +31,12 @@ internal interface HueSchedulesApi {
     @POST("api/{token}/schedules")
     @FirstInCollection
     fun createSchedule(@Path("token") token: String, @Body schedule: ScheduleModification): Deferred<IdToken>
+
+    /**
+     * Gets all attributes for a schedule.
+     */
+    @GET("api/{token}/schedules/{schedule}")
+    fun getSchedule(@Path("token") token: String, @Path("schedule") schedule: String): Deferred<Schedule>
 }
 
 /**
