@@ -2,6 +2,7 @@ package inkapplications.shade.schedules
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
+import inkapplications.shade.constructs.Command
 import inkapplications.shade.groups.GroupStateModification
 import inkapplications.shade.groups.createGroupModificationCommand
 import inkapplications.shade.lights.LightStateModification
@@ -94,7 +95,15 @@ interface ShadeSchedules {
      * @see #createGroupSchedule
      * @return The ID of the schedule that was created.
      */
-    suspend fun createSchedule(modification: ScheduleModification): String
+    suspend fun createSchedule(
+        command: Command,
+        localTime: LocalDateTime,
+        name: String? = null,
+        description: String? = null,
+        status: Status? = null,
+        autoDelete: Boolean? = null,
+        recycle: Boolean? = null
+    ): String
 
     /**
      * Get data for a Schedule.
@@ -115,7 +124,18 @@ internal class ApiSchedules(
 
     override suspend fun getSchedules(): Map<String, Schedule> = schedulesApi.getSchedules(getToken()).await()
 
-    override suspend fun createSchedule(modification: ScheduleModification) = schedulesApi.createSchedule(getToken(), modification).await().id
+    override suspend fun createSchedule(
+        command: Command,
+        localTime: LocalDateTime,
+        name: String?,
+        description: String?,
+        status: Status?,
+        autoDelete: Boolean?,
+        recycle: Boolean?
+    ) = schedulesApi.createSchedule(
+        getToken(),
+        ScheduleCreation(command, localTime, name, description, status, autoDelete, recycle)
+    ).await().id
 
     override suspend fun createGroupSchedule(
         group: String,
@@ -131,7 +151,7 @@ internal class ApiSchedules(
 
         return schedulesApi.createSchedule(
             token,
-            ScheduleModification(
+            ScheduleCreation(
                 createGroupModificationCommand(token, group, modification),
                 localTime = time,
                 name = name,
@@ -157,7 +177,7 @@ internal class ApiSchedules(
 
         return schedulesApi.createSchedule(
             token,
-            ScheduleModification(
+            ScheduleCreation(
                 createLightModificationCommand(token, light, modification),
                 localTime = time,
                 name = name,

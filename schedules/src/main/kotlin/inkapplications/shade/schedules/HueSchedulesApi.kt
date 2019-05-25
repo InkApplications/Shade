@@ -30,7 +30,7 @@ internal interface HueSchedulesApi {
      */
     @POST("api/{token}/schedules")
     @FirstInCollection
-    fun createSchedule(@Path("token") token: String, @Body schedule: ScheduleModification): Deferred<IdToken>
+    fun createSchedule(@Path("token") token: String, @Body schedule: ScheduleCreation): Deferred<IdToken>
 
     /**
      * Gets all attributes for a schedule.
@@ -70,7 +70,7 @@ data class Schedule(
 )
 
 /**
- * Attributes of a scheduled operation.
+ * Attributes for creating a schedule.
  *
  * @param name The name of the schedule.
  * @param description Description of the schedule.
@@ -85,7 +85,7 @@ data class Schedule(
  *        resource. “false” when omitted.
  */
 @JsonClass(generateAdapter = true)
-data class ScheduleModification(
+internal data class ScheduleCreation(
     val command: Command,
     @Json(name = "localtime") val localTime: LocalDateTime,
     val name: String? = null,
