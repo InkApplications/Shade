@@ -40,6 +40,12 @@ internal interface HueSchedulesApi {
      */
     @GET("api/{token}/schedules/{schedule}")
     fun getSchedule(@Path("token") token: String, @Path("schedule") schedule: String): Deferred<Schedule>
+
+    /**
+     * Deletes a schedule from the bridge.
+     */
+    @DELETE("api/{token}/schedules/{schedule}")
+    fun deleteSchedule(@Path("token") token: String, @Path("schedule") schedule: String): Deferred<Unit>
 }
 
 /**

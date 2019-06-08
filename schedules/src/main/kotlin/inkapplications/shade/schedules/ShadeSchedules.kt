@@ -187,6 +187,11 @@ interface ShadeSchedules {
      * @param schedule The ID of the schedule to fetch.
      */
     suspend fun getSchedule(schedule: String): Schedule
+
+    /**
+     * Delete a schedule from the bridge.
+     */
+    suspend fun deleteSchedule(schedule: String)
 }
 
 /**
@@ -343,4 +348,6 @@ internal class ApiSchedules(
     }
 
     override suspend fun getSchedule(schedule: String): Schedule = schedulesApi.getSchedule(getToken(), schedule).await()
+
+    override suspend fun deleteSchedule(schedule: String) = schedulesApi.deleteSchedule(getToken(), schedule).await()
 }
