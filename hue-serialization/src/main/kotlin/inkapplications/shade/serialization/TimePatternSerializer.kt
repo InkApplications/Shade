@@ -5,10 +5,7 @@ import com.squareup.moshi.ToJson
 import inkapplications.shade.constructs.TimePattern
 import inkapplications.shade.constructs.TimePattern.*
 import inkapplications.shade.constructs.TimePattern.Timer.*
-import org.threeten.bp.DayOfWeek
-import org.threeten.bp.LocalDate
-import org.threeten.bp.LocalDateTime
-import org.threeten.bp.LocalTime
+import org.threeten.bp.*
 import org.threeten.bp.format.DateTimeFormatter
 import java.lang.IllegalArgumentException
 
@@ -191,11 +188,14 @@ object ExpiringTimerSerializer {
     @FromJson fun fromJson(data: String): ExpiringTimer {
         val (time) = PATTERN.find(data)!!.destructured
 
-        return ExpiringTimer(LocalTime.parse(time, DateTimeFormatter.ISO_TIME))
+        return LocalTime.parse(time, DateTimeFormatter.ISO_TIME)
+            .toDuration()
+            .let(::ExpiringTimer)
+
     }
 
     @ToJson fun toJson(data: ExpiringTimer): String {
-        val time = data.expiration.format(DateTimeFormatter.ISO_TIME)
+        val time = data.expiration.toTime().format(DateTimeFormatter.ISO_TIME)
 
         return "PT%s".format(time)
     }
@@ -211,15 +211,15 @@ object RandomExpiringTimerSerializer {
         val parts = PATTERN.find(data)!!
         val startTimeString = parts.groups[1]!!.value
         val endTimeString = parts.groups[5]!!.value
-        val startTime = LocalTime.parse(startTimeString, DateTimeFormatter.ISO_TIME)
-        val endTime = LocalTime.parse(endTimeString, DateTimeFormatter.ISO_TIME)
+        val startTime = LocalTime.parse(startTimeString, DateTimeFormatter.ISO_TIME).toDuration()
+        val endTime = LocalTime.parse(endTimeString, DateTimeFormatter.ISO_TIME).toDuration()
 
         return RandomExpiringTimer(startTime..endTime)
     }
 
     @ToJson fun toJson(data: RandomExpiringTimer): String {
-        val startTime = data.expiration.start.format(DateTimeFormatter.ISO_TIME)
-        val endTime = data.expiration.endInclusive.format(DateTimeFormatter.ISO_TIME)
+        val startTime = data.expiration.start.toTime().format(DateTimeFormatter.ISO_TIME)
+        val endTime = data.expiration.endInclusive.toTime().format(DateTimeFormatter.ISO_TIME)
 
         return "PT%sA%s".format(startTime, endTime)
     }
@@ -234,13 +234,13 @@ object RecurringTimerSerializer {
     @FromJson fun fromJson(data: String): RecurringTimer {
         val parts = PATTERN.find(data)!!
         val occurrences = parts.groups[1]?.value?.toInt()
-        val time = LocalTime.parse(parts.groups[2]!!.value, DateTimeFormatter.ISO_TIME)
+        val time = LocalTime.parse(parts.groups[2]!!.value, DateTimeFormatter.ISO_TIME).toDuration()
 
         return RecurringTimer(occurrences, time)
     }
 
     @ToJson fun toJson(data: RecurringTimer): String {
-        val time = data.time.format(DateTimeFormatter.ISO_TIME)
+        val time = data.time.toTime().format(DateTimeFormatter.ISO_TIME)
         val occurrences = data.occurrences
 
         return if (occurrences != null) "R%02d/PT%s".format(occurrences, time) else  "R/PT%s".format(time)
@@ -256,20 +256,34 @@ object RandomRecurringTimerSerializer {
     @FromJson fun fromJson(data: String): RandomRecurringTimer {
         val parts = PATTERN.find(data)!!
         val occurrences = parts.groups[1]?.value?.toInt()
-        val startTime = LocalTime.parse(parts.groups[2]!!.value, DateTimeFormatter.ISO_TIME)
-        val endTime = LocalTime.parse(parts.groups[6]!!.value, DateTimeFormatter.ISO_TIME)
+        val startTime = LocalTime.parse(parts.groups[2]!!.value, DateTimeFormatter.ISO_TIME).toDuration()
+        val endTime = LocalTime.parse(parts.groups[6]!!.value, DateTimeFormatter.ISO_TIME).toDuration()
 
         return RandomRecurringTimer(occurrences, startTime..endTime)
     }
 
     @ToJson fun toJson(data: RandomRecurringTimer): String {
-        val startTime = data.timeRange.start.format(DateTimeFormatter.ISO_TIME)
-        val endTime = data.timeRange.endInclusive.format(DateTimeFormatter.ISO_TIME)
+        val startTime = data.timeRange.start.toTime().format(DateTimeFormatter.ISO_TIME)
+        val endTime = data.timeRange.endInclusive.toTime().format(DateTimeFormatter.ISO_TIME)
         val occurrences = data.occurrences
 
         return if (occurrences != null) "R%02d/PT%sA%s".format(occurrences, startTime, endTime) else  "R/PT%sA%s".format(startTime, endTime)
     }
 }
+
+/**
+ * Convert a local time to a duration from midnight.
+ *
+ * This is a buck-wild operation that's necessary because the durations in hue are mis-formatted.
+ */
+private fun LocalTime.toDuration() = Duration.between(LocalTime.MIN, this)
+
+/**
+ * Convert a duration into a local time from midnight.
+ *
+ * This is a buck-wild operation that's necessary because the durations in hue are mis-formatted.
+ */
+private fun Duration.toTime() = LocalTime.MIN.plus(this)
 
 /**
  * Converts a standard DayOfWeek enum into Hue's Binary flags.

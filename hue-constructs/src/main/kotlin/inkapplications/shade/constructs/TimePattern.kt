@@ -1,9 +1,6 @@
 package inkapplications.shade.constructs
 
-import org.threeten.bp.DayOfWeek
-import org.threeten.bp.LocalDate
-import org.threeten.bp.LocalDateTime
-import org.threeten.bp.LocalTime
+import org.threeten.bp.*
 
 /**
  * Abstraction of all of the various types of date/times that Hue handles.
@@ -52,25 +49,25 @@ sealed class TimePattern {
         /**
          * Timer expiring after the specified time.
          */
-        data class ExpiringTimer(val expiration: LocalTime): Timer()
+        data class ExpiringTimer(val expiration: Duration): Timer()
 
         /**
          * Timer expiring randomly within a time range.
          */
-        data class RandomExpiringTimer(val expiration: ClosedRange<LocalTime>): Timer()
+        data class RandomExpiringTimer(val expiration: ClosedRange<Duration>): Timer()
 
         /**
          * Timer that repeats.
          *
          * @param occurrences If specified, this is the number of times the timer will repeat.
          */
-        data class RecurringTimer(val occurrences: Int?, val time: LocalTime): Timer()
+        data class RecurringTimer(val occurrences: Int?, val time: Duration): Timer()
 
         /**
          * Timer that repeats and expires randomly within a time range.
          *
          * @param occurrences If specified, this is the number of times the timer will repeat.
          */
-        data class RandomRecurringTimer(val occurrences: Int?, val timeRange: ClosedRange<LocalTime>): Timer()
+        data class RandomRecurringTimer(val occurrences: Int?, val timeRange: ClosedRange<Duration>): Timer()
     }
 }
