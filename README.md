@@ -13,7 +13,7 @@ provide access to all of them.
  - [x] Authentication
  - [x] Lights API
  - [x] Groups API
- - [ ] Schedules API
+ - [x] Schedules API
  - [ ] Scenes API
  - [ ] Sensors API
  - [ ] Rules API

@@ -5,6 +5,7 @@ import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.groups.ShadeGroupsModule
 import inkapplications.shade.lights.ShadeLightsModule
+import inkapplications.shade.schedules.ShadeSchedulesModule
 import okhttp3.OkHttpClient
 
 /**
@@ -38,4 +39,9 @@ open class Shade(
      * Services for controlling Light-Groups
      */
     val groups = ShadeGroupsModule().createGroups(client, config, storage)
+
+    /**
+     * Services for setting custom light schedules.
+     */
+    val schedules = ShadeSchedulesModule().createSchedule(client, config, storage)
 }
