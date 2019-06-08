@@ -4,14 +4,11 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import inkapplications.shade.constructs.Command
 import inkapplications.shade.constructs.IdToken
+import inkapplications.shade.constructs.TimePattern
 import inkapplications.shade.serialization.converter.FirstInCollection
 import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
-import org.threeten.bp.LocalDateTime
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 /**
  * API Access for Hue's Schedules
@@ -31,6 +28,12 @@ internal interface HueSchedulesApi {
     @POST("api/{token}/schedules")
     @FirstInCollection
     fun createSchedule(@Path("token") token: String, @Body schedule: ScheduleCreation): Deferred<IdToken>
+
+    /**
+     * Allows the user to change attributes of a schedule.
+     */
+    @PUT("api/{token}/schedules/{schedule}")
+    fun updateSchedule(@Path("token") token: String, @Path("schedule") schedule: String, @Body modification: ScheduleModification): Deferred<Unit>
 
     /**
      * Gets all attributes for a schedule.
@@ -60,12 +63,12 @@ data class Schedule(
     val name: String,
     val description: String,
     val command: Command,
-    @Json(name = "localtime") val localTime: LocalDateTime?,
+    @Json(name = "localtime") val localTime: TimePattern?,
     @Deprecated("Use LocalTime. This only exists for backwards compatibility")
-    val time: Instant?,
+    val time: TimePattern?,
     val created: Instant,
     val status: Status?,
-    @Json(name = "autodelete") val autoDelete: Boolean,
+    @Json(name = "autodelete") val autoDelete: Boolean?,
     @Json(name = "starttime") val startTime: Instant?
 )
 
@@ -87,12 +90,33 @@ data class Schedule(
 @JsonClass(generateAdapter = true)
 internal data class ScheduleCreation(
     val command: Command,
-    @Json(name = "localtime") val localTime: LocalDateTime,
+    @Json(name = "localtime") val localTime: TimePattern,
     val name: String? = null,
     val description: String? = null,
     val status: Status? = null,
     @Json(name = "autodelete") val autoDelete: Boolean? = null,
     val recycle: Boolean? = null
+)
+
+/**
+ *Attributes for editing an existing schedule.
+ *
+ * @param name The name of the schedule.
+ * @param description Description of the schedule.
+ * @param command Request to execute when the scheduled event occurs.
+ * @param localTime Time when the scheduled event will occur.
+ * @param status The current execution status of the schedule
+ * @param autoDelete If set to true, the schedule will be removed
+ *        automatically if expired, if set to false it will be
+ *        disabled. Default is true.
+ */
+internal data class ScheduleModification(
+    val command: Command? = null,
+    @Json(name = "localtime") val localTime: TimePattern? = null,
+    val name: String? = null,
+    val description: String? = null,
+    val status: Status? = null,
+    @Json(name = "autodelete") val autoDelete: Boolean? = null
 )
 
 /**

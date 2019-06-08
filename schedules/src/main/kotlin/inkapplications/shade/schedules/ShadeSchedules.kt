@@ -3,11 +3,11 @@ package inkapplications.shade.schedules
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
 import inkapplications.shade.constructs.Command
+import inkapplications.shade.constructs.TimePattern
 import inkapplications.shade.groups.GroupStateModification
 import inkapplications.shade.groups.createGroupModificationCommand
 import inkapplications.shade.lights.LightStateModification
 import inkapplications.shade.lights.createLightModificationCommand
-import org.threeten.bp.LocalDateTime
 
 /**
  * Provides access to Hue's Schedules
@@ -43,7 +43,7 @@ interface ShadeSchedules {
     suspend fun createGroupSchedule(
         group: String,
         modification: GroupStateModification,
-        time: LocalDateTime,
+        time: TimePattern,
         name: String? = null,
         description: String? = null,
         autoDelete: Boolean? = null,
@@ -76,7 +76,7 @@ interface ShadeSchedules {
     suspend fun createLightSchedule(
         light: String,
         modification: LightStateModification,
-        time: LocalDateTime,
+        time: TimePattern,
         name: String? = null,
         description: String? = null,
         autoDelete: Boolean? = null,
@@ -97,13 +97,89 @@ interface ShadeSchedules {
      */
     suspend fun createSchedule(
         command: Command,
-        localTime: LocalDateTime,
+        time: TimePattern,
         name: String? = null,
         description: String? = null,
         status: Status? = null,
         autoDelete: Boolean? = null,
         recycle: Boolean? = null
     ): String
+
+    /**
+     * Create a schedule to change a Group's state
+     *
+     * @param schedule The ID of the schedule to modify.
+     * @param group The ID of the group to change when the schedule runs.
+     *        `modification` must also be provided if this is modified.
+     * @param modification The state changes to apply to the group.
+     *        `group` must also be provided if this is modified.
+     * @param time Local time when the scheduled event will occur.
+     * @param name Name for the schedule.
+     * @param description Description of the new schedule.
+     * @param autoDelete If set to true, the schedule will be removed
+     *        automatically if expired, if set to false it will be
+     *        disabled. Default is true. Only for non-recurring schedules.
+     * @param status Disabled causes a timer to reset when activated
+     *        (i.e. stop & reset).
+     */
+    suspend fun updateGroupSchedule(
+        schedule: String,
+        group: String? = null,
+        modification: GroupStateModification? = null,
+        time: TimePattern? = null,
+        name: String? = null,
+        description: String? = null,
+        autoDelete: Boolean? = null,
+        status: Status? = null
+    )
+
+    /**
+     * Create a schedule to change a Light's state
+     *
+     * @param schedule The ID of the schedule to modify.
+     * @param light The ID of the Light to change when the schedule runs.
+     *        `modification` must also be provided if this is modified.
+     * @param modification The state changes to apply to the light.
+     *        `light` must also be provided if this is modified.
+     * @param time Local time when the scheduled event will occur.
+     * @param name Name for the schedule.
+     * @param description Description of the new schedule.
+     * @param autoDelete If set to true, the schedule will be removed
+     *        automatically if expired, if set to false it will be
+     *        disabled. Default is true. Only for non-recurring schedules.
+     * @param status Disabled causes a timer to reset when activated
+     *        (i.e. stop & reset).
+     */
+    suspend fun updateLightSchedule(
+        schedule: String,
+        light: String? = null,
+        modification: LightStateModification? = null,
+        time: TimePattern? = null,
+        name: String? = null,
+        description: String? = null,
+        autoDelete: Boolean? = null,
+        status: Status? = null
+    )
+
+    /**
+     * Create a generic Schedule.
+     *
+     * This will create a schedule for any command. For common
+     * commands, such as Group and Light state changes, use
+     * the convenience methods provided by this class.
+     *
+     * @see #createLightSchedule
+     * @see #createGroupSchedule
+     */
+    suspend fun updateSchedule(
+        schedule: String,
+        command: Command? = null,
+        time: TimePattern? = null,
+        name: String? = null,
+        description: String? = null,
+        status: Status? = null,
+        autoDelete: Boolean? = null
+    )
 
     /**
      * Get data for a Schedule.
@@ -126,7 +202,7 @@ internal class ApiSchedules(
 
     override suspend fun createSchedule(
         command: Command,
-        localTime: LocalDateTime,
+        time: TimePattern,
         name: String?,
         description: String?,
         status: Status?,
@@ -134,13 +210,13 @@ internal class ApiSchedules(
         recycle: Boolean?
     ) = schedulesApi.createSchedule(
         getToken(),
-        ScheduleCreation(command, localTime, name, description, status, autoDelete, recycle)
+        ScheduleCreation(command, time, name, description, status, autoDelete, recycle)
     ).await().id
 
     override suspend fun createGroupSchedule(
         group: String,
         modification: GroupStateModification,
-        time: LocalDateTime,
+        time: TimePattern,
         name: String?,
         description: String?,
         autoDelete: Boolean?,
@@ -166,7 +242,7 @@ internal class ApiSchedules(
     override suspend fun createLightSchedule(
         light: String,
         modification: LightStateModification,
-        time: LocalDateTime,
+        time: TimePattern,
         name: String?,
         description: String?,
         autoDelete: Boolean?,
@@ -187,6 +263,83 @@ internal class ApiSchedules(
                 recycle = recycle
             )
         ).await().id
+    }
+
+    override suspend fun updateGroupSchedule(
+        schedule: String,
+        group: String?,
+        modification: GroupStateModification?,
+        time: TimePattern?,
+        name: String?,
+        description: String?,
+        autoDelete: Boolean?,
+        status: Status?
+    ) {
+        val token = getToken()
+
+        schedulesApi.updateSchedule(
+            token,
+            schedule,
+            ScheduleModification(
+                command = if (group != null && modification != null) createGroupModificationCommand(token, group, modification) else null,
+                localTime = time,
+                name = name,
+                description = description,
+                status = status,
+                autoDelete = autoDelete
+            )
+        ).await()
+    }
+
+    override suspend fun updateLightSchedule(
+        schedule: String,
+        light: String?,
+        modification: LightStateModification?,
+        time: TimePattern?,
+        name: String?,
+        description: String?,
+        autoDelete: Boolean?,
+        status: Status?
+    ) {
+        val token = getToken()
+
+        schedulesApi.updateSchedule(
+            token,
+            schedule,
+            ScheduleModification(
+                command = if (light != null && modification != null) createLightModificationCommand(token, light, modification) else null,
+                localTime = time,
+                name = name,
+                description = description,
+                status = status,
+                autoDelete = autoDelete
+            )
+        ).await()
+    }
+
+    override suspend fun updateSchedule(
+        schedule: String,
+        command: Command?,
+        time: TimePattern?,
+        name: String?,
+        description: String?,
+        status: Status?,
+        autoDelete: Boolean?
+    ) {
+        val token = getToken()
+
+        schedulesApi.updateSchedule(
+            token,
+            schedule,
+            ScheduleModification(
+                command = command,
+                localTime = time,
+                name = name,
+                description = description,
+                status = status,
+                autoDelete = autoDelete
+            )
+        ).await()
     }
 
     override suspend fun getSchedule(schedule: String): Schedule = schedulesApi.getSchedule(getToken(), schedule).await()

@@ -4,7 +4,7 @@ import com.squareup.moshi.Moshi
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.serialization.InstantDeserializer
-import inkapplications.shade.serialization.LocalDateTimeDeserializer
+import inkapplications.shade.serialization.TimePatternSerializer
 import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
@@ -24,8 +24,8 @@ class ShadeSchedulesModule {
      */
     fun createSchedule(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeSchedules {
         val moshi = Moshi.Builder()
+            .add(TimePatternSerializer)
             .add(InstantDeserializer)
-            .add(LocalDateTimeDeserializer)
             .build()
 
         val retrofit = Retrofit.Builder()
