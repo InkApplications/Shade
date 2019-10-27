@@ -1,32 +1,7 @@
 # Shade 🕶
 Shade is an SDK for the Philips Hue API written for Kotlin.
 
-## Project Status
-
-This project is relatively new, and the Hue API isn't well documented.
-Shade is currently functional, but API's may change as more is learned
-about the Hue API.
-
-Hue has several classes of endpoints. The goal is for this SDK to
-provide access to all of them.
-
- - [x] Authentication
- - [x] Lights API
- - [x] Groups API
- - [x] Schedules API
- - [ ] Scenes API
- - [ ] Sensors API
- - [ ] Rules API
- - [ ] Configuration API
- - [ ] Info API
- - [ ] Resource Links API
- - [ ] Capabilities API
-
-## Usage (Android)
-
-_Coming Soon_
-
-## Usage (JVM)
+## Usage
 
 ### Installation
 
