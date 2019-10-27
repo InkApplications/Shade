@@ -7,7 +7,7 @@ fun DependencyHandlerScope.coroutines(
 
 fun DependencyHandlerScope.retrofit(
     module: String = "retrofit",
-    version: String = "2.5.0"
+    version: String = "2.6.1"
 ) = "com.squareup.retrofit2:$module:$version"
 
 fun DependencyHandlerScope.moshi(
@@ -17,7 +17,7 @@ fun DependencyHandlerScope.moshi(
 
 fun DependencyHandlerScope.okHttp(
     module: String = "okhttp",
-    version: String = "3.12.0"
+    version: String = "4.2.2"
 ) = "com.squareup.okhttp3:$module:$version"
 
 fun DependencyHandlerScope.threeTen(
