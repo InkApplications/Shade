@@ -1,5 +1,6 @@
 include("auth")
 include("config")
+include("cli")
 include("groups")
 include("hue-constructs")
 include("hue-serialization")
