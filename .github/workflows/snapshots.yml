@@ -1,0 +1,17 @@
+name: Snapshot Builds
+
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: ./gradlew build
+    - uses: actions/upload-artifact@master
+      with:
+        name: cli
+        path: cli/build/distributions/cli.tar
+    - name: Publish
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/InkApplications -Dtoken=${{ secrets.DEPLOY_KEY }}
+

@@ -10,6 +10,8 @@ buildscript {
 }
 
 subprojects {
+    project.group = "com.inkapplications"
+    project.version =  project.findProperty("version") ?: "1.0-SNAPSHOT"
     repositories {
         jcenter()
     }
