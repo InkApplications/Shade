@@ -7,5 +7,6 @@ import dagger.multibindings.IntoSet
 
 @Module
 abstract class LightsModule {
-    @Binds @IntoSet abstract fun command(command: ListLights): CliktCommand
+    @Binds @IntoSet abstract fun list(command: ListLights): CliktCommand
+    @Binds @IntoSet abstract fun control(command: LightControl): CliktCommand
 }
