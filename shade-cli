@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-./gradlew cli:installDist --quiet
-cli/build/install/cli/bin/cli "$@"
+./gradlew cli:installDist --quiet && cli/build/install/cli/bin/cli "$@"
