@@ -7,6 +7,7 @@ plugins {
 application.mainClassName = "inkapplications.shade.cli.MainKt"
 
 dependencies {
+    implementation(project(":shade"))
     implementation(kotlin("stdlib"))
     implementation(coroutines())
     implementation("com.github.ajalt:clikt:2.1.0")
