@@ -17,7 +17,11 @@ class ListLights @Inject constructor(
         runBlocking {
             echo("💡 Hue Lights:")
             shade.lights.getLights().forEach { (id, light) ->
-                println("    ${light.name}")
+                echo("  $id:")
+                echo("    name: ${light.name}")
+                echo("    uuid: ${light.uuid}")
+                echo("    type: ${light.type}")
+                echo("    Firmware: ${light.softwareVersion}")
             }
         }
     }
