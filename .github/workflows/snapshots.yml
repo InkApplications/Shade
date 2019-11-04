@@ -1,4 +1,4 @@
-name: Snapshot Builds
+name: Latest Build
 
 on: [push]
 jobs:
@@ -12,6 +12,4 @@ jobs:
       with:
         name: cli
         path: cli/build/distributions/cli.tar
-    - name: Publish
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/InkApplications -Dtoken=${{ secrets.DEPLOY_KEY }}
 
