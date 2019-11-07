@@ -15,12 +15,12 @@ import javax.inject.Inject
     private val shade: Shade
 ): CliktCommand(
     name = "lights:control",
-    help = "Turn a light on/off"
+    help = "Change the state of a light"
 ) {
     private val light by argument()
 
     private val on: Boolean? by option(
-        help = "Change the light state to on or orr"
+        help = "Change the light state to on or off"
     ).switch(
         "--on" to true,
         "--off" to false
