@@ -10,4 +10,8 @@ abstract class GroupsModule {
     @Binds
     @IntoSet
     abstract fun list(command: GroupsList): CliktCommand
+
+    @Binds
+    @IntoSet
+    abstract fun control(command: GroupsControl): CliktCommand
 }
