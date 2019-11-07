@@ -16,6 +16,6 @@ dependencies {
     implementation(retrofit("converter-moshi"))
     implementation(moshi())
     implementation(moshi("moshi-adapters"))
-    implementation(moshi("moshi-kotlin-codegen"))
+    kapt(moshi("moshi-kotlin-codegen"))
     compile(okHttp())
 }
