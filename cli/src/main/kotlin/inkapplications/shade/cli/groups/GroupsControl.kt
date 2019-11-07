@@ -1,4 +1,4 @@
-package inkapplications.shade.cli.lights
+package inkapplications.shade.cli.groups
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
@@ -7,20 +7,21 @@ import com.github.ajalt.clikt.parameters.options.switch
 import com.github.ajalt.clikt.parameters.types.int
 import dagger.Reusable
 import inkapplications.shade.Shade
-import inkapplications.shade.lights.LightStateModification
+import inkapplications.shade.groups.GroupStateModification
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
-@Reusable class LightControl @Inject constructor(
+@Reusable
+class GroupsControl @Inject constructor(
     private val shade: Shade
 ): CliktCommand(
-    name = "lights:control",
-    help = "Change the state of a light"
+    name = "groups:control",
+    help = "Change the state of a light group"
 ) {
-    private val light by argument()
+    private val group by argument()
 
     private val on: Boolean? by option(
-        help = "Change the light state to on or off"
+        help = "Turn on/off all lights in the group"
     ).switch(
         "--on" to true,
         "--off" to false
@@ -37,12 +38,11 @@ import javax.inject.Inject
 
     override fun run() {
         runBlocking {
-            val modification = LightStateModification(
+            shade.groups.setState(group, GroupStateModification(
                 on = on,
                 brightness = brightness,
                 colorTemperature = colorTemperature
-            )
-            shade.lights.setLightState(light, modification)
+            ))
         }
     }
 }
