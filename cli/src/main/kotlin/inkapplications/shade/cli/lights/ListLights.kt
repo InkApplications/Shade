@@ -15,13 +15,12 @@ class ListLights @Inject constructor(
 ) {
     override fun run() {
         runBlocking {
-            echo("💡 Hue Lights:")
             shade.lights.getLights().forEach { (id, light) ->
-                echo("  $id:")
-                echo("    name: ${light.name}")
-                echo("    uuid: ${light.uuid}")
-                echo("    type: ${light.type}")
-                echo("    Firmware: ${light.softwareVersion}")
+                echo("$id:")
+                echo("  name: ${light.name}")
+                echo("  uuid: ${light.uuid}")
+                echo("  type: ${light.type}")
+                echo("  firmware: ${light.softwareVersion}")
             }
         }
     }
