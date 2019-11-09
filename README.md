@@ -1,5 +1,7 @@
-# Shade 🕶
-Shade is an SDK for the Philips Hue API written for Kotlin.
+
+![Shade Logo](logo-full.svg)
+
+_A modern SDK for the Philips Hue API written for Kotlin._
 
 ## Usage
 
