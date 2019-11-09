@@ -8,7 +8,12 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton class FileStorage @Inject constructor(): TokenStorage {
-    private val file = File("cli-config.properties")
+    private val file = File(
+        System.getProperty("user.home")
+            .takeIf { it.isNullOrEmpty() == false },
+        ".shade-cli.properties"
+    )
+
     private val current: AtomicReference<Properties> by lazy {
         Properties()
             .apply {
