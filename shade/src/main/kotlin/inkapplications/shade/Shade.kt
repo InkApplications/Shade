@@ -3,6 +3,7 @@ package inkapplications.shade
 import inkapplications.shade.auth.ShadeAuthModule
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.config.ShadeConfig
+import inkapplications.shade.discover.DiscoverModule
 import inkapplications.shade.groups.ShadeGroupsModule
 import inkapplications.shade.lights.ShadeLightsModule
 import inkapplications.shade.schedules.ShadeSchedulesModule
@@ -44,4 +45,9 @@ open class Shade(
      * Services for setting custom light schedules.
      */
     val schedules = ShadeSchedulesModule().createSchedule(client, config, storage)
+
+    /**
+     * Services for finding briges on the network.
+     */
+    val discovery = DiscoverModule().createDiscoverclient(client)
 }

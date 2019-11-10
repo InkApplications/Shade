@@ -13,14 +13,14 @@ class Connect @Inject constructor(
     private val storage: FileStorage
 ): CliktCommand(
     name = "connect",
-    help = "Connect the Shade CLI to your Hue Bridge"
+    help = "Connect the Shade CLI to your Hue Device"
 ) {
     private val url by argument()
 
     override fun run() {
         runBlocking {
             storage.setUrl(url)
-            echo("Waiting to connect. Press the button on your Hue Bridge now.")
+            echo("Waiting to connect. Press the button on your Hue Device now.")
             Shade(ShadeConfig(url, storage.getAppId()), storage).auth.awaitToken()
             echo("Success 🎉")
         }
