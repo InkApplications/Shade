@@ -13,5 +13,9 @@ abstract class AuthModule {
     abstract fun command(command: Connect): CliktCommand
 
     @Binds
+    @IntoSet
+    abstract fun discover(command: Discover): CliktCommand
+
+    @Binds
     abstract fun storage(fileStorage: FileStorage): TokenStorage
 }
