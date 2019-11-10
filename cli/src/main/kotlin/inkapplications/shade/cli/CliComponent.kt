@@ -5,6 +5,7 @@ import dagger.Component
 import inkapplications.shade.cli.auth.AuthModule
 import inkapplications.shade.cli.groups.GroupsModule
 import inkapplications.shade.cli.lights.LightsModule
+import inkapplications.shade.cli.scenes.ScenesModule
 import javax.inject.Singleton
 
 @Singleton
@@ -12,6 +13,7 @@ import javax.inject.Singleton
     AuthModule::class,
     GroupsModule::class,
     LightsModule::class,
+    ScenesModule::class,
     ShadeModule::class
 ])
 interface CliComponent {

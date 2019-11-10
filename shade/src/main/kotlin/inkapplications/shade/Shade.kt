@@ -6,6 +6,7 @@ import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.discover.DiscoverModule
 import inkapplications.shade.groups.ShadeGroupsModule
 import inkapplications.shade.lights.ShadeLightsModule
+import inkapplications.shade.scenes.ShadeScenesModule
 import inkapplications.shade.schedules.ShadeSchedulesModule
 import okhttp3.OkHttpClient
 
@@ -47,7 +48,12 @@ open class Shade(
     val schedules = ShadeSchedulesModule().createSchedule(client, config, storage)
 
     /**
-     * Services for finding briges on the network.
+     * Services for finding bridges on the network.
      */
     val discovery = DiscoverModule().createDiscoverclient(client)
+
+    /**
+     * Services for bridge scenes.
+     */
+    val scenes = ShadeScenesModule().createGroups(client, config, storage)
 }
