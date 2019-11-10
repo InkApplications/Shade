@@ -6,7 +6,10 @@ import kotlin.system.exitProcess
 
 class Main: NoRunCliktCommand() {
     init {
-        subcommands(DaggerCliComponent.create().getCommands())
+        DaggerCliComponent.create()
+            .getCommands()
+            .sortedBy { it.commandName }
+            .run(::subcommands)
     }
 }
 
