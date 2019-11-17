@@ -2,7 +2,6 @@ package inkapplications.shade.auth
 
 import com.squareup.moshi.Moshi
 import inkapplications.shade.config.ShadeConfig
-import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -21,7 +20,6 @@ class ShadeAuthModule {
         val retrofit = Retrofit.Builder()
             .client(client)
             .baseUrl(config.baseUrl)
-            .addCallAdapterFactory(ShadeDeferredCallAdapterFactory)
             .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()

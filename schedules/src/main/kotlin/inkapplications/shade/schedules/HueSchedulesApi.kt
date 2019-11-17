@@ -6,7 +6,6 @@ import inkapplications.shade.constructs.Command
 import inkapplications.shade.constructs.IdToken
 import inkapplications.shade.constructs.TimePattern
 import inkapplications.shade.serialization.converter.FirstInCollection
-import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
 import retrofit2.http.*
 
@@ -18,7 +17,7 @@ internal interface HueSchedulesApi {
      * Gets a list of all schedules that have been added to the bridge.
      */
     @GET("api/{token}/schedules")
-    fun getSchedules(@Path("token") token: String): Deferred<Map<String, Schedule>>
+    suspend fun getSchedules(@Path("token") token: String): Map<String, Schedule>
 
     /**
      * Allows the user to create new schedules.
@@ -27,25 +26,25 @@ internal interface HueSchedulesApi {
      */
     @POST("api/{token}/schedules")
     @FirstInCollection
-    fun createSchedule(@Path("token") token: String, @Body schedule: ScheduleCreation): Deferred<IdToken>
+    suspend fun createSchedule(@Path("token") token: String, @Body schedule: ScheduleCreation): IdToken
 
     /**
      * Allows the user to change attributes of a schedule.
      */
     @PUT("api/{token}/schedules/{schedule}")
-    fun updateSchedule(@Path("token") token: String, @Path("schedule") schedule: String, @Body modification: ScheduleModification): Deferred<Unit>
+    suspend fun updateSchedule(@Path("token") token: String, @Path("schedule") schedule: String, @Body modification: ScheduleModification)
 
     /**
      * Gets all attributes for a schedule.
      */
     @GET("api/{token}/schedules/{schedule}")
-    fun getSchedule(@Path("token") token: String, @Path("schedule") schedule: String): Deferred<Schedule>
+    suspend fun getSchedule(@Path("token") token: String, @Path("schedule") schedule: String): Schedule
 
     /**
      * Deletes a schedule from the bridge.
      */
     @DELETE("api/{token}/schedules/{schedule}")
-    fun deleteSchedule(@Path("token") token: String, @Path("schedule") schedule: String): Deferred<Unit>
+    suspend fun deleteSchedule(@Path("token") token: String, @Path("schedule") schedule: String)
 }
 
 /**

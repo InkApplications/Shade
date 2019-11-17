@@ -34,8 +34,7 @@ internal class ApiAuth(
         repeat(retries) {
             try {
                 DeviceType(config.appId)
-                    .let(authApi::createToken)
-                    .await()
+                    .let { authApi.createToken(it) }
                     .token
                     .also { storage.setToken(it) }
                 return

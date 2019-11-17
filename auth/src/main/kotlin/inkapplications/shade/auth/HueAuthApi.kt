@@ -3,7 +3,6 @@ package inkapplications.shade.auth
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import inkapplications.shade.serialization.converter.FirstInCollection
-import kotlinx.coroutines.Deferred
 import retrofit2.http.Body
 import retrofit2.http.POST
 
@@ -27,7 +26,7 @@ internal interface HueAuthApi {
      */
     @POST("api/")
     @FirstInCollection
-    fun createToken(@Body devicetype: DeviceType): Deferred<AuthToken>
+    suspend fun createToken(@Body devicetype: DeviceType): AuthToken
 }
 
 /**

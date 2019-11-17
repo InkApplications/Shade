@@ -63,23 +63,23 @@ internal class ApiGroups(
 ): ShadeGroups {
     private suspend fun getToken(): String = storage.getToken() ?: throw UnauthorizedException()
 
-    override suspend fun getGroups(): Map<String, Group> = groupsApi.getAll(getToken()).await()
+    override suspend fun getGroups(): Map<String, Group> = groupsApi.getAll(getToken())
 
     override suspend fun createGroup(group: MutableGroupAttributes): String {
-        return groupsApi.createGroup(getToken(), group).await().id
+        return groupsApi.createGroup(getToken(), group).id
     }
 
-    override suspend fun getGroup(id: String): Group = groupsApi.getGroup(getToken(), id).await()
+    override suspend fun getGroup(id: String): Group = groupsApi.getGroup(getToken(), id)
 
     override suspend fun updateGroup(id: String, attributes: MutableGroupAttributes) {
-        groupsApi.updateGroup(getToken(), id, attributes).await()
+        groupsApi.updateGroup(getToken(), id, attributes)
     }
 
     override suspend fun setState(id: String, state: GroupStateModification) {
-        groupsApi.setState(getToken(), id, state).await()
+        groupsApi.setState(getToken(), id, state)
     }
 
     override suspend fun deleteGroup(id: String) {
-        groupsApi.deleteGroup(getToken(), id).await()
+        groupsApi.deleteGroup(getToken(), id)
     }
 }

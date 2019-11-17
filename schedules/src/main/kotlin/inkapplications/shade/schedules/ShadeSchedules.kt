@@ -203,7 +203,7 @@ internal class ApiSchedules(
 ): ShadeSchedules {
     private suspend fun getToken() = storage.getToken() ?: throw UnauthorizedException()
 
-    override suspend fun getSchedules(): Map<String, Schedule> = schedulesApi.getSchedules(getToken()).await()
+    override suspend fun getSchedules(): Map<String, Schedule> = schedulesApi.getSchedules(getToken())
 
     override suspend fun createSchedule(
         command: Command,
@@ -216,7 +216,7 @@ internal class ApiSchedules(
     ) = schedulesApi.createSchedule(
         getToken(),
         ScheduleCreation(command, time, name, description, status, autoDelete, recycle)
-    ).await().id
+    ).id
 
     override suspend fun createGroupSchedule(
         group: String,
@@ -241,7 +241,7 @@ internal class ApiSchedules(
                 autoDelete = autoDelete,
                 recycle = recycle
             )
-        ).await().id
+        ).id
     }
 
     override suspend fun createLightSchedule(
@@ -267,7 +267,7 @@ internal class ApiSchedules(
                 autoDelete = autoDelete,
                 recycle = recycle
             )
-        ).await().id
+        ).id
     }
 
     override suspend fun updateGroupSchedule(
@@ -293,7 +293,7 @@ internal class ApiSchedules(
                 status = status,
                 autoDelete = autoDelete
             )
-        ).await()
+        )
     }
 
     override suspend fun updateLightSchedule(
@@ -319,7 +319,7 @@ internal class ApiSchedules(
                 status = status,
                 autoDelete = autoDelete
             )
-        ).await()
+        )
     }
 
     override suspend fun updateSchedule(
@@ -344,10 +344,10 @@ internal class ApiSchedules(
                 status = status,
                 autoDelete = autoDelete
             )
-        ).await()
+        )
     }
 
-    override suspend fun getSchedule(schedule: String): Schedule = schedulesApi.getSchedule(getToken(), schedule).await()
+    override suspend fun getSchedule(schedule: String): Schedule = schedulesApi.getSchedule(getToken(), schedule)
 
-    override suspend fun deleteSchedule(schedule: String) = schedulesApi.deleteSchedule(getToken(), schedule).await()
+    override suspend fun deleteSchedule(schedule: String) = schedulesApi.deleteSchedule(getToken(), schedule)
 }
