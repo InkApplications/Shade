@@ -75,27 +75,27 @@ internal class ApiLights(
 
     private suspend fun getToken() = storage.getToken() ?: throw UnauthorizedException()
 
-    override suspend fun getLights(): Map<String, Light> = lightsApi.getLights(getToken()).await()
-    override suspend fun getNewLights(): Scan = lightsApi.getNewLights(getToken()).await()
-    override suspend fun setLightState(id: String, state: LightStateModification) = lightsApi.setState(getToken(), id, state).await()
-    override suspend fun getLight(id: String): Light = lightsApi.getLightAttributes(getToken(), id).await()
+    override suspend fun getLights(): Map<String, Light> = lightsApi.getLights(getToken())
+    override suspend fun getNewLights(): Scan = lightsApi.getNewLights(getToken())
+    override suspend fun setLightState(id: String, state: LightStateModification) = lightsApi.setState(getToken(), id, state)
+    override suspend fun getLight(id: String): Light = lightsApi.getLightAttributes(getToken(), id)
 
     override suspend fun search(vararg deviceIds: String) {
         if (deviceIds.isEmpty()) {
-            lightsApi.searchLights(getToken()).await()
+            lightsApi.searchLights(getToken())
         } else {
             val criteria = LightSearchCriteria(deviceIds.toList())
-            lightsApi.searchLights(getToken(), criteria).await()
+            lightsApi.searchLights(getToken(), criteria)
         }
     }
 
     override suspend fun rename(id: String, name: String) {
         val attributes = DeviceAttributes(name = name)
 
-        lightsApi.setLightAttributes(getToken(), id, attributes).await()
+        lightsApi.setLightAttributes(getToken(), id, attributes)
     }
 
     override suspend fun delete(id: String) {
-        lightsApi.delete(getToken(), id).await()
+        lightsApi.delete(getToken(), id)
     }
 }

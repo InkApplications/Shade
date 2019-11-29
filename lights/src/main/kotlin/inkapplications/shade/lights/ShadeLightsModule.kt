@@ -7,7 +7,6 @@ import inkapplications.shade.serialization.CoordinatesListDeserializer
 import inkapplications.shade.serialization.InstantDeserializer
 import inkapplications.shade.serialization.ScanAdapter
 import inkapplications.shade.serialization.RangeDeserializer
-import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import inkapplications.shade.serialization.converter.UnitConverterFactory
 import okhttp3.OkHttpClient
@@ -35,7 +34,6 @@ class ShadeLightsModule {
         val retrofit = Retrofit.Builder()
             .client(client)
             .baseUrl(config.baseUrl)
-            .addCallAdapterFactory(ShadeDeferredCallAdapterFactory)
             .addConverterFactory(UnitConverterFactory)
             .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))

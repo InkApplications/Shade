@@ -9,7 +9,6 @@ import inkapplications.shade.lights.AlertState
 import inkapplications.shade.lights.LightEffect
 import inkapplications.shade.lights.LightState
 import inkapplications.shade.serialization.converter.FirstInCollection
-import kotlinx.coroutines.Deferred
 import retrofit2.http.*
 
 /**
@@ -52,7 +51,7 @@ internal interface HueGroupsApi {
      * deleted by a user.
      */
     @GET("api/{token}/groups")
-    fun getAll(@Path("token") token: String): Deferred<Map<String, Group>>
+    suspend fun getAll(@Path("token") token: String): Map<String, Group>
 
     /**
      * Creates a new group containing the lights specified and optional name.
@@ -63,7 +62,7 @@ internal interface HueGroupsApi {
      */
     @POST("api/{token}/groups")
     @FirstInCollection
-    fun createGroup(@Path("token") token: String, @Body group: MutableGroupAttributes): Deferred<IdToken>
+    suspend fun createGroup(@Path("token") token: String, @Body group: MutableGroupAttributes): IdToken
 
     /**
      * Get a single group's attributes.
@@ -71,7 +70,7 @@ internal interface HueGroupsApi {
      * @param groupId The unique ID of the group to fetch.
      */
     @GET("api/{token}/groups/{group}")
-    fun getGroup(@Path("token") token: String, @Path("group") groupId: String): Deferred<Group>
+    suspend fun getGroup(@Path("token") token: String, @Path("group") groupId: String): Group
 
     /**
      * Allows the user to modify the name, light and class membership of a group.
@@ -80,11 +79,11 @@ internal interface HueGroupsApi {
      * @param attributes The editable attributes to set. Optional data will be unmodified.
      */
     @PUT("api/{token}/groups/{group}")
-    fun updateGroup(
+    suspend fun updateGroup(
         @Path("token") token: String,
         @Path("group") groupId: String,
         @Body attributes: MutableGroupAttributes
-    ): Deferred<Unit>
+    )
 
     /**
      * Modifies the state of all lights in a group.
@@ -93,11 +92,11 @@ internal interface HueGroupsApi {
      * @param state The state to assign to all lights in the group.
      */
     @PUT(HUE_GROUPS_STATE_URL)
-    fun setState(
+    suspend fun setState(
         @Path("token") token: String,
         @Path("group") groupId: String,
         @Body state: GroupStateModification
-    ): Deferred<Unit>
+    )
 
     /**
      * Deletes the specified group from the bridge.
@@ -105,7 +104,7 @@ internal interface HueGroupsApi {
      * @param groupId The unique ID of the group to delete.
      */
     @DELETE("api/{token}/groups/{group}")
-    fun deleteGroup(@Path("token") token: String, @Path("group") groupId: String): Deferred<Unit>
+    suspend fun deleteGroup(@Path("token") token: String, @Path("group") groupId: String)
 }
 
 /**

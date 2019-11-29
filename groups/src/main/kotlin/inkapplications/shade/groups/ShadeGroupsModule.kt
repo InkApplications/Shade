@@ -5,7 +5,6 @@ import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.serialization.CoordinatesListDeserializer
-import inkapplications.shade.serialization.adapter.ShadeDeferredCallAdapterFactory
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -48,7 +47,6 @@ class ShadeGroupsModule {
         val retrofit = Retrofit.Builder()
             .client(client)
             .baseUrl(config.baseUrl)
-            .addCallAdapterFactory(ShadeDeferredCallAdapterFactory)
             .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()

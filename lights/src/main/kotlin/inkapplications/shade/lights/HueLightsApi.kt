@@ -6,7 +6,6 @@ import inkapplications.shade.constructs.Coordinates
 import inkapplications.shade.constructs.DeviceAttributes
 import inkapplications.shade.constructs.Scan
 import inkapplications.shade.serialization.converter.FirstInCollection
-import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
 import retrofit2.http.*
 
@@ -42,17 +41,17 @@ internal interface HueLightsApi {
      * Get a list of all lights known to the hue bridge.
      */
     @GET("api/{token}/lights")
-    fun getLights(@Path("token") token: String): Deferred<Map<String, Light>>
+    suspend fun getLights(@Path("token") token: String): Map<String, Light>
 
     /**
      * Set the state of a light.
      */
     @PUT(HUE_LIGHTS_STATE_URL)
-    fun setState(
+    suspend fun setState(
         @Path("token") token: String,
         @Path("light") lightId: String,
         @Body modification: LightStateModification
-    ): Deferred<Unit>
+    )
 
     /**
      * Gets a list of lights that were discovered the last time a
@@ -60,7 +59,7 @@ internal interface HueLightsApi {
      * always deleted when a new search is started.
      */
     @GET("api/{token}/lights/new")
-    fun getNewLights(@Path("token") token: String): Deferred<Scan>
+    suspend fun getNewLights(@Path("token") token: String): Scan
 
     /**
      * Starts searching for new lights.
@@ -83,7 +82,7 @@ internal interface HueLightsApi {
      */
     @POST("api/{token}/lights")
     @FirstInCollection
-    fun searchLights(@Path("token") token: String, @Body criteria: LightSearchCriteria): Deferred<Map<String, String>>
+    suspend fun searchLights(@Path("token") token: String, @Body criteria: LightSearchCriteria): Map<String, String>
 
     /**
      * Starts searching for new lights.
@@ -92,7 +91,7 @@ internal interface HueLightsApi {
      */
     @POST("api/{token}/lights")
     @FirstInCollection
-    fun searchLights(@Path("token") token: String): Deferred<Map<String, String>>
+    suspend fun searchLights(@Path("token") token: String): Map<String, String>
 
     /**
      * Gets the attributes and state of a given light.
@@ -101,7 +100,7 @@ internal interface HueLightsApi {
      * @return The state of the light.
      */
     @GET("api/{token}/lights/{light}")
-    fun getLightAttributes(@Path("token") token: String, @Path("light") lightId: String): Deferred<Light>
+    suspend fun getLightAttributes(@Path("token") token: String, @Path("light") lightId: String): Light
 
     /**
      * Used to rename lights.
@@ -115,17 +114,17 @@ internal interface HueLightsApi {
      */
     @PUT("api/{token}/lights/{light}")
     @FirstInCollection
-    fun setLightAttributes(
+    suspend fun setLightAttributes(
         @Path("token") token: String,
         @Path("light") lightId: String,
         @Body attributes: DeviceAttributes
-    ): Deferred<Map<String, String>>
+    ): Map<String, String>
 
     /**
      * Deletes a light from the bridge.
      */
     @DELETE("api/{token}/lights/{light}")
-    fun delete(@Path("token") token: String, @Path("light") lightId: String): Deferred<Unit>
+    suspend fun delete(@Path("token") token: String, @Path("light") lightId: String)
 }
 
 /**
