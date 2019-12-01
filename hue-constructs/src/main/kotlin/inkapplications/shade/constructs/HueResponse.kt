@@ -1,7 +1,6 @@
-package inkapplications.shade.serialization
+package inkapplications.shade.constructs
 
 import com.squareup.moshi.JsonClass
-import inkapplications.shade.constructs.HueError
 
 /**
  * Responses from the Hue API.
@@ -10,7 +9,7 @@ import inkapplications.shade.constructs.HueError
  * Maybe both? Who knows!
  */
 @JsonClass(generateAdapter = true)
-internal data class HueResponse<T>(
+data class HueResponse<T>(
     val success: T?,
     val error: HueError?
 )

@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     compile(project(":auth"))
+    compile(project(":hue-serialization"))
 
     compile(kotlin("stdlib"))
     compile(coroutines())
