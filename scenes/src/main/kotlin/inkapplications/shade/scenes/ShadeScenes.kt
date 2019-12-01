@@ -27,6 +27,22 @@ interface ShadeScenes {
         picture: String? = null,
         data: Map<String, Any>? = null
     ): String
+
+    /**
+     * Create a new Scene for a group of lights
+     *
+     * @param name A displayable name for the Scene
+     * @param group The ID of the group to associate with the Scene
+     * @param picture It's never really explained how this works, but maybe a file name?
+     * @param data Random app data you want to store with the scene.
+     * @return The ID of the scene that was created.
+     */
+    suspend fun createGroupScene(
+        name: String,
+        group: String,
+        picture: String? = null,
+        data: Map<String, Any>? = null
+    ): String
 }
 
 /**
@@ -51,6 +67,24 @@ internal class ApiScenes(
         val scene = CreateScene.LightScene(
             name = name,
             lights = lights,
+            picture = picture,
+            data = data
+        )
+        return scene.let { scenesApi.createScene(getToken(), it) }
+            .first()
+            .success!!
+            .id
+    }
+
+    override suspend fun createGroupScene(
+        name: String,
+        group: String,
+        picture: String?,
+        data: Map<String, Any>?
+    ): String {
+        val scene = CreateScene.GroupScene(
+            name = name,
+            group = group,
             picture = picture,
             data = data
         )
