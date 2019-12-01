@@ -7,25 +7,25 @@ import inkapplications.shade.Shade
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
-@Reusable class ScenesCreate @Inject constructor(
+@Reusable class GroupSceneCreate @Inject constructor(
     private val shade: Shade
 ): CliktCommand(
-    name = "scenes:create",
-    help = "Create a new scene"
+    name = "scenes:create:group",
+    help = "Create a new scene for a Group"
 ) {
     private val name by argument(
         help = "A friendly name to call the scene"
     )
 
-    private val lights by argument(
-        help = "A comma separated list of Light ID's to add to the Scene"
+    private val group by argument(
+        help = "A Group ID to associate with the Scene"
     )
 
     override fun run() {
         runBlocking {
-            val created = shade.scenes.createLightScene(
+            val created = shade.scenes.createGroupScene(
                 name = name,
-                lights = lights.split(",")
+                group = group
             )
             echo("Created Scene: $created")
         }

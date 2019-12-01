@@ -13,5 +13,9 @@ abstract class ScenesModule {
 
     @Binds
     @IntoSet
-    abstract fun createScene(command: ScenesCreate): CliktCommand
+    abstract fun createLightScene(command: LightSceneCreate): CliktCommand
+
+    @Binds
+    @IntoSet
+    abstract fun createGroupScene(command: GroupSceneCreate): CliktCommand
 }
