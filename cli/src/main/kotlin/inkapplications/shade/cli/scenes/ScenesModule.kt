@@ -9,5 +9,9 @@ import dagger.multibindings.IntoSet
 abstract class ScenesModule {
     @Binds
     @IntoSet
-    abstract fun scenes(command: ScenesCommand): CliktCommand
+    abstract fun scenes(command: ScenesList): CliktCommand
+
+    @Binds
+    @IntoSet
+    abstract fun createScene(command: ScenesCreate): CliktCommand
 }
