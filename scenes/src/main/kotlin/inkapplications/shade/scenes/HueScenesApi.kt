@@ -1,12 +1,24 @@
 package inkapplications.shade.scenes
 
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+import inkapplications.shade.constructs.HueResponse
+import inkapplications.shade.constructs.IdToken
 import org.threeten.bp.Instant
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 internal interface HueScenesApi {
     @GET("api/{token}/scenes")
     suspend fun getScenes(@Path("token") token: String): Map<String, Scene>
+
+    @POST("api/{token}/scenes")
+    suspend fun createScene(
+        @Path("token") token: String,
+        @Body scene: CreateScene
+    ): List<HueResponse<IdToken>>
 }
 
 sealed class Scene {
@@ -23,15 +35,16 @@ sealed class Scene {
     /**
      * Default Scene Type
      */
+    @JsonClass(generateAdapter = true)
     data class LightScene(
         override val name: String,
         override val lights: List<String>,
         override val owner: String,
         override val recycle: Boolean,
         override val locked: Boolean,
-        override val data: Map<String, Any>,
+        @Json(name = "appdata") override val data: Map<String, Any>,
         override val picture: String?,
-        override val lastUpdated: Instant,
+        @Json(name = "lastupdated") override val lastUpdated: Instant,
         override val version: Int
     ): Scene()
 
@@ -51,6 +64,7 @@ sealed class Scene {
      * When a group is deleted or becomes empty, all the GroupScenes associated
      * to the group will be deleted automatically.
      */
+    @JsonClass(generateAdapter = true)
     data class GroupScene(
         override val name: String,
         val group: String,
@@ -58,9 +72,34 @@ sealed class Scene {
         override val owner: String,
         override val recycle: Boolean,
         override val locked: Boolean,
-        override val data: Map<String, Any>,
+        @Json(name = "appdata") override val data: Map<String, Any>,
         override val picture: String?,
-        override val lastUpdated: Instant,
+        @Json(name = "lastupdated") override val lastUpdated: Instant,
         override val version: Int
     ): Scene()
+}
+
+internal sealed class CreateScene {
+    abstract val name: String
+    abstract val recycle: Boolean
+    abstract val data: Map<String, Any>?
+    abstract val picture: String?
+
+    @JsonClass(generateAdapter = true)
+    internal data class LightScene(
+        override val name: String,
+        val lights: List<String>,
+        override val recycle: Boolean = false,
+        @Json(name = "appdata") override val data: Map<String, Any>? = null,
+        override val picture: String? = null
+    ): CreateScene()
+
+    @JsonClass(generateAdapter = true)
+    internal data class GroupScene(
+        override val name: String,
+        val group: String,
+        override val recycle: Boolean = false,
+        @Json(name = "appdata") override val data: Map<String, Any>? = null,
+        override val picture: String? = null
+    ): CreateScene()
 }

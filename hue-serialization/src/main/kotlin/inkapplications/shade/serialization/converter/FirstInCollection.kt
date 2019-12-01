@@ -2,7 +2,7 @@ package inkapplications.shade.serialization.converter
 
 import com.squareup.moshi.Types
 import inkapplications.shade.constructs.ShadeApiError
-import inkapplications.shade.serialization.HueResponse
+import inkapplications.shade.constructs.HueResponse
 import okhttp3.ResponseBody
 import retrofit2.Converter
 import retrofit2.Retrofit
@@ -35,7 +35,8 @@ private class FirstInCollectionConverter<T>(private val delegate: Converter<Resp
     override fun convert(value: ResponseBody): T? {
         val response = delegate.convert(value)
         val firstResponse = response?.firstOrNull()
-        if (firstResponse?.error != null) throw ShadeApiError(firstResponse.error)
+        val error = firstResponse?.error
+        if (error != null) throw ShadeApiError(error)
         return firstResponse?.success
     }
 }

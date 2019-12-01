@@ -2,6 +2,7 @@ package inkapplications.shade.serialization
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
+import inkapplications.shade.constructs.HueResponse
 import inkapplications.shade.constructs.ShadeException
 import inkapplications.shade.constructs.asException
 import retrofit2.Response

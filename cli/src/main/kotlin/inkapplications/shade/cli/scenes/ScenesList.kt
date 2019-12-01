@@ -6,7 +6,7 @@ import inkapplications.shade.Shade
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
-@Reusable class ScenesCommand @Inject constructor(
+@Reusable class ScenesList @Inject constructor(
     private val shade: Shade
 ): CliktCommand(
     name = "scenes:list",
