@@ -6,6 +6,7 @@ buildscript {
     }
     dependencies {
         classpath(kotlin("gradle-plugin", version = "1.3.50"))
+        classpath(atomicFU("gradle-plugin"))
     }
 }
 

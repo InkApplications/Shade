@@ -3,7 +3,6 @@ package inkapplications.shade.groups
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import inkapplications.shade.auth.TokenStorage
-import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.serialization.CoordinatesListDeserializer
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
@@ -17,11 +16,11 @@ class ShadeGroupsModule {
     /**
      * Create new instance of the Groups services.
      *
+     * @param baseUrl URL of the Hue Bridge API
      * @param client Client to create hue requests with
-     * @param config App-wide configuration for Shade, used to set up connections.
      * @param tokenStorage A place to read/write the auth token used for requests.
      */
-    fun createGroups(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeGroups {
+    fun createGroups(baseUrl: String, client: OkHttpClient, tokenStorage: TokenStorage): ShadeGroups {
         val moshi = Moshi.Builder()
             .add(
                 PolymorphicJsonAdapterFactory.of(Group::class.java, "type")
@@ -46,7 +45,7 @@ class ShadeGroupsModule {
 
         val retrofit = Retrofit.Builder()
             .client(client)
-            .baseUrl(config.baseUrl)
+            .baseUrl(baseUrl)
             .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
