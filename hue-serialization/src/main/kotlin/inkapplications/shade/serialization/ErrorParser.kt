@@ -4,13 +4,15 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import inkapplications.shade.constructs.HueResponse
 import inkapplications.shade.constructs.ShadeException
+import inkapplications.shade.constructs.UnknownException
 import inkapplications.shade.constructs.asException
+import retrofit2.HttpException
 import retrofit2.Response
 
 /**
  * Deserialize Error exceptions from responses.
  */
-internal object ErrorParser {
+object ErrorParser {
     private val responseType = Types.newParameterizedType(HueResponse::class.java, Any::class.java)
     private val listType = Types.newParameterizedType(List::class.java, responseType)
     private val moshi = Moshi.Builder().build().adapter<List<HueResponse<Any>>>(listType)
@@ -28,5 +30,21 @@ internal object ErrorParser {
                 return ShadeException("Problem deserializing error", error)
             }
         }
+    }
+}
+
+/**
+ * Get a parsed exception from an HTTP Exception.
+ */
+fun HttpException.parse(): Throwable = throw ErrorParser.parseError(response() ?: throw UnknownException(this))
+
+/**
+ * Run a block of code, catching any internal errors.
+ */
+inline fun <T> encapsulateErrors(block: () -> T): T {
+    try {
+        return block()
+    } catch (httpError: HttpException) {
+        throw httpError.parse()
     }
 }

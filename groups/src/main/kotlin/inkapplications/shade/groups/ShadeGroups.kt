@@ -2,6 +2,7 @@ package inkapplications.shade.groups
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
+import inkapplications.shade.serialization.encapsulateErrors
 
 /**
  * Access for Hue's various Groups.
@@ -63,23 +64,27 @@ internal class ApiGroups(
 ): ShadeGroups {
     private suspend fun getToken(): String = storage.getToken() ?: throw UnauthorizedException()
 
-    override suspend fun getGroups(): Map<String, Group> = groupsApi.getAll(getToken())
+    override suspend fun getGroups(): Map<String, Group> = encapsulateErrors {
+        groupsApi.getAll(getToken())
+    }
 
-    override suspend fun createGroup(group: MutableGroupAttributes): String {
+    override suspend fun createGroup(group: MutableGroupAttributes): String = encapsulateErrors {
         return groupsApi.createGroup(getToken(), group).id
     }
 
-    override suspend fun getGroup(id: String): Group = groupsApi.getGroup(getToken(), id)
+    override suspend fun getGroup(id: String): Group = encapsulateErrors {
+        groupsApi.getGroup(getToken(), id)
+    }
 
-    override suspend fun updateGroup(id: String, attributes: MutableGroupAttributes) {
+    override suspend fun updateGroup(id: String, attributes: MutableGroupAttributes) = encapsulateErrors {
         groupsApi.updateGroup(getToken(), id, attributes)
     }
 
-    override suspend fun setState(id: String, state: GroupStateModification) {
+    override suspend fun setState(id: String, state: GroupStateModification) = encapsulateErrors {
         groupsApi.setState(getToken(), id, state)
     }
 
-    override suspend fun deleteGroup(id: String) {
+    override suspend fun deleteGroup(id: String) = encapsulateErrors {
         groupsApi.deleteGroup(getToken(), id)
     }
 }

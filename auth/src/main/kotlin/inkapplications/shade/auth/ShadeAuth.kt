@@ -3,7 +3,9 @@ package inkapplications.shade.auth
 import inkapplications.shade.constructs.ErrorCodes
 import inkapplications.shade.constructs.ShadeApiError
 import inkapplications.shade.constructs.ShadeException
+import inkapplications.shade.serialization.parse
 import kotlinx.coroutines.delay
+import retrofit2.HttpException
 
 /**
  * Authentication for the Phillips Hue bridge.
@@ -40,6 +42,8 @@ internal class ApiAuth(
             } catch (error: ShadeApiError) {
                 if (error.hueError.type != ErrorCodes.LINK_REQUIRED) throw error
                 delay(timeout)
+            } catch (error: HttpException) {
+                throw error.parse()
             }
         }
         throw ShadeException("Auth timed out")

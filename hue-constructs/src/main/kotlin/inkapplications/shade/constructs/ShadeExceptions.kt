@@ -15,6 +15,16 @@ open class ShadeException(message: String? = null, cause: Throwable? = null): Ru
 open class ShadeApiError(val hueError: HueError): ShadeException(hueError.description)
 
 /**
+ * Exception thrown, but no additional information was able to be parsed.
+ */
+class UnknownException(
+    cause: Throwable? = null
+): ShadeException(
+    message = "Something went wrong, but the error message was unavailable.",
+    cause = cause
+)
+
+/**
  * Wrapper for multiple errors returned by the API
  */
 open class ShadeCompositeApiError(val hueErrors: List<ShadeApiError>): ShadeException("Multiple Hue API Errors occurred") {

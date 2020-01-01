@@ -8,6 +8,7 @@ import inkapplications.shade.groups.GroupStateModification
 import inkapplications.shade.groups.createGroupModificationCommand
 import inkapplications.shade.lights.LightStateModification
 import inkapplications.shade.lights.createLightModificationCommand
+import inkapplications.shade.serialization.encapsulateErrors
 
 /**
  * Provides access to Hue's Schedules
@@ -203,7 +204,9 @@ internal class ApiSchedules(
 ): ShadeSchedules {
     private suspend fun getToken() = storage.getToken() ?: throw UnauthorizedException()
 
-    override suspend fun getSchedules(): Map<String, Schedule> = schedulesApi.getSchedules(getToken())
+    override suspend fun getSchedules(): Map<String, Schedule> = encapsulateErrors {
+        schedulesApi.getSchedules(getToken())
+    }
 
     override suspend fun createSchedule(
         command: Command,
@@ -213,10 +216,12 @@ internal class ApiSchedules(
         status: Status?,
         autoDelete: Boolean?,
         recycle: Boolean?
-    ) = schedulesApi.createSchedule(
-        getToken(),
-        ScheduleCreation(command, time, name, description, status, autoDelete, recycle)
-    ).id
+    ) = encapsulateErrors {
+        schedulesApi.createSchedule(
+            getToken(),
+            ScheduleCreation(command, time, name, description, status, autoDelete, recycle)
+        ).id
+    }
 
     override suspend fun createGroupSchedule(
         group: String,
@@ -227,7 +232,7 @@ internal class ApiSchedules(
         autoDelete: Boolean?,
         status: Status?,
         recycle: Boolean?
-    ): String {
+    ): String = encapsulateErrors {
         val token = getToken()
 
         return schedulesApi.createSchedule(
@@ -253,7 +258,7 @@ internal class ApiSchedules(
         autoDelete: Boolean?,
         status: Status?,
         recycle: Boolean?
-    ): String {
+    ): String = encapsulateErrors {
         val token = getToken()
 
         return schedulesApi.createSchedule(
@@ -279,7 +284,7 @@ internal class ApiSchedules(
         description: String?,
         autoDelete: Boolean?,
         status: Status?
-    ) {
+    ): Unit = encapsulateErrors {
         val token = getToken()
 
         schedulesApi.updateSchedule(
@@ -305,7 +310,7 @@ internal class ApiSchedules(
         description: String?,
         autoDelete: Boolean?,
         status: Status?
-    ) {
+    ): Unit = encapsulateErrors {
         val token = getToken()
 
         schedulesApi.updateSchedule(
@@ -330,7 +335,7 @@ internal class ApiSchedules(
         description: String?,
         status: Status?,
         autoDelete: Boolean?
-    ) {
+    ): Unit = encapsulateErrors {
         val token = getToken()
 
         schedulesApi.updateSchedule(
@@ -347,7 +352,11 @@ internal class ApiSchedules(
         )
     }
 
-    override suspend fun getSchedule(schedule: String): Schedule = schedulesApi.getSchedule(getToken(), schedule)
+    override suspend fun getSchedule(schedule: String): Schedule = encapsulateErrors {
+        schedulesApi.getSchedule(getToken(), schedule)
+    }
 
-    override suspend fun deleteSchedule(schedule: String) = schedulesApi.deleteSchedule(getToken(), schedule)
+    override suspend fun deleteSchedule(schedule: String) = encapsulateErrors {
+        schedulesApi.deleteSchedule(getToken(), schedule)
+    }
 }
