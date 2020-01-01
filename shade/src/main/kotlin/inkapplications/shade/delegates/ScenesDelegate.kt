@@ -29,4 +29,8 @@ internal class ScenesDelegate(
         picture: String?,
         data: Map<String, Any>?
     ): String = delegate.createGroupScene(name, group, picture, data)
+
+    override suspend fun getScene(id: String): Scene = delegate.getScene(id)
+
+    override suspend fun deleteScene(id: String) = delegate.deleteScene(id)
 }

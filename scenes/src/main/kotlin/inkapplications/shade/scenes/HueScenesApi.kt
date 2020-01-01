@@ -5,10 +5,7 @@ import com.squareup.moshi.JsonClass
 import inkapplications.shade.constructs.HueResponse
 import inkapplications.shade.constructs.IdToken
 import org.threeten.bp.Instant
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 internal interface HueScenesApi {
     @GET("api/{token}/scenes")
@@ -19,6 +16,18 @@ internal interface HueScenesApi {
         @Path("token") token: String,
         @Body scene: CreateScene
     ): List<HueResponse<IdToken>>
+
+    @GET("api/{token}/scenes/{scene}")
+    suspend fun getScene(
+        @Path("token") token: String,
+        @Path("scene") sceneId: String
+    ): Scene
+
+    @DELETE("api/{token}/scenes/{scene}")
+    suspend fun deleteScene(
+        @Path("token") token: String,
+        @Path("scene") sceneId: String
+    ): List<HueResponse<String>>
 }
 
 sealed class Scene {
