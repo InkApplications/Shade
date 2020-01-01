@@ -19,6 +19,12 @@ internal interface HueScenesApi {
         @Path("token") token: String,
         @Body scene: CreateScene
     ): List<HueResponse<IdToken>>
+
+    @GET("api/{token}/scenes/{scene}")
+    suspend fun getScene(
+        @Path("token") token: String,
+        @Path("scene") sceneId: String
+    ): Scene
 }
 
 sealed class Scene {

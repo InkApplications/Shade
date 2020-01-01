@@ -43,6 +43,13 @@ interface ShadeScenes {
         picture: String? = null,
         data: Map<String, Any>? = null
     ): String
+
+    /**
+     * Get a single scene known to the Hue Bridge.
+     *
+     * @param id The Scene ID to look up.
+     */
+    suspend fun getScene(id: String): Scene
 }
 
 /**
@@ -92,5 +99,9 @@ internal class ApiScenes(
             .first()
             .success!!
             .id
+    }
+
+    override suspend fun getScene(id: String): Scene {
+        return scenesApi.getScene(getToken(), id)
     }
 }
