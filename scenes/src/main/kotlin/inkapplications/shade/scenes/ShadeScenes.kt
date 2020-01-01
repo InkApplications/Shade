@@ -50,6 +50,13 @@ interface ShadeScenes {
      * @param id The Scene ID to look up.
      */
     suspend fun getScene(id: String): Scene
+
+    /**
+     * Remove a scene from the Hue Bridge
+     *
+     * @param id The ID of the Scene to be deleted.
+     */
+    suspend fun deleteScene(id: String)
 }
 
 /**
@@ -103,5 +110,9 @@ internal class ApiScenes(
 
     override suspend fun getScene(id: String): Scene {
         return scenesApi.getScene(getToken(), id)
+    }
+
+    override suspend fun deleteScene(id: String) {
+        scenesApi.deleteScene(getToken(), id)
     }
 }
