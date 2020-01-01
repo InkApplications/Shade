@@ -1,5 +1,4 @@
 include("auth")
-include("config")
 include("cli")
 include("discover")
 include("groups")

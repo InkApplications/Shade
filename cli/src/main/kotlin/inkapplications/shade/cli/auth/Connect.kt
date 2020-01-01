@@ -5,7 +5,6 @@ import com.github.ajalt.clikt.output.TermUi.prompt
 import com.github.ajalt.clikt.parameters.options.option
 import dagger.Reusable
 import inkapplications.shade.Shade
-import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.discover.Device
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject

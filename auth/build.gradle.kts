@@ -4,7 +4,6 @@ plugins {
 }
 
 dependencies {
-    compile(project(":config"))
     implementation(project(":hue-serialization"))
     compile(project(":hue-constructs"))
 
