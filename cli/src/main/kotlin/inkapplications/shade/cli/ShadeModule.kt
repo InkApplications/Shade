@@ -5,7 +5,6 @@ import dagger.Provides
 import dagger.Reusable
 import inkapplications.shade.Shade
 import inkapplications.shade.cli.auth.FileStorage
-import inkapplications.shade.config.ShadeConfig
 
 @Module
 class ShadeModule {
@@ -13,6 +12,10 @@ class ShadeModule {
     @Reusable
     fun shade(fileStorage: FileStorage): Shade {
         val url = fileStorage.getUrl()
-        return Shade(ShadeConfig(url , fileStorage.getAppId()), fileStorage)
+        return Shade(
+            appId = fileStorage.getAppId(),
+            initBaseUrl = url,
+            storage = fileStorage
+        )
     }
 }

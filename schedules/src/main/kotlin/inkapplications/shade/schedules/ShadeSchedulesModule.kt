@@ -2,7 +2,6 @@ package inkapplications.shade.schedules
 
 import com.squareup.moshi.Moshi
 import inkapplications.shade.auth.TokenStorage
-import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.serialization.InstantDeserializer
 import inkapplications.shade.serialization.TimePatternSerializer
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
@@ -17,11 +16,11 @@ class ShadeSchedulesModule {
     /**
      * Create a new instance of the schedules interface.
      *
+     * @param baseUrl URL of the Hue Bridge API
      * @param client Client to create hue requests with
-     * @param config App-wide configuration for Shade, used to set up connections.
      * @param tokenStorage A place to read/write the auth token used for requests.
      */
-    fun createSchedule(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeSchedules {
+    fun createSchedule(baseUrl: String, client: OkHttpClient, tokenStorage: TokenStorage): ShadeSchedules {
         val moshi = Moshi.Builder()
             .add(TimePatternSerializer)
             .add(InstantDeserializer)
@@ -29,7 +28,7 @@ class ShadeSchedulesModule {
 
         val retrofit = Retrofit.Builder()
             .client(client)
-            .baseUrl(config.baseUrl)
+            .baseUrl(baseUrl)
             .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()

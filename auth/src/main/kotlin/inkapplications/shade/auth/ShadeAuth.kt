@@ -1,6 +1,5 @@
 package inkapplications.shade.auth
 
-import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.constructs.ErrorCodes
 import inkapplications.shade.constructs.ShadeApiError
 import inkapplications.shade.constructs.ShadeException
@@ -27,13 +26,13 @@ interface ShadeAuth {
  */
 internal class ApiAuth(
     private val authApi: HueAuthApi,
-    private val config: ShadeConfig,
+    private val appId: String,
     private val storage: TokenStorage
 ): ShadeAuth {
     override suspend fun awaitToken(retries: Int, timeout: Long) {
         repeat(retries) {
             try {
-                DeviceType(config.appId)
+                DeviceType(appId)
                     .let { authApi.createToken(it) }
                     .token
                     .also { storage.setToken(it) }

@@ -30,3 +30,8 @@ fun DependencyHandlerScope.jUnit(
     module: String = "junit",
     version: String = "4.12"
 ) = "junit:$module:$version"
+
+fun DependencyHandlerScope.atomicFU(
+    module: String = "common",
+    version: String = "0.13.2"
+) = "org.jetbrains.kotlinx:atomicfu-$module:$version"

@@ -2,7 +2,6 @@ package inkapplications.shade.lights
 
 import com.squareup.moshi.Moshi
 import inkapplications.shade.auth.TokenStorage
-import inkapplications.shade.config.ShadeConfig
 import inkapplications.shade.serialization.CoordinatesListDeserializer
 import inkapplications.shade.serialization.InstantDeserializer
 import inkapplications.shade.serialization.ScanAdapter
@@ -21,10 +20,10 @@ class ShadeLightsModule {
      * Create a new instance of the lighting interface.
      *
      * @param client Client to create hue requests with
-     * @param config App-wide configuration for Shade, used to set up connections.
+     * @param baseUrl URL of the Hue Bridge API
      * @param tokenStorage A place to read/write the auth token used for requests.
      */
-    fun createLights(client: OkHttpClient, config: ShadeConfig, tokenStorage: TokenStorage): ShadeLights {
+    fun createLights(baseUrl: String, client: OkHttpClient, tokenStorage: TokenStorage): ShadeLights {
         val moshi = Moshi.Builder()
             .add(CoordinatesListDeserializer)
             .add(InstantDeserializer)
@@ -33,7 +32,7 @@ class ShadeLightsModule {
             .build()
         val retrofit = Retrofit.Builder()
             .client(client)
-            .baseUrl(config.baseUrl)
+            .baseUrl(baseUrl)
             .addConverterFactory(UnitConverterFactory)
             .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))

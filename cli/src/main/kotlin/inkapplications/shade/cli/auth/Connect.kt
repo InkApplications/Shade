@@ -12,7 +12,6 @@ import javax.inject.Inject
 
 @Reusable
 class Connect @Inject constructor(
-    private val storage: FileStorage,
     private val shade: Shade
 ): CliktCommand(
     name = "connect",
@@ -27,9 +26,9 @@ class Connect @Inject constructor(
         runBlocking {
             val url = getUrl() ?: return@runBlocking
 
-            storage.setUrl(url)
+            shade.setBaseUrl(url)
             echo("Waiting to connect. Press the button on your Hue Device now.")
-            Shade(ShadeConfig(url, storage.getAppId()), storage).auth.awaitToken()
+            shade.auth.awaitToken()
             echo("Success 🎉")
         }
     }

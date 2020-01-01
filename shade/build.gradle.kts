@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm")
+    id("kotlinx-atomicfu")
 }
 
 dependencies {
@@ -12,4 +13,5 @@ dependencies {
 
     compile(kotlin("stdlib"))
     compile(coroutines())
+    compile(atomicFU())
 }
