@@ -4,6 +4,7 @@ import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
 import inkapplications.shade.constructs.DeviceAttributes
 import inkapplications.shade.constructs.Scan
+import inkapplications.shade.serialization.encapsulateErrors
 
 /**
  * Actions to control lights.
@@ -72,15 +73,25 @@ internal class ApiLights(
     private val lightsApi: HueLightsApi,
     private val storage: TokenStorage
 ): ShadeLights {
-
     private suspend fun getToken() = storage.getToken() ?: throw UnauthorizedException()
 
-    override suspend fun getLights(): Map<String, Light> = lightsApi.getLights(getToken())
-    override suspend fun getNewLights(): Scan = lightsApi.getNewLights(getToken())
-    override suspend fun setLightState(id: String, state: LightStateModification) = lightsApi.setState(getToken(), id, state)
-    override suspend fun getLight(id: String): Light = lightsApi.getLightAttributes(getToken(), id)
+    override suspend fun getLights(): Map<String, Light> = encapsulateErrors {
+        lightsApi.getLights(getToken())
+    }
 
-    override suspend fun search(vararg deviceIds: String) {
+    override suspend fun getNewLights(): Scan = encapsulateErrors {
+        lightsApi.getNewLights(getToken())
+    }
+
+    override suspend fun setLightState(id: String, state: LightStateModification) = encapsulateErrors {
+        lightsApi.setState(getToken(), id, state)
+    }
+
+    override suspend fun getLight(id: String): Light = encapsulateErrors {
+        lightsApi.getLightAttributes(getToken(), id)
+    }
+
+    override suspend fun search(vararg deviceIds: String): Unit = encapsulateErrors {
         if (deviceIds.isEmpty()) {
             lightsApi.searchLights(getToken())
         } else {
@@ -89,13 +100,13 @@ internal class ApiLights(
         }
     }
 
-    override suspend fun rename(id: String, name: String) {
+    override suspend fun rename(id: String, name: String): Unit = encapsulateErrors {
         val attributes = DeviceAttributes(name = name)
 
         lightsApi.setLightAttributes(getToken(), id, attributes)
     }
 
-    override suspend fun delete(id: String) {
+    override suspend fun delete(id: String) = encapsulateErrors {
         lightsApi.delete(getToken(), id)
     }
 }

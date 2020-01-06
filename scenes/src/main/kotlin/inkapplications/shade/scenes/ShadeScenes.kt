@@ -2,6 +2,7 @@ package inkapplications.shade.scenes
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
+import inkapplications.shade.serialization.encapsulateErrors
 
 /**
  * Access to Hue's scene storage.
@@ -68,8 +69,8 @@ internal class ApiScenes(
 ): ShadeScenes {
     private suspend fun getToken(): String = storage.getToken() ?: throw UnauthorizedException()
 
-    override suspend fun getScenes(): Map<String, Scene> {
-        return scenesApi.getScenes(getToken())
+    override suspend fun getScenes(): Map<String, Scene> = encapsulateErrors {
+        scenesApi.getScenes(getToken())
     }
 
     override suspend fun createLightScene(
@@ -77,7 +78,7 @@ internal class ApiScenes(
         lights: List<String>,
         picture: String?,
         data: Map<String, Any>?
-    ): String {
+    ): String = encapsulateErrors {
         val scene = CreateScene.LightScene(
             name = name,
             lights = lights,
@@ -95,7 +96,7 @@ internal class ApiScenes(
         group: String,
         picture: String?,
         data: Map<String, Any>?
-    ): String {
+    ): String = encapsulateErrors {
         val scene = CreateScene.GroupScene(
             name = name,
             group = group,
@@ -108,11 +109,11 @@ internal class ApiScenes(
             .id
     }
 
-    override suspend fun getScene(id: String): Scene {
+    override suspend fun getScene(id: String): Scene = encapsulateErrors {
         return scenesApi.getScene(getToken(), id)
     }
 
-    override suspend fun deleteScene(id: String) {
+    override suspend fun deleteScene(id: String): Unit = encapsulateErrors {
         scenesApi.deleteScene(getToken(), id)
     }
 }
