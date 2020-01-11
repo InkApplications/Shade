@@ -22,4 +22,8 @@ abstract class ScenesModule {
     @Binds
     @IntoSet
     abstract fun deleteScene(command: SceneDelete): CliktCommand
+
+    @Binds
+    @IntoSet
+    abstract fun updateLightScene(command: LightSceneUpdate): CliktCommand
 }

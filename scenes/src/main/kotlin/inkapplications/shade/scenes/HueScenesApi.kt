@@ -28,6 +28,20 @@ internal interface HueScenesApi {
         @Path("token") token: String,
         @Path("scene") sceneId: String
     ): List<HueResponse<String>>
+
+    @PUT("api/{token}/scenes/{scene}")
+    suspend fun updateScene(
+        @Path("token") token: String,
+        @Path("scene") sceneId: String,
+        @Body scene: UpdateScene.LightScene
+    )
+
+    @PUT("api/{token}/scenes/{scene}")
+    suspend fun updateScene(
+        @Path("token") token: String,
+        @Path("scene") sceneId: String,
+        @Body scene: UpdateScene.GroupScene
+    )
 }
 
 sealed class Scene {
@@ -111,4 +125,25 @@ internal sealed class CreateScene {
         @Json(name = "appdata") override val data: Map<String, Any>? = null,
         override val picture: String? = null
     ): CreateScene()
+}
+
+internal sealed class UpdateScene {
+    abstract val name: String?
+    abstract val data: Map<String, Any>?
+    abstract val picture: String?
+
+    @JsonClass(generateAdapter = true)
+    internal data class LightScene(
+        override val name: String?,
+        val lights: List<String>?,
+        @Json(name = "appdata") override val data: Map<String, Any>? = null,
+        override val picture: String? = null
+    ): UpdateScene()
+
+    @JsonClass(generateAdapter = true)
+    internal data class GroupScene(
+        override val name: String?,
+        @Json(name = "appdata") override val data: Map<String, Any>? = null,
+        override val picture: String? = null
+    ): UpdateScene()
 }
