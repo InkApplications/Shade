@@ -2,7 +2,7 @@ package inkapplications.shade.serialization
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
-import inkapplications.shade.constructs.HueResponse
+import inkapplications.shade.constructs.HueResult
 import inkapplications.shade.constructs.ShadeException
 import inkapplications.shade.constructs.UnknownException
 import inkapplications.shade.constructs.asException
@@ -13,9 +13,9 @@ import retrofit2.Response
  * Deserialize Error exceptions from responses.
  */
 object ErrorParser {
-    private val responseType = Types.newParameterizedType(HueResponse::class.java, Any::class.java)
+    private val responseType = Types.newParameterizedType(HueResult::class.java, Any::class.java)
     private val listType = Types.newParameterizedType(List::class.java, responseType)
-    private val moshi = Moshi.Builder().build().adapter<List<HueResponse<Any>>>(listType)
+    private val moshi = Moshi.Builder().build().adapter<List<HueResult<Any>>>(listType)
 
     fun parseError(response: Response<*>): ShadeException {
         response.errorBody().use { body ->

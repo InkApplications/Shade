@@ -2,6 +2,8 @@ package inkapplications.shade.scenes
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
+import inkapplications.shade.constructs.getOrThrow
+import inkapplications.shade.constructs.throwOnFailure
 import inkapplications.shade.serialization.encapsulateErrors
 
 /**
@@ -145,8 +147,8 @@ internal class ApiScenes(
         return scenesApi.getScene(getToken(), id)
     }
 
-    override suspend fun deleteScene(id: String): Unit = encapsulateErrors {
-        scenesApi.deleteScene(getToken(), id)
+    override suspend fun deleteScene(id: String) = encapsulateErrors {
+        scenesApi.deleteScene(getToken(), id).throwOnFailure()
     }
 
     override suspend fun updateLightScene(
@@ -162,7 +164,7 @@ internal class ApiScenes(
             picture = picture,
             data = data
         )
-        scenesApi.updateScene(getToken(), id, scene)
+        scenesApi.updateScene(getToken(), id, scene).throwOnFailure()
     }
 
     override suspend fun updateGroupScene(
@@ -176,6 +178,6 @@ internal class ApiScenes(
             picture = picture,
             data = data
         )
-        scenesApi.updateScene(getToken(), id, scene)
+        scenesApi.updateScene(getToken(), id, scene).throwOnFailure()
     }
 }

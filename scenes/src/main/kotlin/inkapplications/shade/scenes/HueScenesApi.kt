@@ -2,7 +2,9 @@ package inkapplications.shade.scenes
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import inkapplications.shade.constructs.HueProperties
 import inkapplications.shade.constructs.HueResponse
+import inkapplications.shade.constructs.HueResult
 import inkapplications.shade.constructs.IdToken
 import org.threeten.bp.Instant
 import retrofit2.http.*
@@ -15,7 +17,7 @@ internal interface HueScenesApi {
     suspend fun createScene(
         @Path("token") token: String,
         @Body scene: CreateScene
-    ): List<HueResponse<IdToken>>
+    ): List<HueResult<IdToken>>
 
     @GET("api/{token}/scenes/{scene}")
     suspend fun getScene(
@@ -27,21 +29,21 @@ internal interface HueScenesApi {
     suspend fun deleteScene(
         @Path("token") token: String,
         @Path("scene") sceneId: String
-    ): List<HueResponse<String>>
+    ): HueResponse<String>
 
     @PUT("api/{token}/scenes/{scene}")
     suspend fun updateScene(
         @Path("token") token: String,
         @Path("scene") sceneId: String,
         @Body scene: UpdateScene.LightScene
-    )
+    ): HueResponse<HueProperties>
 
     @PUT("api/{token}/scenes/{scene}")
     suspend fun updateScene(
         @Path("token") token: String,
         @Path("scene") sceneId: String,
         @Body scene: UpdateScene.GroupScene
-    )
+    ): HueResponse<HueProperties>
 }
 
 sealed class Scene {
