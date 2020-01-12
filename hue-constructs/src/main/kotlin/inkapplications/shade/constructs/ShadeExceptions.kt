@@ -30,17 +30,17 @@ class UnknownException(
 open class ShadeCompositeApiError(val hueErrors: List<ShadeApiError>): ShadeException("Multiple Hue API Errors occurred") {
     override fun printStackTrace() {
         super.printStackTrace()
-        hueErrors.forEach { printStackTrace() }
+        hueErrors.forEach { it.printStackTrace() }
     }
 
     override fun printStackTrace(stream: PrintStream?) {
         super.printStackTrace(stream)
-        hueErrors.forEach { printStackTrace(stream) }
+        hueErrors.forEach { it.printStackTrace(stream) }
     }
 
     override fun printStackTrace(writer: PrintWriter?) {
         super.printStackTrace(writer)
-        hueErrors.forEach { printStackTrace(writer) }
+        hueErrors.forEach { it.printStackTrace(writer) }
     }
 }
 
