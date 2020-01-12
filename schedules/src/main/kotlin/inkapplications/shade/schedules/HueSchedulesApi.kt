@@ -2,9 +2,7 @@ package inkapplications.shade.schedules
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import inkapplications.shade.constructs.Command
-import inkapplications.shade.constructs.IdToken
-import inkapplications.shade.constructs.TimePattern
+import inkapplications.shade.constructs.*
 import inkapplications.shade.serialization.converter.FirstInCollection
 import org.threeten.bp.Instant
 import retrofit2.http.*
@@ -32,7 +30,11 @@ internal interface HueSchedulesApi {
      * Allows the user to change attributes of a schedule.
      */
     @PUT("api/{token}/schedules/{schedule}")
-    suspend fun updateSchedule(@Path("token") token: String, @Path("schedule") schedule: String, @Body modification: ScheduleModification)
+    suspend fun updateSchedule(
+        @Path("token") token: String,
+        @Path("schedule") schedule: String,
+        @Body modification: ScheduleModification
+    ): HueResponse<HueProperties>
 
     /**
      * Gets all attributes for a schedule.
@@ -44,7 +46,10 @@ internal interface HueSchedulesApi {
      * Deletes a schedule from the bridge.
      */
     @DELETE("api/{token}/schedules/{schedule}")
-    suspend fun deleteSchedule(@Path("token") token: String, @Path("schedule") schedule: String)
+    suspend fun deleteSchedule(
+        @Path("token") token: String,
+        @Path("schedule") schedule: String
+    ): HueResponse<String>
 }
 
 /**

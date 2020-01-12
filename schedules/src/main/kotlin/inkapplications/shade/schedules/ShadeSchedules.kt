@@ -4,6 +4,7 @@ import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
 import inkapplications.shade.constructs.Command
 import inkapplications.shade.constructs.TimePattern
+import inkapplications.shade.constructs.throwOnFailure
 import inkapplications.shade.groups.GroupStateModification
 import inkapplications.shade.groups.createGroupModificationCommand
 import inkapplications.shade.lights.LightStateModification
@@ -284,7 +285,7 @@ internal class ApiSchedules(
         description: String?,
         autoDelete: Boolean?,
         status: Status?
-    ): Unit = encapsulateErrors {
+    ) = encapsulateErrors {
         val token = getToken()
 
         schedulesApi.updateSchedule(
@@ -298,7 +299,7 @@ internal class ApiSchedules(
                 status = status,
                 autoDelete = autoDelete
             )
-        )
+        ).throwOnFailure()
     }
 
     override suspend fun updateLightSchedule(
@@ -310,7 +311,7 @@ internal class ApiSchedules(
         description: String?,
         autoDelete: Boolean?,
         status: Status?
-    ): Unit = encapsulateErrors {
+    ) = encapsulateErrors {
         val token = getToken()
 
         schedulesApi.updateSchedule(
@@ -324,7 +325,7 @@ internal class ApiSchedules(
                 status = status,
                 autoDelete = autoDelete
             )
-        )
+        ).throwOnFailure()
     }
 
     override suspend fun updateSchedule(
@@ -335,7 +336,7 @@ internal class ApiSchedules(
         description: String?,
         status: Status?,
         autoDelete: Boolean?
-    ): Unit = encapsulateErrors {
+    ) = encapsulateErrors {
         val token = getToken()
 
         schedulesApi.updateSchedule(
@@ -349,7 +350,7 @@ internal class ApiSchedules(
                 status = status,
                 autoDelete = autoDelete
             )
-        )
+        ).throwOnFailure()
     }
 
     override suspend fun getSchedule(schedule: String): Schedule = encapsulateErrors {
@@ -357,6 +358,6 @@ internal class ApiSchedules(
     }
 
     override suspend fun deleteSchedule(schedule: String) = encapsulateErrors {
-        schedulesApi.deleteSchedule(getToken(), schedule)
+        schedulesApi.deleteSchedule(getToken(), schedule).throwOnFailure()
     }
 }

@@ -2,9 +2,7 @@ package inkapplications.shade.groups
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import inkapplications.shade.constructs.Command
-import inkapplications.shade.constructs.Coordinates
-import inkapplications.shade.constructs.IdToken
+import inkapplications.shade.constructs.*
 import inkapplications.shade.lights.AlertState
 import inkapplications.shade.lights.LightEffect
 import inkapplications.shade.lights.LightState
@@ -83,7 +81,7 @@ internal interface HueGroupsApi {
         @Path("token") token: String,
         @Path("group") groupId: String,
         @Body attributes: MutableGroupAttributes
-    )
+    ): HueResponse<HueProperties>
 
     /**
      * Modifies the state of all lights in a group.
@@ -96,7 +94,7 @@ internal interface HueGroupsApi {
         @Path("token") token: String,
         @Path("group") groupId: String,
         @Body state: GroupStateModification
-    )
+    ): HueResponse<HueProperties>
 
     /**
      * Deletes the specified group from the bridge.
@@ -104,7 +102,10 @@ internal interface HueGroupsApi {
      * @param groupId The unique ID of the group to delete.
      */
     @DELETE("api/{token}/groups/{group}")
-    suspend fun deleteGroup(@Path("token") token: String, @Path("group") groupId: String)
+    suspend fun deleteGroup(
+        @Path("token") token: String,
+        @Path("group") groupId: String
+    ): HueResponse<String>
 }
 
 /**
