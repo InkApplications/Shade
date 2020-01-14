@@ -1,5 +1,6 @@
 package inkapplications.shade.delegates
 
+import kotlinx.atomicfu.AtomicRef
 import kotlinx.atomicfu.atomic
 import java.lang.IllegalStateException
 
@@ -11,9 +12,10 @@ import java.lang.IllegalStateException
  *
  * @param initialUrl The baseurl to start with (optional)
  */
-internal abstract class EndpointDelegate<T>(initialUrl: String?) {
-    private val delegateReference = atomic(initialUrl?.let(::createEndpoint))
+internal abstract class EndpointDelegate<T>(private val initialUrl: String?) {
+    private val delegateReference: AtomicRef<T?> = atomic(null)
     protected val delegate: T get() = delegateReference.value
+        ?: initialUrl?.let(::createEndpoint)
         ?: throw IllegalStateException("BaseURL of Hue bridge was not set. It can be set when Shade is constructed or by calling `Shade#setBaseUrl`")
 
     /**

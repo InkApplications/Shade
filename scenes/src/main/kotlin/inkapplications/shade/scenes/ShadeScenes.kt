@@ -2,6 +2,8 @@ package inkapplications.shade.scenes
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
+import inkapplications.shade.constructs.getOrThrow
+import inkapplications.shade.constructs.throwOnFailure
 import inkapplications.shade.serialization.encapsulateErrors
 
 /**
@@ -44,6 +46,38 @@ interface ShadeScenes {
         picture: String? = null,
         data: Map<String, Any>? = null
     ): String
+
+    /**
+     * Update the properties of a light scene.
+     *
+     * @param id The ID of the scene to modify.
+     * @param name A displayable name for the Scene
+     * @param lights The ID's of the lights to associate with the Scene
+     * @param picture It's never really explained how this works, but maybe a file name?
+     * @param data Random app data you want to store with the scene.
+     */
+    suspend fun updateLightScene(
+        id: String,
+        name: String? = null,
+        lights: List<String>? = null,
+        picture: String? = null,
+        data: Map<String, Any>? = null
+    )
+
+    /**
+     * Update the properties of a light scene.
+     *
+     * @param id The ID of the scene to modify.
+     * @param name A displayable name for the Scene
+     * @param picture It's never really explained how this works, but maybe a file name?
+     * @param data Random app data you want to store with the scene.
+     */
+    suspend fun updateGroupScene(
+        id: String,
+        name: String? = null,
+        picture: String? = null,
+        data: Map<String, Any>? = null
+    )
 
     /**
      * Get a single scene known to the Hue Bridge.
@@ -113,7 +147,37 @@ internal class ApiScenes(
         return scenesApi.getScene(getToken(), id)
     }
 
-    override suspend fun deleteScene(id: String): Unit = encapsulateErrors {
-        scenesApi.deleteScene(getToken(), id)
+    override suspend fun deleteScene(id: String) = encapsulateErrors {
+        scenesApi.deleteScene(getToken(), id).throwOnFailure()
+    }
+
+    override suspend fun updateLightScene(
+        id: String,
+        name: String?,
+        lights: List<String>?,
+        picture: String?,
+        data: Map<String, Any>?
+    ) = encapsulateErrors {
+        val scene = UpdateScene.LightScene(
+            name = name,
+            lights = lights,
+            picture = picture,
+            data = data
+        )
+        scenesApi.updateScene(getToken(), id, scene).throwOnFailure()
+    }
+
+    override suspend fun updateGroupScene(
+        id: String,
+        name: String?,
+        picture: String?,
+        data: Map<String, Any>?
+    ) = encapsulateErrors {
+        val scene = UpdateScene.GroupScene(
+            name = name,
+            picture = picture,
+            data = data
+        )
+        scenesApi.updateScene(getToken(), id, scene).throwOnFailure()
     }
 }

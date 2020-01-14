@@ -1,11 +1,7 @@
 package inkapplications.shade.lights
 
 import com.squareup.moshi.*
-import inkapplications.shade.constructs.Command
-import inkapplications.shade.constructs.Coordinates
-import inkapplications.shade.constructs.DeviceAttributes
-import inkapplications.shade.constructs.Scan
-import inkapplications.shade.serialization.converter.FirstInCollection
+import inkapplications.shade.constructs.*
 import org.threeten.bp.Instant
 import retrofit2.http.*
 
@@ -51,7 +47,7 @@ internal interface HueLightsApi {
         @Path("token") token: String,
         @Path("light") lightId: String,
         @Body modification: LightStateModification
-    )
+    ): HueResponse<HueProperties>
 
     /**
      * Gets a list of lights that were discovered the last time a
@@ -81,8 +77,7 @@ internal interface HueLightsApi {
      * @return a pretty useless map that just contains the endpoint that was hit.
      */
     @POST("api/{token}/lights")
-    @FirstInCollection
-    suspend fun searchLights(@Path("token") token: String, @Body criteria: LightSearchCriteria): Map<String, String>
+    suspend fun searchLights(@Path("token") token: String, @Body criteria: LightSearchCriteria): HueResponse<HueProperties>
 
     /**
      * Starts searching for new lights.
@@ -90,8 +85,7 @@ internal interface HueLightsApi {
      * @see HueLightsApi.searchLights(StringIndexOutOfBoundsException, LightSearchCriteria)
      */
     @POST("api/{token}/lights")
-    @FirstInCollection
-    suspend fun searchLights(@Path("token") token: String): Map<String, String>
+    suspend fun searchLights(@Path("token") token: String): HueResponse<HueProperties>
 
     /**
      * Gets the attributes and state of a given light.
@@ -113,18 +107,20 @@ internal interface HueLightsApi {
      * @return a pretty useless map that just contains the endpoint that was hit.
      */
     @PUT("api/{token}/lights/{light}")
-    @FirstInCollection
     suspend fun setLightAttributes(
         @Path("token") token: String,
         @Path("light") lightId: String,
         @Body attributes: DeviceAttributes
-    ): Map<String, String>
+    ): HueResponse<HueProperties>
 
     /**
      * Deletes a light from the bridge.
      */
     @DELETE("api/{token}/lights/{light}")
-    suspend fun delete(@Path("token") token: String, @Path("light") lightId: String)
+    suspend fun delete(
+        @Path("token") token: String,
+        @Path("light") lightId: String
+    ): HueResponse<String>
 }
 
 /**

@@ -2,6 +2,7 @@ package inkapplications.shade.groups
 
 import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.auth.UnauthorizedException
+import inkapplications.shade.constructs.throwOnFailure
 import inkapplications.shade.serialization.encapsulateErrors
 
 /**
@@ -77,14 +78,14 @@ internal class ApiGroups(
     }
 
     override suspend fun updateGroup(id: String, attributes: MutableGroupAttributes) = encapsulateErrors {
-        groupsApi.updateGroup(getToken(), id, attributes)
+        groupsApi.updateGroup(getToken(), id, attributes).throwOnFailure()
     }
 
     override suspend fun setState(id: String, state: GroupStateModification) = encapsulateErrors {
-        groupsApi.setState(getToken(), id, state)
+        groupsApi.setState(getToken(), id, state).throwOnFailure()
     }
 
     override suspend fun deleteGroup(id: String) = encapsulateErrors {
-        groupsApi.deleteGroup(getToken(), id)
+        groupsApi.deleteGroup(getToken(), id).throwOnFailure()
     }
 }
