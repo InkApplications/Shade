@@ -1,0 +1,29 @@
+html {
+    background-color: #212121;
+    color: #fff;
+}
+h1,
+h2,
+h3
+{
+    color: #fff;
+}
+
+a,
+a:visited,
+a:hover
+{
+    color: #fff;
+}
+
+code,
+.hljs {
+    background-color: #292929;
+}
+
+.only-light {
+    display: none;
+}
+.only-dark {
+    display: initial;
+}

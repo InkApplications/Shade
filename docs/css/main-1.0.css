@@ -1,0 +1,116 @@
+html
+{
+    background-color: #fff;
+    color: #212121;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    font-size: 1em;
+}
+body {
+    padding-bottom: 8rem;
+}
+
+h1,
+h2,
+h3
+{
+    font-family: 'Alegreya Sans SC', monospace;
+    font-weight: 300;
+    color: #616161;
+}
+
+section,
+body > header
+{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+a,
+a:visited,
+a:hover
+{
+    color: #212121;
+    text-decoration: none;
+    border-bottom: 1px solid #D84315;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+h2 {
+    font-size: 2.125rem;
+    letter-spacing: 0.015625rem;
+    line-height: 2.575rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+p {
+    margin: 8px 0;
+    line-height: 1.25rem;
+}
+
+article {
+    margin: 2rem 0;
+}
+
+section {
+    padding: 1rem;
+}
+
+code,
+.hljs
+{
+    background-color: #f2f2f2f2;
+}
+
+code {
+    font-family: 'Inconsolata', monospace;
+    border-radius: 4px;
+    padding: .25rem;
+}
+pre > code {
+    margin: 1rem 0;
+}
+
+.logo {
+    height: 5rem;
+    max-width: 40vw;
+    margin: .5rem 0;
+}
+
+.links {
+    margin: 1rem 0;
+}
+.links li:first-child a {
+    margin-left: 0;
+}
+.links li:last-child a {
+    margin-right: 0;
+}
+.links li {
+    display: inline-block;
+}
+
+.links a {
+    font-size: 2rem;
+    display: inline-block;
+    margin: .25rem;
+    padding: .25rem .5rem;
+    border: 1px solid #D84315;
+    border-radius: .5rem;
+    font-family: 'Alegreya Sans SC', monospace;
+}
+
+.only-dark,
+.hidden
+{
+    display: none;
+}
