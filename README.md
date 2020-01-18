@@ -47,7 +47,7 @@ fun main() {
 
         println("Turning all the lights on!")
         shade.groups.setState(
-            0, // All
+            GROUP_ALL,
             GroupStateModification(
                 on = on
             )
