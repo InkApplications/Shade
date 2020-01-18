@@ -40,7 +40,7 @@ fun main() {
         println("Searching for Hue Bridges")
         val shade = Shade()
         val devices = shade.discovery.getDevices()
-        shade.setBaseUrl("http://${devices.first().ip}")
+        shade.setBaseUrl(devices.first().url)
 
         println("Press the connect button on the hue bridge")
         shade.auth.awaitToken()
