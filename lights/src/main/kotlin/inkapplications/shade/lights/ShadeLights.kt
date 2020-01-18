@@ -29,7 +29,7 @@ interface ShadeLights {
      * @param id The ID (not the uuid) of the light to modify.
      * @param state Arguments to change about the light.
      */
-    suspend fun setLightState(id: String, state: LightStateModification)
+    suspend fun setState(id: String, state: LightStateModification)
 
     /**
      * Starts searching for new lights.
@@ -84,7 +84,7 @@ internal class ApiLights(
         lightsApi.getNewLights(getToken())
     }
 
-    override suspend fun setLightState(id: String, state: LightStateModification) = encapsulateErrors {
+    override suspend fun setState(id: String, state: LightStateModification) = encapsulateErrors {
         lightsApi.setState(getToken(), id, state).throwOnFailure()
     }
 

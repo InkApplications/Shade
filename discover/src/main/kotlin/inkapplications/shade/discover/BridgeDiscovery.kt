@@ -28,4 +28,11 @@ interface BridgeDiscovery {
 data class Device(
     val id: String,
     @Json(name = "internalipaddress") val ip: String
-)
+) {
+    /**
+     * A base-URL that can be used to connect to the hue bridge locally.
+     *
+     * Note: Hue bridges don't support https :sadface:
+     */
+    val url: String = "http://$ip/"
+}

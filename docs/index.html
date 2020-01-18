@@ -118,14 +118,14 @@ fun main() {
         println("Searching for Hue Bridges")
         val shade = Shade()
         val devices = shade.discovery.getDevices()
-        shade.setBaseUrl("http://${devices.first().ip}")
+        shade.setBaseUrl(devices.first().url)
 
         println("Press the connect button on the hue bridge")
         shade.auth.awaitToken()
 
         println("Turning all the lights on!")
         shade.groups.setState(
-            0, // All
+            GROUP_ALL,
             GroupStateModification(
                 on = on
             )
@@ -211,8 +211,26 @@ shade.discovery.getDevices().forEach {
             </p>
 
             <pre><code class="kotlin">
-shade.setBaseUrl("http://${device.ip}/")
+shade.setBaseUrl(device.url)
             </code></pre>
+
+            <h3>Authenticate</h3>
+            <p>
+                The last step you need to do before you can start controlling
+                lights is to request access. Hue does this by tapping the button
+                on the top of the hub. To start this process use the
+                <code>awaitToken</code> method in <code>auth</code> module.
+            </p>
+            <pre><code class="kotlin">
+shade.auth.awaitToken()
+            </code></pre>
+            <p>
+                This method will eventually timeout after an amount of time.
+                You can change how many retries and how often the SDK will poll
+                the bridge for auth using the optional <code>retries</code>
+                and <code>timeout</code> arguments on the
+                <code>awaitToken()</code> method.
+            </p>
         </article>
         <article>
             <a name="sdk-lights"></a>
@@ -233,7 +251,7 @@ shade.lights.getLights().forEach { (id, light) ->
             <h3>Change Light State</h3>
             <p>
                 To turn lights on/off, change their color or brightness you
-                can use the <code>setLightState</code> method with a
+                can use the <code>setState</code> method with a
                 <code>LightStateModification</code> object.
             </p>
             <p>
@@ -243,7 +261,7 @@ shade.lights.getLights().forEach { (id, light) ->
                 state of the light will not change.
             </p>
             <pre><code class="kotlin">
-shade.lights.setLightState(id, LightStateModification(on = true, brightness = 50))
+shade.lights.setState(id, LightStateModification(on = true, brightness = 50))
             </code></pre>
         </article>
         <article>

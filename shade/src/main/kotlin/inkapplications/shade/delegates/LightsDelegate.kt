@@ -19,7 +19,7 @@ internal class LightsDelegate(
 
     override suspend fun getLights(): Map<String, Light> = delegate.getLights()
     override suspend fun getNewLights(): Scan = delegate.getNewLights()
-    override suspend fun setLightState(id: String, state: LightStateModification) = delegate.setLightState(id, state)
+    override suspend fun setState(id: String, state: LightStateModification) = delegate.setState(id, state)
     override suspend fun search(vararg deviceIds: String) = delegate.search(*deviceIds)
     override suspend fun getLight(id: String): Light = delegate.getLight(id)
     override suspend fun rename(id: String, name: String) = delegate.rename(id, name)
