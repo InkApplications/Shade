@@ -42,7 +42,7 @@ import javax.inject.Inject
                 brightness = brightness,
                 colorTemperature = colorTemperature
             )
-            shade.lights.setLightState(light, modification)
+            shade.lights.setState(light, modification)
         }
     }
 }

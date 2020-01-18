@@ -233,7 +233,7 @@ shade.lights.getLights().forEach { (id, light) ->
             <h3>Change Light State</h3>
             <p>
                 To turn lights on/off, change their color or brightness you
-                can use the <code>setLightState</code> method with a
+                can use the <code>setState</code> method with a
                 <code>LightStateModification</code> object.
             </p>
             <p>
@@ -243,7 +243,7 @@ shade.lights.getLights().forEach { (id, light) ->
                 state of the light will not change.
             </p>
             <pre><code class="kotlin">
-shade.lights.setLightState(id, LightStateModification(on = true, brightness = 50))
+shade.lights.setState(id, LightStateModification(on = true, brightness = 50))
             </code></pre>
         </article>
         <article>
