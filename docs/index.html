@@ -213,6 +213,24 @@ shade.discovery.getDevices().forEach {
             <pre><code class="kotlin">
 shade.setBaseUrl(device.url)
             </code></pre>
+
+            <h3>Authenticate</h3>
+            <p>
+                The last step you need to do before you can start controlling
+                lights is to request access. Hue does this by tapping the button
+                on the top of the hub. To start this process use the
+                <code>awaitToken</code> method in <code>auth</code> module.
+            </p>
+            <pre><code class="kotlin">
+shade.auth.awaitToken()
+            </code></pre>
+            <p>
+                This method will eventually timeout after an amount of time.
+                You can change how many retries and how often the SDK will poll
+                the bridge for auth using the optional <code>retries</code>
+                and <code>timeout</code> arguments on the
+                <code>awaitToken()</code> method.
+            </p>
         </article>
         <article>
             <a name="sdk-lights"></a>
