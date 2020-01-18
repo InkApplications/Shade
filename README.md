@@ -1,72 +1,69 @@
 
-![Shade Logo](logo-full.svg)
+![Shade Logo](docs/svg/logo-full.svg)
 
-_A modern SDK for the Philips Hue API written for Kotlin._
+_A modern CLI and SDK for the Philips Hue API written in Kotlin._
 
-## Usage
+## CLI
 
-### Installation
+Shade's CLI tools can be used to connect, discover and control lights
+on your Hue Bridge.
 
-If you haven’t already, add JitPack to your gradle repositories in 
-your `build.gradle` file:
+```shell
+$ shade-cli connect
+Connecting to bridge at 192.168.1.100
+Waiting to connect. Press the button on your Hue Device now.
+Success 🎉
 
-    repositories {
-        maven {
-            url "https://jitpack.io"
-        }
-    }
-    
-Next, add Shade as a dependency to your `build.gradle` file:
+$ shade-cli lights:list
+1:
+  name: Renee's Office
+  uuid: 00:19:28:37:00:a1:b9:f2-0b
+  type: Extended color light
+  firmware: 5.127.1.26581
+2:
+  name: Kitchen
+  uuid: 00:91:82:73:00:b9:c3:7a-0b
+  type: Extended color light
+  firmware: 5.127.1.26581
 
-    compile "com.github.Inkapplications.Shade:shade:+" // Replace with exact version
-
-### Initialize Shade
-
-Connect Shade to your Hue Bridge by providing a config:
-
- - `baseUrl`: The URL of the Hue Hub you want to connect to
- - `appID`: A Unique ID for your application.
-
-```kotlin
-val config = ShadeConfig(baseUrl = "http://192.168.0.2/", appId = "shade#shade")
-val shade = Shade(config)
+$ shade-cli lights:control 1 --on --brightness 20
 ```
 
-### Authenticate with Hue
+## Kotlin SDK
 
-To authenticate with your hue system call the `awaitToken()` method:
+Shede's Kotlin SDK uses Kotlin Coroutines and a modern API to allow
+your JVM or Android app to discover and control lights.
 
 ```kotlin
-suspend fun connect() {
-    println("Waiting for token. Press Button on Hue Bridge")
-    shade.auth.awaitToken()
-    println("Authenticated Successfully!")
+fun main() {
+    runBlocking {
+        println("Searching for Hue Bridges")
+        val shade = Shade()
+        val devices = shade.discovery.getDevices()
+        shade.setBaseUrl("http://${devices.first().ip}")
+
+        println("Press the connect button on the hue bridge")
+        shade.auth.awaitToken()
+
+        println("Turning all the lights on!")
+        shade.groups.setState(
+            0, // All
+            GroupStateModification(
+                on = on
+            )
+        )
+    }
 }
 ```
 
-### Control Lights
+## Documentation
 
-```kotlin
-suspend fun turnOffAll() {
-    shade.lights.getLights().forEach { (id, light) ->
-        println("Turning off Light ID: $id, Name: ${light.name}")
-        shade.lights.setLightState(id, LightStateModification(on = false))
-    }
-}
-```
+For more examples and documentation please see [the website](https://shade.lighting)
 
-### Groups
+## Contributions and Issues
 
-Groups can be accessed through Shade's `.groups` service:
+Shade is free, Open Source, actively maintained, and always looking for contributions.
 
-```kotlin
-shade.groups.getGroups()
-    .also { println("Found ${it.size} Light Groups") }
-    .forEach { (id, group) -> println("    Group ID: $id, Name: ${group.name}") }
-
-shade.groups.setState("10", GroupStateModification(
-    on = true,
-    colorTemperature = 200,
-    brightness = 100
-))
-```
+There are many Hue devices and things to do with them.
+Testing all that can be difficult.
+If you have an issue, please [tell us](https://github.com/InkApplications/Shade/issues/new)!
