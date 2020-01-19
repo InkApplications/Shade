@@ -452,9 +452,7 @@ sealed class MutableGroupAttributes {
  * but also gives the option to set a scene.
  *
  * @property on On/Off state of the light. On=true, Off=false
- * @property brightness Brightness of the light. This is a scale from
- *           the minimum brightness the light is capable of, 1, to the
- *           maximum capable brightness, 254.
+ * @property brightness Brightness of the light.
  * @property hue Hue of the light. This is a wrapping value between 0
  *           and 65535. Note, that hue/sat values are hardware
  *           dependent which means that programming two devices with
@@ -524,7 +522,7 @@ sealed class MutableGroupAttributes {
 @JsonClass(generateAdapter = true)
 data class GroupStateModification(
     val on: Boolean? = null,
-    @Json(name="bri") val brightness: Int? = null,
+    @Json(name="bri") val brightness: Brightness? = null,
     val hue: Int? = null,
     @Json(name="sat") val saturation: Int? = null,
     val effect: LightEffect? = null,
@@ -532,7 +530,7 @@ data class GroupStateModification(
     @Json(name="xy") val cieColorCoordinates: Coordinates? = null,
     @Json(name="ct") val colorTemperature: ColorTemperature? = null,
     val alert: AlertState? = null,
-    @Json(name="bri_inc") val brightnessIncrement: Int? = null,
+    @Json(name="bri_inc") val brightnessIncrement: Brightness? = null,
     @Json(name="sat_inc") val saturationIncrement: Int? = null,
     @Json(name="hue_inc") val hueIncrement: Int? = null,
     @Json(name="ct_inc") val colorTemperatureIncrement: Int? = null,
