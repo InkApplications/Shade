@@ -220,9 +220,7 @@ data class LightStartupConfig(
 /**
  * Custom parameters for how a light should turn on.
  *
- * @property brightness Brightness of the light. This is a scale from
- *           the minimum brightness the light is capable of, 1, to
- *           the maximum capable brightness, 254.
+ * @property brightness Brightness of the light.
  * @property cieColorCoordinates The x and y coordinates of a color in
  *           CIE color space.The first entry is the x coordinate and
  *           the second entry is the y coordinate. Both x and y must be
@@ -243,7 +241,7 @@ data class LightStartupConfig(
  */
 @JsonClass(generateAdapter = true)
 data class LightCustomStartupSettings(
-    @Json(name = "bri") val brightness: Int?,
+    @Json(name = "bri") val brightness: Brightness?,
     @Json(name = "xy") val cieColorCoordinates: Coordinates?,
     @Json(name="ct") val colorTemperature: ColorTemperature?,
     val hue: Int?,
@@ -287,9 +285,7 @@ data class UpdateState(
  * State of a light.
  *
  * @property on On/Off state of the light. On=true, Off=false
- * @property brightness Brightness of the light. This is a scale from
- *           the minimum brightness the light is capable of, 1, to the
- *           maximum capable brightness, 254.
+ * @property brightness Brightness of the light.
  * @property hue Hue of the light. This is a wrapping value between 0
  *           and 65535. Note, that hue/sat values are hardware
  *           dependent which means that programming two devices with
@@ -326,7 +322,7 @@ data class UpdateState(
 @JsonClass(generateAdapter = true)
 data class LightState(
     val on: Boolean,
-    @Json(name="bri") val brightness: Int,
+    @Json(name="bri") val brightness: Brightness,
     val hue: Int?,
     @Json(name="sat") val saturation: Int?,
     val effect: LightEffect?,
@@ -342,9 +338,7 @@ data class LightState(
  * Options when modifying the state of a light.
  *
  * @property on On/Off state of the light. On=true, Off=false
- * @property brightness Brightness of the light. This is a scale from
- *           the minimum brightness the light is capable of, 1, to the
- *           maximum capable brightness, 254.
+ * @property brightness Brightness of the light.
  * @property hue Hue of the light. This is a wrapping value between 0
  *           and 65535. Note, that hue/sat values are hardware
  *           dependent which means that programming two devices with
@@ -413,7 +407,7 @@ data class LightState(
 @JsonClass(generateAdapter = true)
 data class LightStateModification(
     val on: Boolean? = null,
-    @Json(name="bri") val brightness: Int? = null,
+    @Json(name="bri") val brightness: Brightness? = null,
     val hue: Int? = null,
     @Json(name="sat") val saturation: Int? = null,
     val effect: LightEffect? = null,
