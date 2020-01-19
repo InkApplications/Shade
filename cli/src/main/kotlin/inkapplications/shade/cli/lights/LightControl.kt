@@ -7,6 +7,7 @@ import com.github.ajalt.clikt.parameters.options.switch
 import com.github.ajalt.clikt.parameters.types.int
 import dagger.Reusable
 import inkapplications.shade.Shade
+import inkapplications.shade.constructs.mireds
 import inkapplications.shade.lights.LightStateModification
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
@@ -40,7 +41,7 @@ import javax.inject.Inject
             val modification = LightStateModification(
                 on = on,
                 brightness = brightness,
-                colorTemperature = colorTemperature
+                colorTemperature = colorTemperature?.mireds
             )
             shade.lights.setState(light, modification)
         }

@@ -2,10 +2,7 @@ package inkapplications.shade.lights
 
 import com.squareup.moshi.Moshi
 import inkapplications.shade.auth.TokenStorage
-import inkapplications.shade.serialization.CoordinatesListDeserializer
-import inkapplications.shade.serialization.InstantDeserializer
-import inkapplications.shade.serialization.ScanAdapter
-import inkapplications.shade.serialization.RangeDeserializer
+import inkapplications.shade.serialization.*
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import inkapplications.shade.serialization.converter.UnitConverterFactory
 import okhttp3.OkHttpClient
@@ -28,7 +25,8 @@ class ShadeLightsModule {
             .add(CoordinatesListDeserializer)
             .add(InstantDeserializer)
             .add(ScanAdapter)
-            .add(RangeDeserializer)
+            .add(ColorTemperatureDeserializer)
+            .add(TemperatureRangeDeserializer)
             .build()
         val retrofit = Retrofit.Builder()
             .client(client)
