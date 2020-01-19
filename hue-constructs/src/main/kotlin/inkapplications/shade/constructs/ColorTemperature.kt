@@ -5,11 +5,13 @@ package inkapplications.shade.constructs
  *
  * @param kelvinValue Color temperature in kelvin. Base unit to reduce rounding errors.
  */
-data class ColorTemperature internal constructor(val kelvinValue: Int) {
+data class ColorTemperature internal constructor(val kelvinValue: Int): Comparable<ColorTemperature> {
     /**
      * Value in Mireds. Base unit of the Hue API.
      */
     val miredValue: Int = 1_000_000 / kelvinValue
+
+    override fun compareTo(other: ColorTemperature): Int = kelvinValue.compareTo(other.kelvinValue)
 }
 
 /**

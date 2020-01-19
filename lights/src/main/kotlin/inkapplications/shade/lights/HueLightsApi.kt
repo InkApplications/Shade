@@ -229,7 +229,7 @@ data class LightStartupConfig(
  *           between 0 and 1.
  *           If the specified coordinates are not in the CIE color space,
  *           the closest color to the coordinates will be chosen.
- * @property colorTemperature The Mired Color temperature of the light.
+ * @property colorTemperature The Color temperature of the light.
  *           2012 connected lights are capable of 153 (6500K) to 500 (2000K).
  * @property hue Hue of the light. This is a wrapping value between 0
  *           and 65535. Note, that hue/sat values are hardware
@@ -245,7 +245,7 @@ data class LightStartupConfig(
 data class LightCustomStartupSettings(
     @Json(name = "bri") val brightness: Int?,
     @Json(name = "xy") val cieColorCoordinates: Coordinates?,
-    @Json(name="ct") val colorTemperature: Int?,
+    @Json(name="ct") val colorTemperature: ColorTemperature?,
     val hue: Int?,
     @Json(name="sat") val saturation: Int?
 )
@@ -267,7 +267,7 @@ data class ControlCapabilities(
     @Json(name = "maxlumen") val maximumLumens: Int?,
     @Json(name = "colorgamuttype") val colorGamutType: String?,
     @Json(name = "colorgamut") val colorGamut: List<Coordinates>?,
-    @Json(name = "ct") val colorTemperatures: IntRange?
+    @Json(name = "ct") val colorTemperatures: ClosedRange<ColorTemperature>?
 )
 
 /**
@@ -310,7 +310,7 @@ data class UpdateState(
  *           not, the lamp will calculate it’s closest color and use
  *           that. The CIE xy color is absolute, independent from the
  *           hardware.
- * @property colorTemperature The Mired Color temperature of the light.
+ * @property colorTemperature The Color temperature of the light.
  *           2012 connected lights are capable of 153 (6500K) to 500 (2000K).
  * @property alert The alert effect is a temporary change to the bulb’s state.
  *           Note that this contains the last alert sent to the light and
@@ -331,7 +331,7 @@ data class LightState(
     @Json(name="sat") val saturation: Int?,
     val effect: LightEffect?,
     @Json(name="xy") val cieColorCoordinates: Coordinates?,
-    @Json(name="ct") val colorTemperature: Int?,
+    @Json(name="ct") val colorTemperature: ColorTemperature?,
     val alert: AlertState?,
     @Json(name="colormode") val colorMode: ColorMode?,
     val mode: String?,
@@ -370,7 +370,7 @@ data class LightState(
  *           not, the lamp will calculate it’s closest color and use
  *           that. The CIE xy color is absolute, independent from the
  *           hardware.
- * @property colorTemperature The Mired Color temperature of the light.
+ * @property colorTemperature The Color temperature of the light.
  *           2012 connected lights are capable of 153 (6500K) to 500 (2000K).
  * @property alert The alert effect is a temporary change to the bulb’s state.
  *           Note that this contains the last alert sent to the light and
@@ -419,7 +419,7 @@ data class LightStateModification(
     val effect: LightEffect? = null,
     @Json(name="transitiontime") val transitionTime: Int? = null,
     @Json(name="xy") val cieColorCoordinates: Coordinates? = null,
-    @Json(name="ct") val colorTemperature: Int? = null,
+    @Json(name="ct") val colorTemperature: ColorTemperature? = null,
     val alert: AlertState? = null,
     @Json(name="bri_inc") val brightnessIncrement: Int? = null,
     @Json(name="sat_inc") val saturationIncrement: Int? = null,
