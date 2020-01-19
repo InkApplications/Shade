@@ -4,10 +4,12 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.switch
+import com.github.ajalt.clikt.parameters.types.float
 import com.github.ajalt.clikt.parameters.types.int
 import dagger.Reusable
 import inkapplications.shade.Shade
 import inkapplications.shade.constructs.mireds
+import inkapplications.shade.constructs.percentageBrightness
 import inkapplications.shade.groups.GroupStateModification
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
@@ -28,9 +30,9 @@ class GroupsControl @Inject constructor(
         "--off" to false
     )
 
-    private val brightness: Int? by option(
-        help = "Change the brightness on a scale of 0 to 254"
-    ).int()
+    private val brightness: Float? by option(
+        help = "Change the brightness as a percentage on a scale of 0.0 to 1.0"
+    ).float()
 
     private val colorTemperature: Int? by option(
         "--color-temperature",
@@ -41,7 +43,7 @@ class GroupsControl @Inject constructor(
         runBlocking {
             shade.groups.setState(group, GroupStateModification(
                 on = on,
-                brightness = brightness,
+                brightness = brightness?.percentageBrightness,
                 colorTemperature = colorTemperature?.mireds
             ))
         }

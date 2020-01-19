@@ -3,6 +3,7 @@ package inkapplications.shade.groups
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import inkapplications.shade.auth.TokenStorage
+import inkapplications.shade.serialization.BrightnessDeserializer
 import inkapplications.shade.serialization.ColorTemperatureDeserializer
 import inkapplications.shade.serialization.CoordinatesListDeserializer
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
@@ -43,6 +44,7 @@ class ShadeGroupsModule {
             )
             .add(ColorTemperatureDeserializer)
             .add(CoordinatesListDeserializer)
+            .add(BrightnessDeserializer)
             .build()
 
         val retrofit = Retrofit.Builder()
