@@ -7,6 +7,7 @@ import com.github.ajalt.clikt.parameters.options.switch
 import com.github.ajalt.clikt.parameters.types.int
 import dagger.Reusable
 import inkapplications.shade.Shade
+import inkapplications.shade.constructs.mireds
 import inkapplications.shade.groups.GroupStateModification
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
@@ -41,7 +42,7 @@ class GroupsControl @Inject constructor(
             shade.groups.setState(group, GroupStateModification(
                 on = on,
                 brightness = brightness,
-                colorTemperature = colorTemperature
+                colorTemperature = colorTemperature?.mireds
             ))
         }
     }

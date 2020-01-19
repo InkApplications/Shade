@@ -480,7 +480,7 @@ sealed class MutableGroupAttributes {
  *           not, the lamp will calculate it’s closest color and use
  *           that. The CIE xy color is absolute, independent from the
  *           hardware.
- * @property colorTemperature The Mired Color temperature of the light.
+ * @property colorTemperature The Color temperature of the light.
  *           2012 connected lights are capable of 153 (6500K) to 500 (2000K).
  * @property alert The alert effect is a temporary change to the bulb’s state.
  *           Note that this contains the last alert sent to the light and
@@ -530,7 +530,7 @@ data class GroupStateModification(
     val effect: LightEffect? = null,
     @Json(name="transitiontime") val transitionTime: Int? = null,
     @Json(name="xy") val cieColorCoordinates: Coordinates? = null,
-    @Json(name="ct") val colorTemperature: Int? = null,
+    @Json(name="ct") val colorTemperature: ColorTemperature? = null,
     val alert: AlertState? = null,
     @Json(name="bri_inc") val brightnessIncrement: Int? = null,
     @Json(name="sat_inc") val saturationIncrement: Int? = null,

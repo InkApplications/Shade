@@ -3,6 +3,7 @@ package inkapplications.shade.groups
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import inkapplications.shade.auth.TokenStorage
+import inkapplications.shade.serialization.ColorTemperatureDeserializer
 import inkapplications.shade.serialization.CoordinatesListDeserializer
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
@@ -40,6 +41,7 @@ class ShadeGroupsModule {
                     .withSubtype(MutableGroupAttributes.Entertainment::class.java, "Entertainment")
                     .withSubtype(MutableGroupAttributes.Zone::class.java, "Zone")
             )
+            .add(ColorTemperatureDeserializer)
             .add(CoordinatesListDeserializer)
             .build()
 
