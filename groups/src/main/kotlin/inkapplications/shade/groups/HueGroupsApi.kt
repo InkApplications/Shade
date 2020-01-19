@@ -533,7 +533,7 @@ data class GroupStateModification(
     @Json(name="bri_inc") val brightnessIncrement: Brightness? = null,
     @Json(name="sat_inc") val saturationIncrement: Int? = null,
     @Json(name="hue_inc") val hueIncrement: Int? = null,
-    @Json(name="ct_inc") val colorTemperatureIncrement: Int? = null,
+    @Json(name="ct_inc") val colorTemperatureIncrement: ColorTemperature? = null,
     @Json(name="xy_inc") val cieCoordinateTranslation: Coordinates? = null,
     val scene: String? = null
 )
