@@ -6,12 +6,14 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.switch
 import com.github.ajalt.clikt.parameters.types.float
 import com.github.ajalt.clikt.parameters.types.int
+import com.github.ajalt.clikt.parameters.types.long
 import dagger.Reusable
 import inkapplications.shade.Shade
 import inkapplications.shade.constructs.mireds
 import inkapplications.shade.constructs.percentageBrightness
 import inkapplications.shade.groups.GroupStateModification
 import kotlinx.coroutines.runBlocking
+import org.threeten.bp.Duration
 import javax.inject.Inject
 
 @Reusable
@@ -39,12 +41,18 @@ class GroupsControl @Inject constructor(
         help = "Change the color temperature in Mireds"
     ).int()
 
+    private val transitionTime: Long? by option(
+        "--transition-time",
+        help = "The time in milliseconds it should take to transition to the specified state"
+    ).long()
+
     override fun run() {
         runBlocking {
             shade.groups.setState(group, GroupStateModification(
                 on = on,
                 brightness = brightness?.percentageBrightness,
-                colorTemperature = colorTemperature?.mireds
+                colorTemperature = colorTemperature?.mireds,
+                transitionTime = transitionTime?.let(Duration::ofMillis)
             ))
         }
     }
