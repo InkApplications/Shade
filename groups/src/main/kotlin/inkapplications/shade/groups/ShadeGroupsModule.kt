@@ -6,6 +6,7 @@ import inkapplications.shade.auth.TokenStorage
 import inkapplications.shade.serialization.BrightnessDeserializer
 import inkapplications.shade.serialization.ColorTemperatureDeserializer
 import inkapplications.shade.serialization.CoordinatesListDeserializer
+import inkapplications.shade.serialization.DurationDeserializer
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -45,6 +46,7 @@ class ShadeGroupsModule {
             .add(ColorTemperatureDeserializer)
             .add(CoordinatesListDeserializer)
             .add(BrightnessDeserializer)
+            .add(DurationDeserializer)
             .build()
 
         val retrofit = Retrofit.Builder()
