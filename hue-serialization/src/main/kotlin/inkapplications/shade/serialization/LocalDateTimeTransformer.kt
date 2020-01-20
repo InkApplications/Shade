@@ -8,7 +8,7 @@ import org.threeten.bp.format.DateTimeFormatter
 /**
  * Deserialize dates as 310 Instant objects.
  */
-object LocalDateTimeDeserializer {
+object LocalDateTimeTransformer {
     @FromJson fun fromJson(time: String): LocalDateTime = LocalDateTime.parse(time)
     @ToJson fun toJson(time: LocalDateTime): String = DateTimeFormatter.ISO_DATE_TIME.format(time)
 }

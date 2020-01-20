@@ -5,15 +5,15 @@ import org.junit.Test
 import org.junit.Assert.*
 import org.threeten.bp.Duration
 
-class DurationDeserializerTest {
+class DurationTransformerTest {
 
     @Test
     fun fromJson() {
-        assertEquals(Duration.ofMillis(400), DurationDeserializer.fromJson(4))
+        assertEquals(Duration.ofMillis(400), DurationTransformer.fromJson(4))
     }
 
     @Test
     fun toJson() {
-        assertEquals(10, DurationDeserializer.toJson(Duration.ofSeconds(1)))
+        assertEquals(10, DurationTransformer.toJson(Duration.ofSeconds(1)))
     }
 }

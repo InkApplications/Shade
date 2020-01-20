@@ -10,7 +10,7 @@ import org.threeten.bp.format.DateTimeFormatter
 /**
  * Deserialize dates as 310 Instant objects.
  */
-object InstantDeserializer {
+object InstantTransformer {
     @FromJson fun fromJson(time: String): Instant = LocalDateTime.parse(time).toInstant(ZoneOffset.UTC)
     @ToJson fun toJson(time: Instant): String = DateTimeFormatter.ISO_DATE_TIME.format(time.atOffset(ZoneOffset.UTC))
 }

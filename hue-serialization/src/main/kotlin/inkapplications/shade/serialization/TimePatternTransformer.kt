@@ -17,30 +17,30 @@ import java.lang.IllegalArgumentException
  * This parses it out to a TimeFormat sealed class, which seems like
  * the most sane way to handle things that could be any format.
  */
-object TimePatternSerializer {
+object TimePatternTransformer {
     @FromJson fun fromJson(data: String): TimePattern = when {
-        data.matches(AbsoluteTimeSerializer.PATTERN) -> AbsoluteTimeSerializer.fromJson(data)
-        data.matches(RandomizedTimeSerializer.PATTERN) -> RandomizedTimeSerializer.fromJson(data)
-        data.matches(RecurringTimeSerializer.PATTERN) -> RecurringTimeSerializer.fromJson(data)
-        data.matches(RecurringRandomizedTimeSerializer.PATTERN) -> RecurringRandomizedTimeSerializer.fromJson(data)
-        data.matches(TimeIntervalSerializer.PATTERN) -> TimeIntervalSerializer.fromJson(data)
-        data.matches(ExpiringTimerSerializer.PATTERN) -> ExpiringTimerSerializer.fromJson(data)
-        data.matches(RandomExpiringTimerSerializer.PATTERN) -> RandomExpiringTimerSerializer.fromJson(data)
-        data.matches(RecurringTimerSerializer.PATTERN) -> RecurringTimerSerializer.fromJson(data)
-        data.matches(RandomRecurringTimerSerializer.PATTERN) -> RandomRecurringTimerSerializer.fromJson(data)
+        data.matches(AbsoluteTimeTransformer.PATTERN) -> AbsoluteTimeTransformer.fromJson(data)
+        data.matches(RandomizedTimeTransformer.PATTERN) -> RandomizedTimeTransformer.fromJson(data)
+        data.matches(RecurringTimeTransformer.PATTERN) -> RecurringTimeTransformer.fromJson(data)
+        data.matches(RecurringRandomizedTimeTransformer.PATTERN) -> RecurringRandomizedTimeTransformer.fromJson(data)
+        data.matches(TimeIntervalTransformer.PATTERN) -> TimeIntervalTransformer.fromJson(data)
+        data.matches(ExpiringTimerTransformer.PATTERN) -> ExpiringTimerTransformer.fromJson(data)
+        data.matches(RandomExpiringTimerTransformer.PATTERN) -> RandomExpiringTimerTransformer.fromJson(data)
+        data.matches(RecurringTimerTransformer.PATTERN) -> RecurringTimerTransformer.fromJson(data)
+        data.matches(RandomRecurringTimerTransformer.PATTERN) -> RandomRecurringTimerTransformer.fromJson(data)
         else -> throw IllegalArgumentException("Unknown TimePattern: $data")
     }
 
     @ToJson fun toJson(data: TimePattern): String = when (data) {
-        is AbsoluteTime -> AbsoluteTimeSerializer.toJson(data)
-        is RandomizedTime -> RandomizedTimeSerializer.toJson(data)
-        is RecurringTime -> RecurringTimeSerializer.toJson(data)
-        is RecurringRandomizedTime -> RecurringRandomizedTimeSerializer.toJson(data)
-        is TimeInterval -> TimeIntervalSerializer.toJson(data)
-        is ExpiringTimer -> ExpiringTimerSerializer.toJson(data)
-        is RandomExpiringTimer -> RandomExpiringTimerSerializer.toJson(data)
-        is RecurringTimer -> RecurringTimerSerializer.toJson(data)
-        is RandomRecurringTimer -> RandomRecurringTimerSerializer.toJson(data)
+        is AbsoluteTime -> AbsoluteTimeTransformer.toJson(data)
+        is RandomizedTime -> RandomizedTimeTransformer.toJson(data)
+        is RecurringTime -> RecurringTimeTransformer.toJson(data)
+        is RecurringRandomizedTime -> RecurringRandomizedTimeTransformer.toJson(data)
+        is TimeInterval -> TimeIntervalTransformer.toJson(data)
+        is ExpiringTimer -> ExpiringTimerTransformer.toJson(data)
+        is RandomExpiringTimer -> RandomExpiringTimerTransformer.toJson(data)
+        is RecurringTimer -> RecurringTimerTransformer.toJson(data)
+        is RandomRecurringTimer -> RandomRecurringTimerTransformer.toJson(data)
     }
 }
 
@@ -51,7 +51,7 @@ object TimePatternSerializer {
  * don't know what time zone it's in. So this is left as a LocalDateTime.
  * Good luck.
  */
-object AbsoluteTimeSerializer {
+object AbsoluteTimeTransformer {
     val PATTERN = Regex("(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})")
 
     @FromJson fun fromJson(data: String): AbsoluteTime = AbsoluteTime(LocalDateTime.parse(data))
@@ -64,7 +64,7 @@ object AbsoluteTimeSerializer {
  * This is used to convey an event that happens semi-randomly
  * inside of a range of times.
  */
-object RandomizedTimeSerializer {
+object RandomizedTimeTransformer {
     val PATTERN = Regex("(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})A(\\d{2}):(\\d{2}):(\\d{2})")
 
     @FromJson fun fromJson(data: String): RandomizedTime {
@@ -92,7 +92,7 @@ object RandomizedTimeSerializer {
  * This isn't documented at all, but the days of week are specified as
  * a three-digit binary flag 0-127 before the time.
  */
-object RecurringTimeSerializer {
+object RecurringTimeTransformer {
     val PATTERN = Regex("W(\\d{3})/T((\\d{2}):(\\d{2}):(\\d{2}))")
 
     @FromJson  fun fromJson(data: String): RecurringTime {
@@ -120,7 +120,7 @@ object RecurringTimeSerializer {
  * This isn't documented at all, but the days of week are specified as
  * a three-digit binary flag 0-127 before the time.
  */
-object RecurringRandomizedTimeSerializer {
+object RecurringRandomizedTimeTransformer {
     val PATTERN = Regex("W(\\d{3})/T((\\d{2}):(\\d{2}):(\\d{2}))A((\\d{2}):(\\d{2}):(\\d{2}))")
 
     @FromJson fun fromJson(data: String): RecurringRandomizedTime {
@@ -152,7 +152,7 @@ object RecurringRandomizedTimeSerializer {
  *
  * The days are optional, here and is nullable to preserve bijectivity.
  */
-object TimeIntervalSerializer {
+object TimeIntervalTransformer {
     val PATTERN = Regex("(W(\\d{3})/)?T((\\d{2}):(\\d{2}):(\\d{2}))/T((\\d{2}):(\\d{2}):(\\d{2}))")
 
     @FromJson fun fromJson(data: String): TimeInterval {
@@ -182,7 +182,7 @@ object TimeIntervalSerializer {
 /**
  * Handles a timer that expires after a given time.
  */
-object ExpiringTimerSerializer {
+object ExpiringTimerTransformer {
     val PATTERN = Regex("PT((\\d{2}):(\\d{2}):(\\d{2}))")
 
     @FromJson fun fromJson(data: String): ExpiringTimer {
@@ -204,7 +204,7 @@ object ExpiringTimerSerializer {
 /**
  * Handles timers that expire randomly within a time range.
  */
-object RandomExpiringTimerSerializer {
+object RandomExpiringTimerTransformer {
     val PATTERN = Regex("PT((\\d{2}):(\\d{2}):(\\d{2}))A((\\d{2}):(\\d{2}):(\\d{2}))")
 
     @FromJson fun fromJson(data: String): RandomExpiringTimer {
@@ -228,7 +228,7 @@ object RandomExpiringTimerSerializer {
 /**
  * Handles timers that repeat.
  */
-object RecurringTimerSerializer {
+object RecurringTimerTransformer {
     val PATTERN = Regex("R(\\d{2})?/PT((\\d{2}):(\\d{2}):(\\d{2}))")
 
     @FromJson fun fromJson(data: String): RecurringTimer {
@@ -250,7 +250,7 @@ object RecurringTimerSerializer {
 /**
  * Handles timers that repeat and expire randomly within a time range.
  */
-object RandomRecurringTimerSerializer {
+object RandomRecurringTimerTransformer {
     val PATTERN = Regex("R(\\d{2})?/PT((\\d{2}):(\\d{2}):(\\d{2}))A((\\d{2}):(\\d{2}):(\\d{2}))")
 
     @FromJson fun fromJson(data: String): RandomRecurringTimer {

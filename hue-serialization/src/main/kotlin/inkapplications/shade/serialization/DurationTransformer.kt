@@ -4,7 +4,7 @@ import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
 import org.threeten.bp.Duration
 
-object DurationDeserializer {
+object DurationTransformer {
     @FromJson
     fun fromJson(value: Long): Duration = Duration.ofMillis(value * 100)
 

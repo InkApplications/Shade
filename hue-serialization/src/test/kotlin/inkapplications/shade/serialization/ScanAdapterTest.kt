@@ -12,7 +12,7 @@ import org.threeten.bp.ZoneOffset
 class ScanAdapterTest {
     val moshi = Moshi.Builder()
         .add(ScanAdapter)
-        .add(InstantDeserializer)
+        .add(InstantTransformer)
         .build()
 
     val adapter = moshi.adapter(Scan::class.java)
