@@ -2,6 +2,7 @@ package inkapplications.shade.lights
 
 import com.squareup.moshi.*
 import inkapplications.shade.constructs.*
+import org.threeten.bp.Duration
 import org.threeten.bp.Instant
 import retrofit2.http.*
 
@@ -411,7 +412,7 @@ data class LightStateModification(
     val hue: Int? = null,
     @Json(name="sat") val saturation: Int? = null,
     val effect: LightEffect? = null,
-    @Json(name="transitiontime") val transitionTime: Int? = null,
+    @Json(name="transitiontime") val transitionTime: Duration? = null,
     @Json(name="xy") val cieColorCoordinates: Coordinates? = null,
     @Json(name="ct") val colorTemperature: ColorTemperature? = null,
     val alert: AlertState? = null,
