@@ -28,6 +28,7 @@ class ShadeLightsModule {
             .add(ColorTemperatureDeserializer)
             .add(TemperatureRangeDeserializer)
             .add(BrightnessDeserializer)
+            .add(DurationDeserializer)
             .build()
         val retrofit = Retrofit.Builder()
             .client(client)

@@ -7,6 +7,7 @@ import inkapplications.shade.lights.AlertState
 import inkapplications.shade.lights.LightEffect
 import inkapplications.shade.lights.LightState
 import inkapplications.shade.serialization.converter.FirstInCollection
+import org.threeten.bp.Duration
 import retrofit2.http.*
 
 /**
@@ -526,7 +527,7 @@ data class GroupStateModification(
     val hue: Int? = null,
     @Json(name="sat") val saturation: Int? = null,
     val effect: LightEffect? = null,
-    @Json(name="transitiontime") val transitionTime: Int? = null,
+    @Json(name="transitiontime") val transitionTime: Duration? = null,
     @Json(name="xy") val cieColorCoordinates: Coordinates? = null,
     @Json(name="ct") val colorTemperature: ColorTemperature? = null,
     val alert: AlertState? = null,
