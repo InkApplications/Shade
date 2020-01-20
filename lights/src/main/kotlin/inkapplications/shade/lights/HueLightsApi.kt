@@ -416,7 +416,7 @@ data class LightStateModification(
     @Json(name="xy") val cieColorCoordinates: Coordinates? = null,
     @Json(name="ct") val colorTemperature: ColorTemperature? = null,
     val alert: AlertState? = null,
-    @Json(name="bri_inc") val brightnessIncrement: Int? = null,
+    @Json(name="bri_inc") val brightnessIncrement: Brightness? = null,
     @Json(name="sat_inc") val saturationIncrement: Int? = null,
     @Json(name="hue_inc") val hueIncrement: Int? = null,
     @Json(name="ct_inc") val colorTemperatureIncrement: ColorTemperature? = null,
