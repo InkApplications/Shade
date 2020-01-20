@@ -6,15 +6,15 @@ import org.junit.Test
 
 import org.junit.Assert.*
 
-class ColorTemperatureDeserializerTest {
+class ColorTemperatureTransformerTest {
 
     @Test
     fun fromJson() {
-        assertEquals(200.mireds, ColorTemperatureDeserializer.fromJson(200))
+        assertEquals(200.mireds, ColorTemperatureTransformer.fromJson(200))
     }
 
     @Test
     fun toJson() {
-        assertEquals(200, ColorTemperatureDeserializer.toJson(5000.kelvin))
+        assertEquals(200, ColorTemperatureTransformer.toJson(5000.kelvin))
     }
 }

@@ -8,7 +8,7 @@ import inkapplications.shade.constructs.mireds
 /**
  * Convert custom color temperature units to/from the API's mired integer.
  */
-object ColorTemperatureDeserializer {
+object ColorTemperatureTransformer {
     @FromJson
     fun fromJson(value: Int): ColorTemperature = value.mireds
 

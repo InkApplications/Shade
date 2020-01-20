@@ -35,7 +35,7 @@ object ScanAdapter: JsonAdapter.Factory {
                     val key = reader.nextName()
                     when (key) {
                         LAST_SCAN_KEY -> reader.nextString()
-                            .let { if (it == "none") null else InstantDeserializer.fromJson(it) }
+                            .let { if (it == "none") null else InstantTransformer.fromJson(it) }
                             ?.also { lastScan = it }
                         else -> reader.peekJson()
                             .use { nameAdapter.fromJson(it) }

@@ -3,10 +3,10 @@ package inkapplications.shade.groups
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import inkapplications.shade.auth.TokenStorage
-import inkapplications.shade.serialization.BrightnessDeserializer
-import inkapplications.shade.serialization.ColorTemperatureDeserializer
-import inkapplications.shade.serialization.CoordinatesListDeserializer
-import inkapplications.shade.serialization.DurationDeserializer
+import inkapplications.shade.serialization.BrightnessTransformer
+import inkapplications.shade.serialization.ColorTemperatureTransformer
+import inkapplications.shade.serialization.CoordinatesListTransformer
+import inkapplications.shade.serialization.DurationTransformer
 import inkapplications.shade.serialization.converter.FirstInCollectionConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -43,10 +43,10 @@ class ShadeGroupsModule {
                     .withSubtype(MutableGroupAttributes.Entertainment::class.java, "Entertainment")
                     .withSubtype(MutableGroupAttributes.Zone::class.java, "Zone")
             )
-            .add(ColorTemperatureDeserializer)
-            .add(CoordinatesListDeserializer)
-            .add(BrightnessDeserializer)
-            .add(DurationDeserializer)
+            .add(ColorTemperatureTransformer)
+            .add(CoordinatesListTransformer)
+            .add(BrightnessTransformer)
+            .add(DurationTransformer)
             .build()
 
         val retrofit = Retrofit.Builder()

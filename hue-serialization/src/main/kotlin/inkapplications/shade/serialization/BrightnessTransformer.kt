@@ -5,7 +5,7 @@ import com.squareup.moshi.ToJson
 import inkapplications.shade.constructs.Brightness
 import inkapplications.shade.constructs.asByteBrightness
 
-object BrightnessDeserializer {
+object BrightnessTransformer {
     @FromJson
     fun fromJson(value: Int): Brightness = value.asByteBrightness
 

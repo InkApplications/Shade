@@ -3,7 +3,7 @@ package inkapplications.shade.scenes
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import inkapplications.shade.auth.TokenStorage
-import inkapplications.shade.serialization.InstantDeserializer
+import inkapplications.shade.serialization.InstantTransformer
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -31,7 +31,7 @@ class ShadeScenesModule {
                     .withSubtype(CreateScene.GroupScene::class.java, "GroupScene")
                     .withSubtype(CreateScene.LightScene::class.java, "LightScene")
             )
-            .add(InstantDeserializer)
+            .add(InstantTransformer)
             .build()
         val retrofit = Retrofit.Builder()
             .client(client)
