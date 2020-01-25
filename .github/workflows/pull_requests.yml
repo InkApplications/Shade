@@ -1,12 +1,13 @@
 name: Pull Request
-
 on: [pull_request]
-
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Unit Tests
-      run: ./gradlew test
+    tests:
+        runs-on: ubuntu-latest
+        steps:
+            -
+                name: Checkout
+                uses: actions/checkout@v1
+            -
+                name: Unit Tests
+                run: ./gradlew test
 

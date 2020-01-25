@@ -1,0 +1,45 @@
+on:
+  push:
+    tags: ['*']
+name: Release
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            -
+                name: Checkout
+                uses: actions/checkout@v1
+            -
+                name: Build
+                run: ./gradlew build
+            -
+                name: Create Release
+                id: create_release
+                uses: actions/create-release@1.0.0
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                with:
+                    tag_name: ${{ github.ref }}
+                    release_name: ${{ github.ref }} Release
+                    draft: true
+                    prerelease: false
+            -
+                name: Upload Cli Tar
+                uses: actions/upload-release-asset@1.0.1
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                with:
+                    upload_url: ${{ steps.create_release.outputs.upload_url }}
+                    asset_path: cli/build/distributions/shade.tar
+                    asset_name: shade.tar
+                    asset_content_type: application/x-tar
+            -
+                name: Upload Cli Zip
+                uses: actions/upload-release-asset@1.0.1
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                with:
+                    upload_url: ${{ steps.create_release.outputs.upload_url }}
+                    asset_path: cli/build/distributions/shade.zip
+                    asset_name: shade.zip
+                    asset_content_type: application/zip
