@@ -4,7 +4,10 @@ plugins {
     kotlin("kapt")
 }
 
-application.mainClassName = "inkapplications.shade.cli.MainKt"
+application {
+    applicationName = "shade"
+    mainClassName = "inkapplications.shade.cli.MainKt"
+}
 
 dependencies {
     implementation(project(":shade"))
