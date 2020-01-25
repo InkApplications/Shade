@@ -1,15 +1,26 @@
 name: Latest Build
-
-on: [push]
+on:
+    push:
+        branches: [master]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Build
-      run: ./gradlew build
-    - uses: actions/upload-artifact@master
-      with:
-        name: cli
-        path: cli/build/distributions/cli.tar
-
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - 
+                name: Checkout
+                uses: actions/checkout@v1
+            -
+                name: Build
+                run: ./gradlew build
+            -
+                name: Archive CLI Tar
+                uses: actions/upload-artifact@v1.0.0
+                with:
+                    name: shade.tar
+                    path: cli/build/distributions/shade.tar
+            -
+                name: Archive CLI Zip
+                uses: actions/upload-artifact@v1.0.0
+                with:
+                    name: shade.zip
+                    path: cli/build/distributions/shade.zip
