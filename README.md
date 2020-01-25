@@ -14,7 +14,7 @@ Connecting to bridge at 192.168.1.100
 Waiting to connect. Press the button on your Hue Device now.
 Success 🎉
 
-$ shade-cli lights:list
+$ shade lights:list
 1:
   name: Renee's Office
   uuid: 00:19:28:37:00:a1:b9:f2-0b
@@ -26,7 +26,7 @@ $ shade-cli lights:list
   type: Extended color light
   firmware: 5.127.1.26581
 
-$ shade-cli lights:control 1 --on --brightness 0.2
+$ shade lights:control 1 --on --brightness 0.2
 ```
 
 ## Kotlin SDK
