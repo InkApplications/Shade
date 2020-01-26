@@ -16,7 +16,7 @@ jobs:
                 name: Maven Publish
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                run: ./gradlew publish -Pversion=SNAPSHOT -PpublishUsername=InkApplications -PpublishPassword=$GITHUB_TOKEN -PpublishUrl=https://maven.pkg.github.com/InkApplications/Shade
+                run: ./gradlew publish -Pversion=SNAPSHOT -PpublishUsername=InkApplications -PpublishPassword=$GITHUB_TOKEN -PpublishUrl=https://maven.pkg.github.com/InkApplications
             -
                 name: Archive CLI Tar
                 uses: actions/upload-artifact@v1.0.0
