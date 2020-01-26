@@ -3,6 +3,8 @@ plugins {
     id("kotlinx-atomicfu")
 }
 
+publishJava()
+
 dependencies {
     compile(project(":discover"))
     compile(project(":lights"))

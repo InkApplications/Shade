@@ -3,6 +3,8 @@ plugins {
     kotlin("kapt")
 }
 
+publishJava()
+
 dependencies {
     compile(kotlin("stdlib"))
 
