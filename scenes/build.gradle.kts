@@ -3,6 +3,8 @@ plugins {
     kotlin("kapt")
 }
 
+publishJava()
+
 dependencies {
     compile(project(":auth"))
     compile(project(":hue-serialization"))

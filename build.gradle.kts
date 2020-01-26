@@ -9,6 +9,8 @@ buildscript {
         classpath(atomicFU("gradle-plugin"))
     }
 }
+group = "com.inkapplications.shade"
+version = if (version != "unspecified") version else "1.0-SNAPSHOT"
 
 subprojects {
     repositories {
