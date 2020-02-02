@@ -17,7 +17,7 @@ fun Project.publishJava() {
                 maven(publishUrl!!) {
                     credentials {
                         username = publishUsername!!
-                        username = publishPassword!!
+                        password = publishPassword!!
                     }
                 }
             }
