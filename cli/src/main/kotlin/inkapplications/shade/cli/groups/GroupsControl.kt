@@ -10,7 +10,7 @@ import com.github.ajalt.clikt.parameters.types.long
 import dagger.Reusable
 import inkapplications.shade.Shade
 import inkapplications.shade.constructs.kelvin
-import inkapplications.shade.constructs.percentageBrightness
+import inkapplications.shade.constructs.percentage
 import inkapplications.shade.groups.GroupStateModification
 import kotlinx.coroutines.runBlocking
 import org.threeten.bp.Duration
@@ -50,10 +50,11 @@ class GroupsControl @Inject constructor(
         runBlocking {
             shade.groups.setState(group, GroupStateModification(
                 on = on,
-                brightness = brightness?.percentageBrightness,
+                brightness = brightness?.percentage,
                 colorTemperature = colorTemperature?.kelvin,
                 transitionTime = transitionTime?.let(Duration::ofMillis)
             ))
+
         }
     }
 }

@@ -7,32 +7,32 @@ import org.junit.Assert.*
 class BrightnessTest {
     @Test
     fun testConversionsMaxValue() {
-        assertEquals(254.toUByte(), 1.0.percentageBrightness.byteValue)
-        assertEquals(254.toUByte(), 1.0f.percentageBrightness.byteValue)
-        assertEquals(254.toUByte(), 254.asByteBrightness.byteValue)
-        assertEquals(254.toUByte(), 254.toUByte().asBrightness.byteValue)
+        assertEquals(254.toUByte(), 1.0.percentage.byteValue)
+        assertEquals(254.toUByte(), 1.0f.percentage.byteValue)
+        assertEquals(254.toUByte(), 254.bytePercentage.byteValue)
+        assertEquals(254.toUByte(), 254.toUByte().percentage.byteValue)
     }
 
     @Test
     fun testConversionsMinValue() {
-        assertEquals(0.toUByte(), 0.0.percentageBrightness.byteValue)
-        assertEquals(0.toUByte(), 0.0f.percentageBrightness.byteValue)
-        assertEquals(0.toUByte(), 0.asByteBrightness.byteValue)
-        assertEquals(0.toUByte(), 0.toUByte().asBrightness.byteValue)
+        assertEquals(0.toUByte(), 0.0.percentage.byteValue)
+        assertEquals(0.toUByte(), 0.0f.percentage.byteValue)
+        assertEquals(0.toUByte(), 0.bytePercentage.byteValue)
+        assertEquals(0.toUByte(), 0.toUByte().percentage.byteValue)
     }
 
     @Test
     fun testConversionsMidValue() {
-        assertEquals(127.toUByte(), 0.5.percentageBrightness.byteValue)
-        assertEquals(127.toUByte(), 0.5f.percentageBrightness.byteValue)
-        assertEquals(127.toUByte(), 127.asByteBrightness.byteValue)
-        assertEquals(127.toUByte(), 127.toUByte().asBrightness.byteValue)
+        assertEquals(127.toUByte(), 0.5.percentage.byteValue)
+        assertEquals(127.toUByte(), 0.5f.percentage.byteValue)
+        assertEquals(127.toUByte(), 127.bytePercentage.byteValue)
+        assertEquals(127.toUByte(), 127.toUByte().percentage.byteValue)
     }
 
     @Test
     fun testPercentConversions() {
-        assertEquals(.5f, Brightness(127.toUByte()).percentageValue, .01f)
-        assertEquals(1f, Brightness(254.toUByte()).percentageValue, .01f)
-        assertEquals(0f, Brightness(0.toUByte()).percentageValue, .01f)
+        assertEquals(.5f, Percentage(127.toUByte()).fractionalValue, .01f)
+        assertEquals(1f, Percentage(254.toUByte()).fractionalValue, .01f)
+        assertEquals(0f, Percentage(0.toUByte()).fractionalValue, .01f)
     }
 }

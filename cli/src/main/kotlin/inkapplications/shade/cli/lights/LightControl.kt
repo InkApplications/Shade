@@ -10,7 +10,7 @@ import com.github.ajalt.clikt.parameters.types.long
 import dagger.Reusable
 import inkapplications.shade.Shade
 import inkapplications.shade.constructs.kelvin
-import inkapplications.shade.constructs.percentageBrightness
+import inkapplications.shade.constructs.percentage
 import inkapplications.shade.lights.LightStateModification
 import kotlinx.coroutines.runBlocking
 import org.threeten.bp.Duration
@@ -49,7 +49,7 @@ import javax.inject.Inject
         runBlocking {
             val modification = LightStateModification(
                 on = on,
-                brightness = brightness?.percentageBrightness,
+                brightness = brightness?.percentage,
                 colorTemperature = colorTemperature?.kelvin,
                 transitionTime = transitionTime?.let(Duration::ofMillis)
             )

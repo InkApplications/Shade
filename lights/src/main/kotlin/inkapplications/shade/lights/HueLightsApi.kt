@@ -242,11 +242,11 @@ data class LightStartupConfig(
  */
 @JsonClass(generateAdapter = true)
 data class LightCustomStartupSettings(
-    @Json(name = "bri") val brightness: Brightness?,
+    @Json(name = "bri") val brightness: Percentage?,
     @Json(name = "xy") val cieColorCoordinates: Coordinates?,
     @Json(name="ct") val colorTemperature: ColorTemperature?,
     val hue: Int?,
-    @Json(name="sat") val saturation: Int?
+    @Json(name="sat") val saturation: Percentage?
 )
 
 /**
@@ -294,8 +294,7 @@ data class UpdateState(
  *           same color. Programming 0 and 65535 would mean that the
  *           light will resemble the color red, 21845 for green and
  *           43690 for blue.
- * @property saturation Saturation of the light. 254 is the most
- *           saturated (colored) and 0 is the least saturated (white).
+ * @property saturation Saturation of the light.
  * @property effect The dynamic effect of the light.
  * @property cieColorCoordinates The x and y coordinates of a color
  *           in CIE color space.
@@ -323,9 +322,9 @@ data class UpdateState(
 @JsonClass(generateAdapter = true)
 data class LightState(
     val on: Boolean,
-    @Json(name="bri") val brightness: Brightness,
+    @Json(name="bri") val brightness: Percentage,
     val hue: Int?,
-    @Json(name="sat") val saturation: Int?,
+    @Json(name="sat") val saturation: Percentage?,
     val effect: LightEffect?,
     @Json(name="xy") val cieColorCoordinates: Coordinates?,
     @Json(name="ct") val colorTemperature: ColorTemperature?,
@@ -408,16 +407,16 @@ data class LightState(
 @JsonClass(generateAdapter = true)
 data class LightStateModification(
     val on: Boolean? = null,
-    @Json(name="bri") val brightness: Brightness? = null,
+    @Json(name="bri") val brightness: Percentage? = null,
     val hue: Int? = null,
-    @Json(name="sat") val saturation: Int? = null,
+    @Json(name="sat") val saturation: Percentage? = null,
     val effect: LightEffect? = null,
     @Json(name="transitiontime") val transitionTime: Duration? = null,
     @Json(name="xy") val cieColorCoordinates: Coordinates? = null,
     @Json(name="ct") val colorTemperature: ColorTemperature? = null,
     val alert: AlertState? = null,
-    @Json(name="bri_inc") val brightnessIncrement: Brightness? = null,
-    @Json(name="sat_inc") val saturationIncrement: Int? = null,
+    @Json(name="bri_inc") val brightnessIncrement: Percentage? = null,
+    @Json(name="sat_inc") val saturationIncrement: Percentage? = null,
     @Json(name="hue_inc") val hueIncrement: Int? = null,
     @Json(name="ct_inc") val colorTemperatureIncrement: ColorTemperature? = null,
     @Json(name="xy_inc") val cieCoordinateTranslation: Coordinates? = null
