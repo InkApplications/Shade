@@ -105,7 +105,7 @@ $ shade lights:list
                 command, including on/off, brightness, and color.
             </p>
             <pre><code class="shell">
-$ shade lights:control 1 --on --brightness 0.5
+$ shade lights:control 1 --on --brightness 50
             </code></pre>
         </article>
         <article>
@@ -281,7 +281,7 @@ shade.lights.getLights().forEach { (id, light) ->
                 state of the light will not change.
             </p>
             <pre><code class="kotlin">
-shade.lights.setState(id, LightStateModification(on = true, brightness = 0.5.percentage))
+shade.lights.setState(id, LightStateModification(on = true, brightness = 50.percent))
             </code></pre>
         </article>
         <article>

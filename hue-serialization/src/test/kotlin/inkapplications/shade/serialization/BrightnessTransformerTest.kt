@@ -1,6 +1,6 @@
 package inkapplications.shade.serialization
 
-import inkapplications.shade.constructs.percentage
+import inkapplications.shade.constructs.asPercentage
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -15,8 +15,8 @@ class BrightnessTransformerTest {
 
     @Test
     fun toJson() {
-        assertEquals(254, BrightnessTransformer.toJson(1f.percentage))
-        assertEquals(127, BrightnessTransformer.toJson(0.5f.percentage))
-        assertEquals(0, BrightnessTransformer.toJson(0f.percentage))
+        assertEquals(254, BrightnessTransformer.toJson(1f.asPercentage))
+        assertEquals(127, BrightnessTransformer.toJson(0.5f.asPercentage))
+        assertEquals(0, BrightnessTransformer.toJson(0f.asPercentage))
     }
 }

@@ -10,7 +10,7 @@ import com.github.ajalt.clikt.parameters.types.long
 import dagger.Reusable
 import inkapplications.shade.Shade
 import inkapplications.shade.constructs.kelvin
-import inkapplications.shade.constructs.percentage
+import inkapplications.shade.constructs.percent
 import inkapplications.shade.lights.LightStateModification
 import kotlinx.coroutines.runBlocking
 import org.threeten.bp.Duration
@@ -32,7 +32,7 @@ import javax.inject.Inject
     )
 
     private val brightness: Float? by option(
-        help = "Change the brightness as a percentage from 0.0 to 1.0"
+        help = "Change the brightness as a percentage from 0 to 100"
     ).float()
 
     private val colorTemperature: Int? by option(
@@ -49,7 +49,7 @@ import javax.inject.Inject
         runBlocking {
             val modification = LightStateModification(
                 on = on,
-                brightness = brightness?.percentage,
+                brightness = brightness?.percent,
                 colorTemperature = colorTemperature?.kelvin,
                 transitionTime = transitionTime?.let(Duration::ofMillis)
             )
