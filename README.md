@@ -26,7 +26,7 @@ $ shade lights:list
   type: Extended color light
   firmware: 5.127.1.26581
 
-$ shade lights:control 1 --on --brightness 0.2
+$ shade lights:control 1 --on --brightness 50
 ```
 
 ## Kotlin SDK
