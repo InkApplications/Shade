@@ -20,7 +20,7 @@ jobs:
                 env:
                     GITHUB_TAG: ${{ github.ref }}
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                run: ./gradlew publish -Pversion=$GITHUB_TAG -PpublishUsername=InkApplications -PpublishPassword=$GITHUB_TOKEN -PpublishUrl=https://maven.pkg.github.com/InkApplications
+                run: ./gradlew publish -Pversion=${GITHUB_TAG/refs\/tags\//} -PpublishUsername=InkApplications -PpublishPassword=$GITHUB_TOKEN -PpublishUrl=https://maven.pkg.github.com/${GITHUB_REPOSITORY}
             -
                 name: Create Release
                 id: create_release
