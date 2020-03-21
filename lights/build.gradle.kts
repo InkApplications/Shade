@@ -8,6 +8,7 @@ publishJava()
 dependencies {
     compile(project(":hue-constructs"))
     implementation(project(":hue-serialization"))
+    implementation(project(":http"))
     compile(project(":auth"))
 
     compile(kotlin("stdlib"))

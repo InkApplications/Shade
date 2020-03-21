@@ -11,6 +11,7 @@ import inkapplications.shade.serialization.converter.FirstInCollectionConverterF
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import shade.http.RateLimitInterceptor
 
 /**
  * Constructs Groups services.
@@ -24,6 +25,9 @@ class ShadeGroupsModule {
      * @param tokenStorage A place to read/write the auth token used for requests.
      */
     fun createGroups(baseUrl: String, client: OkHttpClient, tokenStorage: TokenStorage): ShadeGroups {
+        val apiClient = client.newBuilder()
+            .addInterceptor(RateLimitInterceptor)
+            .build()
         val moshi = Moshi.Builder()
             .add(
                 PolymorphicJsonAdapterFactory.of(Group::class.java, "type")
@@ -50,7 +54,7 @@ class ShadeGroupsModule {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .client(client)
+            .client(apiClient)
             .baseUrl(baseUrl)
             .addConverterFactory(FirstInCollectionConverterFactory)
             .addConverterFactory(MoshiConverterFactory.create(moshi))

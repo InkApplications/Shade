@@ -5,6 +5,7 @@ import inkapplications.shade.constructs.*
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant
 import retrofit2.http.*
+import shade.http.RATE_LIMIT
 
 /**
  * API URL for modifying the state of a Light.
@@ -44,6 +45,7 @@ internal interface HueLightsApi {
      * Set the state of a light.
      */
     @PUT(HUE_LIGHTS_STATE_URL)
+    @Headers("$RATE_LIMIT: 100")
     suspend fun setState(
         @Path("token") token: String,
         @Path("light") lightId: String,
@@ -108,6 +110,7 @@ internal interface HueLightsApi {
      * @return a pretty useless map that just contains the endpoint that was hit.
      */
     @PUT("api/{token}/lights/{light}")
+    @Headers("$RATE_LIMIT: 100")
     suspend fun setLightAttributes(
         @Path("token") token: String,
         @Path("light") lightId: String,
@@ -118,6 +121,7 @@ internal interface HueLightsApi {
      * Deletes a light from the bridge.
      */
     @DELETE("api/{token}/lights/{light}")
+    @Headers("$RATE_LIMIT: 100")
     suspend fun delete(
         @Path("token") token: String,
         @Path("light") lightId: String
