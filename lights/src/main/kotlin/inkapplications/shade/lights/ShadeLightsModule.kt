@@ -8,6 +8,7 @@ import inkapplications.shade.serialization.converter.UnitConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import shade.http.RateLimitInterceptor
 
 /**
  * Constructs lights services.
@@ -21,6 +22,9 @@ class ShadeLightsModule {
      * @param tokenStorage A place to read/write the auth token used for requests.
      */
     fun createLights(baseUrl: String, client: OkHttpClient, tokenStorage: TokenStorage): ShadeLights {
+        val apiClient = client.newBuilder()
+            .addInterceptor(RateLimitInterceptor)
+            .build()
         val moshi = Moshi.Builder()
             .add(CoordinatesListTransformer)
             .add(InstantTransformer)
@@ -31,7 +35,7 @@ class ShadeLightsModule {
             .add(DurationTransformer)
             .build()
         val retrofit = Retrofit.Builder()
-            .client(client)
+            .client(apiClient)
             .baseUrl(baseUrl)
             .addConverterFactory(UnitConverterFactory)
             .addConverterFactory(FirstInCollectionConverterFactory)

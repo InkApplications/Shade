@@ -9,6 +9,7 @@ import inkapplications.shade.lights.LightState
 import inkapplications.shade.serialization.converter.FirstInCollection
 import org.threeten.bp.Duration
 import retrofit2.http.*
+import shade.http.RATE_LIMIT
 
 /**
  * A Special group ID containing all lamps known by the bridge.
@@ -60,6 +61,7 @@ internal interface HueGroupsApi {
      * @param group The editable attributes of the group
      */
     @POST("api/{token}/groups")
+    @Headers("$RATE_LIMIT: 1000")
     @FirstInCollection
     suspend fun createGroup(@Path("token") token: String, @Body group: MutableGroupAttributes): IdToken
 
@@ -78,6 +80,7 @@ internal interface HueGroupsApi {
      * @param attributes The editable attributes to set. Optional data will be unmodified.
      */
     @PUT("api/{token}/groups/{group}")
+    @Headers("$RATE_LIMIT: 1000")
     suspend fun updateGroup(
         @Path("token") token: String,
         @Path("group") groupId: String,
@@ -91,6 +94,7 @@ internal interface HueGroupsApi {
      * @param state The state to assign to all lights in the group.
      */
     @PUT(HUE_GROUPS_STATE_URL)
+    @Headers("$RATE_LIMIT: 1000")
     suspend fun setState(
         @Path("token") token: String,
         @Path("group") groupId: String,
@@ -103,6 +107,7 @@ internal interface HueGroupsApi {
      * @param groupId The unique ID of the group to delete.
      */
     @DELETE("api/{token}/groups/{group}")
+    @Headers("$RATE_LIMIT: 1000")
     suspend fun deleteGroup(
         @Path("token") token: String,
         @Path("group") groupId: String
