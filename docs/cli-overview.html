@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Shade, Hue, CLI, Terminal, Command" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CLI / Shade</title>
+
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300|Open+Sans:300|Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" href="css/atom-one-light.css" type="text/css" />
+    <link rel="stylesheet" href="css/atom-one-dark.css" type="text/css" media="(prefers-color-scheme:dark)" />
+    <link rel="stylesheet" href="css/main-1.1.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/dark-1.1.css" type="text/css" media="(prefers-color-scheme:dark)" />
+
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<header>
+    <a href="index.html">
+        <img src="svg/logo-full-dark.svg" class="logo only-dark" alt="Shade Logo" />
+        <img src="svg/logo-full.svg" class="logo only-light" alt="Shade Logo" />
+    </a>
+</header>
+<section>
+    <header>
+        <a name="cli" href="#cli">
+            <h1>CLI</h1>
+        </a>
+    </header>
+    <p>
+        Shade's CLI can provide an API for system tools to control lights,
+        can be run manually, and functions as a sample project for the SDK!
+    </p>
+    <article>
+        <a href="#cli-install" name="cli-install">
+            <h2>Install</h2>
+        </a>
+        <h3>Using HomeBrew</h3>
+        <p>
+            If you're on a Mac with <a href="https://brew.sh">HomeBrew</a> you can
+            install Shade with the following command:
+        </p>
+        <pre><code class="shell">
+$ brew install inkapplications/cli-tools/shade
+            </code></pre>
+        <h3>Manual Install</h3>
+        <p>
+            For Windows or Linux, Shade's CLI can be installed by
+            downloading the
+            <a href="https://github.com/InkApplications/Shade/releases/latest">latest release</a>
+            and running the or <code>bin/shade.bat</code> or
+            <code>bin/shade</code> executable or adding them to your
+            <code>$PATH</code>.
+        </p>
+    </article>
+    <article>
+        <a href="#cli-connect" name="cli-connect">
+            <h2>Connect to a Hue bridge</h2>
+        </a>
+        <p>
+            You can set up your connection to Hue using the
+            <code>connect</code> command. This will automatically discover
+            hue bridges on the network and attempt to authenticate with
+            them.
+        </p>
+        <pre><code class="shell">
+$ shade connect
+Connecting to bridge at 192.168.1.100
+Waiting to connect. Press the button on your Hue Device now.
+            </code></pre>
+    </article>
+    <article>
+        <a href="#cli-lights-list" name="cli-lights-list">
+            <h2>List lights</h2>
+        </a>
+        <p>
+            You can get information about of all the lights known to your
+            Hue bridge with the <code>lights:list</code> command.
+        </p>
+        <pre><code class="shell">
+$ shade lights:list
+1:
+  name: Renee's Office
+  uuid: 00:19:28:37:00:a1:b9:f2-0b
+  type: Extended color light
+  firmware: 5.127.1.26581
+2:
+  name: Kitchen
+  uuid: 00:91:82:73:00:b9:c3:7a-0b
+  type: Extended color light
+  firmware: 5.127.1.26581
+            </code></pre>
+    </article>
+    <article>
+        <a href="#cli-lights-control" name="cli-lights-control">
+            <h2>Control Lights</h2>
+        </a>
+        <p>
+            You can control lights using the <code>lights:control</code>
+            command, including on/off, brightness, and color.
+        </p>
+        <pre><code class="shell">
+$ shade lights:control 1 --on --brightness 50
+            </code></pre>
+    </article>
+    <article>
+        <a href="#cli-more" name="cli-more">
+            <h2>Groups, Scenes, and more</h2>
+        </a>
+        <p>
+            Shade supports commands for many of Hue's API's like Groups and
+            Scenes. For a full list of commands, run
+            <code>shade-cli --help</code>
+        </p>
+    </article>
+</section>
+<section>
+    <header>
+        <a name="contributions" href="#contributions">
+            <h1>Contributions and Issues</h1>
+        </a>
+    </header>
+    <p>
+        Shade is free, <a href="https://github.com/InkApplications/Shade">Open Source</a>,
+        actively maintained, and always looking for contributions.
+    </p>
+    <p>
+        There are many Hue devices and things to do with them.<br />
+        Testing all that can be difficult.
+        If you have an issue, please
+        <a href="https://github.com/InkApplications/Shade/issues/new/choose">tell us</a>!
+    </p>
+</section>
+</body>
+</html>

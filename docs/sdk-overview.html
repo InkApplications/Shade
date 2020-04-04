@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Shade, Hue, Kotlin, Java, Android, Library" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kotlin SDK / Shade</title>
+
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300|Open+Sans:300|Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" href="css/atom-one-light.css" type="text/css" />
+    <link rel="stylesheet" href="css/atom-one-dark.css" type="text/css" media="(prefers-color-scheme:dark)" />
+    <link rel="stylesheet" href="css/main-1.1.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/dark-1.1.css" type="text/css" media="(prefers-color-scheme:dark)" />
+
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<header>
+    <a href="index.html">
+        <img src="svg/logo-full-dark.svg" class="logo only-dark" alt="Shade Logo" />
+        <img src="svg/logo-full.svg" class="logo only-light" alt="Shade Logo" />
+    </a>
+</header>
+<section>
+    <header>
+        <a name="sdk" href="#sdk">
+            <h1>Kotlin SDK</h1>
+        </a>
+    </header>
+    <p>
+        Shade's Kotlin SDK provides simple type-safe access to your Hue
+        lights. Shade is built using Kotlin's Coroutines to provide a simple
+        straightforward API on Android or the JVM.
+    </p>
+    <a name="sdk-intro" href="#sdk-intro">
+        <h2>Introduction</h2>
+    </a>
+    <p>
+        Shade can be used to connect and manipulate lights in Hue:
+    </p>
+    <pre><code class="kotlin">
+fun main() {
+    runBlocking {
+        println("Searching for Hue Bridges")
+        val shade = Shade()
+        val devices = shade.discovery.getDevices()
+        shade.setBaseUrl(devices.first().url)
+
+        println("Press the connect button on the hue bridge")
+        shade.auth.awaitToken()
+
+        println("Turning all the lights on!")
+        shade.groups.setState(
+            GROUP_ALL,
+            GroupStateModification(
+                on = on
+            )
+        )
+    }
+}
+        </code></pre>
+    <p>
+        Shade's Kotlin SDK currently supports controlling Lights, Groups,
+        Scenes and Schedules. With plans to support new API's as Hue
+        introduces them.
+    </p>
+
+    <article>
+        <a name="sdk-install" href="#sdk-install">
+            <h2>Installation</h2>
+        </a>
+        <p>
+            If you haven’t already, add JitPack to your gradle repositories in your build.gradle file:
+        </p>
+        <pre><code>
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+            </code></pre>
+        <p>
+            Next, add Shade as a dependency to your build.gradle file:
+        </p>
+        <pre><code>
+compile "com.github.Inkapplications.Shade:shade:+" // Replace with exact version
+            </code></pre>
+    </article>
+    <article>
+        <a name="sdk-discover" href="#sdk-discover">
+            <h2>Discover a Hue Bridge</h2>
+        </a>
+        <p>
+            Before you can start discovering, you need to create an
+            uninitialized Shade instance. Just call the constructor to do
+            this:
+        </p>
+
+        <pre><code class="kotlin">
+val shade = Shade()
+            </code></pre>
+
+        <p>
+            If you know the URL/IP of the Bridge you want to connect to,
+            you can specify it with the <code>initBaseUrl</code> parameter
+            in the constructor, and skip right to controlling your lights!
+        </p>
+
+        <p>
+            Shade is broken into several modules. To find a Hue Bridge to
+            connect to, you'll use the <code>discovery</code> module. Which
+            provides a <code>getDevices()</code> method.
+        </p>
+
+        <p>
+            Because multiple Hue Bridges may be on the network, discovery
+            returns a list of devices. Each device has an ID and an
+            IP address.
+        </p>
+
+        <pre><code class="kotlin">
+shade.discovery.getDevices().forEach {
+    println("found device: ${it.id} ip: ${it.ip}")
+}
+            </code></pre>
+
+        <p>
+            Once you select a device to use, you can tell Shade to connect
+            to it using the <code>setBaseUrl</code> method. This can be
+            called at any point to change the bridge this instance of
+            Shade is connected to.
+        </p>
+
+        <pre><code class="kotlin">
+shade.setBaseUrl(device.url)
+            </code></pre>
+
+        <h3>Authenticate</h3>
+        <p>
+            The last step you need to do before you can start controlling
+            lights is to request access. Hue does this by tapping the button
+            on the top of the hub. To start this process use the
+            <code>awaitToken</code> method in <code>auth</code> module.
+        </p>
+        <pre><code class="kotlin">
+shade.auth.awaitToken()
+            </code></pre>
+        <p>
+            This method will eventually timeout after an amount of time.
+            You can change how many retries and how often the SDK will poll
+            the bridge for auth using the optional <code>retries</code>
+            and <code>timeout</code> arguments on the
+            <code>awaitToken()</code> method.
+        </p>
+    </article>
+    <article>
+        <a name="sdk-lights" href="#sdk-lights">
+            <h2>Light Controls</h2>
+        </a>
+        <p>
+            Controlling individual lights is done through the
+            <code>lights</code> module.
+        </p>
+        <h3>Get a List of Lights</h3>
+        <p>
+            You can get a list of lights using <code>getLights()</code>
+        </p>
+        <pre><code class="kotlin">
+shade.lights.getLights().forEach { (id, light) ->
+    println("Found light $id named ${light.name}")
+}
+            </code></pre>
+        <h3>Change Light State</h3>
+        <p>
+            To turn lights on/off, change their color or brightness you
+            can use the <code>setState</code> method with a
+            <code>LightStateModification</code> object.
+        </p>
+        <p>
+            The <code>LightStateModification</code> object is used to
+            describe properties that will be changed on the light. If a
+            property is left <code>null</code> / not specified, the current
+            state of the light will not change.
+        </p>
+        <pre><code class="kotlin">
+shade.lights.setState(id, LightStateModification(on = true, brightness = 50.percent))
+            </code></pre>
+    </article>
+    <article>
+        <a name="sdk-groups" href="#sdk-groups">
+            <h2>Group Controls</h2>
+        </a>
+        <p>
+            Groups can be accessed through the <code>groups</code> module
+            and function very similar to individual lights.
+        </p>
+        <h3>Get a List of Groups</h3>
+        <p>
+            You can get a list of groups using <code>getGroups()</code>
+        </p>
+        <pre><code class="kotlin">
+shade.groups.getGroups().forEach { (id, light) ->
+    println("Found Group $id named ${light.name}")
+}
+            </code></pre>
+        <h3>Change a Group of Lights</h3>
+        <p>
+            Changing a group of lights is similar to changing a light state
+            except is done with a <code>GroupStateModification</code>
+            object. Like light modifications, properties that are not set
+            on the modification object will retain its current state.
+        </p>
+        <pre><code class="kotlin">
+shade.groups.setState(id, GroupStateModification(on = true, colorTemperature = 5000.kelvin))
+            </code></pre>
+    </article>
+</section>
+<section>
+    <header>
+        <a name="contributions" href="#contributions">
+            <h1>Contributions and Issues</h1>
+        </a>
+    </header>
+    <p>
+        Shade is free, <a href="https://github.com/InkApplications/Shade">Open Source</a>,
+        actively maintained, and always looking for contributions.
+    </p>
+    <p>
+        There are many Hue devices and things to do with them.<br />
+        Testing all that can be difficult.
+        If you have an issue, please
+        <a href="https://github.com/InkApplications/Shade/issues/new/choose">tell us</a>!
+    </p>
+</section>
+</body>
+</html>

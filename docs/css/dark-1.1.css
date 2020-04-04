@@ -27,3 +27,7 @@ code,
 .only-dark {
     display: initial;
 }
+
+.hero > article {
+    background-color: #292929;
+}

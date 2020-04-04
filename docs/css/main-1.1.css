@@ -20,13 +20,6 @@ h3
     color: #616161;
 }
 
-section,
-body > header
-{
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
 a,
 a:visited,
 a:hover
@@ -34,6 +27,18 @@ a:hover
     color: #212121;
     text-decoration: none;
     border-bottom: 1px solid #D84315;
+}
+a[href^="#"]
+{
+    border: none;
+}
+a[href^="#"]:hover
+{
+    cursor: default;
+}
+a[href^="#"]:focus
+{
+    outline: none;
 }
 
 h1 {
@@ -80,12 +85,71 @@ pre > code {
     margin: 1rem 0;
 }
 
+section,
+body > header
+{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+body > header {
+    margin-bottom: 2rem;
+}
+
+body > header > a,
+body > header > a:hover
+{
+    border: none
+}
+
 .logo {
     height: 5rem;
     max-width: 40vw;
     margin: .5rem 0;
 }
 
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.hero > h1 {
+    flex-basis: 70%;
+    align-self: center;
+    font-size: 2rem;
+}
+.hero > article {
+    border-radius: .5rem;
+    padding: 1rem;
+    flex-basis: 30%;
+    background-color: #f2f2f2f2;
+}
+.hero > article > h1 {
+    font-size: 2rem;
+}
+.hero > article > a {
+    border-bottom: none;
+    border: 1px solid #D84315;
+    padding: .5rem;
+    border-radius: .25rem;
+    margin: 1rem 0;
+    display: inline-block;
+    float: right;
+}
+.hero > nav {
+    flex-basis: 30%
+}
+.hero > nav > a {
+    border-bottom: none;
+    display: block;
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+.hero > nav > a:after {
+    content: '⭢';
+    padding-left: .25rem;
+    padding-top: .125rem;
+}
 .links {
     margin: 1rem 0;
 }
@@ -113,4 +177,13 @@ pre > code {
 .hidden
 {
     display: none;
+}
+
+@media(max-width: 820px) {
+    .hero > h1,
+    .hero > nav,
+    .hero > article
+     {
+        flex-basis: 100%;
+    }
 }
