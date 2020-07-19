@@ -1,6 +1,19 @@
 Change Log
 ==========
 
+1.1.1
+-----
+
+### Fixed:
+
+ - Unhandled JsonDataException when a room is empty.
+
+### Other Changes:
+ - Update ThreeTenBP to 1.4.4
+ - Update OkHttp to 4.8.0
+ - Update Moshi to 1.9.3
+ - Update Coroutines to 1.3.8
+
 1.1.0
 -----
 

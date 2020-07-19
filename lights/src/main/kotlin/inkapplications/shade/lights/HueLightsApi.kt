@@ -1,7 +1,12 @@
 package inkapplications.shade.lights
 
-import com.squareup.moshi.*
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 import inkapplications.shade.constructs.*
+import inkapplications.shade.lights.AlertState.*
+import inkapplications.shade.lights.ColorMode.*
+import inkapplications.shade.lights.LightEffect.COLOR_LOOP
+import inkapplications.shade.lights.LightEffect.NONE
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant
 import retrofit2.http.*
@@ -287,6 +292,24 @@ data class UpdateState(
 )
 
 /**
+ * Internal representation of the [LightState] class for json transformation.
+ */
+@JsonClass(generateAdapter = true)
+internal data class HueLightState(
+    val on: Boolean,
+    @Json(name="bri") val brightness: Percentage?,
+    val hue: Int?,
+    @Json(name="sat") val saturation: Percentage?,
+    val effect: LightEffect?,
+    @Json(name="xy") val cieColorCoordinates: Coordinates?,
+    @Json(name="ct") val colorTemperature: ColorTemperature?,
+    val alert: AlertState?,
+    @Json(name="colormode") val colorMode: ColorMode?,
+    val mode: String?,
+    val reachable: Boolean?
+)
+
+/**
  * State of a light.
  *
  * @property on On/Off state of the light. On=true, Off=false
@@ -323,7 +346,6 @@ data class UpdateState(
  * @property mode Hue's Docs say nothing about this one.
  * @property reachable Indicates if a light can be reached by the bridge.
  */
-@JsonClass(generateAdapter = true)
 data class LightState(
     val on: Boolean,
     @Json(name="bri") val brightness: Percentage,
