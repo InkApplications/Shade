@@ -3,6 +3,7 @@ package inkapplications.shade.groups
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import inkapplications.shade.auth.TokenStorage
+import inkapplications.shade.lights.ShadeLightsModule
 import inkapplications.shade.serialization.BrightnessTransformer
 import inkapplications.shade.serialization.ColorTemperatureTransformer
 import inkapplications.shade.serialization.CoordinatesListTransformer
@@ -16,7 +17,9 @@ import shade.http.RateLimitInterceptor
 /**
  * Constructs Groups services.
  */
-class ShadeGroupsModule {
+class ShadeGroupsModule(
+    val lightsModule: ShadeLightsModule = ShadeLightsModule()
+) {
     /**
      * Create new instance of the Groups services.
      *
@@ -47,6 +50,9 @@ class ShadeGroupsModule {
                     .withSubtype(MutableGroupAttributes.Entertainment::class.java, "Entertainment")
                     .withSubtype(MutableGroupAttributes.Zone::class.java, "Zone")
             )
+            .apply {
+                lightsModule.transformers().forEach { add(it) }
+            }
             .add(ColorTemperatureTransformer)
             .add(CoordinatesListTransformer)
             .add(BrightnessTransformer)

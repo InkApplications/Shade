@@ -14,6 +14,16 @@ import shade.http.RateLimitInterceptor
  * Constructs lights services.
  */
 class ShadeLightsModule {
+    fun transformers(): Set<Any> = setOf(
+        CoordinatesListTransformer,
+        InstantTransformer,
+        ColorTemperatureTransformer,
+        TemperatureRangeTransformer,
+        BrightnessTransformer,
+        DurationTransformer,
+        HueLightStateTransformer
+    )
+
     /**
      * Create a new instance of the lighting interface.
      *
@@ -26,13 +36,8 @@ class ShadeLightsModule {
             .addInterceptor(RateLimitInterceptor)
             .build()
         val moshi = Moshi.Builder()
-            .add(CoordinatesListTransformer)
-            .add(InstantTransformer)
             .add(ScanAdapter)
-            .add(ColorTemperatureTransformer)
-            .add(TemperatureRangeTransformer)
-            .add(BrightnessTransformer)
-            .add(DurationTransformer)
+            .apply { transformers().forEach { add(it) } }
             .build()
         val retrofit = Retrofit.Builder()
             .client(apiClient)
