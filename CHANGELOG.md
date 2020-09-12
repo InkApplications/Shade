@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+1.1.3
+-----
+
+### Fixed:
+
+ - Handle null `lastInstall` fields on hue lights' update state.
+
 1.1.2
 -----
 

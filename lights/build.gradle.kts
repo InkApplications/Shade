@@ -21,4 +21,6 @@ dependencies {
     kapt(moshi("moshi-kotlin-codegen"))
     compile(okHttp())
     compile(threeTen())
+
+    testImplementation(jUnit())
 }
