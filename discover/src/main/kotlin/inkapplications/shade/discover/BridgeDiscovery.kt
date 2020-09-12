@@ -14,7 +14,7 @@ interface BridgeDiscovery {
     /**
      * Get Bridges reported on the network.
      */
-    @GET("nupnp")
+    @GET(".")
     suspend fun getDevices(): List<Device>
 }
 

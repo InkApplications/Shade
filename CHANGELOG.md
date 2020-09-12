@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+1.1.2
+-----
+
+### Fixed:
+
+ - Migrate Discover functionality from old nupnp to new endpoint (discover.meethue.com)
+
 1.1.1
 -----
 

@@ -10,7 +10,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 class DiscoverModule {
     fun createDiscoverclient(
         client: OkHttpClient,
-        apiUrl: String = "https://www.meethue.com/api/"
+        apiUrl: String = "https://discovery.meethue.com/"
     ): BridgeDiscovery {
         return Retrofit.Builder()
             .client(client)
