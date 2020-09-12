@@ -21,7 +21,8 @@ class ShadeLightsModule {
         TemperatureRangeTransformer,
         BrightnessTransformer,
         DurationTransformer,
-        HueLightStateTransformer
+        HueLightStateTransformer,
+        HueUpdateStateTransformer
     )
 
     /**

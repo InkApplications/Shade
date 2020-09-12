@@ -285,10 +285,23 @@ data class ControlCapabilities(
  *           of this aren't documented anywhere I can find.
  * @property lastInstall Timestamp of the last firmware update.
  */
-@JsonClass(generateAdapter = true)
 data class UpdateState(
     val state: String,
-    @Json(name="lastinstall") val lastInstall: Instant
+    @Deprecated(
+        message = "Use lastKnownInstall to handle optional cases.",
+        replaceWith = ReplaceWith("lastKnownInstall")
+    )
+    val lastInstall: Instant,
+    val lastKnownInstall: Instant? = lastInstall
+)
+
+/**
+ * Internal representation of the [UpdateState] class for Json Transformation.
+ */
+@JsonClass(generateAdapter = true)
+internal data class HueUpdateState(
+    val state: String,
+    @Json(name="lastinstall") val lastInstall: Instant?
 )
 
 /**
