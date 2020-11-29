@@ -22,7 +22,7 @@ fun DependencyHandlerScope.okHttp(
 
 fun DependencyHandlerScope.threeTen(
     module: String = "threetenbp",
-    version: String = "1.4.4",
+    version: String = "1.5.0",
     includeTimezoneDb: Boolean = false
 ) = "org.threeten:$module:$version" + (":no-tzdb".takeIf { !includeTimezoneDb }.orEmpty())
 
