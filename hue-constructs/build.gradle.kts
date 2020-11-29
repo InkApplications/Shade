@@ -10,7 +10,7 @@ dependencies {
 
     implementation(moshi())
     kapt(moshi("moshi-kotlin-codegen"))
-    compile("com.github.ajalt:colormath:1.2.0")
+    compile("com.github.ajalt.colormath:colormath:2.0.0")
     compile(threeTen())
 
     testImplementation(jUnit())

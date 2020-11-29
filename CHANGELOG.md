@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+1.2.0
+-----
+
+ - Update ColorMath dependency.
+
 1.1.3
 -----
 
