@@ -2,7 +2,7 @@ import org.gradle.kotlin.dsl.DependencyHandlerScope
 
 fun DependencyHandlerScope.coroutines(
     module: String = "core",
-    version: String = "1.3.8"
+    version: String = "1.4.2"
 ) = "org.jetbrains.kotlinx:kotlinx-coroutines-$module:$version"
 
 fun DependencyHandlerScope.retrofit(

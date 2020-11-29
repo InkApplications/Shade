@@ -5,6 +5,7 @@ Change Log
 -----
 
  - Update ColorMath dependency.
+ - Update to Kotlin 1.4
 
 1.1.3
 -----
