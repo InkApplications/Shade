@@ -4,8 +4,9 @@ Change Log
 1.2.0
 -----
 
- - Update ColorMath dependency.
- - Update to Kotlin 1.4
+ - Update ColorMath dependency to 2.0.0
+ - Update to Kotlin 1.4.20
+ - Update OkHttp to 4.9.0
 
 1.1.3
 -----

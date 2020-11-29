@@ -17,7 +17,7 @@ fun DependencyHandlerScope.moshi(
 
 fun DependencyHandlerScope.okHttp(
     module: String = "okhttp",
-    version: String = "4.8.0"
+    version: String = "4.9.0"
 ) = "com.squareup.okhttp3:$module:$version"
 
 fun DependencyHandlerScope.threeTen(
