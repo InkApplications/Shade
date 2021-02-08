@@ -2,9 +2,13 @@ package inkapplications.shade.auth
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import inkapplications.shade.constructs.HueError
+import inkapplications.shade.constructs.HueResponse
 import inkapplications.shade.serialization.converter.FirstInCollection
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 /**
  * Hue Bridge Authentication endpoints.
@@ -27,6 +31,16 @@ internal interface HueAuthApi {
     @POST("api/")
     @FirstInCollection
     suspend fun createToken(@Body devicetype: DeviceType): AuthToken
+
+    /**
+     * Validate token.
+     *
+     * Send request to a non-existing endpoint to validate token based on error type:
+     * Invalid token returns error type 1 (unauthorized user)
+     * Valid token returns error type 4 (method not available)
+     */
+    @GET("api/{token}/connected")
+    suspend fun validateToken(@Path("token") token: String): HueResponse<HueError>
 }
 
 /**

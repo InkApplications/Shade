@@ -20,7 +20,8 @@ object RateLimitInterceptor: Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
-        val limit = request.header(RATE_LIMIT)?.toLong() ?: 0
+        val limit = request.header(RATE_LIMIT)?.toLong()
+            ?: return chain.proceed(request)
 
         semaphore.acquire()
         val response = request.newBuilder()

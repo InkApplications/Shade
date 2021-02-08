@@ -16,4 +16,5 @@ internal class AuthDelegate(
     }
 
     override suspend fun awaitToken(retries: Int, timeout: Long) = delegate.awaitToken(retries, timeout)
+    override suspend fun validateToken(token: String) = delegate.validateToken(token)
 }
