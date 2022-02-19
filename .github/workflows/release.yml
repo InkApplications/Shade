@@ -8,7 +8,7 @@ jobs:
         steps:
             -
                 name: Checkout
-                uses: actions/checkout@v1
+                uses: actions/checkout@v2.4.0
             -
                 name: Build
                 run: ./gradlew build
@@ -24,7 +24,7 @@ jobs:
             -
                 name: Create Release
                 id: create_release
-                uses: actions/create-release@v1.0.0
+                uses: actions/create-release@v1.1.4
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:
@@ -34,7 +34,7 @@ jobs:
                     prerelease: false
             -
                 name: Upload Cli Tar
-                uses: actions/upload-release-asset@v1.0.1
+                uses: actions/upload-release-asset@v1.0.2
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:
@@ -44,7 +44,7 @@ jobs:
                     asset_content_type: application/x-tar
             -
                 name: Upload Cli Zip
-                uses: actions/upload-release-asset@v1.0.1
+                uses: actions/upload-release-asset@v1.0.2
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:

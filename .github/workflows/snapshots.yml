@@ -8,7 +8,7 @@ jobs:
         steps:
             - 
                 name: Checkout
-                uses: actions/checkout@v1
+                uses: actions/checkout@v2.4.0
             -
                 name: Build
                 run: ./gradlew build
@@ -17,13 +17,13 @@ jobs:
                 run: cp cli/build/distributions/shade-*.zip cli/build/distributions/shade.zip && cp cli/build/distributions/shade-*.tar cli/build/distributions/shade.tar
             -
                 name: Archive CLI Tar
-                uses: actions/upload-artifact@v1.0.0
+                uses: actions/upload-artifact@v2.3.1
                 with:
                     name: shade.tar
                     path: cli/build/distributions/shade.tar
             -
                 name: Archive CLI Zip
-                uses: actions/upload-artifact@v1.0.0
+                uses: actions/upload-artifact@v2.3.1
                 with:
                     name: shade.zip
                     path: cli/build/distributions/shade.zip
