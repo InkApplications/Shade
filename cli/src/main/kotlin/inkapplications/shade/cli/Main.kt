@@ -1,15 +1,10 @@
 package inkapplications.shade.cli
 
-import com.github.ajalt.clikt.core.NoRunCliktCommand
-import com.github.ajalt.clikt.core.subcommands
+import com.github.ajalt.clikt.core.NoOpCliktCommand
 import kotlin.system.exitProcess
 
-class Main: NoRunCliktCommand() {
+class Main: NoOpCliktCommand() {
     init {
-        DaggerCliComponent.create()
-            .getCommands()
-            .sortedBy { it.commandName }
-            .run(::subcommands)
     }
 }
 

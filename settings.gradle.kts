@@ -13,4 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
+include("cli")
 include("hue-constructs")
