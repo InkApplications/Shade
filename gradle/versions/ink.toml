@@ -1,0 +1,5 @@
+[versions]
+
+[libraries.publishing]
+version = "1.0.0"
+module = "com.inkapplications.publishing:ink-publishing"

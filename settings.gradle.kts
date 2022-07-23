@@ -1,11 +1,11 @@
-include("auth")
-include("cli")
-include("discover")
-include("groups")
-include("http")
-include("hue-constructs")
-include("hue-serialization")
-include("lights")
-include("scenes")
-include("schedules")
-include("shade")
+rootProject.name = "shade"
+enableFeaturePreview("VERSION_CATALOGS")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("kotlinLibraries") {
+            from(files("gradle/versions/kotlin.toml"))
+        }
+    }
+}
