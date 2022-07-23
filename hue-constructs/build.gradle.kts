@@ -1,17 +1,17 @@
 plugins {
-    kotlin("jvm")
-    kotlin("kapt")
+    id("library")
+    kotlin("plugin.serialization")
+    id("com.inkapplications.publishing")
 }
 
-publishJava()
-
-dependencies {
-    compile(kotlin("stdlib"))
-
-    implementation(moshi())
-    kapt(moshi("moshi-kotlin-codegen"))
-    compile("com.github.ajalt.colormath:colormath:2.0.0")
-    compile(threeTen())
-
-    testImplementation(jUnit())
+kotlin {
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation(kotlinLibraries.serialization.json)
+                api(kotlinLibraries.datetime)
+                api(inkLibraries.spondee)
+            }
+        }
+    }
 }

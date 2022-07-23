@@ -3,3 +3,7 @@
 [libraries.publishing]
 version = "1.0.0"
 module = "com.inkapplications.publishing:ink-publishing"
+
+[libraries.spondee]
+version = "0.6.0"
+module = "com.inkapplications.spondee:measures"
