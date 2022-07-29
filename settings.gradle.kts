@@ -10,8 +10,14 @@ dependencyResolutionManagement {
         create("inkLibraries") {
             from(files("gradle/versions/ink.toml"))
         }
+        create("ktorLibraries") {
+            from(files("gradle/versions/ktor.toml"))
+        }
     }
 }
 
 include("cli")
-include("hue-constructs")
+include("internals")
+include("lights")
+include("serialization")
+include("structures")
