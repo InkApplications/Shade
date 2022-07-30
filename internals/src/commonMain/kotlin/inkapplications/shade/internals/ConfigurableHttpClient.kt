@@ -9,7 +9,6 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.KSerializer
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import subatomic.Atomic
 
@@ -17,15 +16,18 @@ import subatomic.Atomic
  * Implements HTTP functionality to the hue API as a configurable container.
  */
 internal class ConfigurableHttpClient(
+    hostname: String? = null,
+    applicationKey: ApplicationKey? = null,
+    securityStrategy: SecurityStrategy = SecurityStrategy.PlatformTrust,
     private val platformModule: PlatformModule,
 ): HueHttpClient, HueConfigurationContainer {
     private val json = Json {
         ignoreUnknownKeys = true
     }
-    private val defaultClient = createHttpClient(SecurityStrategy.PlatformTrust)
+    private val defaultClient = createHttpClient(securityStrategy)
     private val httpClient = Atomic(defaultClient)
-    private val hostName = Atomic<String?>(null)
-    private val applicationKey = Atomic<ApplicationKey?>(null)
+    private val hostName = Atomic(hostname)
+    private val applicationKey = Atomic(applicationKey)
 
     override suspend fun <T> getDeserializedData(vararg pathSegments: String, serializer: KSerializer<HueResponse<T>>): T {
         val httpResponse = get(*pathSegments)

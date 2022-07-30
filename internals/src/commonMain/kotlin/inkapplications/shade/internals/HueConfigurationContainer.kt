@@ -1,6 +1,7 @@
 package inkapplications.shade.internals
 
 import inkapplications.shade.structures.ApplicationKey
+import inkapplications.shade.structures.SecurityStrategy
 
 /**
  * Store configuration for communicating with the Hue API.

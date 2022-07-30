@@ -1,5 +1,6 @@
 package inkapplications.shade.internals
 
+import inkapplications.shade.structures.SecurityStrategy
 import io.ktor.client.engine.*
 
 /**

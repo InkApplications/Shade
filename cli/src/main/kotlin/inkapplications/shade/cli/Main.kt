@@ -1,10 +1,13 @@
 package inkapplications.shade.cli
 
 import com.github.ajalt.clikt.core.NoOpCliktCommand
+import com.github.ajalt.clikt.core.subcommands
+import inkapplications.shade.cli.lights.GetLightCommand
 import kotlin.system.exitProcess
 
 class Main: NoOpCliktCommand() {
     init {
+        subcommands(GetLightCommand())
     }
 }
 

@@ -1,11 +1,23 @@
 package inkapplications.shade.internals
 
+import inkapplications.shade.structures.ApplicationKey
+import inkapplications.shade.structures.SecurityStrategy
+
 /**
  * Provides access to services in the internals module.
  */
-class InternalsModule {
+class InternalsModule(
+    hostname: String? = null,
+    applicationKey: ApplicationKey? = null,
+    securityStrategy: SecurityStrategy = SecurityStrategy.PlatformTrust,
+) {
     private val platformModule = PlatformModule()
-    private val configurableHttpClient = ConfigurableHttpClient(platformModule)
+    private val configurableHttpClient = ConfigurableHttpClient(
+        hostname = hostname,
+        applicationKey = applicationKey,
+        securityStrategy = securityStrategy,
+        platformModule = platformModule
+    )
 
     /**
      * HttpClient initialized to be configured by the [configurationContainer].

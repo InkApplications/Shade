@@ -1,4 +1,4 @@
-package inkapplications.shade.internals
+package inkapplications.shade.structures
 
 private val HUE_CA = """
     -----BEGIN CERTIFICATE-----
@@ -16,7 +16,6 @@ private val HUE_CA = """
     sFgDAiEA1Fj/C3AN5psFMjo0//mrQebo0eKd3aWRx+pQY08mk48=
     -----END CERTIFICATE-----
 """.trimIndent()
-
 
 /**
  * Defines a strategy for handling SSL communication with the hue bridge.
