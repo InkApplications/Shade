@@ -25,3 +25,15 @@ module = "org.jetbrains.kotlinx:kotlinx-serialization-json"
 [libraries.datetime]
 version = "0.4.0"
 module = "org.jetbrains.kotlinx:kotlinx-datetime"
+
+[libraries.test-junit]
+version.ref = "kotlin"
+module = "org.jetbrains.kotlin:kotlin-test-junit"
+
+[libraries.test-core]
+version.ref = "kotlin"
+module = "org.jetbrains.kotlin:kotlin-test"
+
+[libraries.test-annotations]
+version.ref = "kotlin"
+module = "org.jetbrains.kotlin:kotlin-test-annotations-common"

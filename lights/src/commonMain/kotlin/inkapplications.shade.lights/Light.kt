@@ -29,15 +29,22 @@ data class Light(
     val owner: ResourceReference,
 
     /**
-     * On/Off state of the light on=true, off=false
+     * On/Off state of the light
      */
     @SerialName("on")
-    val power: PowerInfo,
+    val powerInfo: PowerInfo,
 
     /**
      * Information about the light's dimming, if supported.
      */
-    val dimming: DimmingInfo? = null,
+    @SerialName("dimming")
+    val dimmingInfo: DimmingInfo? = null,
+
+    /**
+     * Information about the color temperature and capabilities of the light.
+     */
+    @SerialName("color_temperature")
+    val colorTemperatureInfo: ColorTemperatureInfo? = null,
 
     /**
      * Clip v1 resource identifier.

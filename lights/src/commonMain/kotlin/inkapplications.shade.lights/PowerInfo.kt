@@ -3,9 +3,12 @@ package inkapplications.shade.lights
 import kotlinx.serialization.Serializable
 
 /**
- * Wraps a boolean for no discernible reason.
+ * Describes the power state of a light.
  */
 @Serializable
 data class PowerInfo(
+    /**
+     * Whether the light is currently powered on.
+     */
     val on: Boolean,
 )

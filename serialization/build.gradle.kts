@@ -12,5 +12,13 @@ kotlin {
                 api(inkLibraries.spondee)
             }
         }
+
+        val jvmTest by getting {
+            dependencies {
+                implementation(kotlinLibraries.test.core)
+                implementation(kotlinLibraries.test.junit)
+                implementation(kotlinLibraries.test.annotations)
+            }
+        }
     }
 }
