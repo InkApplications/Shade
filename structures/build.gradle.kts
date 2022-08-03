@@ -13,6 +13,7 @@ kotlin {
                 api(kotlinLibraries.coroutines.core)
                 api(kotlinLibraries.datetime)
                 api(inkLibraries.spondee)
+                api("com.github.ajalt.colormath:colormath:3.2.0")
             }
         }
     }

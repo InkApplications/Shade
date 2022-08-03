@@ -5,6 +5,7 @@ import inkapplications.shade.cli.ShadeCommand
 import inkapplications.shade.cli.resourceId
 import inkapplications.spondee.measure.Kelvin
 import inkapplications.spondee.measure.toTemperature
+import inkapplications.spondee.scalar.WholePercentage
 
 class GetLightCommand: ShadeCommand(
     help = "Get data for a specific light"
@@ -14,13 +15,21 @@ class GetLightCommand: ShadeCommand(
     override suspend fun runCommand(): Int {
         val light = shade.lights.getLight(lightId)
 
+        debug { echo(light) }
+
         echo("${light.id.value}:")
         echo("    On: ${light.powerInfo.on}")
-        val temperature = light.colorTemperatureInfo
-        if (temperature != null) {
-            val temperatureString = temperature.temperature?.toTemperature()?.let(Kelvin::format) ?: "--"
+        light.colorTemperatureInfo?.run {
+            val temperatureString = temperature?.toTemperature()?.let(Kelvin::format) ?: "--"
             echo("    Temperature: $temperatureString")
-            echo("    Temperature Range: ${temperature.range}")
+            echo("    Temperature Range: ${range}")
+        }
+        light.dimmingInfo?.run {
+            echo("    Brightness: ${WholePercentage.format(brightness)}")
+        }
+        light.colorInfo?.run {
+            echo("    Color (rgb): ${color.toSRGB().toHex()}")
+            echo("    Color (xy): [${color.toXYZ().toCIExyY().x},${color.toXYZ().toCIExyY().y}]")
         }
 
         return 0

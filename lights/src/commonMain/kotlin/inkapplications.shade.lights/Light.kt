@@ -47,6 +47,12 @@ data class Light(
     val colorTemperatureInfo: ColorTemperatureInfo? = null,
 
     /**
+     * Information about the bulb's color and color capabilities.
+     */
+    @SerialName("color")
+    val colorInfo: ColorInfo? = null,
+
+    /**
      * Clip v1 resource identifier.
      */
     @Deprecated("V1 Resource")

@@ -17,10 +17,18 @@ abstract class ShadeCommand(
     private val hostname by argument(
         help = "Hostname of the Hue bridge. "
     )
+
     private val key by argument(
         help = "Application API Key/Token for connecting to the hue bridge"
     )
-    private val insecure by option().flag()
+
+    private val insecure by option(
+        help = "Use an insecure SSL connection for requests to the Hue Bridge"
+    ).flag()
+
+    protected val debug by option(
+        help = "Print debugging information in output"
+    ).flag()
 
     protected val shade by lazy {
         Shade(
@@ -44,6 +52,7 @@ abstract class ShadeCommand(
             throw ProgramResult(it)
         }
         result.onFailure {
+            if (debug) it.printStackTrace()
             when (it) {
                 is UnauthorizedException -> echo("API Token Invalid", err = true)
                 is ShadeException -> echo("Error: ${it.message}", err = true)
@@ -51,6 +60,13 @@ abstract class ShadeCommand(
             }
             throw ProgramResult(1)
         }
+    }
+
+    /**
+     * Execute a block of code only if the debug flag is enabled
+     */
+    protected inline fun debug(action: () -> Unit) {
+        if (debug) action()
     }
 
     abstract suspend fun runCommand(): Int
