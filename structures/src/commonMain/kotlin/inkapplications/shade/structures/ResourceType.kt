@@ -14,8 +14,9 @@ value class ResourceType private constructor(val key: String) {
     override fun toString(): String = key
 
     companion object {
+        val Device = ResourceType("device")
         val Light = ResourceType("light")
-        fun values(): Array<ResourceType> = arrayOf(Light)
+        fun values(): Array<ResourceType> = arrayOf(Device, Light)
         fun valueOf(key: String) = values().single { it.key == key }
     }
 

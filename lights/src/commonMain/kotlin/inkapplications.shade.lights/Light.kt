@@ -2,7 +2,6 @@ package inkapplications.shade.lights
 
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
-import inkapplications.shade.structures.ResourceType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -11,11 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Light(
-    /**
-     * Type of the supported resources
-     */
-    val type: ResourceType,
-
     /**
      * Unique identifier representing a specific resource instance
      */
@@ -88,5 +82,6 @@ data class Light(
     /**
      * Basic feature containing timed effect properties.
      */
+    @SerialName("timed_effects")
     val timedEffects: TimedLightingEffectInfo? = null,
 )
