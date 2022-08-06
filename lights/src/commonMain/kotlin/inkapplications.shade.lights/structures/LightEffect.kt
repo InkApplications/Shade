@@ -1,4 +1,4 @@
-package inkapplications.shade.lights
+package inkapplications.shade.lights.structures
 
 import inkapplications.shade.serialization.DelegateSerializer
 import kotlinx.serialization.Serializable
@@ -19,7 +19,7 @@ value class LightEffect private constructor(val key: String) {
         val None = LightEffect("no_effect")
 
         fun values(): Array<LightEffect> = arrayOf(Fire, Candle, None)
-        fun valueOf(key: String) = LightEffect.values().single { it.key == key }
+        fun valueOf(key: String) = values().single { it.key == key }
     }
 
     internal object Serializer: DelegateSerializer<String, LightEffect>(String.serializer()) {

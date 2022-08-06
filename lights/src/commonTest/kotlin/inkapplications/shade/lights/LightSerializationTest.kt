@@ -1,5 +1,6 @@
 package inkapplications.shade.lights
 
+import inkapplications.shade.lights.structures.*
 import inkapplications.shade.structures.ResourceType
 import inkapplications.spondee.measure.Mireds
 import inkapplications.spondee.scalar.WholePercentage
@@ -131,15 +132,15 @@ class LightSerializationTest {
         assertEquals(153, light.colorTemperatureInfo?.range?.coolest?.value(Mireds)?.roundToInt())
         assertEquals(454, light.colorTemperatureInfo?.range?.warmest?.value(Mireds)?.roundToInt())
         assertEquals(true, light.colorTemperatureInfo?.valid)
-        assertEquals(0.3171f, light.colorInfo?.color?.toXYZ()?.toCIExyY()?.x)
-        assertEquals(0.3327f, light.colorInfo?.color?.toXYZ()?.toCIExyY()?.y)
+        assertEquals(0.3171f, light.colorInfo?.color?.toXYZ()?.toCIExyY()?.x ?: 0f, 1e-16f)
+        assertEquals(0.3327f, light.colorInfo?.color?.toXYZ()?.toCIExyY()?.y ?: 0f, 1e-16f)
         assertEquals(GamutType.C, light.colorInfo?.gamutType)
-        assertEquals(0.6915f, light.colorInfo?.gamut?.red?.x)
-        assertEquals(0.3083f, light.colorInfo?.gamut?.red?.y)
-        assertEquals(0.17f, light.colorInfo?.gamut?.green?.x)
-        assertEquals(0.7f, light.colorInfo?.gamut?.green?.y)
-        assertEquals(0.1532f, light.colorInfo?.gamut?.blue?.x)
-        assertEquals(0.0475f, light.colorInfo?.gamut?.blue?.y)
+        assertEquals(0.6915f, light.colorInfo?.gamut?.red?.x ?: 0f, 1e-16f)
+        assertEquals(0.3083f, light.colorInfo?.gamut?.red?.y ?: 0f, 1e-16f)
+        assertEquals(0.17f, light.colorInfo?.gamut?.green?.x ?: 0f, 1e-16f)
+        assertEquals(0.7f, light.colorInfo?.gamut?.green?.y ?: 0f, 1e-16f)
+        assertEquals(0.1532f, light.colorInfo?.gamut?.blue?.x ?: 0f, 1e-16f)
+        assertEquals(0.0475f, light.colorInfo?.gamut?.blue?.y ?: 0f, 1e-16f)
         assertEquals("/lights/2", light.v1Id)
         assertEquals(12.3, light.dynamics?.speed?.value(WholePercentage) ?: 0.0, 1e-16)
         assertEquals(false, light.dynamics?.speedValid)
@@ -147,8 +148,8 @@ class LightSerializationTest {
         assertEquals(listOf(DynamicsStatus.None), light.dynamics?.statusValues)
         assertEquals(listOf(AlertEffectType.Breathe), light.alertInfo?.actionValues)
         assertEquals(5, light.gradient?.pointsCapable)
-        assertEquals(0.12f, light.gradient?.points?.single()?.colorInfo?.color?.toXYZ()?.toCIExyY()?.x)
-        assertEquals(0.34f, light.gradient?.points?.single()?.colorInfo?.color?.toXYZ()?.toCIExyY()?.y)
+        assertEquals(0.12f, light.gradient?.points?.single()?.colorInfo?.color?.toXYZ()?.toCIExyY()?.x ?: 0f, 1e-16f)
+        assertEquals(0.34f, light.gradient?.points?.single()?.colorInfo?.color?.toXYZ()?.toCIExyY()?.y ?: 0f, 1e-16f)
         assertEquals(listOf(LightEffect.None, LightEffect.Candle), light.effects?.values)
         assertEquals(LightEffect.Candle, light.effects?.status)
         assertEquals(listOf(TimedLightEffect.None), light.timedEffects?.values)

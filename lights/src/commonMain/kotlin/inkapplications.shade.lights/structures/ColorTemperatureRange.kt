@@ -1,4 +1,4 @@
-package inkapplications.shade.lights
+package inkapplications.shade.lights.structures
 
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Kelvin

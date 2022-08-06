@@ -1,5 +1,6 @@
 package inkapplications.shade.lights
 
+import inkapplications.shade.lights.structures.Light
 import inkapplications.shade.structures.ResourceId
 
 /**

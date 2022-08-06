@@ -1,4 +1,4 @@
-package inkapplications.shade.lights
+package inkapplications.shade.lights.structures
 
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference

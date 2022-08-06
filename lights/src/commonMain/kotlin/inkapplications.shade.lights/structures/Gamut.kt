@@ -1,4 +1,4 @@
-package inkapplications.shade.lights
+package inkapplications.shade.lights.structures
 
 import com.github.ajalt.colormath.Illuminant
 import com.github.ajalt.colormath.model.RGBColorSpace
