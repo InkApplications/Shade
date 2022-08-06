@@ -2,19 +2,18 @@ package inkapplications.shade.lights
 
 import inkapplications.shade.serialization.DelegateSerializer
 import kotlinx.serialization.builtins.serializer
+import kotlin.jvm.JvmInline
 
 /**
  * Wraps potential values for [LightDynamics] state.
  */
-open class DynamicsStatus private constructor(val key: String) {
-    object DynamicPalette: DynamicsStatus("dynamic_palette")
-    object None: DynamicsStatus("none")
-
-    override fun equals(other: Any?): Boolean = key == (other as? DynamicsStatus)?.key
-    override fun hashCode(): Int = key.hashCode()
+@JvmInline
+value class DynamicsStatus private constructor(val key: String) {
     override fun toString(): String = key
 
     companion object {
+        val DynamicPalette = DynamicsStatus("dynamic_palette")
+        val None = DynamicsStatus("none")
         fun values(): Array<DynamicsStatus> = arrayOf(None, DynamicPalette)
         fun valueOf(key: String) = values().single { it.key == key }
     }
