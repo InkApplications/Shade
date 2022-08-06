@@ -74,5 +74,9 @@ data class Light(
      */
     @SerialName("alert")
     val alertInfo: AlertInfo? = null,
-)
 
+    /**
+     * Gradient information if supported.
+     */
+    val gradient: Gradient? = null,
+)

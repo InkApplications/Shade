@@ -10,11 +10,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Gamut(
-    @Serializable(with = ColorInfo.ChromaticitySerializer::class)
+    @Serializable(with = Chromaticity.CieChromaticitySerializer::class)
     val red: xyY,
-    @Serializable(with = ColorInfo.ChromaticitySerializer::class)
+    @Serializable(with = Chromaticity.CieChromaticitySerializer::class)
     val green: xyY,
-    @Serializable(with = ColorInfo.ChromaticitySerializer::class)
+    @Serializable(with = Chromaticity.CieChromaticitySerializer::class)
     val blue: xyY,
 ) {
     fun toColorSpace() = RGBColorSpace(
