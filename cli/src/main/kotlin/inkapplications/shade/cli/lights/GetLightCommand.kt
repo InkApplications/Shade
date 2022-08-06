@@ -19,6 +19,7 @@ class GetLightCommand: ShadeCommand(
 
         echo("${light.id.value}:")
         echo("    On: ${light.powerInfo.on}")
+        echo("    Mode: ${light.mode}")
         light.colorTemperatureInfo?.run {
             val temperatureString = temperature?.toTemperature()?.let(Kelvin::format) ?: "--"
             echo("    Temperature: $temperatureString")

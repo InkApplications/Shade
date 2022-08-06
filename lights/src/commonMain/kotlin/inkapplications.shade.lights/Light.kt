@@ -35,6 +35,11 @@ data class Light(
     val powerInfo: PowerInfo,
 
     /**
+     * Current mode that the light is in
+     */
+    val mode: LightMode,
+
+    /**
      * Information about the light's dimming, if supported.
      */
     @SerialName("dimming")

@@ -38,7 +38,7 @@ value class GamutType private constructor(val key: String) {
         fun valueOf(key: String) = values().single { it.key == key }
     }
 
-    internal object Serializer: DelegateSerializer<String, GamutType>(String.serializer()){
+    internal object Serializer: DelegateSerializer<String, GamutType>(String.serializer()) {
         override fun serialize(data: GamutType): String = data.key
         override fun deserialize(data: String): GamutType = GamutType(data)
     }

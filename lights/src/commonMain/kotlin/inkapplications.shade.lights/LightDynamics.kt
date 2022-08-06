@@ -13,14 +13,13 @@ data class LightDynamics(
     /**
      * Current status of the lamp with dynamics.
      */
-    @Serializable(with = DynamicsStatus.Serializer::class)
     val status: DynamicsStatus,
 
     /**
      * Statuses in which a lamp could be when playing dynamics.
      */
     @SerialName("status_values")
-    val statusValues: List<@Serializable(with = DynamicsStatus.Serializer::class) DynamicsStatus>,
+    val statusValues: List<DynamicsStatus>,
 
     /**
      * Speed of dynamic palette or effect.

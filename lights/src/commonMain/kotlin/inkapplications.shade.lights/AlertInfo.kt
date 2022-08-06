@@ -12,5 +12,5 @@ data class AlertInfo(
      * Alert effects that the light supports.
      */
     @SerialName("action_values")
-    val actionValues: List<@Serializable(with = AlertEffectType.Serializer::class) AlertEffectType>
+    val actionValues: List<AlertEffectType>
 )

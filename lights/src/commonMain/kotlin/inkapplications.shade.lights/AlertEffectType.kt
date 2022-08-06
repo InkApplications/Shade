@@ -1,6 +1,7 @@
 package inkapplications.shade.lights
 
 import inkapplications.shade.serialization.DelegateSerializer
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.serializer
 import kotlin.jvm.JvmInline
 
@@ -8,6 +9,7 @@ import kotlin.jvm.JvmInline
  * Wraps alert effects for lighting
  */
 @JvmInline
+@Serializable(with = AlertEffectType.Serializer::class)
 value class AlertEffectType private constructor(val key: String) {
     override fun toString(): String = key
 
