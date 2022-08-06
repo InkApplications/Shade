@@ -8,7 +8,8 @@ import kotlinx.serialization.builtins.serializer
 /**
  * Serialize a percentage value as an integer.
  */
-object PercentageSerializer: DelegateSerializer<Double, Percentage>(Double.serializer()) {
+object WholePercentageSerializer: DelegateSerializer<Double, Percentage>(Double.serializer()) {
     override fun serialize(data: Percentage): Double = data.value(WholePercentage)
     override fun deserialize(data: Double): Percentage = WholePercentage.of(data)
 }
+

@@ -58,4 +58,10 @@ data class Light(
     @Deprecated("V1 Resource")
     @SerialName("id_v1")
     val v1Id: String? = null,
+
+    /**
+     * Light dynamics information if supported
+     */
+    val dynamics: LightDynamics? = null,
 )
+

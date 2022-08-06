@@ -31,6 +31,11 @@ class GetLightCommand: ShadeCommand(
             echo("    Color (rgb): ${color.toSRGB().toHex()}")
             echo("    Color (xy): [${color.toXYZ().toCIExyY().x},${color.toXYZ().toCIExyY().y}]")
         }
+        light.dynamics?.run {
+            echo("    Current Dynamics: ${status}")
+            echo("    Available Dynamics: ${statusValues.joinToString()}")
+            echo("    Dynamics Speed: ${WholePercentage.format(speed)}${"*".takeUnless { speedValid }.orEmpty()}")
+        }
 
         return 0
     }
