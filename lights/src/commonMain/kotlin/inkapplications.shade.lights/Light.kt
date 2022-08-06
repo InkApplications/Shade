@@ -84,4 +84,9 @@ data class Light(
      * Basic feature containing effect properties.
      */
     val effects: LightingEffectInfo? = null,
+
+    /**
+     * Basic feature containing timed effect properties.
+     */
+    val timedEffects: TimedLightingEffectInfo? = null,
 )
