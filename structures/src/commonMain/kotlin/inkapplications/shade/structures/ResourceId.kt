@@ -11,6 +11,7 @@ import kotlin.jvm.JvmInline
 @JvmInline
 @Serializable(with = ResourceId.Serializer::class)
 value class ResourceId(val value: String) {
+    override fun toString(): String = value
     internal object Serializer: DelegateSerializer<String, ResourceId>(String.serializer()) {
         override fun serialize(data: ResourceId): String = data.value
         override fun deserialize(data: String): ResourceId = ResourceId(data)
