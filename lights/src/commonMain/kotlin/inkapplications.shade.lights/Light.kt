@@ -63,5 +63,11 @@ data class Light(
      * Light dynamics information if supported
      */
     val dynamics: LightDynamics? = null,
+
+    /**
+     * Information on alerting effects for this light
+     */
+    @SerialName("alert")
+    val alertInfo: AlertInfo? = null,
 )
 
