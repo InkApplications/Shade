@@ -79,4 +79,9 @@ data class Light(
      * Gradient information if supported.
      */
     val gradient: Gradient? = null,
+
+    /**
+     * Basic feature containing effect properties.
+     */
+    val effects: LightingEffectInfo? = null,
 )
