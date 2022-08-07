@@ -1,0 +1,14 @@
+name: V2 Build
+on:
+    push:
+        branches: [2.0]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - 
+                name: Checkout
+                uses: actions/checkout@v2.4.0
+            -
+                name: Build
+                run: ./gradlew build jvmTest
