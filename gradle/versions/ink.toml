@@ -1,4 +1,5 @@
 [versions]
+kimchi = "1.1.0"
 
 [libraries.publishing]
 version = "1.0.0"
@@ -11,3 +12,11 @@ module = "com.inkapplications.spondee:measures"
 [libraries.subatomic]
 version = "1.1.0"
 module = "com.inkapplications.subatomic:core"
+
+[libraries.kimchi-logger]
+version.ref = "kimchi"
+module = "com.inkapplications.kimchi:logger"
+
+[libraries.kimchi-core]
+version.ref = "kimchi"
+module = "com.inkapplications.kimchi:core"

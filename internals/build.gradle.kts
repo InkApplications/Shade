@@ -13,6 +13,7 @@ kotlin {
                 implementation(inkLibraries.subatomic)
                 implementation(projects.serialization)
                 api(projects.structures)
+                api(inkLibraries.kimchi.logger)
 
                 implementation(ktorLibraries.client.contentnegotiation)
                 implementation(ktorLibraries.serialization.json)

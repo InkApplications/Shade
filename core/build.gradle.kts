@@ -11,6 +11,8 @@ kotlin {
                 api(projects.structures)
                 api(projects.discover)
                 api(projects.lights)
+
+                api(inkLibraries.kimchi.logger)
             }
         }
     }

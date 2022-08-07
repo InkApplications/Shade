@@ -8,7 +8,7 @@ object ListLightsCommand: ShadeCommand(
     override suspend fun runCommand(): Int {
         val lights = shade.lights.getLights()
 
-        debug { echo(lights) }
+        logger.debug("Got Lights: $lights")
         lights.forEach { echoLight(it) }
 
         return 0

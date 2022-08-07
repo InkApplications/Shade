@@ -12,7 +12,7 @@ object GetLightCommand: ShadeCommand(
     override suspend fun runCommand(): Int {
         val light = shade.lights.getLight(lightId)
 
-        debug { echo(light) }
+        logger.debug("Got Light: $light")
         echoLight(light)
 
         return 0

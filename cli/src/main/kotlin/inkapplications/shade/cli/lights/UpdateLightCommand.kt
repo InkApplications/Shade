@@ -36,8 +36,9 @@ object UpdateLightCommand: ShadeCommand(
                 )
             },
         )
-        debug { echo(parameters) }
-        shade.lights.updateLight(lightId, parameters)
+        logger.debug("Using Parameters: $parameters")
+        val response = shade.lights.updateLight(lightId, parameters)
+        logger.info("Got response: $response")
 
         return 0
     }

@@ -8,6 +8,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
+import kimchi.logger.KimchiLogger
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.Json
 import subatomic.Atomic
@@ -20,6 +21,7 @@ internal class ConfigurableHttpClient(
     applicationKey: ApplicationKey? = null,
     securityStrategy: SecurityStrategy = SecurityStrategy.PlatformTrust,
     private val platformModule: PlatformModule,
+    private val logger: KimchiLogger,
 ): HueHttpClient, HueConfigurationContainer {
     private val json = Json {
         ignoreUnknownKeys = true
@@ -45,7 +47,9 @@ internal class ConfigurableHttpClient(
         responseSerializer: KSerializer<HueResponse<RESPONSE>>
     ): RESPONSE {
         val requestBody = try {
-            json.encodeToString(requestSerializer, body)
+            json.encodeToString(requestSerializer, body).also {
+                logger.debug("Request Json encoded as: $it")
+            }
         } catch (e: Throwable) {
             throw SerializationError("Error thrown while serializing request body.", e)
         }
@@ -56,6 +60,7 @@ internal class ConfigurableHttpClient(
 
     private suspend fun <T> KSerializer<HueResponse<T>>.parseResponse(httpResponse: HttpResponse): T {
         val bodyText = httpResponse.bodyAsText()
+        logger.debug("Response Body: $bodyText")
         val response = try {
             json.decodeFromString(this, bodyText)
         } catch (e: Throwable) {
@@ -87,13 +92,21 @@ internal class ConfigurableHttpClient(
                 url {
                     host = hostName
                     encodedPathSegments = listOf("clip", "v2", *pathSegments)
-                    applicationKey.value?.run { headers.append("hue-application-key", key) }
+                    applicationKey.value?.run {
+                        logger.debug("Attaching Application key to request")
+                        headers.append("hue-application-key", key)
+                    }
                     protocol = URLProtocol.HTTPS
+
+                    logger.debug { "--> ${method.value} ${buildString()}" }
+                    body?.run(logger::debug)
                 }
             }
         } catch (e: Throwable) {
             throw NetworkException("Unknown Error making API Request", e)
         }
+
+        logger.debug("<-- ${response.status.value}")
 
         if (response.status in setOf(HttpStatusCode.Forbidden, HttpStatusCode.Unauthorized)) {
             throw UnauthorizedException()
@@ -103,11 +116,13 @@ internal class ConfigurableHttpClient(
     }
 
     override fun setHost(hostname: String, securityStrategy: SecurityStrategy) {
+        logger.trace("Setting host to $hostname with Security: $securityStrategy")
         httpClient.value = createHttpClient(securityStrategy)
         hostName.value = hostname
     }
 
     override fun setApplicationKey(key: ApplicationKey) {
+        logger.trace("Application key set")
         applicationKey.value = key
     }
 

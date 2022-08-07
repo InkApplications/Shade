@@ -7,6 +7,7 @@ import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import inkapplications.shade.core.Shade
 import inkapplications.shade.structures.*
+import kimchi.logger.*
 import kotlinx.coroutines.runBlocking
 
 abstract class ShadeCommand(
@@ -26,9 +27,26 @@ abstract class ShadeCommand(
         help = "Use an insecure SSL connection for requests to the Hue Bridge"
     ).flag()
 
-    protected val debug by option(
-        help = "Print debugging information in output"
+    protected val verbose by option(
+        help = "Print all logging information in output"
     ).flag()
+
+    protected val debug by option(
+        help = "Print debug logging information in output"
+    ).flag()
+
+    protected val info by option(
+        help = "Print logging information in output"
+    ).flag()
+
+    protected val logger by lazy {
+        when {
+            verbose -> ConsolidatedLogger(defaultWriter)
+            debug -> ConsolidatedLogger(defaultWriter.withThreshold(LogLevel.DEBUG))
+            info -> ConsolidatedLogger(defaultWriter.withThreshold(LogLevel.INFO))
+            else -> EmptyLogger
+        }
+    }
 
     protected val shade by lazy {
         Shade(
@@ -38,7 +56,8 @@ abstract class ShadeCommand(
                 SecurityStrategy.Insecure(hostname)
             } else {
                 SecurityStrategy.PlatformTrust
-            }
+            },
+            logger = logger,
         )
     }
 
@@ -60,13 +79,6 @@ abstract class ShadeCommand(
             }
             throw ProgramResult(1)
         }
-    }
-
-    /**
-     * Execute a block of code only if the debug flag is enabled
-     */
-    protected inline fun debug(action: () -> Unit) {
-        if (debug) action()
     }
 
     abstract suspend fun runCommand(): Int
