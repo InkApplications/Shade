@@ -4,6 +4,7 @@ import com.github.ajalt.clikt.core.NoOpCliktCommand
 import com.github.ajalt.clikt.core.subcommands
 import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
+import inkapplications.shade.cli.lights.UpdateLightCommand
 import kotlin.system.exitProcess
 
 class Main: NoOpCliktCommand() {
@@ -11,6 +12,7 @@ class Main: NoOpCliktCommand() {
         subcommands(
             GetLightCommand,
             ListLightsCommand,
+            UpdateLightCommand,
         )
     }
 }

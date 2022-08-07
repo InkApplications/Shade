@@ -24,12 +24,23 @@ class UnexpectedStateException(message: String, cause: Throwable? = null): Inter
  * Exception thrown if the SDK was unable to properly handle a response from
  * the Hue API.
  */
-class ResponseDecodingError(message: String, cause: Throwable?): InternalErrorException(message, cause)
+class SerializationError(message: String, cause: Throwable?): InternalErrorException(message, cause)
+
+/**
+ * Exception thrown if a status error is received from the Hue API
+ */
+open class ApiStatusError(
+    val code: Int,
+    message: String = "API Responded with code $code",
+): ShadeException(
+    message = message
+)
 
 /**
  * Exception thrown if an error is received from the Hue API
  */
-class ApiError(code: Int, errors: List<String>): ShadeException(
+class ApiError(code: Int, errors: List<String>): ApiStatusError(
+    code = code,
     message = "($code): API Responded with errors: [${errors.joinToString()}]"
 )
 

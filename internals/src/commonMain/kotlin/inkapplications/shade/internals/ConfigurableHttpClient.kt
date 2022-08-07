@@ -29,35 +29,67 @@ internal class ConfigurableHttpClient(
     private val hostName = Atomic(hostname)
     private val applicationKey = Atomic(applicationKey)
 
-    override suspend fun <T> getDeserializedData(vararg pathSegments: String, serializer: KSerializer<HueResponse<T>>): T {
-        val httpResponse = get(*pathSegments)
+    override suspend fun <RESPONSE> getDeserializedData(
+        vararg pathSegments: String,
+        serializer: KSerializer<HueResponse<RESPONSE>>
+    ): RESPONSE {
+        val httpResponse = hueRequest(HttpMethod.Get, pathSegments, null)
+
+        return serializer.parseResponse(httpResponse)
+    }
+
+    override suspend fun <REQUEST, RESPONSE> putDeserializedData(
+        body: REQUEST,
+        vararg pathSegments: String,
+        requestSerializer: KSerializer<REQUEST>,
+        responseSerializer: KSerializer<HueResponse<RESPONSE>>
+    ): RESPONSE {
+        val requestBody = try {
+            json.encodeToString(requestSerializer, body)
+        } catch (e: Throwable) {
+            throw SerializationError("Error thrown while serializing request body.", e)
+        }
+        val httpResponse = hueRequest(HttpMethod.Put, pathSegments, requestBody)
+
+        return responseSerializer.parseResponse(httpResponse)
+    }
+
+    private suspend fun <T> KSerializer<HueResponse<T>>.parseResponse(httpResponse: HttpResponse): T {
         val bodyText = httpResponse.bodyAsText()
         val response = try {
-            json.decodeFromString(serializer, bodyText)
+            json.decodeFromString(this, bodyText)
         } catch (e: Throwable) {
-            throw ResponseDecodingError("Error thrown while deserializing response body.", e)
+            throw SerializationError("Error thrown while deserializing response body.", e)
         }
-        when (response) {
-            is HueResponse.Success -> return response.data
-            is HueResponse.Error -> throw ApiError(
+        when {
+            response is HueResponse.Error -> throw ApiError(
                 code = httpResponse.status.value,
                 errors = response.errors.map { it.description }
             )
+            !httpResponse.status.isSuccess() -> throw ApiStatusError(
+                code = httpResponse.status.value,
+            )
+            response is HueResponse.Success -> return response.data
             else -> throw UnexpectedStateException("Unhandled response")
         }
     }
 
-    private suspend fun get(vararg pathSegments: String): HttpResponse {
+    private suspend fun hueRequest(
+        method: HttpMethod,
+        pathSegments: Array<out String>,
+        body: String?,
+    ): HttpResponse {
         val hostName = hostName.value ?: throw HostnameNotSetException
         val response = try {
-            httpClient.value.get {
+            httpClient.value.request {
+                this.method = method
+                setBody(body)
                 url {
                     host = hostName
                     encodedPathSegments = listOf("clip", "v2", *pathSegments)
                     applicationKey.value?.run { headers.append("hue-application-key", key) }
                     protocol = URLProtocol.HTTPS
                 }
-                contentType(ContentType.Application.Json)
             }
         } catch (e: Throwable) {
             throw NetworkException("Unknown Error making API Request", e)

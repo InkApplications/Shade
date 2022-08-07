@@ -51,7 +51,7 @@ abstract class HueResponse<T> private constructor() {
 
         override fun deserialize(data: PolymorphicResponse<T>): HueResponse<out T> {
             return when {
-                data.data != null -> HueResponse.Success(
+                data.data != null && data.errors.isEmpty() -> Success(
                     data = data.data,
                     errors = data.errors,
                 )
