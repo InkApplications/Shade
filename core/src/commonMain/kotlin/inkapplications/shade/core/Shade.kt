@@ -1,5 +1,6 @@
 package inkapplications.shade.core
 
+import inkapplications.shade.discover.DiscoverModule
 import inkapplications.shade.internals.InternalsModule
 import inkapplications.shade.structures.SecurityStrategy
 import inkapplications.shade.lights.ShadeLightsModule
@@ -16,5 +17,6 @@ class Shade(
         securityStrategy = securityStrategy,
     )
 
+    val discover = DiscoverModule()
     val lights = ShadeLightsModule(internalsModule).lights
 }

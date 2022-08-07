@@ -17,6 +17,7 @@ dependencyResolutionManagement {
 }
 
 include("cli")
+include("discover")
 include("internals")
 include("lights")
 include("serialization")
