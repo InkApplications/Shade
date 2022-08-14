@@ -2,15 +2,12 @@ package inkapplications.shade.cli.lights
 
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.option
-import inkapplications.shade.cli.ShadeCommand
-import inkapplications.shade.cli.percentage
-import inkapplications.shade.cli.power
-import inkapplications.shade.cli.resourceId
+import inkapplications.shade.cli.*
 import inkapplications.shade.lights.parameters.DimmingParameters
 import inkapplications.shade.lights.parameters.LightUpdateParameters
 import inkapplications.shade.lights.parameters.PowerParameters
 
-object UpdateLightCommand: ShadeCommand(
+object UpdateLightCommand: AuthorizedShadeCommand(
     help = "Set the state of a specific light",
 ) {
     private val lightId by argument().resourceId()

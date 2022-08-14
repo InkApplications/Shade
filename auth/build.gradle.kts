@@ -22,6 +22,7 @@ kotlin {
             dependencies {
                 implementation(kotlinLibraries.test.core)
                 implementation(kotlinLibraries.test.annotations)
+                implementation(kotlinLibraries.coroutines.test)
             }
         }
     }

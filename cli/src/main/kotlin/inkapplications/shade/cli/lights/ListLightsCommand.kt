@@ -1,8 +1,8 @@
 package inkapplications.shade.cli.lights
 
-import inkapplications.shade.cli.ShadeCommand
+import inkapplications.shade.cli.AuthorizedShadeCommand
 
-object ListLightsCommand: ShadeCommand(
+object ListLightsCommand: AuthorizedShadeCommand(
     help = "Get all lights connected to the bridge"
 ) {
     override suspend fun runCommand(): Int {

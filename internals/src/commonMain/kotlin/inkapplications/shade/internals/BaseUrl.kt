@@ -3,7 +3,7 @@ package inkapplications.shade.internals
 /**
  * Builds the base path of API requests
  */
-object BaseUrl {
+internal object BaseUrl {
     private val API_V2 = arrayOf("clip", "v2")
     private val API_V1 = arrayOf("api")
 

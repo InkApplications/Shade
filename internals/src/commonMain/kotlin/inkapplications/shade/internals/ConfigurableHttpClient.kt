@@ -32,47 +32,33 @@ internal class ConfigurableHttpClient(
     private val hostName = Atomic(hostname)
     private val applicationKey = Atomic(authToken)
 
-    override suspend fun <RESPONSE> getDeserializedData(
-        vararg pathSegments: String,
-        serializer: KSerializer<HueResponse<RESPONSE>>
+    override suspend fun <REQUEST, RESPONSE> sendRequest(
+        method: String,
+        pathSegments: Array<out String>,
+        responseSerializer: KSerializer<HueResponse<RESPONSE>>,
+        body: REQUEST?,
+        requestSerializer: KSerializer<REQUEST>?
     ): RESPONSE {
-        val httpResponse = hueRequest(HttpMethod.Get, pathSegments, null)
+        val requestBody = if (body != null && requestSerializer != null) {
+            createRequestBody(body, requestSerializer)
+        } else null
 
-        return serializer.parseResponse(httpResponse)
-    }
-
-    override suspend fun <REQUEST, RESPONSE> putDeserializedData(
-        body: REQUEST,
-        vararg pathSegments: String,
-        requestSerializer: KSerializer<REQUEST>,
-        responseSerializer: KSerializer<HueResponse<RESPONSE>>
-    ): RESPONSE {
-        val requestBody = createRequestBody(body, requestSerializer)
-        val httpResponse = hueRequest(HttpMethod.Put, pathSegments, requestBody)
+        val httpResponse = hueRequest(HttpMethod(method), BaseUrl.v2(*pathSegments), requestBody)
 
         return responseSerializer.parseResponse(httpResponse)
     }
 
-    override suspend fun <REQUEST, RESPONSE> postDeserializedData(
-        body: REQUEST,
-        vararg pathSegments: String,
-        requestSerializer: KSerializer<REQUEST>,
-        responseSerializer: KSerializer<HueResponse<RESPONSE>>
+    override suspend fun <REQUEST, RESPONSE> sendV1Request(
+        method: String,
+        pathSegments: Array<out String>,
+        responseSerializer: KSerializer<List<V1HueResponse<RESPONSE>>>,
+        body: REQUEST?,
+        requestSerializer: KSerializer<REQUEST>?
     ): RESPONSE {
-        val requestBody = createRequestBody(body, requestSerializer)
-        val httpResponse = hueRequest(HttpMethod.Post, pathSegments, requestBody)
-
-        return responseSerializer.parseResponse(httpResponse)
-    }
-
-    override suspend fun <REQUEST, RESPONSE> postV1DeserializedData(
-        body: REQUEST,
-        vararg pathSegments: String,
-        requestSerializer: KSerializer<REQUEST>,
-        responseSerializer: KSerializer<List<V1HueResponse<RESPONSE>>>
-    ): RESPONSE {
-        val requestBody = createRequestBody(body, requestSerializer)
-        val httpResponse = hueRequest(HttpMethod.Post, pathSegments, requestBody)
+        val requestBody = if (body != null && requestSerializer != null) {
+            createRequestBody(body, requestSerializer)
+        } else null
+        val httpResponse = hueRequest(HttpMethod(method), BaseUrl.v1(*pathSegments), requestBody)
 
         return responseSerializer.parseV1Response(httpResponse)
     }

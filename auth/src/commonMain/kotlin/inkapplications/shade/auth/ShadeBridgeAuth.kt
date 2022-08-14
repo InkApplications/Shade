@@ -2,7 +2,6 @@ package inkapplications.shade.auth
 
 import inkapplications.shade.auth.structures.AppId
 import inkapplications.shade.auth.structures.AuthRequest
-import inkapplications.shade.internals.BaseUrl
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.structures.ApiError
 import inkapplications.shade.structures.AuthToken
@@ -33,9 +32,10 @@ internal class ShadeBridgeAuth(
 
         repeat(retries) {
             try {
-                return client.postV1DeserializedData(
+                return client.sendV1Request(
+                    method = "POST",
                     body = authRequest,
-                    pathSegments = BaseUrl.v1(),
+                    pathSegments = emptyArray(),
                     requestSerializer = serializer(),
                     responseSerializer = serializer(),
                 )

@@ -1,10 +1,10 @@
 package inkapplications.shade.cli.lights
 
 import com.github.ajalt.clikt.parameters.arguments.argument
-import inkapplications.shade.cli.ShadeCommand
+import inkapplications.shade.cli.AuthorizedShadeCommand
 import inkapplications.shade.cli.resourceId
 
-object GetLightCommand: ShadeCommand(
+object GetLightCommand: AuthorizedShadeCommand(
     help = "Get data for a specific light"
 ) {
     private val lightId by argument().resourceId()

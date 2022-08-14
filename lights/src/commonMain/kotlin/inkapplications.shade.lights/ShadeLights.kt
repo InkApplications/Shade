@@ -1,6 +1,5 @@
 package inkapplications.shade.lights
 
-import inkapplications.shade.internals.BaseUrl
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.internals.getData
 import inkapplications.shade.internals.putData
@@ -26,7 +25,7 @@ internal class ShadeLights(
     override suspend fun updateLight(id: ResourceId, parameters: LightUpdateParameters): ResourceReference {
         val response: List<ResourceReference> = hueClient.putData(
             body = parameters,
-            pathSegments = BaseUrl.v2("resource", "light", id.value),
+            pathSegments = arrayOf("resource", "light", id.value),
         )
 
         return response.single()
