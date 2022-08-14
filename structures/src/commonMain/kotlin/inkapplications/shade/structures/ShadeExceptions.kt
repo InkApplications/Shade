@@ -69,3 +69,11 @@ class UnauthorizedException(cause: Throwable? = null): ShadeException(
     message = "Authorization error. Is your application key unset or expired?",
     cause = cause
 )
+
+/**
+ * Thrown when the application has exceeded its limits of waiting for the user
+ * to press the authorize button on the Hue bridge.
+ */
+object AuthorizationTimeoutException: ShadeException(
+    message = "Timeout waiting for user to accept authorization request",
+)

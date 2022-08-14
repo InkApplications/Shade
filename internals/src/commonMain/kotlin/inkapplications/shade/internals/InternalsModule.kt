@@ -1,6 +1,6 @@
 package inkapplications.shade.internals
 
-import inkapplications.shade.structures.ApplicationKey
+import inkapplications.shade.structures.AuthToken
 import inkapplications.shade.structures.SecurityStrategy
 import kimchi.logger.EmptyLogger
 import kimchi.logger.KimchiLogger
@@ -10,14 +10,14 @@ import kimchi.logger.KimchiLogger
  */
 class InternalsModule(
     hostname: String? = null,
-    applicationKey: ApplicationKey? = null,
+    authToken: AuthToken? = null,
     securityStrategy: SecurityStrategy = SecurityStrategy.PlatformTrust,
     logger: KimchiLogger = EmptyLogger,
 ) {
     private val platformModule = PlatformModule()
     private val configurableHttpClient = ConfigurableHttpClient(
         hostname = hostname,
-        applicationKey = applicationKey,
+        authToken = authToken,
         securityStrategy = securityStrategy,
         platformModule = platformModule,
         logger = logger,

@@ -2,7 +2,8 @@ package inkapplications.shade.cli
 
 import com.github.ajalt.clikt.core.NoOpCliktCommand
 import com.github.ajalt.clikt.core.subcommands
-import inkapplications.shade.cli.discover.DiscoverCommand
+import inkapplications.shade.cli.connection.AuthorizeCommand
+import inkapplications.shade.cli.connection.DiscoverCommand
 import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
@@ -15,6 +16,7 @@ class Main: NoOpCliktCommand() {
             GetLightCommand,
             ListLightsCommand,
             UpdateLightCommand,
+            AuthorizeCommand,
         )
     }
 }

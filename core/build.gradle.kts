@@ -8,6 +8,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(projects.internals)
+                api(projects.auth)
                 api(projects.structures)
                 api(projects.discover)
                 api(projects.lights)

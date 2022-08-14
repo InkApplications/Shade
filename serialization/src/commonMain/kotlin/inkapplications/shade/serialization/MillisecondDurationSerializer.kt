@@ -1,6 +1,5 @@
 package inkapplications.shade.serialization
 
-import inkapplications.shade.serialization.DelegateSerializer
 import kotlinx.serialization.builtins.serializer
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds

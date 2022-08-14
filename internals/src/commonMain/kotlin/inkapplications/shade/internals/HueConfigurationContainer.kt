@@ -1,6 +1,6 @@
 package inkapplications.shade.internals
 
-import inkapplications.shade.structures.ApplicationKey
+import inkapplications.shade.structures.AuthToken
 import inkapplications.shade.structures.SecurityStrategy
 
 /**
@@ -15,5 +15,5 @@ interface HueConfigurationContainer {
     /**
      * Set the application key/token to use when communicating with the Hue bridge.
      */
-    fun setApplicationKey(key: ApplicationKey)
+    fun setApplicationKey(key: AuthToken)
 }

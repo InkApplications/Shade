@@ -16,6 +16,7 @@ dependencyResolutionManagement {
     }
 }
 
+include("auth")
 include("cli")
 include("discover")
 include("internals")

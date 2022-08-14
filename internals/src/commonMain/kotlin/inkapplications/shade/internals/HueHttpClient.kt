@@ -1,6 +1,7 @@
 package inkapplications.shade.internals
 
 import inkapplications.shade.serialization.HueResponse
+import inkapplications.shade.serialization.V1HueResponse
 import inkapplications.shade.structures.HostnameNotSetException
 import inkapplications.shade.structures.UnauthorizedException
 import inkapplications.shade.structures.SerializationError
@@ -49,6 +50,46 @@ interface HueHttpClient {
         requestSerializer: KSerializer<REQUEST>,
         responseSerializer: KSerializer<HueResponse<RESPONSE>>,
     ): RESPONSE
+
+    /**
+     * Make a POST request to the hue bridge
+     *
+     * Note: To avoid specifying serializers, use the [postData] extension.
+     *
+     * @param body Request data to be encoded and send to the endpoint
+     * @param pathSegments A list of strings to url encode and use as the path.
+     * @param requestSerializer Serializer to use when encoding the request body.
+     * @param responseSerializer Serializer to use when decoding the data from the http response.
+     * @throws SerializationError if the response body is unable to be decoded.
+     * @throws HostnameNotSetException if the client has not been configured with a hostname.
+     * @throws UnauthorizedException if the client's authentication is invalid.
+     * @throws NetworkException if an error occurs while communicating with the API.
+     */
+    suspend fun <REQUEST, RESPONSE> postDeserializedData(
+        body: REQUEST,
+        vararg pathSegments: String,
+        requestSerializer: KSerializer<REQUEST>,
+        responseSerializer: KSerializer<HueResponse<RESPONSE>>,
+    ): RESPONSE
+
+    /**
+     * Make a POST request to the hue bridge as a V1 endpoint.
+     *
+     * @param body Request data to be encoded and send to the endpoint
+     * @param pathSegments A list of strings to url encode and use as the path.
+     * @param requestSerializer Serializer to use when encoding the request body.
+     * @param responseSerializer Serializer to use when decoding the data from the http response.
+     * @throws SerializationError if the response body is unable to be decoded.
+     * @throws HostnameNotSetException if the client has not been configured with a hostname.
+     * @throws UnauthorizedException if the client's authentication is invalid.
+     * @throws NetworkException if an error occurs while communicating with the API.
+     */
+    suspend fun <REQUEST, RESPONSE> postV1DeserializedData(
+        body: REQUEST,
+        vararg pathSegments: String,
+        requestSerializer: KSerializer<REQUEST>,
+        responseSerializer: KSerializer<List<V1HueResponse<RESPONSE>>>,
+    ): RESPONSE
 }
 
 /**
@@ -81,6 +122,28 @@ suspend inline fun <reified REQUEST, reified RESPONSE> HueHttpClient.putData(
     vararg pathSegments: String
 ): RESPONSE {
     return putDeserializedData(
+        body = body,
+        pathSegments = pathSegments,
+        requestSerializer = serializer(),
+        responseSerializer = serializer(),
+    )
+}
+
+/**
+ * Make a POST request to the hue bridge.
+ *
+ * @param body Request data to be encoded and send to the endpoint
+ * @param pathSegments A list of strings to url encode and use as the path.
+ * @throws SerializationError if the response body is unable to be decoded.
+ * @throws HostnameNotSetException if the client has not been configured with a hostname.
+ * @throws UnauthorizedException if the client's authentication is invalid.
+ * @throws NetworkException if an error occurs while communicating with the API.
+ */
+suspend inline fun <reified REQUEST, reified RESPONSE> HueHttpClient.postData(
+    body: REQUEST,
+    vararg pathSegments: String
+): RESPONSE {
+    return postDeserializedData(
         body = body,
         pathSegments = pathSegments,
         requestSerializer = serializer(),

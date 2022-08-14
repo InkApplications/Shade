@@ -1,6 +1,7 @@
 package inkapplications.shade.internals
 
 import inkapplications.shade.serialization.HueResponse
+import inkapplications.shade.serialization.V1HueResponse
 import inkapplications.shade.structures.*
 import io.ktor.client.*
 import io.ktor.client.plugins.contentnegotiation.*
@@ -18,7 +19,7 @@ import subatomic.Atomic
  */
 internal class ConfigurableHttpClient(
     hostname: String? = null,
-    applicationKey: ApplicationKey? = null,
+    authToken: AuthToken? = null,
     securityStrategy: SecurityStrategy = SecurityStrategy.PlatformTrust,
     private val platformModule: PlatformModule,
     private val logger: KimchiLogger,
@@ -29,7 +30,7 @@ internal class ConfigurableHttpClient(
     private val defaultClient = createHttpClient(securityStrategy)
     private val httpClient = Atomic(defaultClient)
     private val hostName = Atomic(hostname)
-    private val applicationKey = Atomic(applicationKey)
+    private val applicationKey = Atomic(authToken)
 
     override suspend fun <RESPONSE> getDeserializedData(
         vararg pathSegments: String,
@@ -46,26 +47,57 @@ internal class ConfigurableHttpClient(
         requestSerializer: KSerializer<REQUEST>,
         responseSerializer: KSerializer<HueResponse<RESPONSE>>
     ): RESPONSE {
-        val requestBody = try {
+        val requestBody = createRequestBody(body, requestSerializer)
+        val httpResponse = hueRequest(HttpMethod.Put, pathSegments, requestBody)
+
+        return responseSerializer.parseResponse(httpResponse)
+    }
+
+    override suspend fun <REQUEST, RESPONSE> postDeserializedData(
+        body: REQUEST,
+        vararg pathSegments: String,
+        requestSerializer: KSerializer<REQUEST>,
+        responseSerializer: KSerializer<HueResponse<RESPONSE>>
+    ): RESPONSE {
+        val requestBody = createRequestBody(body, requestSerializer)
+        val httpResponse = hueRequest(HttpMethod.Post, pathSegments, requestBody)
+
+        return responseSerializer.parseResponse(httpResponse)
+    }
+
+    override suspend fun <REQUEST, RESPONSE> postV1DeserializedData(
+        body: REQUEST,
+        vararg pathSegments: String,
+        requestSerializer: KSerializer<REQUEST>,
+        responseSerializer: KSerializer<List<V1HueResponse<RESPONSE>>>
+    ): RESPONSE {
+        val requestBody = createRequestBody(body, requestSerializer)
+        val httpResponse = hueRequest(HttpMethod.Post, pathSegments, requestBody)
+
+        return responseSerializer.parseV1Response(httpResponse)
+    }
+
+    private fun <REQUEST> createRequestBody(
+        body: REQUEST,
+        requestSerializer: KSerializer<REQUEST>,
+    ): String {
+        return try {
             json.encodeToString(requestSerializer, body).also {
                 logger.debug("Request Json encoded as: $it")
             }
         } catch (e: Throwable) {
             throw SerializationError("Error thrown while serializing request body.", e)
         }
-        val httpResponse = hueRequest(HttpMethod.Put, pathSegments, requestBody)
-
-        return responseSerializer.parseResponse(httpResponse)
     }
 
     private suspend fun <T> KSerializer<HueResponse<T>>.parseResponse(httpResponse: HttpResponse): T {
         val bodyText = httpResponse.bodyAsText()
-        logger.debug("Response Body: $bodyText")
         val response = try {
             json.decodeFromString(this, bodyText)
         } catch (e: Throwable) {
             throw SerializationError("Error thrown while deserializing response body.", e)
         }
+        logger.debug("Decoded response: $response")
         when {
             response is HueResponse.Error -> throw ApiError(
                 code = httpResponse.status.value,
@@ -75,6 +107,32 @@ internal class ConfigurableHttpClient(
                 code = httpResponse.status.value,
             )
             response is HueResponse.Success -> return response.data
+            else -> throw UnexpectedStateException("Unhandled response")
+        }
+    }
+
+    private suspend fun <T> KSerializer<List<V1HueResponse<T>>>.parseV1Response(httpResponse: HttpResponse): T {
+        val bodyText = httpResponse.bodyAsText()
+        val response = try {
+            json.decodeFromString(this, bodyText)
+        } catch (e: Throwable) {
+            throw SerializationError("Error thrown while deserializing response body.", e)
+        }
+        logger.debug("Decoded response: $response")
+
+        when {
+            response.any { it is V1HueResponse.Error } -> throw ApiError(
+                code = httpResponse.status.value,
+                errors = response.filterIsInstance<V1HueResponse.Error>()
+                    .map { "V1 Error: (${it.error.type}) response.error.description" }
+            )
+            !httpResponse.status.isSuccess() -> throw ApiStatusError(
+                code = httpResponse.status.value,
+            )
+            response.any { it is V1HueResponse.Success } -> return response
+                .first { it is V1HueResponse.Success }
+                .let { it as V1HueResponse.Success }
+                .success
             else -> throw UnexpectedStateException("Unhandled response")
         }
     }
@@ -91,10 +149,10 @@ internal class ConfigurableHttpClient(
                 setBody(body)
                 url {
                     host = hostName
-                    encodedPathSegments = listOf("clip", "v2", *pathSegments)
+                    encodedPathSegments = pathSegments.toList()
                     applicationKey.value?.run {
                         logger.debug("Attaching Application key to request")
-                        headers.append("hue-application-key", key)
+                        headers.append("hue-application-key", applicationKey)
                     }
                     protocol = URLProtocol.HTTPS
 
@@ -121,7 +179,7 @@ internal class ConfigurableHttpClient(
         hostName.value = hostname
     }
 
-    override fun setApplicationKey(key: ApplicationKey) {
+    override fun setApplicationKey(key: AuthToken) {
         logger.trace("Application key set")
         applicationKey.value = key
     }

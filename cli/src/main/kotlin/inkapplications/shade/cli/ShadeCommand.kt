@@ -6,7 +6,9 @@ import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import inkapplications.shade.core.Shade
-import inkapplications.shade.structures.*
+import inkapplications.shade.structures.SecurityStrategy
+import inkapplications.shade.structures.ShadeException
+import inkapplications.shade.structures.UnauthorizedException
 import kimchi.logger.*
 import kotlinx.coroutines.runBlocking
 
@@ -15,17 +17,21 @@ abstract class ShadeCommand(
 ): CliktCommand(
     help = help,
 ) {
-    private val hostname by argument(
+    protected val hostname by argument(
         help = "Hostname of the Hue bridge. "
-    )
-
-    private val key by argument(
-        help = "Application API Key/Token for connecting to the hue bridge"
     )
 
     private val insecure by option(
         help = "Use an insecure SSL connection for requests to the Hue Bridge"
     ).flag()
+
+    protected val securityStrategy by lazy {
+        if (insecure) {
+            SecurityStrategy.Insecure(hostname)
+        } else {
+            SecurityStrategy.PlatformTrust
+        }
+    }
 
     protected val verbose by option(
         help = "Print all logging information in output"
@@ -48,15 +54,10 @@ abstract class ShadeCommand(
         }
     }
 
-    protected val shade by lazy {
+    open val shade: Shade by lazy {
         Shade(
             hostname = hostname,
-            applicationKey = ApplicationKey(key),
-            securityStrategy = if (insecure) {
-                SecurityStrategy.Insecure(hostname)
-            } else {
-                SecurityStrategy.PlatformTrust
-            },
+            securityStrategy = securityStrategy,
             logger = logger,
         )
     }
