@@ -12,6 +12,7 @@ class AuthModule(
 ) {
     val bridgeAuth: BridgeAuth = ShadeBridgeAuth(
         client = internalsModule.hueHttpClient,
+        configurationContainer = internalsModule.configurationContainer,
         logger = logger,
     )
 }

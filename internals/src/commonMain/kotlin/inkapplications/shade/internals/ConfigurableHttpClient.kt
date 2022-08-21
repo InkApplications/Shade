@@ -12,25 +12,21 @@ import io.ktor.serialization.kotlinx.json.*
 import kimchi.logger.KimchiLogger
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.Json
-import subatomic.Atomic
 
 /**
  * Implements HTTP functionality to the hue API as a configurable container.
  */
 internal class ConfigurableHttpClient(
-    hostname: String? = null,
-    authToken: AuthToken? = null,
-    securityStrategy: SecurityStrategy = SecurityStrategy.PlatformTrust,
+    private val configurationContainer: HueConfigurationContainer,
     private val platformModule: PlatformModule,
     private val logger: KimchiLogger,
-): HueHttpClient, HueConfigurationContainer {
+): HueHttpClient {
     private val json = Json {
         ignoreUnknownKeys = true
     }
-    private val defaultClient = createHttpClient(securityStrategy)
-    private val httpClient = Atomic(defaultClient)
-    private val hostName = Atomic(hostname)
-    private val applicationKey = Atomic(authToken)
+    val httpClient by CachedProperty(configurationContainer.securityStrategy::value) { key ->
+        createHttpClient(key)
+    }
 
     override suspend fun <REQUEST, RESPONSE> sendRequest(
         method: String,
@@ -128,15 +124,15 @@ internal class ConfigurableHttpClient(
         pathSegments: Array<out String>,
         body: String?,
     ): HttpResponse {
-        val hostName = hostName.value ?: throw HostnameNotSetException
+        val hostName = configurationContainer.hostname.value ?: throw HostnameNotSetException
         val response = try {
-            httpClient.value.request {
+            httpClient.request {
                 this.method = method
                 setBody(body)
                 url {
                     host = hostName
                     encodedPathSegments = pathSegments.toList()
-                    applicationKey.value?.run {
+                    configurationContainer.authToken.value?.run {
                         logger.debug("Attaching Application key to request")
                         headers.append("hue-application-key", applicationKey)
                     }
@@ -157,17 +153,6 @@ internal class ConfigurableHttpClient(
         }
 
         return response
-    }
-
-    override fun setHost(hostname: String, securityStrategy: SecurityStrategy) {
-        logger.trace("Setting host to $hostname with Security: $securityStrategy")
-        httpClient.value = createHttpClient(securityStrategy)
-        hostName.value = hostname
-    }
-
-    override fun setApplicationKey(key: AuthToken) {
-        logger.trace("Application key set")
-        applicationKey.value = key
     }
 
     private fun createHttpClient(securityStrategy: SecurityStrategy) = HttpClient(

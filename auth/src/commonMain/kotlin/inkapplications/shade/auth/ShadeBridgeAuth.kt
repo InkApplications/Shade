@@ -2,6 +2,7 @@ package inkapplications.shade.auth
 
 import inkapplications.shade.auth.structures.AppId
 import inkapplications.shade.auth.structures.AuthRequest
+import inkapplications.shade.internals.HueConfigurationContainer
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.structures.ApiError
 import inkapplications.shade.structures.AuthToken
@@ -17,6 +18,7 @@ import kotlin.time.ExperimentalTime
  */
 internal class ShadeBridgeAuth(
     private val client: HueHttpClient,
+    private val configurationContainer: HueConfigurationContainer,
     private val logger: KimchiLogger,
 ): BridgeAuth {
     @ExperimentalTime
@@ -32,13 +34,17 @@ internal class ShadeBridgeAuth(
 
         repeat(retries) {
             try {
-                return client.sendV1Request(
+                val authToken: AuthToken = client.sendV1Request(
                     method = "POST",
                     body = authRequest,
                     pathSegments = emptyArray(),
                     requestSerializer = serializer(),
                     responseSerializer = serializer(),
                 )
+
+                configurationContainer.setAuthToken(authToken)
+
+                return authToken
             } catch (e: ApiError) {
                 if (e.code == 200) {
                     logger.debug("Received Expected API Error, Waiting $timeout before retry", e)

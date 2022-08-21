@@ -3,6 +3,7 @@
 package inkapplications.shade.auth
 
 import inkapplications.shade.auth.structures.AppId
+import inkapplications.shade.internals.DummyConfigurationContainer
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.internals.HueStubClient
 import inkapplications.shade.serialization.V1HueResponse
@@ -43,7 +44,8 @@ class ShadeBridgeAuthTest {
         }
         val auth = ShadeBridgeAuth(
             client = spyClient,
-            logger = EmptyLogger
+            configurationContainer = DummyConfigurationContainer,
+            logger = EmptyLogger,
         )
 
         val result = runCatching { auth.awaitToken(AppId("Test", "App"), retries = 5, timeout = 0.seconds) }
@@ -74,7 +76,8 @@ class ShadeBridgeAuthTest {
         }
         val auth = ShadeBridgeAuth(
             client = spyClient,
-            logger = EmptyLogger
+            configurationContainer = DummyConfigurationContainer,
+            logger = EmptyLogger,
         )
 
         val result = async { runCatching { auth.awaitToken(AppId("Test", "App"), retries = 2, timeout = 1.seconds) } }

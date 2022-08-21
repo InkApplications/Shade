@@ -2,18 +2,39 @@ package inkapplications.shade.internals
 
 import inkapplications.shade.structures.AuthToken
 import inkapplications.shade.structures.SecurityStrategy
+import kotlinx.coroutines.flow.StateFlow
 
 /**
  * Store configuration for communicating with the Hue API.
  */
 interface HueConfigurationContainer {
     /**
-     * Set the host of the hue bridge to communicate with.
+     * The Hue IP or hostname to communicate with.
      */
-    fun setHost(hostname: String, securityStrategy: SecurityStrategy = SecurityStrategy.PlatformTrust)
+    val hostname: StateFlow<String?>
+
+    /**
+     * TLS configuration strategy.
+     */
+    val securityStrategy: StateFlow<SecurityStrategy>
+
+    /**
+     * Auth token used in authenticated requests to the hue bridge
+     */
+    val authToken: StateFlow<AuthToken?>
+
+    /**
+     * he Hue IP or hostname to communicate with. eg "192.168.1.5"
+     */
+    suspend fun setHostname(hostname: String?)
 
     /**
      * Set the application key/token to use when communicating with the Hue bridge.
      */
-    fun setApplicationKey(key: AuthToken)
+    suspend fun setAuthToken(key: AuthToken?)
+
+    /**
+     * TLS configuration strategy.
+     */
+    suspend fun setSecurityStrategy(securityStrategy: SecurityStrategy)
 }

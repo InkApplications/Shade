@@ -32,5 +32,12 @@ kotlin {
                 implementation(ktorLibraries.client.js)
             }
         }
+
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlinLibraries.test.core)
+                implementation(kotlinLibraries.test.annotations)
+            }
+        }
     }
 }
