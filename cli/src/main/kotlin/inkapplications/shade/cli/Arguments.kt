@@ -7,6 +7,9 @@ import com.github.ajalt.clikt.parameters.options.convert
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.int
 import inkapplications.shade.structures.ResourceId
+import inkapplications.spondee.measure.ColorTemperature
+import inkapplications.spondee.measure.Kelvin
+import inkapplications.spondee.measure.toColorTemperature
 import inkapplications.spondee.scalar.Percentage
 import inkapplications.spondee.scalar.WholePercentage
 
@@ -25,11 +28,20 @@ fun NullableOption<String, String>.percentage(): NullableOption<Percentage, Perc
 }
 
 /**
- * Convert an argument into a percentage object
+ * Convert an argument into an on/off boolean representation
  */
 fun NullableOption<String, String>.power(): NullableOption<Boolean, Boolean> {
     return choice("on", "off", ignoreCase = true)
         .convert {
             it == "on"
         }
+}
+
+/**
+ * Convert an argument into a color temperature in kelvin
+ */
+fun NullableOption<String, String>.kelvin(): NullableOption<ColorTemperature, ColorTemperature> {
+    return convert { it.trimEnd('K', 'k', ' ') }
+        .int()
+        .convert { Kelvin.of(it).toColorTemperature() }
 }

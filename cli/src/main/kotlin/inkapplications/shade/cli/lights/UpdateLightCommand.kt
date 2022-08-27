@@ -25,6 +25,10 @@ object UpdateLightCommand: AuthorizedShadeCommand(
         help = "Change the brightness of a light as a function of its current brightness. ie. +10%"
     ).percentage()
 
+    private val colorTemperature by option(
+        help = "Set the color temperature of a light, in Kelvin. ie. '5600K'"
+    ).kelvin()
+
     override suspend fun runCommand(): Int {
         val parameters = LightUpdateParameters(
             power = power?.let {
@@ -41,6 +45,11 @@ object UpdateLightCommand: AuthorizedShadeCommand(
                 DimmingDeltaParameters(
                     action = if (it.value(WholePercentage) >= 0) DeltaAction.Up else DeltaAction.Down,
                     brightnessDelta = WholePercentage.of(it.value(WholePercentage).absoluteValue),
+                )
+            },
+            colorTemperature = colorTemperature?.let {
+                ColorTemperatureParameters(
+                    temperature = colorTemperature,
                 )
             }
         )
