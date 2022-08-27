@@ -2,34 +2,39 @@ package inkapplications.shade.cli
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.ProgramResult
-import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import inkapplications.shade.core.Shade
-import inkapplications.shade.structures.SecurityStrategy
-import inkapplications.shade.structures.ShadeException
-import inkapplications.shade.structures.UnauthorizedException
+import inkapplications.shade.structures.*
 import kimchi.logger.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.runBlocking
 
 abstract class ShadeCommand(
     help: String,
+    protected val fileProperties: HueConfigurationContainer = PropertiesFileConfiguration(),
 ): CliktCommand(
     help = help,
-) {
-    protected val hostname by argument(
+), HueConfigurationContainer by fileProperties {
+    private val host by option(
         help = "Hostname of the Hue bridge. "
     )
+    override val hostname: StateFlow<String?> by lazy {
+        host?.let(::MutableStateFlow) ?: fileProperties.hostname
+    }
 
     private val insecure by option(
         help = "Use an insecure SSL connection for requests to the Hue Bridge"
     ).flag()
 
-    protected val securityStrategy by lazy {
+    override val securityStrategy: StateFlow<SecurityStrategy> by lazy {
         if (insecure) {
-            SecurityStrategy.Insecure(hostname)
+            (hostname.value ?: throw InvalidConfigurationException("Hostname required for insecure connection"))
+                .let(SecurityStrategy::Insecure)
+                .let(::MutableStateFlow)
         } else {
-            SecurityStrategy.PlatformTrust
+            fileProperties.securityStrategy
         }
     }
 
@@ -56,8 +61,7 @@ abstract class ShadeCommand(
 
     open val shade: Shade by lazy {
         Shade(
-            hostname = hostname,
-            securityStrategy = securityStrategy,
+            configurationContainer = this,
             logger = logger,
         )
     }

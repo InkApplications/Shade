@@ -77,3 +77,7 @@ class UnauthorizedException(cause: Throwable? = null): ShadeException(
 object AuthorizationTimeoutException: ShadeException(
     message = "Timeout waiting for user to accept authorization request",
 )
+
+class InvalidConfigurationException(message: String): UserError(
+    message = message,
+)

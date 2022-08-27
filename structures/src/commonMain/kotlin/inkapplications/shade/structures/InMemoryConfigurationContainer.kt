@@ -1,6 +1,7 @@
-package inkapplications.shade.internals
+package inkapplications.shade.structures
 
 import inkapplications.shade.structures.AuthToken
+import inkapplications.shade.structures.HueConfigurationContainer
 import inkapplications.shade.structures.SecurityStrategy
 import kotlinx.coroutines.flow.*
 
@@ -26,8 +27,8 @@ class InMemoryConfigurationContainer(
         mutableHostname.value = hostname
     }
 
-    override suspend fun setAuthToken(key: AuthToken?) {
-        mutableAuthToken.value = key
+    override suspend fun setAuthToken(token: AuthToken?) {
+        mutableAuthToken.value = token
     }
 
     override suspend fun setSecurityStrategy(securityStrategy: SecurityStrategy) {

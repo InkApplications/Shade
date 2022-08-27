@@ -1,5 +1,6 @@
 package inkapplications.shade.internals
 
+import inkapplications.shade.structures.HueConfigurationContainer
 import kimchi.logger.EmptyLogger
 import kimchi.logger.KimchiLogger
 

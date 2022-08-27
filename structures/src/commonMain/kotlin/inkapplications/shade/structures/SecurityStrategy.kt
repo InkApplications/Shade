@@ -29,7 +29,7 @@ open class SecurityStrategy private constructor() {
         /**
          * The hostname to limit insecure traffic to.
          */
-        val hostName: String,
+        val hostname: String,
     ): SecurityStrategy()
 
     /**
@@ -49,10 +49,10 @@ open class SecurityStrategy private constructor() {
         /**
          * The hostname that traffic will be directed at.
          */
-        val hostName: String,
+        val hostname: String,
 
         /**
-         * The IP for which to resolve traffic directed at the [hostName]
+         * The IP for which to resolve traffic directed at the [hostname]
          */
         val ip: String,
     ): SecurityStrategy()
@@ -72,7 +72,7 @@ open class SecurityStrategy private constructor() {
         deviceId: String
     ): CustomCa(
         certificatePem = HUE_CA,
-        hostName = deviceId,
+        hostname = deviceId,
         ip = ip,
     )
 }

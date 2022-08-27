@@ -2,7 +2,7 @@ package inkapplications.shade.auth
 
 import inkapplications.shade.auth.structures.AppId
 import inkapplications.shade.auth.structures.AuthRequest
-import inkapplications.shade.internals.HueConfigurationContainer
+import inkapplications.shade.structures.HueConfigurationContainer
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.structures.ApiError
 import inkapplications.shade.structures.AuthToken

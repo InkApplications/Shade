@@ -2,8 +2,8 @@ package inkapplications.shade.core
 
 import inkapplications.shade.auth.AuthModule
 import inkapplications.shade.discover.DiscoverModule
-import inkapplications.shade.internals.HueConfigurationContainer
-import inkapplications.shade.internals.InMemoryConfigurationContainer
+import inkapplications.shade.structures.HueConfigurationContainer
+import inkapplications.shade.structures.InMemoryConfigurationContainer
 import inkapplications.shade.internals.InternalsModule
 import inkapplications.shade.structures.SecurityStrategy
 import inkapplications.shade.lights.ShadeLightsModule

@@ -1,4 +1,4 @@
-package inkapplications.shade.internals
+package inkapplications.shade.structures
 
 import inkapplications.shade.structures.AuthToken
 import inkapplications.shade.structures.SecurityStrategy
@@ -31,7 +31,7 @@ interface HueConfigurationContainer {
     /**
      * Set the application key/token to use when communicating with the Hue bridge.
      */
-    suspend fun setAuthToken(key: AuthToken?)
+    suspend fun setAuthToken(token: AuthToken?)
 
     /**
      * TLS configuration strategy.

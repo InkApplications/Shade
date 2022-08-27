@@ -27,10 +27,10 @@ internal actual class PlatformModule {
 
     private fun OkHttpClient.Builder.insecure(strategy: SecurityStrategy.Insecure) {
         val certificates = HandshakeCertificates.Builder()
-            .addInsecureHost(strategy.hostName)
+            .addInsecureHost(strategy.hostname)
             .addPlatformTrustedCertificates()
             .build()
-        hostnameVerifier { hostname, session -> hostname == strategy.hostName }
+        hostnameVerifier { hostname, session -> hostname == strategy.hostname }
 
         sslSocketFactory(certificates.sslSocketFactory(), certificates.trustManager)
     }
@@ -42,13 +42,13 @@ internal actual class PlatformModule {
         sslSocketFactory(certificates.sslSocketFactory(), certificates.trustManager)
         dns(object: Dns {
             override fun lookup(hostname: String): List<InetAddress> {
-                if (hostname == strategy.hostName) {
+                if (hostname == strategy.hostname) {
                     return listOf(InetAddress.getByName(strategy.ip))
                 }
                 return emptyList()
             }
         })
-        hostnameVerifier { hostname, session -> hostname == strategy.hostName }
+        hostnameVerifier { hostname, session -> hostname == strategy.hostname }
     }
 }
 
