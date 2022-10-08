@@ -45,6 +45,10 @@ object UpdateLightCommand: AuthorizedShadeCommand(
         help = "Set a speed dynamic for the new state, in whole percentage. ie. '50%'"
     ).percentage()
 
+    private val alert by option(
+        help = "Set an alert effect on the light"
+    ).alertEffect()
+
     override suspend fun runCommand(): Int {
         val parameters = LightUpdateParameters(
             power = power?.let {
@@ -85,6 +89,11 @@ object UpdateLightCommand: AuthorizedShadeCommand(
                     speed = dynamicSpeed,
                 )
             } else null,
+            alert = alert?.let {
+                AlertParameters(
+                    action = it,
+                )
+            },
         )
         logger.debug("Using Parameters: $parameters")
         val response = shade.lights.updateLight(lightId, parameters)

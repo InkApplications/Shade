@@ -8,6 +8,7 @@ import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.int
 import com.github.ajalt.colormath.Color
 import com.github.ajalt.colormath.parse
+import inkapplications.shade.lights.structures.AlertEffectType
 import inkapplications.shade.structures.ResourceId
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
@@ -85,4 +86,12 @@ fun NullableOption<String, String>.color(): NullableOption<Color, Color> {
  */
 fun NullableOption<String, String>.duration(): NullableOption<Duration, Duration> {
     return convert { Duration.parse(it) }
+}
+
+/**
+ * Convert an argument to an alert effect value.
+ */
+fun NullableOption<String, String>.alertEffect(): NullableOption<AlertEffectType, AlertEffectType> {
+    return choice(choices = AlertEffectType.values().map { it.key }.toTypedArray())
+        .convert { AlertEffectType.valueOf(it) }
 }
