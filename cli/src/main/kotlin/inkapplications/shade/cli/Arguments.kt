@@ -7,6 +7,7 @@ import com.github.ajalt.clikt.parameters.options.convert
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.int
 import inkapplications.shade.structures.ResourceId
+import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
 import inkapplications.spondee.measure.metric.Kelvin
 import inkapplications.spondee.measure.metric.kelvin
@@ -45,6 +46,21 @@ fun NullableOption<String, String>.kelvin(): NullableOption<Kelvin, Kelvin> {
     return convert { it.trimEnd('K', 'k', ' ') }
         .int()
         .convert { it.kelvin }
+}
+
+/**
+ * Convert an argument into a color temperature in kelvin
+ */
+fun NullableOption<String, String>.colorTemperature(): NullableOption<ColorTemperature, ColorTemperature> {
+    return convert {
+        val sanitized = it.trim()
+        val isKelvin = it.endsWith("k", ignoreCase = true)
+
+        return@convert sanitized
+            .trimEnd('K', 'k')
+            .toInt()
+            .let { if (isKelvin) it.kelvin else it.mireds }
+    }
 }
 
 /**

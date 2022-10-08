@@ -27,8 +27,8 @@ object UpdateLightCommand: AuthorizedShadeCommand(
     ).percentage()
 
     private val colorTemperature by option(
-        help = "Set the color temperature of a light, in Kelvin. ie. '5600K'"
-    ).kelvin()
+        help = "Set the color temperature of a light, in Mireds or Kelvin. Kelvin values must end in a 'K'. ie. '5000K' for Kelvin or just '200' for Mireds."
+    ).colorTemperature()
 
     private val colorTemperatureDelta by option(
         help = "Change the color temperature of a light as a function of its current temperature, in Mireds only. ie '+100'"
