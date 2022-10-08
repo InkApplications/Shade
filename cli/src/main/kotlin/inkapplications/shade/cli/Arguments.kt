@@ -7,10 +7,7 @@ import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.int
 import com.github.ajalt.colormath.Color
 import com.github.ajalt.colormath.parse
-import inkapplications.shade.lights.structures.AlertEffectType
-import inkapplications.shade.lights.structures.GradientColorInfo
-import inkapplications.shade.lights.structures.GradientPoint
-import inkapplications.shade.lights.structures.LightEffect
+import inkapplications.shade.lights.structures.*
 import inkapplications.shade.structures.ResourceId
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
@@ -104,6 +101,14 @@ fun NullableOption<String, String>.alertEffect(): NullableOption<AlertEffectType
 fun NullableOption<String, String>.lightEffect(): NullableOption<LightEffect, LightEffect> {
     return choice(choices = LightEffect.values().map { it.key }.toTypedArray())
         .convert { LightEffect.valueOf(it) }
+}
+
+/**
+ * Convert an argument to a timed light effect value.
+ */
+fun NullableOption<String, String>.timedLightEffect(): NullableOption<TimedLightEffect, TimedLightEffect> {
+    return choice(choices = TimedLightEffect.values().map { it.key }.toTypedArray())
+        .convert { TimedLightEffect.valueOf(it) }
 }
 
 /**

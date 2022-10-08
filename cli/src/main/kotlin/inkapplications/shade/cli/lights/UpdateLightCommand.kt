@@ -57,6 +57,14 @@ object UpdateLightCommand: AuthorizedShadeCommand(
         help = "Set a lighting effect to the resource."
     ).lightEffect()
 
+    private val timedLightEffect by option(
+        help = "Set a timed lighting effect to the resource. You must also set --timed-light-effect-duration when using this with a value other than 'no_effect'"
+    ).timedLightEffect()
+
+    private val timedLightEffectDuration by option(
+        help = "Set the duration of a lighting effect to the resource. Required when using --timed-light-effect with a value other than 'no_effect'"
+    ).duration()
+
     override suspend fun runCommand(): Int {
         val parameters = LightUpdateParameters(
             power = power?.let {
@@ -110,6 +118,12 @@ object UpdateLightCommand: AuthorizedShadeCommand(
             effects = lightEffect?.let {
                 EffectsParameters(
                     effect = it,
+                )
+            },
+            timedEffects = timedLightEffect?.let {
+                TimedEffectsParameters(
+                    effect = it,
+                    duration = timedLightEffectDuration,
                 )
             },
         )
