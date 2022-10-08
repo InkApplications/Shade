@@ -10,6 +10,7 @@ import com.github.ajalt.colormath.parse
 import inkapplications.shade.lights.structures.AlertEffectType
 import inkapplications.shade.lights.structures.GradientColorInfo
 import inkapplications.shade.lights.structures.GradientPoint
+import inkapplications.shade.lights.structures.LightEffect
 import inkapplications.shade.structures.ResourceId
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
@@ -95,6 +96,14 @@ fun NullableOption<String, String>.duration(): NullableOption<Duration, Duration
 fun NullableOption<String, String>.alertEffect(): NullableOption<AlertEffectType, AlertEffectType> {
     return choice(choices = AlertEffectType.values().map { it.key }.toTypedArray())
         .convert { AlertEffectType.valueOf(it) }
+}
+
+/**
+ * Convert an argument to a light effect value.
+ */
+fun NullableOption<String, String>.lightEffect(): NullableOption<LightEffect, LightEffect> {
+    return choice(choices = LightEffect.values().map { it.key }.toTypedArray())
+        .convert { LightEffect.valueOf(it) }
 }
 
 /**
