@@ -16,6 +16,7 @@ import inkapplications.spondee.measure.metric.kelvin
 import inkapplications.spondee.measure.mireds
 import inkapplications.spondee.scalar.WholePercentage
 import inkapplications.spondee.scalar.percent
+import kotlin.time.Duration
 
 /**
  * Convert a string argument into a resource ID
@@ -77,4 +78,11 @@ fun NullableOption<String, String>.mireds(): NullableOption<Mireds, Mireds> {
  */
 fun NullableOption<String, String>.color(): NullableOption<Color, Color> {
     return convert { Color.parse(it) }
+}
+
+/**
+ * Convert an argument into a color.
+ */
+fun NullableOption<String, String>.duration(): NullableOption<Duration, Duration> {
+    return convert { Duration.parse(it) }
 }

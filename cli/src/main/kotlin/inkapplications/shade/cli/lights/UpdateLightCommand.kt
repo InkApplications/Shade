@@ -2,12 +2,9 @@ package inkapplications.shade.cli.lights
 
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.colormath.Color
-import com.github.ajalt.colormath.parse
 import inkapplications.shade.cli.*
 import inkapplications.shade.lights.parameters.*
 import inkapplications.spondee.measure.mireds
-import inkapplications.spondee.measure.toMireds
 import inkapplications.spondee.scalar.toWholePercentage
 import kotlin.math.absoluteValue
 
@@ -39,6 +36,14 @@ object UpdateLightCommand: AuthorizedShadeCommand(
     private val color by option(
         help = "Change the color of a light. Accepts CSS-style values such as RGB or Hex strings."
     ).color()
+
+    private val dynamicDuration by option(
+        help = "Set a transition time dynamic for the new state."
+    ).duration()
+
+    private val dynamicSpeed by option(
+        help = "Set a speed dynamic for the new state, in whole percentage. ie. '50%'"
+    ).percentage()
 
     override suspend fun runCommand(): Int {
         val parameters = LightUpdateParameters(
@@ -74,6 +79,12 @@ object UpdateLightCommand: AuthorizedShadeCommand(
                     color = it,
                 )
             },
+            dynamics = if (dynamicDuration != null || dynamicSpeed != null) {
+                DynamicsParameters(
+                    duration = dynamicDuration,
+                    speed = dynamicSpeed,
+                )
+            } else null,
         )
         logger.debug("Using Parameters: $parameters")
         val response = shade.lights.updateLight(lightId, parameters)
