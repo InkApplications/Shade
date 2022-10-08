@@ -19,4 +19,6 @@ data class ResourceReference(
      */
     @SerialName("rtype")
     val type: ResourceType,
-)
+) {
+    override fun toString(): String = "[$type:$id]"
+}
