@@ -6,6 +6,8 @@ import com.github.ajalt.clikt.parameters.options.NullableOption
 import com.github.ajalt.clikt.parameters.options.convert
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.int
+import com.github.ajalt.colormath.Color
+import com.github.ajalt.colormath.parse
 import inkapplications.shade.structures.ResourceId
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
@@ -68,4 +70,11 @@ fun NullableOption<String, String>.colorTemperature(): NullableOption<ColorTempe
  */
 fun NullableOption<String, String>.mireds(): NullableOption<Mireds, Mireds> {
     return int().convert { it.mireds }
+}
+
+/**
+ * Convert an argument into a color.
+ */
+fun NullableOption<String, String>.color(): NullableOption<Color, Color> {
+    return convert { Color.parse(it) }
 }

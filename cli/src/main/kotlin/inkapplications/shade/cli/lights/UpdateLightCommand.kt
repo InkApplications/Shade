@@ -2,6 +2,8 @@ package inkapplications.shade.cli.lights
 
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.option
+import com.github.ajalt.colormath.Color
+import com.github.ajalt.colormath.parse
 import inkapplications.shade.cli.*
 import inkapplications.shade.lights.parameters.*
 import inkapplications.spondee.measure.mireds
@@ -34,6 +36,10 @@ object UpdateLightCommand: AuthorizedShadeCommand(
         help = "Change the color temperature of a light as a function of its current temperature, in Mireds only. ie '+100'"
     ).mireds()
 
+    private val color by option(
+        help = "Change the color of a light. Accepts CSS-style values such as RGB or Hex strings."
+    ).color()
+
     override suspend fun runCommand(): Int {
         val parameters = LightUpdateParameters(
             power = power?.let {
@@ -62,7 +68,12 @@ object UpdateLightCommand: AuthorizedShadeCommand(
                     action = if (it.value.toDouble() >= 0) DeltaAction.Up else DeltaAction.Down,
                     temperatureDelta = it.value.toDouble().absoluteValue.mireds,
                 )
-            }
+            },
+            color = color?.let {
+                ColorParameters(
+                    color = it,
+                )
+            },
         )
         logger.debug("Using Parameters: $parameters")
         val response = shade.lights.updateLight(lightId, parameters)
