@@ -49,6 +49,10 @@ object UpdateLightCommand: AuthorizedShadeCommand(
         help = "Set an alert effect on the light"
     ).alertEffect()
 
+    private val gradientColors by option(
+        help = "Set a list of gradient point colors. A Minimum of 2 points are required. Accepts CSS-style values such as RGB or Hex strings. Comma separated."
+    ).gradientPoints()
+
     override suspend fun runCommand(): Int {
         val parameters = LightUpdateParameters(
             power = power?.let {
@@ -92,6 +96,11 @@ object UpdateLightCommand: AuthorizedShadeCommand(
             alert = alert?.let {
                 AlertParameters(
                     action = it,
+                )
+            },
+            gradient = gradientColors?.let {
+                GradientParameters(
+                    points = it,
                 )
             },
         )

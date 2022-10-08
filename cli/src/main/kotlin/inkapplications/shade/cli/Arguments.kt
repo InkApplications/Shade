@@ -2,13 +2,14 @@ package inkapplications.shade.cli
 
 import com.github.ajalt.clikt.parameters.arguments.ProcessedArgument
 import com.github.ajalt.clikt.parameters.arguments.convert
-import com.github.ajalt.clikt.parameters.options.NullableOption
-import com.github.ajalt.clikt.parameters.options.convert
+import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.int
 import com.github.ajalt.colormath.Color
 import com.github.ajalt.colormath.parse
 import inkapplications.shade.lights.structures.AlertEffectType
+import inkapplications.shade.lights.structures.GradientColorInfo
+import inkapplications.shade.lights.structures.GradientPoint
 import inkapplications.shade.structures.ResourceId
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
@@ -94,4 +95,17 @@ fun NullableOption<String, String>.duration(): NullableOption<Duration, Duration
 fun NullableOption<String, String>.alertEffect(): NullableOption<AlertEffectType, AlertEffectType> {
     return choice(choices = AlertEffectType.values().map { it.key }.toTypedArray())
         .convert { AlertEffectType.valueOf(it) }
+}
+
+/**
+ * Convert an argument to an alert effect value.
+ */
+fun NullableOption<String, String>.gradientPoints(): NullableOption<List<GradientPoint>, List<GradientPoint>> {
+    return convert {
+        it.split(",")
+            .map { it.trim() }
+            .map { Color.parse(it) }
+            .map { GradientColorInfo(color = it) }
+            .map { GradientPoint(colorInfo = it) }
+    }
 }
