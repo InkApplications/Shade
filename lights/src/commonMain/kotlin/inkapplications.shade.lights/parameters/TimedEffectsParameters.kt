@@ -1,7 +1,7 @@
 package inkapplications.shade.lights.parameters
 
-import inkapplications.shade.lights.structures.TimedLightEffect
 import inkapplications.shade.lights.structures.Light
+import inkapplications.shade.lights.structures.TimedLightEffect
 import inkapplications.shade.serialization.MillisecondDurationSerializer
 import kotlinx.serialization.Serializable
 import kotlin.time.Duration

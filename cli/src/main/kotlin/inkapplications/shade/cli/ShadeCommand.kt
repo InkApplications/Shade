@@ -79,7 +79,10 @@ abstract class ShadeCommand(
             if (debug) it.printStackTrace()
             when (it) {
                 is UnauthorizedException -> echo("API Token Invalid", err = true)
-                is ShadeException -> echo("Error: ${it.message}", err = true)
+                is ShadeException -> {
+                    echo("Error: ${it.message}", err = true)
+                    if (verbose) it.printStackTrace()
+                }
                 else -> throw it
             }
             throw ProgramResult(1)

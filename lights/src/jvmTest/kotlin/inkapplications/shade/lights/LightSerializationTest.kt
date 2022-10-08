@@ -2,9 +2,9 @@ package inkapplications.shade.lights
 
 import inkapplications.shade.lights.structures.*
 import inkapplications.shade.structures.ResourceType
-import inkapplications.spondee.measure.Mireds
-import inkapplications.spondee.scalar.WholePercentage
-import inkapplications.spondee.structure.value
+import inkapplications.spondee.measure.toMireds
+import inkapplications.spondee.scalar.toWholePercentage
+import inkapplications.spondee.structure.convert
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlin.math.roundToInt
@@ -126,11 +126,11 @@ class LightSerializationTest {
         assertTrue(light.powerInfo.on)
         assertEquals(LightMode.Normal, light.mode)
 
-        assertEquals(50.0, light.dimmingInfo?.brightness?.value(WholePercentage) ?: 0.0, 1e-16)
-        assertEquals(0.20000000298023224, light.dimmingInfo?.minimum?.value(WholePercentage) ?: 0.0, 1e-16)
-        assertEquals(161, light.colorTemperatureInfo?.temperature?.value(Mireds)?.roundToInt())
-        assertEquals(153, light.colorTemperatureInfo?.range?.coolest?.value(Mireds)?.roundToInt())
-        assertEquals(454, light.colorTemperatureInfo?.range?.warmest?.value(Mireds)?.roundToInt())
+        assertEquals(50.0, light.dimmingInfo?.brightness?.toWholePercentage()?.value?.toDouble() ?: 0.0, 1e-16)
+        assertEquals(0.20000000298023224, light.dimmingInfo?.minimum?.toWholePercentage()?.value?.toDouble() ?: 0.0, 1e-16)
+        assertEquals(161, light.colorTemperatureInfo?.temperature?.toMireds()?.convert { roundToInt() })
+        assertEquals(153, light.colorTemperatureInfo?.range?.coolest?.toMireds()?.convert { roundToInt() })
+        assertEquals(454, light.colorTemperatureInfo?.range?.warmest?.toMireds()?.convert { roundToInt() })
         assertEquals(true, light.colorTemperatureInfo?.valid)
         assertEquals(0.3171f, light.colorInfo?.color?.toXYZ()?.toCIExyY()?.x ?: 0f, 1e-16f)
         assertEquals(0.3327f, light.colorInfo?.color?.toXYZ()?.toCIExyY()?.y ?: 0f, 1e-16f)
@@ -142,7 +142,7 @@ class LightSerializationTest {
         assertEquals(0.1532f, light.colorInfo?.gamut?.blue?.x ?: 0f, 1e-16f)
         assertEquals(0.0475f, light.colorInfo?.gamut?.blue?.y ?: 0f, 1e-16f)
         assertEquals("/lights/2", light.v1Id)
-        assertEquals(12.3, light.dynamics?.speed?.value(WholePercentage) ?: 0.0, 1e-16)
+        assertEquals(12.3, light.dynamics?.speed?.toWholePercentage()?.value?.toDouble() ?: 0.0, 1e-16)
         assertEquals(false, light.dynamics?.speedValid)
         assertEquals(DynamicsStatus.None, light.dynamics?.status)
         assertEquals(listOf(DynamicsStatus.None), light.dynamics?.statusValues)

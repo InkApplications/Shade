@@ -1,8 +1,9 @@
 package inkapplications.shade.serialization
 
 import inkapplications.spondee.measure.ColorTemperature
-import inkapplications.spondee.measure.Mireds
-import inkapplications.spondee.structure.value
+import inkapplications.spondee.measure.mireds
+import inkapplications.spondee.measure.toMireds
+import inkapplications.spondee.structure.convert
 import kotlinx.serialization.builtins.serializer
 import kotlin.math.roundToInt
 
@@ -15,10 +16,10 @@ import kotlin.math.roundToInt
  */
 object MiredSerializer: DelegateSerializer<Int, ColorTemperature>(Int.serializer()) {
     override fun serialize(data: ColorTemperature): Int {
-        return data.value(Mireds).roundToInt()
+        return data.toMireds().convert { roundToInt() }
     }
 
     override fun deserialize(data: Int): ColorTemperature {
-        return Mireds.of(data)
+        return data.mireds
     }
 }

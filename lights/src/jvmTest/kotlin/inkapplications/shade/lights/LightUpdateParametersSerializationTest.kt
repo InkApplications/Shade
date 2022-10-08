@@ -4,8 +4,8 @@ import com.github.ajalt.colormath.model.XYZ
 import com.github.ajalt.colormath.model.xyY
 import inkapplications.shade.lights.parameters.*
 import inkapplications.shade.lights.structures.*
-import inkapplications.spondee.measure.Mireds
-import inkapplications.spondee.scalar.WholePercentage
+import inkapplications.spondee.measure.mireds
+import inkapplications.spondee.scalar.percent
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlin.test.Test
@@ -85,25 +85,25 @@ class LightUpdateParametersSerializationTest {
                 on = true,
             ),
             dimming = DimmingParameters(
-                brightness = WholePercentage.of(12),
+                brightness = 12.percent,
             ),
             dimmingDelta = DimmingDeltaParameters(
                 action = DeltaAction.Up,
-                brightnessDelta = WholePercentage.of(34),
+                brightnessDelta = 34.percent,
             ),
             colorTemperature = ColorTemperatureParameters(
-                temperature = Mireds.of(12),
+                temperature = 12.mireds,
             ),
             colorTemperatureDelta = ColorTemperatureDeltaParameters(
                 action = DeltaAction.Down,
-                temperatureDelta = Mireds.of(12),
+                temperatureDelta = 12.mireds,
             ),
             color = ColorParameters(
                 color = xyY(.2f, .4f).let { XYZ(x = it.X, y = it.Y, z = it.Z) },
             ),
             dynamics = DynamicsParameters(
                 duration = 12.milliseconds,
-                speed = WholePercentage.of(34),
+                speed = 34.percent,
             ),
             alert = AlertParameters(
                 action = AlertEffectType.Breathe,

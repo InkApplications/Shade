@@ -1,7 +1,27 @@
 package inkapplications.shade.lights.structures
 
-import inkapplications.spondee.measure.Kelvin
-import inkapplications.spondee.measure.toColorTemperature
+import inkapplications.shade.lights.structures.StandardTemperatures.A
+import inkapplications.shade.lights.structures.StandardTemperatures.B
+import inkapplications.shade.lights.structures.StandardTemperatures.C
+import inkapplications.shade.lights.structures.StandardTemperatures.D50
+import inkapplications.shade.lights.structures.StandardTemperatures.D55
+import inkapplications.shade.lights.structures.StandardTemperatures.D65
+import inkapplications.shade.lights.structures.StandardTemperatures.D75
+import inkapplications.shade.lights.structures.StandardTemperatures.E
+import inkapplications.shade.lights.structures.StandardTemperatures.F1
+import inkapplications.shade.lights.structures.StandardTemperatures.F10
+import inkapplications.shade.lights.structures.StandardTemperatures.F11
+import inkapplications.shade.lights.structures.StandardTemperatures.F12
+import inkapplications.shade.lights.structures.StandardTemperatures.F2
+import inkapplications.shade.lights.structures.StandardTemperatures.F3
+import inkapplications.shade.lights.structures.StandardTemperatures.F4
+import inkapplications.shade.lights.structures.StandardTemperatures.F5
+import inkapplications.shade.lights.structures.StandardTemperatures.F6
+import inkapplications.shade.lights.structures.StandardTemperatures.F7
+import inkapplications.shade.lights.structures.StandardTemperatures.F8
+import inkapplications.shade.lights.structures.StandardTemperatures.F9
+import inkapplications.spondee.measure.ColorTemperature
+import inkapplications.spondee.measure.metric.kelvin
 
 /**
  * Commonly used reference temperatures.
@@ -28,24 +48,24 @@ import inkapplications.spondee.measure.toColorTemperature
  * @property F12 Philips TL83, Ultralume 30
  */
 object StandardTemperatures {
-    val A = Kelvin.of(2856).toColorTemperature()
-    val B = Kelvin.of(4874).toColorTemperature()
-    val C = Kelvin.of(6774).toColorTemperature()
-    val D50 = Kelvin.of(5003).toColorTemperature()
-    val D55 = Kelvin.of(5503).toColorTemperature()
-    val D65 = Kelvin.of(6504).toColorTemperature()
-    val D75 = Kelvin.of(7504).toColorTemperature()
-    val E = Kelvin.of(5454).toColorTemperature()
-    val F1 = Kelvin.of(6430).toColorTemperature()
-    val F2 = Kelvin.of(4230).toColorTemperature()
-    val F3 = Kelvin.of(3450).toColorTemperature()
-    val F4 = Kelvin.of(2940).toColorTemperature()
-    val F5 = Kelvin.of(6350).toColorTemperature()
-    val F6 = Kelvin.of(4150).toColorTemperature()
-    val F7 = Kelvin.of(6500).toColorTemperature()
-    val F8 = Kelvin.of(5000).toColorTemperature()
-    val F9 = Kelvin.of(4150).toColorTemperature()
-    val F10 = Kelvin.of(5000).toColorTemperature()
-    val F11 = Kelvin.of(4000).toColorTemperature()
-    val F12 = Kelvin.of(3000).toColorTemperature()
+    val A: ColorTemperature = 2856.kelvin
+    val B: ColorTemperature = 4874.kelvin
+    val C: ColorTemperature = 6774.kelvin
+    val D50: ColorTemperature = 5003.kelvin
+    val D55: ColorTemperature = 5503.kelvin
+    val D65: ColorTemperature = 6504.kelvin
+    val D75: ColorTemperature = 7504.kelvin
+    val E: ColorTemperature = 5454.kelvin
+    val F1: ColorTemperature = 6430.kelvin
+    val F2: ColorTemperature = 4230.kelvin
+    val F3: ColorTemperature = 3450.kelvin
+    val F4: ColorTemperature = 2940.kelvin
+    val F5: ColorTemperature = 6350.kelvin
+    val F6: ColorTemperature = 4150.kelvin
+    val F7: ColorTemperature = 6500.kelvin
+    val F8: ColorTemperature = 5000.kelvin
+    val F9: ColorTemperature = 4150.kelvin
+    val F10: ColorTemperature = 5000.kelvin
+    val F11: ColorTemperature = 4000.kelvin
+    val F12: ColorTemperature = 3000.kelvin
 }

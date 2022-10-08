@@ -3,8 +3,9 @@ package inkapplications.shade.lights.structures
 import inkapplications.shade.serialization.DelegateSerializer
 import inkapplications.shade.serialization.MiredSerializer
 import inkapplications.spondee.measure.ColorTemperature
-import inkapplications.spondee.measure.Mireds
-import inkapplications.spondee.structure.value
+import inkapplications.spondee.measure.mireds
+import inkapplications.spondee.measure.toMireds
+import inkapplications.spondee.structure.convert
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.math.roundToInt
@@ -45,15 +46,15 @@ data class ColorTemperatureInfo(
     internal object MirekSchemaSerializer: DelegateSerializer<MirekSchema, ColorTemperatureRange>(MirekSchema.serializer()) {
         override fun serialize(data: ColorTemperatureRange): MirekSchema {
             return MirekSchema(
-                mirek_minimum = data.coolest.value(Mireds).roundToInt(),
-                mirek_maximum = data.warmest.value(Mireds).roundToInt(),
+                mirek_minimum = data.coolest.toMireds().convert { roundToInt() },
+                mirek_maximum = data.warmest.toMireds().convert { roundToInt() },
             )
         }
 
         override fun deserialize(data: MirekSchema): ColorTemperatureRange {
             return ColorTemperatureRange(
-                coolest = Mireds.of(data.mirek_minimum),
-                warmest = Mireds.of(data.mirek_maximum),
+                coolest = data.mirek_minimum.mireds,
+                warmest = data.mirek_maximum.mireds,
             )
         }
     }

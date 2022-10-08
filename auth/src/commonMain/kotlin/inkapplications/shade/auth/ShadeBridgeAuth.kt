@@ -2,11 +2,11 @@ package inkapplications.shade.auth
 
 import inkapplications.shade.auth.structures.AppId
 import inkapplications.shade.auth.structures.AuthRequest
-import inkapplications.shade.structures.HueConfigurationContainer
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.structures.ApiError
 import inkapplications.shade.structures.AuthToken
 import inkapplications.shade.structures.AuthorizationTimeoutException
+import inkapplications.shade.structures.HueConfigurationContainer
 import kimchi.logger.KimchiLogger
 import kotlinx.coroutines.delay
 import kotlinx.serialization.serializer

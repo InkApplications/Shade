@@ -4,8 +4,9 @@ import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.option
 import inkapplications.shade.cli.*
 import inkapplications.shade.lights.parameters.*
-import inkapplications.spondee.scalar.WholePercentage
-import inkapplications.spondee.structure.value
+import inkapplications.spondee.measure.mireds
+import inkapplications.spondee.measure.toMireds
+import inkapplications.spondee.scalar.toWholePercentage
 import kotlin.math.absoluteValue
 
 object UpdateLightCommand: AuthorizedShadeCommand(
@@ -22,12 +23,16 @@ object UpdateLightCommand: AuthorizedShadeCommand(
     ).percentage()
 
     private val brightnessDelta by option(
-        help = "Change the brightness of a light as a function of its current brightness. ie. +10%"
+        help = "Change the brightness of a light as a function of its current brightness. ie. '+10%'"
     ).percentage()
 
     private val colorTemperature by option(
         help = "Set the color temperature of a light, in Kelvin. ie. '5600K'"
     ).kelvin()
+
+    private val colorTemperatureDelta by option(
+        help = "Change the color temperature of a light as a function of its current temperature, in Mireds only. ie '+100'"
+    ).mireds()
 
     override suspend fun runCommand(): Int {
         val parameters = LightUpdateParameters(
@@ -43,13 +48,19 @@ object UpdateLightCommand: AuthorizedShadeCommand(
             },
             dimmingDelta = brightnessDelta?.let {
                 DimmingDeltaParameters(
-                    action = if (it.value(WholePercentage) >= 0) DeltaAction.Up else DeltaAction.Down,
-                    brightnessDelta = WholePercentage.of(it.value(WholePercentage).absoluteValue),
+                    action = if (it.toWholePercentage().value.toDouble() >= 0) DeltaAction.Up else DeltaAction.Down,
+                    brightnessDelta = it.toWholePercentage(),
                 )
             },
             colorTemperature = colorTemperature?.let {
                 ColorTemperatureParameters(
                     temperature = colorTemperature,
+                )
+            },
+            colorTemperatureDelta = colorTemperatureDelta?.let {
+                ColorTemperatureDeltaParameters(
+                    action = if (it.value.toDouble() >= 0) DeltaAction.Up else DeltaAction.Down,
+                    temperatureDelta = it.value.toDouble().absoluteValue.mireds,
                 )
             }
         )

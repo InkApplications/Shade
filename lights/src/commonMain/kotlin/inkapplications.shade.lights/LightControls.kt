@@ -1,7 +1,7 @@
 package inkapplications.shade.lights
 
 import inkapplications.shade.lights.parameters.LightUpdateParameters
-import inkapplications.shade.lights.structures.*
+import inkapplications.shade.lights.structures.Light
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
 

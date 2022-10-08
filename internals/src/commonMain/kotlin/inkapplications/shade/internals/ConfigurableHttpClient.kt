@@ -128,7 +128,7 @@ internal class ConfigurableHttpClient(
         val response = try {
             httpClient.request {
                 this.method = method
-                setBody(body)
+                body?.run(::setBody)
                 url {
                     host = hostName
                     encodedPathSegments = pathSegments.toList()

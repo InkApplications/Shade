@@ -1,7 +1,7 @@
 package inkapplications.shade.lights.parameters
 
-import inkapplications.shade.serialization.MiredSerializer
-import inkapplications.spondee.measure.ColorTemperature
+import inkapplications.shade.serialization.ExplicitMiredSerializer
+import inkapplications.spondee.measure.Mireds
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -20,6 +20,6 @@ data class ColorTemperatureDeltaParameters(
      * current state.
      */
     @SerialName("mirek_delta")
-    @Serializable(with = MiredSerializer::class)
-    val temperatureDelta: ColorTemperature? = null,
+    @Serializable(with = ExplicitMiredSerializer::class)
+    val temperatureDelta: Mireds? = null,
 )

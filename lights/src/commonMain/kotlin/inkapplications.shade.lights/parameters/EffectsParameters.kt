@@ -1,7 +1,7 @@
 package inkapplications.shade.lights.parameters
 
-import inkapplications.shade.lights.structures.LightEffect
 import inkapplications.shade.lights.structures.Light
+import inkapplications.shade.lights.structures.LightEffect
 import kotlinx.serialization.Serializable
 
 /**

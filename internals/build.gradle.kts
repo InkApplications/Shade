@@ -10,7 +10,6 @@ kotlin {
             dependencies {
                 implementation(kotlinLibraries.serialization.json)
                 implementation(ktorLibraries.client.core)
-                implementation(inkLibraries.subatomic)
                 implementation(projects.serialization)
                 api(projects.structures)
                 api(inkLibraries.kimchi.logger)

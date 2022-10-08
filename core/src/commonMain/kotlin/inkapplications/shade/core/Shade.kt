@@ -2,12 +2,12 @@ package inkapplications.shade.core
 
 import inkapplications.shade.auth.AuthModule
 import inkapplications.shade.discover.DiscoverModule
-import inkapplications.shade.structures.HueConfigurationContainer
-import inkapplications.shade.structures.InMemoryConfigurationContainer
 import inkapplications.shade.internals.InternalsModule
-import inkapplications.shade.structures.SecurityStrategy
 import inkapplications.shade.lights.ShadeLightsModule
 import inkapplications.shade.structures.AuthToken
+import inkapplications.shade.structures.HueConfigurationContainer
+import inkapplications.shade.structures.InMemoryConfigurationContainer
+import inkapplications.shade.structures.SecurityStrategy
 import kimchi.logger.EmptyLogger
 import kimchi.logger.KimchiLogger
 

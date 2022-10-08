@@ -1,7 +1,5 @@
 package inkapplications.shade.structures
 
-import inkapplications.shade.structures.AuthToken
-import inkapplications.shade.structures.SecurityStrategy
 import kotlinx.coroutines.flow.StateFlow
 
 /**
