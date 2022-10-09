@@ -1,14 +1,12 @@
 package inkapplications.shade.lights.structures
 
-import inkapplications.shade.serialization.DelegateSerializer
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.builtins.serializer
 import kotlin.jvm.JvmInline
 
 /**
  * Simple Gamut Type definition used by Hue products.
  */
-@Serializable(with = GamutType.Serializer::class)
+@Serializable
 @JvmInline
 value class GamutType private constructor(val key: String) {
     override fun toString(): String = key
@@ -36,10 +34,5 @@ value class GamutType private constructor(val key: String) {
 
         fun values(): Array<GamutType> = arrayOf(A, B, C, Other)
         fun valueOf(key: String) = values().single { it.key == key }
-    }
-
-    internal object Serializer: DelegateSerializer<String, GamutType>(String.serializer()) {
-        override fun serialize(data: GamutType): String = data.key
-        override fun deserialize(data: String): GamutType = GamutType(data)
     }
 }

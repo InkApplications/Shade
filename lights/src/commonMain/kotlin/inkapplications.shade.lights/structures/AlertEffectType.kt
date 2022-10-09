@@ -1,15 +1,13 @@
 package inkapplications.shade.lights.structures
 
-import inkapplications.shade.serialization.DelegateSerializer
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.builtins.serializer
 import kotlin.jvm.JvmInline
 
 /**
  * Wraps alert effects for lighting
  */
 @JvmInline
-@Serializable(with = AlertEffectType.Serializer::class)
+@Serializable
 value class AlertEffectType private constructor(val key: String) {
     override fun toString(): String = key
 
@@ -17,10 +15,5 @@ value class AlertEffectType private constructor(val key: String) {
         val Breathe = AlertEffectType("breathe")
         fun values(): Array<AlertEffectType> = arrayOf(Breathe)
         fun valueOf(key: String) = values().single { it.key == key }
-    }
-
-    internal object Serializer: DelegateSerializer<String, AlertEffectType>(String.serializer()) {
-        override fun serialize(data: AlertEffectType): String = data.key
-        override fun deserialize(data: String): AlertEffectType = AlertEffectType(data)
     }
 }

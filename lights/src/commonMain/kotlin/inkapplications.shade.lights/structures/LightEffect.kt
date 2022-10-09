@@ -1,15 +1,13 @@
 package inkapplications.shade.lights.structures
 
-import inkapplications.shade.serialization.DelegateSerializer
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.builtins.serializer
 import kotlin.jvm.JvmInline
 
 /**
  * Static effect applied to a light.
  */
 @JvmInline
-@Serializable(with = LightEffect.Serializer::class)
+@Serializable
 value class LightEffect private constructor(val key: String) {
     override fun toString(): String = key
 
@@ -20,10 +18,5 @@ value class LightEffect private constructor(val key: String) {
 
         fun values(): Array<LightEffect> = arrayOf(Fire, Candle, None)
         fun valueOf(key: String) = values().single { it.key == key }
-    }
-
-    internal object Serializer: DelegateSerializer<String, LightEffect>(String.serializer()) {
-        override fun serialize(data: LightEffect): String = data.key
-        override fun deserialize(data: String): LightEffect = LightEffect(data)
     }
 }
