@@ -1,5 +1,5 @@
 [versions]
-kimchi = "1.1.0"
+kimchi = "2.0.0"
 
 [libraries.publishing]
 version = "1.0.0"
