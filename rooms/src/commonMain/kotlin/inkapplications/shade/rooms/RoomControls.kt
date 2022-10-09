@@ -11,4 +11,9 @@ interface RoomControls {
      * Get the state of a single room
      */
     suspend fun getRoom(id: ResourceId): Room
+
+    /**
+     * Get a list of rooms configured on the hue service.
+     */
+    suspend fun getRooms(): List<Room>
 }

@@ -8,6 +8,7 @@ import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
 import inkapplications.shade.cli.rooms.GetRoomCommand
+import inkapplications.shade.cli.rooms.ListRoomsCommand
 import kotlin.system.exitProcess
 
 class Main: NoOpCliktCommand() {
@@ -19,6 +20,7 @@ class Main: NoOpCliktCommand() {
             UpdateLightCommand,
             AuthorizeCommand,
             GetRoomCommand,
+            ListRoomsCommand,
         )
     }
 }

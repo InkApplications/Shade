@@ -14,4 +14,8 @@ internal class ShadeRooms(
     override suspend fun getRoom(id: ResourceId): Room {
         return hueHttpClient.getData<List<Room>>("resource", "room", id.value).single()
     }
+
+    override suspend fun getRooms(): List<Room> {
+        return hueHttpClient.getData("resource", "room")
+    }
 }
