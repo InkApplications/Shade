@@ -4,6 +4,7 @@ import inkapplications.shade.auth.AuthModule
 import inkapplications.shade.discover.DiscoverModule
 import inkapplications.shade.internals.InternalsModule
 import inkapplications.shade.lights.ShadeLightsModule
+import inkapplications.shade.rooms.ShadeRoomsModule
 import inkapplications.shade.structures.AuthToken
 import inkapplications.shade.structures.HueConfigurationContainer
 import inkapplications.shade.structures.InMemoryConfigurationContainer
@@ -43,4 +44,5 @@ class Shade(
     )
     val discover = DiscoverModule()
     val lights = ShadeLightsModule(internalsModule).lights
+    val rooms = ShadeRoomsModule(internalsModule).rooms
 }

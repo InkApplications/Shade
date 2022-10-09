@@ -12,6 +12,7 @@ kotlin {
                 api(projects.structures)
                 api(projects.discover)
                 api(projects.lights)
+                api(projects.rooms)
 
                 api(inkLibraries.kimchi.logger)
             }
