@@ -1,5 +1,6 @@
 package inkapplications.shade.cli
 
+import com.github.ajalt.clikt.parameters.arguments.Argument
 import com.github.ajalt.clikt.parameters.arguments.ProcessedArgument
 import com.github.ajalt.clikt.parameters.arguments.convert
 import com.github.ajalt.clikt.parameters.options.*
@@ -8,7 +9,10 @@ import com.github.ajalt.clikt.parameters.types.int
 import com.github.ajalt.colormath.Color
 import com.github.ajalt.colormath.parse
 import inkapplications.shade.lights.structures.*
+import inkapplications.shade.rooms.structures.RoomArchetype
 import inkapplications.shade.structures.ResourceId
+import inkapplications.shade.structures.ResourceReference
+import inkapplications.shade.structures.ResourceType
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
 import inkapplications.spondee.measure.metric.Kelvin
@@ -22,6 +26,25 @@ import kotlin.time.Duration
  * Convert a string argument into a resource ID
  */
 fun ProcessedArgument<String, String>.resourceId() = convert { ResourceId(it) }
+
+/**
+ * Convert an argument to a timed light effect value.
+ */
+fun ProcessedArgument<String, String>.roomArchetype(): ProcessedArgument<RoomArchetype, RoomArchetype> {
+    return choice(choices = RoomArchetype.values().map { it.key }.toTypedArray())
+        .convert { RoomArchetype.valueOf(it) }
+}
+
+/**
+ * Convert a comma separated argument to a list of resource references for devices.
+ */
+fun NullableOption<String, String>.deviceResourceReferences(): NullableOption<List<ResourceReference>, List<ResourceReference>> {
+    return convert {
+        it.split(',')
+            .map { ResourceId(it.trim()) }
+            .map { ResourceReference(id = it, type = ResourceType.Device) }
+    }
+}
 
 /**
  * Convert an argument into a percentage object
