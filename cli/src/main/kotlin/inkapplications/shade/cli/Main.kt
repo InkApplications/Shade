@@ -7,10 +7,7 @@ import inkapplications.shade.cli.connection.DiscoverCommand
 import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
-import inkapplications.shade.cli.rooms.CreateRoomCommand
-import inkapplications.shade.cli.rooms.GetRoomCommand
-import inkapplications.shade.cli.rooms.ListRoomsCommand
-import inkapplications.shade.cli.rooms.UpdateRoomCommand
+import inkapplications.shade.cli.rooms.*
 import kotlin.system.exitProcess
 
 class Main: NoOpCliktCommand() {
@@ -25,6 +22,7 @@ class Main: NoOpCliktCommand() {
             ListRoomsCommand,
             CreateRoomCommand,
             UpdateRoomCommand,
+            DeleteRoomCommand,
         )
     }
 }

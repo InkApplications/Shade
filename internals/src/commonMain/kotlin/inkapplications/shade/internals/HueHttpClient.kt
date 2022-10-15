@@ -120,3 +120,20 @@ suspend inline fun <reified REQUEST, reified RESPONSE> HueHttpClient.postData(
         responseSerializer = serializer(),
     )
 }
+
+/**
+ * Make a DELETE request to the hue bridge.@author
+ *
+ * @param pathSegments A list of strings to url encode and use as the path.
+ * @throws SerializationError if the response body is unable to be decoded.
+ * @throws HostnameNotSetException if the client has not been configured with a hostname.
+ * @throws UnauthorizedException if the client's authentication is invalid.
+ * @throws NetworkException if an error occurs while communicating with the API.
+ */
+suspend inline fun <reified T> HueHttpClient.deleteData(vararg pathSegments: String): T {
+    return sendRequest<Nothing, T>(
+        method = HttpMethod.Delete.value,
+        pathSegments = pathSegments,
+        responseSerializer = serializer(),
+    )
+}

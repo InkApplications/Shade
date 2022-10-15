@@ -1,9 +1,6 @@
 package inkapplications.shade.rooms
 
-import inkapplications.shade.internals.HueHttpClient
-import inkapplications.shade.internals.getData
-import inkapplications.shade.internals.postData
-import inkapplications.shade.internals.putData
+import inkapplications.shade.internals.*
 import inkapplications.shade.rooms.parameters.RoomCreateParameters
 import inkapplications.shade.rooms.parameters.RoomUpdateParameters
 import inkapplications.shade.rooms.structures.Room
@@ -40,5 +37,9 @@ internal class ShadeRooms(
         )
 
         return response.single()
+    }
+
+    override suspend fun deleteRoom(id: ResourceId): ResourceReference {
+        return hueHttpClient.deleteData<List<ResourceReference>>("resource", "room", id.value).single()
     }
 }

@@ -34,4 +34,11 @@ interface RoomControls {
      * @param parameters data about the room to be updated.
      */
     suspend fun updateRoom(id: ResourceId, parameters: RoomUpdateParameters): ResourceReference
+
+    /**
+     * Delete an existing room from the hue bridge.
+     *
+     * @param id The v2 resource ID of the room to be deleted
+     */
+    suspend fun deleteRoom(id: ResourceId): ResourceReference
 }
