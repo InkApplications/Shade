@@ -36,6 +36,14 @@ fun ProcessedArgument<String, String>.roomArchetype(): ProcessedArgument<RoomArc
 }
 
 /**
+ * Convert an argument to a timed light effect value.
+ */
+fun NullableOption<String, String>.roomArchetype(): NullableOption<RoomArchetype, RoomArchetype> {
+    return choice(choices = RoomArchetype.values().map { it.key }.toTypedArray())
+        .convert { RoomArchetype.valueOf(it) }
+}
+
+/**
  * Convert a comma separated argument to a list of resource references for devices.
  */
 fun NullableOption<String, String>.deviceResourceReferences(): NullableOption<List<ResourceReference>, List<ResourceReference>> {

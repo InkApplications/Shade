@@ -1,8 +1,8 @@
 package inkapplications.shade.rooms
 
-import inkapplications.shade.rooms.parameters.RoomUpdateParameters
+import inkapplications.shade.rooms.parameters.RoomCreateParameters
 import inkapplications.shade.rooms.structures.RoomArchetype
-import inkapplications.shade.rooms.structures.RoomMetadataUpdateParameters
+import inkapplications.shade.rooms.structures.RoomMetadata
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
 import inkapplications.shade.structures.ResourceType
@@ -11,7 +11,7 @@ import kotlinx.serialization.json.Json
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class RoomUpdateParametersSerializationTest {
+class RoomCreateParametersSerializationTest {
     val json = Json { ignoreUnknownKeys = true; prettyPrint = true }
 
     @Test
@@ -35,12 +35,12 @@ class RoomUpdateParametersSerializationTest {
             }
         """.trimIndent()
 
-        val parameters = RoomUpdateParameters(
+        val parameters = RoomCreateParameters(
             children = listOf(
                 ResourceReference(ResourceId("test-id-2"), ResourceType.Device),
                 ResourceReference(ResourceId("test-id-3"), ResourceType.Device),
             ),
-            metadata = RoomMetadataUpdateParameters(
+            metadata = RoomMetadata(
                 name = "Hallway",
                 archetype = RoomArchetype.Other,
             ),
@@ -55,10 +55,22 @@ class RoomUpdateParametersSerializationTest {
     fun minimalSerialization() {
         val data = """
             {
+                "metadata": {
+                    "archetype": "other",
+                    "name": "Hallway"
+                },
+                "children": [
+                ]
             }
         """.trimIndent()
 
-        val parameters = RoomUpdateParameters()
+        val parameters = RoomCreateParameters(
+            children = listOf(),
+            metadata = RoomMetadata(
+                name = "Hallway",
+                archetype = RoomArchetype.Other,
+            ),
+        )
 
         val serialized = json.encodeToString(parameters)
 

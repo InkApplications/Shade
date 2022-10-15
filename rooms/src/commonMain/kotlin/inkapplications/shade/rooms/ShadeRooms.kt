@@ -3,7 +3,9 @@ package inkapplications.shade.rooms
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.internals.getData
 import inkapplications.shade.internals.postData
+import inkapplications.shade.internals.putData
 import inkapplications.shade.rooms.parameters.RoomCreateParameters
+import inkapplications.shade.rooms.parameters.RoomUpdateParameters
 import inkapplications.shade.rooms.structures.Room
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
@@ -26,6 +28,15 @@ internal class ShadeRooms(
         val response: List<ResourceReference> = hueHttpClient.postData(
             body = parameters,
             pathSegments = arrayOf("resource", "room"),
+        )
+
+        return response.single()
+    }
+
+    override suspend fun updateRoom(id: ResourceId, parameters: RoomUpdateParameters): ResourceReference {
+        val response: List<ResourceReference> = hueHttpClient.putData(
+            body = parameters,
+            pathSegments =  arrayOf("resource", "room", id.value),
         )
 
         return response.single()
