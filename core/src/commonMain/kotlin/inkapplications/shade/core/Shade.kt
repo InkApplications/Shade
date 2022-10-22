@@ -9,6 +9,7 @@ import inkapplications.shade.structures.AuthToken
 import inkapplications.shade.structures.HueConfigurationContainer
 import inkapplications.shade.structures.InMemoryConfigurationContainer
 import inkapplications.shade.structures.SecurityStrategy
+import inkapplications.shade.zones.ShadeZonesModule
 import kimchi.logger.EmptyLogger
 import kimchi.logger.KimchiLogger
 
@@ -47,4 +48,5 @@ class Shade(
 
     val lights = ShadeLightsModule(internalsModule).lights
     val rooms = ShadeRoomsModule(internalsModule).rooms
+    val zones = ShadeZonesModule(internalsModule).zones
 }

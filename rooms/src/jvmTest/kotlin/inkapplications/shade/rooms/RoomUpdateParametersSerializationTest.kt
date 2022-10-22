@@ -1,11 +1,7 @@
 package inkapplications.shade.rooms
 
 import inkapplications.shade.rooms.parameters.RoomCreateParameters
-import inkapplications.shade.rooms.structures.RoomArchetype
-import inkapplications.shade.rooms.structures.RoomMetadata
-import inkapplications.shade.structures.ResourceId
-import inkapplications.shade.structures.ResourceReference
-import inkapplications.shade.structures.ResourceType
+import inkapplications.shade.structures.*
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.junit.Test

@@ -18,7 +18,7 @@ internal class ShadeLights(
         return hueClient.getData<List<Light>>("resource", "light", id.value).single()
     }
 
-    override suspend fun getLights(): List<Light> {
+    override suspend fun listLights(): List<Light> {
         return hueClient.getData("resource", "light")
     }
 

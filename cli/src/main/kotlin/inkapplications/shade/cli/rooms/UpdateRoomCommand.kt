@@ -7,7 +7,7 @@ import inkapplications.shade.cli.deviceResourceReferences
 import inkapplications.shade.cli.resourceId
 import inkapplications.shade.cli.roomArchetype
 import inkapplications.shade.rooms.parameters.RoomUpdateParameters
-import inkapplications.shade.rooms.structures.RoomMetadataUpdateParameters
+import inkapplications.shade.rooms.parameters.RoomMetadataUpdateParameters
 
 object UpdateRoomCommand: AuthorizedShadeCommand(
     help = "Update an existing room on the Hue bridge"

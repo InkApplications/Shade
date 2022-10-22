@@ -20,7 +20,7 @@ interface RoomControls {
     /**
      * Get a list of rooms configured on the hue service.
      */
-    suspend fun getRooms(): List<Room>
+    suspend fun listRooms(): List<Room>
 
     /**
      * Create a new room on the hue bridge.

@@ -6,7 +6,7 @@ object ListRoomsCommand: AuthorizedShadeCommand(
     help = "Get all of the rooms configured on the Hue bridge"
 ) {
     override suspend fun runCommand(): Int {
-        val rooms = shade.rooms.getRooms()
+        val rooms = shade.rooms.listRooms()
 
         logger.debug("Got Rooms: $rooms")
         rooms.forEach(::echoRoom)

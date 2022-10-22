@@ -1,6 +1,5 @@
 package inkapplications.shade.rooms.parameters
 
-import inkapplications.shade.rooms.structures.RoomMetadataUpdateParameters
 import inkapplications.shade.structures.ResourceReference
 import kotlinx.serialization.Serializable
 

@@ -1,8 +1,8 @@
-package inkapplications.shade.rooms
+package inkapplications.shade.zones
 
-import inkapplications.shade.rooms.structures.Room
 import inkapplications.shade.structures.ResourceType
 import inkapplications.shade.structures.RoomArchetype
+import inkapplications.shade.zones.structures.Zone
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.junit.Test
@@ -16,7 +16,7 @@ class RoomSerializationTest {
         val data = """
             {
                 "id": "test-id",
-                "id_v1": "/groups/4",
+                "id_v1": "/zone/4",
                 "children": [
                     {"rid":"test-id-2","rtype":"device"},
                     {"rid":"test-id-3","rtype":"device"}
@@ -28,23 +28,23 @@ class RoomSerializationTest {
                     "name":"Hallway",
                     "archetype":"other"
                 },
-                "type":"room"
+                "type":"zone"
             }
         """.trimIndent()
 
-        val room = json.decodeFromString<Room>(data)
+        val zone = json.decodeFromString<Zone>(data)
 
-        assertEquals("test-id", room.id.value)
-        assertEquals("Hallway", room.metadata.name)
-        assertEquals(RoomArchetype.Other, room.metadata.archetype)
-        assertEquals(2, room.children.size)
-        assertEquals("test-id-2", room.children[0].id.value)
-        assertEquals(ResourceType.Device, room.children[0].type)
-        assertEquals("test-id-3", room.children[1].id.value)
-        assertEquals(ResourceType.Device, room.children[1].type)
-        assertEquals(1, room.services.size)
-        assertEquals("test-id-4", room.services[0].id.value)
-        assertEquals(ResourceType.GroupedLight, room.services[0].type)
+        assertEquals("test-id", zone.id.value)
+        assertEquals("Hallway", zone.metadata.name)
+        assertEquals(RoomArchetype.Other, zone.metadata.archetype)
+        assertEquals(2, zone.children.size)
+        assertEquals("test-id-2", zone.children[0].id.value)
+        assertEquals(ResourceType.Device, zone.children[0].type)
+        assertEquals("test-id-3", zone.children[1].id.value)
+        assertEquals(ResourceType.Device, zone.children[1].type)
+        assertEquals(1, zone.services.size)
+        assertEquals("test-id-4", zone.services[0].id.value)
+        assertEquals(ResourceType.GroupedLight, zone.services[0].type)
     }
 
     @Test
@@ -61,12 +61,12 @@ class RoomSerializationTest {
             }
         """.trimIndent()
 
-        val room = json.decodeFromString<Room>(data)
+        val zone = json.decodeFromString<Zone>(data)
 
-        assertEquals("test-id", room.id.value)
-        assertEquals("Hallway", room.metadata.name)
-        assertEquals(RoomArchetype.Other, room.metadata.archetype)
-        assertEquals(0, room.children.size)
-        assertEquals(0, room.services.size)
+        assertEquals("test-id", zone.id.value)
+        assertEquals("Hallway", zone.metadata.name)
+        assertEquals(RoomArchetype.Other, zone.metadata.archetype)
+        assertEquals(0, zone.children.size)
+        assertEquals(0, zone.services.size)
     }
 }

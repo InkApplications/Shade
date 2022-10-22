@@ -1,5 +1,6 @@
-package inkapplications.shade.rooms.structures
+package inkapplications.shade.rooms.parameters
 
+import inkapplications.shade.structures.RoomArchetype
 import kotlinx.serialization.Serializable
 
 /**

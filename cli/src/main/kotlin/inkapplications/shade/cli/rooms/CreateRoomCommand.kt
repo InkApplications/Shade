@@ -6,7 +6,7 @@ import inkapplications.shade.cli.AuthorizedShadeCommand
 import inkapplications.shade.cli.deviceResourceReferences
 import inkapplications.shade.cli.roomArchetype
 import inkapplications.shade.rooms.parameters.RoomCreateParameters
-import inkapplications.shade.rooms.structures.RoomMetadata
+import inkapplications.shade.structures.RoomMetadata
 
 object CreateRoomCommand: AuthorizedShadeCommand(
     help = "Create a new room on the Hue bridge"

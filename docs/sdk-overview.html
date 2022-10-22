@@ -116,7 +116,7 @@
     </section>
     <section>
         <header>
-            <a name="controls" href="#controls">
+            <a name="lights" href="#lights">
                 <h1>Control Lights</h1>
             </a>
         </header>
@@ -130,10 +130,26 @@
         brightness = 10.percent,
     ),
 )</code></pre>
+        <p>
+            The lights module supports the following actions:
+        </p>
+        <ul>
+            <li>
+                <code>listLights</code> To get a list of all lights on the
+                hue bridge
+            </li>
+            <li>
+                <code>getLight</code> To get information about a single light
+            </li>
+            <li>
+                <code>updateLight</code> To update information about a single
+                light
+            </li>
+        </ul>
     </section>
     <section>
         <header>
-            <a name="controls" href="#controls">
+            <a name="rooms" href="#rooms">
                 <h1>Configure Rooms</h1>
             </a>
         </header>
@@ -150,6 +166,49 @@
         children = listOf(lightReference),
     ),
 )</code></pre>
+        <p>
+            The rooms module supports the following actions:
+        </p>
+        <ul>
+            <li>
+                <code>listRooms</code> To get a list of all rooms on the
+                hue bridge
+            </li>
+            <li>
+                <code>getRoom</code> To get information about a single room
+            </li>
+            <li>
+                <code>updateRoom</code> To update information about a single
+                room
+            </li>
+            <li>
+                <code>createRoom</code> To create a new room on the hue bridge
+            </li>
+            <li>
+                <code>deleteRoom</code> To remove a room from the hue bridge
+            </li>
+        </ul>
+    </section>
+    <section>
+        <header>
+            <a name="zones" href="#zones">
+                <h1>Configure Zones</h1>
+            </a>
+        </header>
+        <p>
+            Zones can be created and updated through the <code>zones</code>
+            module:
+        </p>
+<pre><code class="kotlin">shade.zones.listZones()</code></pre>
+        <p>
+            The zones module supports the following actions:
+        </p>
+        <ul>
+            <li>
+                <code>listZones</code> To get a list of all zones on the
+                hue bridge
+            </li>
+        </ul>
     </section>
 </body>
 </html>

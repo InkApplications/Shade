@@ -2,6 +2,7 @@ package inkapplications.shade.rooms.structures
 
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
+import inkapplications.shade.structures.RoomMetadata
 import kotlinx.serialization.Serializable
 
 /**

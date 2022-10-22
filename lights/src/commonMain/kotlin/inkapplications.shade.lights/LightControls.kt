@@ -19,7 +19,7 @@ interface LightControls {
     /**
      * Get a list of all lights connected to the bridge
      */
-    suspend fun getLights(): List<Light>
+    suspend fun listLights(): List<Light>
 
     /**
      * Update a light's state.

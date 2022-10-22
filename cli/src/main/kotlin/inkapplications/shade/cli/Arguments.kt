@@ -1,6 +1,5 @@
 package inkapplications.shade.cli
 
-import com.github.ajalt.clikt.parameters.arguments.Argument
 import com.github.ajalt.clikt.parameters.arguments.ProcessedArgument
 import com.github.ajalt.clikt.parameters.arguments.convert
 import com.github.ajalt.clikt.parameters.options.*
@@ -9,10 +8,10 @@ import com.github.ajalt.clikt.parameters.types.int
 import com.github.ajalt.colormath.Color
 import com.github.ajalt.colormath.parse
 import inkapplications.shade.lights.structures.*
-import inkapplications.shade.rooms.structures.RoomArchetype
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
 import inkapplications.shade.structures.ResourceType
+import inkapplications.shade.structures.RoomArchetype
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
 import inkapplications.spondee.measure.metric.Kelvin
