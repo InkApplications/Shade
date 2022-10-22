@@ -37,3 +37,7 @@ module = "org.jetbrains.kotlin:kotlin-test"
 [libraries.test-annotations]
 version.ref = "kotlin"
 module = "org.jetbrains.kotlin:kotlin-test-annotations-common"
+
+[libraries.dokka]
+version.ref = "kotlin"
+module = "org.jetbrains.dokka:dokka-gradle-plugin"

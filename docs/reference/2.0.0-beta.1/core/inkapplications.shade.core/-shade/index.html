@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Shade</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>shade</span>            </a>    </div>
+    <div>2.0.0-beta.1
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="core::inkapplications.shade.core/Shade///PointingToDeclaration//-2011752812">
+  <div class="breadcrumbs"><a href="../../index.html">core</a><span class="delimiter">/</span><a href="../index.html">inkapplications.shade.core</a><span class="delimiter">/</span><span class="current">Shade</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Shade</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Shade</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>configuration<span class="token operator">: </span><a href="../../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span><span class="token operator"> = </span>EmptyLogger</span></span><span class="token punctuation">)</span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="1084406789%2FConstructors%2F-2011752812" anchor-label="Shade" id="1084406789%2FConstructors%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/commonMain" data-filterable-set=":core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-shade.html"><span><span>Shade</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1084406789%2FConstructors%2F-2011752812"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-shade.html"><span class="token function">Shade</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">hostname<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">authToken<span class="token operator">: </span><a href="../../../structures/inkapplications.shade.structures/-auth-token/index.html">AuthToken</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">securityStrategy<span class="token operator">: </span><a href="../../../structures/inkapplications.shade.structures/-security-strategy/index.html">SecurityStrategy</a><span class="token operator"> = </span>SecurityStrategy.PlatformTrust<span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span><span class="token operator"> = </span>EmptyLogger</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Empty Constructor with reasonable defaults.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="49934260%2FConstructors%2F-2011752812" anchor-label="Shade" id="49934260%2FConstructors%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/commonMain" data-filterable-set=":core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-shade.html"><span><span>Shade</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="49934260%2FConstructors%2F-2011752812"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-shade.html"><span class="token function">Shade</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configuration<span class="token operator">: </span><a href="../../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span><span class="token operator"> = </span>EmptyLogger</span></span><span class="token punctuation">)</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="1406034761%2FProperties%2F-2011752812" anchor-label="auth" id="1406034761%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/commonMain" data-filterable-set=":core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="auth.html"><span><span>auth</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1406034761%2FProperties%2F-2011752812"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><a data-name="1406034761%2FProperties%2F-2011752812" anchor-label="auth" id="1406034761%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="auth.html">auth</a><span class="token operator">: </span><a href="../../../auth/inkapplications.shade.auth/-bridge-auth/index.html">BridgeAuth</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="338303443%2FProperties%2F-2011752812" anchor-label="configuration" id="338303443%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/commonMain" data-filterable-set=":core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="configuration.html"><span><span>configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="338303443%2FProperties%2F-2011752812"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><a data-name="338303443%2FProperties%2F-2011752812" anchor-label="configuration" id="338303443%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="configuration.html">configuration</a><span class="token operator">: </span><a href="../../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1129485172%2FProperties%2F-2011752812" anchor-label="lights" id="1129485172%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/commonMain" data-filterable-set=":core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="lights.html"><span><span>lights</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1129485172%2FProperties%2F-2011752812"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><a data-name="1129485172%2FProperties%2F-2011752812" anchor-label="lights" id="1129485172%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="lights.html">lights</a><span class="token operator">: </span><a href="../../../lights/inkapplications.shade.lights/-light-controls/index.html">LightControls</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="698411276%2FProperties%2F-2011752812" anchor-label="onlineDiscovery" id="698411276%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/commonMain" data-filterable-set=":core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="online-discovery.html"><span>online</span><wbr><span><span>Discovery</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="698411276%2FProperties%2F-2011752812"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><a data-name="698411276%2FProperties%2F-2011752812" anchor-label="onlineDiscovery" id="698411276%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="online-discovery.html">onlineDiscovery</a><span class="token operator">: </span><a href="../../../discover/inkapplications.shade.discover/-bridge-discovery/index.html">BridgeDiscovery</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="24208913%2FProperties%2F-2011752812" anchor-label="rooms" id="24208913%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/commonMain" data-filterable-set=":core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="rooms.html"><span><span>rooms</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="24208913%2FProperties%2F-2011752812"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><a data-name="24208913%2FProperties%2F-2011752812" anchor-label="rooms" id="24208913%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="rooms.html">rooms</a><span class="token operator">: </span><a href="../../../rooms/inkapplications.shade.rooms/-room-controls/index.html">RoomControls</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1266496930%2FProperties%2F-2011752812" anchor-label="zones" id="1266496930%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/commonMain" data-filterable-set=":core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="zones.html"><span><span>zones</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1266496930%2FProperties%2F-2011752812"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/commonMain"><a data-name="1266496930%2FProperties%2F-2011752812" anchor-label="zones" id="1266496930%2FProperties%2F-2011752812" data-filterable-set=":core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="zones.html">zones</a><span class="token operator">: </span><a href="../../../zones/inkapplications.shade.zones/-zone-controls/index.html">ZoneControls</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+
