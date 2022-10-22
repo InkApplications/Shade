@@ -13,7 +13,7 @@ import kimchi.logger.EmptyLogger
 import kimchi.logger.KimchiLogger
 
 class Shade(
-    configurationContainer: HueConfigurationContainer,
+    val configuration: HueConfigurationContainer,
     logger: KimchiLogger = EmptyLogger,
 ) {
     /**
@@ -25,7 +25,7 @@ class Shade(
         securityStrategy: SecurityStrategy = SecurityStrategy.PlatformTrust,
         logger: KimchiLogger = EmptyLogger,
     ): this(
-        configurationContainer = InMemoryConfigurationContainer(
+        configuration = InMemoryConfigurationContainer(
             initialHostname = hostname,
             initialAuthToken = authToken,
             initialSecurityStrategy = securityStrategy,
@@ -34,15 +34,17 @@ class Shade(
     )
 
     private val internalsModule = InternalsModule(
-        configurationContainer = configurationContainer,
+        configurationContainer = configuration,
         logger = logger,
     )
 
+    val onlineDiscovery = DiscoverModule().onlineDiscovery
+    
     val auth = AuthModule(
         internalsModule = internalsModule,
         logger = logger,
-    )
-    val discover = DiscoverModule()
+    ).bridgeAuth
+
     val lights = ShadeLightsModule(internalsModule).lights
     val rooms = ShadeRoomsModule(internalsModule).rooms
 }

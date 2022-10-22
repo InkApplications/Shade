@@ -33,7 +33,7 @@ object AuthorizeCommand: ShadeCommand(
     override suspend fun runCommand(): Int {
 
         echo("Press button on hue bridge to complete")
-        val token = shade.auth.bridgeAuth.awaitToken(
+        val token = shade.auth.awaitToken(
             appId = AppId(appName, instanceId),
             retries = retries,
             timeout = timeout,

@@ -1,0 +1,66 @@
+@import url("https://assets.inkapplications.com/css/main-v1.css");
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400");
+
+:root
+{
+    --color-accent: #ec6238;
+}
+
+.logo
+{
+    margin: 0 auto;
+    height: 4rem;
+    display: block;
+}
+
+h1,
+h2,
+h3
+{
+    font-family: 'Alegreya Sans SC', monospace;
+    font-weight: 400;
+}
+
+section > *:last-child
+{
+    margin-bottom: 0;
+}
+
+section nav ul
+{
+    margin: 1.5rem 0;
+}
+
+section nav ul > li
+{
+    margin: .75rem 0;
+}
+
+section nav ul > li::before
+{
+    content: none;
+}
+
+section nav a:not(.button):after
+{
+    content: ' >';
+}
+
+
+@media not (prefers-color-scheme: dark) {
+    .logo.only-darkmode
+    {
+        display: none;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .logo.only-lightmode
+    {
+        display: none;
+    }
+}
+
+.button
+{
+    display: inline-block;
+}

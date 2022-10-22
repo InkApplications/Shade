@@ -61,7 +61,7 @@ abstract class ShadeCommand(
 
     open val shade: Shade by lazy {
         Shade(
-            configurationContainer = this,
+            configuration = this,
             logger = logger,
         )
     }

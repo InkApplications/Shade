@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Shade, Hue, Kotlin, Java, Android, Library" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shade / Kotlin SDK</title>
+
+    <link rel="stylesheet" href="css/main-2.0.css" type="text/css" media="all" />
+
+    <script src="https://assets.inkapplications.com/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="sectioned">
+<header class="content-break">
+    <a href="index.html">
+        <img src="svg/logo-full.svg" class="logo only-lightmode" alt="Shade Logo" />
+        <img src="svg/logo-full-dark.svg" class="logo only-darkmode" alt="Shade Logo" />
+    </a>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="sdk-overview.html">SDK Overview</a>
+            </li>
+            <li>
+                Initialization
+            </li>
+        </ul>
+    </nav>
+</header>
+    <section>
+        <header>
+            <a name="sdk" href="#sdk">
+                <h1>Initializing the Shade SDK</h1>
+            </a>
+        </header>
+        <p>
+            Shade's default configuration stores authorization in memory and
+            uses the Platform's SSL Configuration. However, this can be
+            customized or completely overridden depending on your application.
+        </p>
+    </section>
+    <section>
+        <header>
+            <a name="hostname" href="#hostname">
+                <h1>Manual Configuration</h1>
+            </a>
+        </header>
+        <article>
+            <h2>Set the Hostname Manually</h2>
+            <p>
+                If you know the hostname or IP of the Hue bridge you want to
+                connect to, you can specify it when constructing the Shade
+                object:
+            </p>
+<pre><code class="kotlin">Shade(
+    hostname = "192.168.1.23",
+)</code></pre>
+            <p>
+                The hostname may simply be the bridge's local IP address.
+                A DNS that resolves to the bridge's IP address is also
+                acceptable, as well as the bridge ID if using the Hue CA
+                <code>SecurityStrategy</code>.
+            </p>
+        </article>
+        <article>
+            <h2>Set the Auth Token Manually</h2>
+            <p>
+                If you have saved your connection authorization token from a
+                previous connection, you may set it on initialization to skip
+                the auth process:
+            </p>
+<pre><code class="kotlin">Shade(
+    authToken = AuthToken(
+        applicationKey = "********",
+        clientKey = "*******",
+    ),
+)</code></pre>
+        </article>
+    </section>
+    <section>
+        <header>
+            <a name="security" href="#security">
+                <h1>Security</h1>
+            </a>
+        </header>
+        <p>
+            Shade is configured to use HTTPS by default when connecting to the
+            hue bridge. However, since connections are done on a local network,
+            either your platform or application will need to be configured to
+            trust the SSL certificate coming from the Hue bridge.
+        </p>
+        <article>
+            <h2>Platform Trust (default)</h2>
+            <p>
+                Platform trust is the default trust strategy for Shade.
+                This will defer validation of the HTTPS connection to your
+                platform, meaning you will have to manually install or mark the
+                certificate as trusted on your system in order to connect to
+                the hue bridge.
+            </p>
+            <p>
+                This option requires no configuration and is supported by all
+                platforms, which makes it an ideal default. However, since it
+                requires configuration on your system, <strong>it is likely
+                you will want to change it</strong> when building an
+                application.
+            </p>
+        </article>
+        <article>
+            <h2>Hue CA</h2>
+            <p>
+                The hue bridge is
+                <a href="https://developers.meethue.com/develop/application-design-guidance/using-https/">configured</a>
+                to use a custom CA in its HTTPS certificates. You can configure
+                Shade to trust this root certificate manually on many platforms,
+                when provided the IP and device ID of the bridge that were
+                obtained during discovery:
+            </p>
+<pre><code class="kotlin">Shade(
+    hostname = "192.168.1.23",
+    securityStrategy = SecurityStrategy.HueCa(
+        ip = "192.168.1.23",
+        deviceId = "abcde1234",
+    ),
+)</code></pre>
+        </article>
+        <article>
+            <h2>Insecure</h2>
+            <p>
+                For security reasons it is not recommended that you use an
+                insecure connection for the connection, however you may
+                disable the SSL verification on many platforms for the bridge's
+                hostname:
+            </p>
+<pre><code class="kotlin">Shade(
+    hostname = "192.168.1.23",
+    securityStrategy = SecurityStrategy.Insecure(
+        hostname = "192.168.1.23",
+    ),
+)</code></pre>
+            <p>
+                When specifying this security type, the SSL certificate will
+                be ignored for all traffic to the specified hostname
+                done in the library.
+            </p>
+        </article>
+    </section>
+    <section>
+        <header>
+            <a name="custom-config" href="#custom-config">
+                <h1>Custom Configuration</h1>
+            </a>
+        </header>
+        <p>
+            Shade's in-memory configuration can be overridden entirely by
+            specifying a custom implementation of the
+            <code>HueConfigurationContainer</code> interface.
+        </p>
+        <p>
+            This interface allows you to load and save your connection
+            configuration any way your application wants, such as to a
+            local database:
+        </p>
+<pre><code class="kotlin">class DatabaseConfig: HueConfigurationContainer {
+    override val hostname: StateFlow&lt;String?&gt; = TODO("Load hostname from database")
+    override val securityStrategy: StateFlow&lt;SecurityStrategy&gt; = TODO("Load security strategy from database")
+    override val authToken: StateFlow&lt;AuthToken?&gt; = TODO("Load auth token from database")
+
+    override suspend fun setHostname(hostname: String?) {
+        TODO("Save Hostname to database")
+    }
+
+    override suspend fun setAuthToken(token: AuthToken?) {
+        TODO("Save auth token fields to database")
+    }
+
+    override suspend fun setSecurityStrategy(securityStrategy: SecurityStrategy) {
+        TODO("Save Security Strategy to database")
+    }
+}
+
+val shade = Shade(
+    configuration = DatabaseConfig(),
+)</code></pre>
+    </section>
+</body>
+</html>

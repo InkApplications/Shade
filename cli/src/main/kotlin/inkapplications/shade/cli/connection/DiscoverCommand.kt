@@ -6,7 +6,7 @@ object DiscoverCommand: ShadeCommand(
     help = "Discover hue bridges on the network",
 ) {
     override suspend fun runCommand(): Int {
-        val devices = shade.discover.onlineDiscovery.getDevices()
+        val devices = shade.onlineDiscovery.getDevices()
 
         devices.forEach {
             echo("${it.id}:")
