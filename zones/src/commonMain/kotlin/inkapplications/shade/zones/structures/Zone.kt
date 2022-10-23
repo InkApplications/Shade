@@ -10,12 +10,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Zone(
-        /**
+    /**
      * Unique v2 ID for the zone.
      */
     val id: ResourceId,
 
-        /**
+    /**
      * References all services aggregating control and state of children
      * in the group.
      *
@@ -27,12 +27,12 @@ data class Zone(
      */
     val services: List<ResourceReference>,
 
-        /**
+    /**
      * Configuration metatdata for the room/zone type.
      */
     val metadata: SegmentMetadata,
 
-        /**
+    /**
      * Children devices of this zone.
      */
     val children: List<ResourceReference>,

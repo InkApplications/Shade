@@ -7,12 +7,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SegmentMetadata(
-        /**
+    /**
      * Category of type/purpose of the segment
      */
     val archetype: SegmentArchetype,
 
-        /**
+    /**
      * Human readable name of the room.
      */
     val name: String,

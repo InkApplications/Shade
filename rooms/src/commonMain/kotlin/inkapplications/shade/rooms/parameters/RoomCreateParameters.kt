@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class RoomCreateParameters(
-        /**
+    /**
      * Configuration data for the room.
      */
     val metadata: SegmentMetadata,

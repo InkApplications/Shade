@@ -8,12 +8,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class RoomMetadataUpdateParameters(
-        /**
+    /**
      * Configuration object for a room
      */
     val archetype: SegmentArchetype? = null,
 
-        /**
+    /**
      * Human readable name of the room.
      */
     val name: String? = null,
