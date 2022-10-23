@@ -25,4 +25,5 @@ module:structures
 inkapplications.shade.structures
 module:zones
 inkapplications.shade.zones
+inkapplications.shade.zones.parameters
 inkapplications.shade.zones.structures

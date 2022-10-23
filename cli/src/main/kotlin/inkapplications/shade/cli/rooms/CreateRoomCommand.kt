@@ -4,7 +4,7 @@ import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.option
 import inkapplications.shade.cli.AuthorizedShadeCommand
 import inkapplications.shade.cli.deviceResourceReferences
-import inkapplications.shade.cli.roomArchetype
+import inkapplications.shade.cli.segmentArchetype
 import inkapplications.shade.rooms.parameters.RoomCreateParameters
 import inkapplications.shade.structures.SegmentMetadata
 
@@ -17,7 +17,7 @@ object CreateRoomCommand: AuthorizedShadeCommand(
 
     val archetype by argument(
         help = "The type of room"
-    ).roomArchetype()
+    ).segmentArchetype()
 
     val childrenDeviceIds by option(
         help = "A comma-separated list of device ID's to add as children for the room."

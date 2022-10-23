@@ -5,9 +5,9 @@ import com.github.ajalt.clikt.parameters.options.option
 import inkapplications.shade.cli.AuthorizedShadeCommand
 import inkapplications.shade.cli.deviceResourceReferences
 import inkapplications.shade.cli.resourceId
-import inkapplications.shade.cli.roomArchetype
+import inkapplications.shade.cli.segmentArchetype
 import inkapplications.shade.rooms.parameters.RoomUpdateParameters
-import inkapplications.shade.rooms.parameters.RoomMetadataUpdateParameters
+import inkapplications.shade.structures.SegmentMetadataUpdate
 
 object UpdateRoomCommand: AuthorizedShadeCommand(
     help = "Update an existing room on the Hue bridge"
@@ -22,7 +22,7 @@ object UpdateRoomCommand: AuthorizedShadeCommand(
 
     private val archetype by option(
         help = "The type of room"
-    ).roomArchetype()
+    ).segmentArchetype()
 
     private val childrenDeviceIds by option(
         help = "A comma-separated list of device ID's to add as children for the room."
@@ -32,7 +32,7 @@ object UpdateRoomCommand: AuthorizedShadeCommand(
         val response = shade.rooms.updateRoom(
             id = roomId,
             parameters = RoomUpdateParameters(
-                metadata = if (archetype != null || name != null) RoomMetadataUpdateParameters(
+                metadata = if (archetype != null || name != null) SegmentMetadataUpdate(
                     archetype = archetype,
                     name = name,
                 ) else null,

@@ -2,7 +2,10 @@ package inkapplications.shade.zones
 
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.internals.getData
+import inkapplications.shade.internals.putData
 import inkapplications.shade.structures.ResourceId
+import inkapplications.shade.structures.ResourceReference
+import inkapplications.shade.zones.parameters.ZoneUpdateParameters
 import inkapplications.shade.zones.structures.Zone
 
 /**
@@ -17,5 +20,14 @@ internal class ShadeZones(
 
     override suspend fun getZone(id: ResourceId): Zone {
         return hueHttpClient.getData<List<Zone>>("resource", "zone", id.value).single()
+    }
+
+    override suspend fun updateZone(id: ResourceId, parameters: ZoneUpdateParameters): ResourceReference {
+        val response: List<ResourceReference> = hueHttpClient.putData(
+            body = parameters,
+            pathSegments = arrayOf("resource", "zone", id.value),
+        )
+
+        return response.single()
     }
 }

@@ -29,7 +29,7 @@ fun ProcessedArgument<String, String>.resourceId() = convert { ResourceId(it) }
 /**
  * Convert an argument to a timed light effect value.
  */
-fun ProcessedArgument<String, String>.roomArchetype(): ProcessedArgument<SegmentArchetype, SegmentArchetype> {
+fun ProcessedArgument<String, String>.segmentArchetype(): ProcessedArgument<SegmentArchetype, SegmentArchetype> {
     return choice(choices = SegmentArchetype.values().map { it.key }.toTypedArray())
         .convert { SegmentArchetype.valueOf(it) }
 }
@@ -37,7 +37,7 @@ fun ProcessedArgument<String, String>.roomArchetype(): ProcessedArgument<Segment
 /**
  * Convert an argument to a timed light effect value.
  */
-fun NullableOption<String, String>.roomArchetype(): NullableOption<SegmentArchetype, SegmentArchetype> {
+fun NullableOption<String, String>.segmentArchetype(): NullableOption<SegmentArchetype, SegmentArchetype> {
     return choice(choices = SegmentArchetype.values().map { it.key }.toTypedArray())
         .convert { SegmentArchetype.valueOf(it) }
 }

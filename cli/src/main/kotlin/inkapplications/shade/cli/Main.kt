@@ -10,6 +10,7 @@ import inkapplications.shade.cli.lights.UpdateLightCommand
 import inkapplications.shade.cli.rooms.*
 import inkapplications.shade.cli.zones.GetZoneCommand
 import inkapplications.shade.cli.zones.ListZonesCommand
+import inkapplications.shade.cli.zones.UpdateZoneCommand
 import kotlin.system.exitProcess
 
 class Main: NoOpCliktCommand() {
@@ -27,6 +28,7 @@ class Main: NoOpCliktCommand() {
             DeleteRoomCommand,
             ListZonesCommand,
             GetZoneCommand,
+            UpdateZoneCommand,
         )
     }
 }
