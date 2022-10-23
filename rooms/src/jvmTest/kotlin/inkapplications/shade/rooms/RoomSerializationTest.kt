@@ -2,7 +2,7 @@ package inkapplications.shade.rooms
 
 import inkapplications.shade.rooms.structures.Room
 import inkapplications.shade.structures.ResourceType
-import inkapplications.shade.structures.RoomArchetype
+import inkapplications.shade.structures.SegmentArchetype
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.junit.Test
@@ -36,7 +36,7 @@ class RoomSerializationTest {
 
         assertEquals("test-id", room.id.value)
         assertEquals("Hallway", room.metadata.name)
-        assertEquals(RoomArchetype.Other, room.metadata.archetype)
+        assertEquals(SegmentArchetype.Other, room.metadata.archetype)
         assertEquals(2, room.children.size)
         assertEquals("test-id-2", room.children[0].id.value)
         assertEquals(ResourceType.Device, room.children[0].type)
@@ -65,7 +65,7 @@ class RoomSerializationTest {
 
         assertEquals("test-id", room.id.value)
         assertEquals("Hallway", room.metadata.name)
-        assertEquals(RoomArchetype.Other, room.metadata.archetype)
+        assertEquals(SegmentArchetype.Other, room.metadata.archetype)
         assertEquals(0, room.children.size)
         assertEquals(0, room.services.size)
     }

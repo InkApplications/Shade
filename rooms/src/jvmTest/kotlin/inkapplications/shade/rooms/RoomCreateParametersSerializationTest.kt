@@ -5,7 +5,7 @@ import inkapplications.shade.rooms.parameters.RoomMetadataUpdateParameters
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
 import inkapplications.shade.structures.ResourceType
-import inkapplications.shade.structures.RoomArchetype
+import inkapplications.shade.structures.SegmentArchetype
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.junit.Test
@@ -42,7 +42,7 @@ class RoomUpdateParametersSerializationTest {
             ),
             metadata = RoomMetadataUpdateParameters(
                 name = "Hallway",
-                archetype = RoomArchetype.Other,
+                archetype = SegmentArchetype.Other,
             ),
         )
 

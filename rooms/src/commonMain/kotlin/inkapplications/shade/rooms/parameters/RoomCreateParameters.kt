@@ -1,7 +1,7 @@
 package inkapplications.shade.rooms.parameters
 
 import inkapplications.shade.structures.ResourceReference
-import inkapplications.shade.structures.RoomMetadata
+import inkapplications.shade.structures.SegmentMetadata
 import kotlinx.serialization.Serializable
 
 /**
@@ -9,12 +9,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class RoomCreateParameters(
-    /**
+        /**
      * Configuration data for the room.
      */
-    val metadata: RoomMetadata,
+    val metadata: SegmentMetadata,
 
-    /**
+        /**
      * Devices to group by the Room
      */
     val children: List<ResourceReference>,

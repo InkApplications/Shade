@@ -36,9 +36,9 @@ class RoomCreateParametersSerializationTest {
                 ResourceReference(ResourceId("test-id-2"), ResourceType.Device),
                 ResourceReference(ResourceId("test-id-3"), ResourceType.Device),
             ),
-            metadata = RoomMetadata(
+            metadata = SegmentMetadata(
                 name = "Hallway",
-                archetype = RoomArchetype.Other,
+                archetype = SegmentArchetype.Other,
             ),
         )
 
@@ -62,9 +62,9 @@ class RoomCreateParametersSerializationTest {
 
         val parameters = RoomCreateParameters(
             children = listOf(),
-            metadata = RoomMetadata(
+            metadata = SegmentMetadata(
                 name = "Hallway",
-                archetype = RoomArchetype.Other,
+                archetype = SegmentArchetype.Other,
             ),
         )
 

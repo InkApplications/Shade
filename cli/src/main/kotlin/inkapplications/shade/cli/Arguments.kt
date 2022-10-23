@@ -11,7 +11,7 @@ import inkapplications.shade.lights.structures.*
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
 import inkapplications.shade.structures.ResourceType
-import inkapplications.shade.structures.RoomArchetype
+import inkapplications.shade.structures.SegmentArchetype
 import inkapplications.spondee.measure.ColorTemperature
 import inkapplications.spondee.measure.Mireds
 import inkapplications.spondee.measure.metric.Kelvin
@@ -29,17 +29,17 @@ fun ProcessedArgument<String, String>.resourceId() = convert { ResourceId(it) }
 /**
  * Convert an argument to a timed light effect value.
  */
-fun ProcessedArgument<String, String>.roomArchetype(): ProcessedArgument<RoomArchetype, RoomArchetype> {
-    return choice(choices = RoomArchetype.values().map { it.key }.toTypedArray())
-        .convert { RoomArchetype.valueOf(it) }
+fun ProcessedArgument<String, String>.roomArchetype(): ProcessedArgument<SegmentArchetype, SegmentArchetype> {
+    return choice(choices = SegmentArchetype.values().map { it.key }.toTypedArray())
+        .convert { SegmentArchetype.valueOf(it) }
 }
 
 /**
  * Convert an argument to a timed light effect value.
  */
-fun NullableOption<String, String>.roomArchetype(): NullableOption<RoomArchetype, RoomArchetype> {
-    return choice(choices = RoomArchetype.values().map { it.key }.toTypedArray())
-        .convert { RoomArchetype.valueOf(it) }
+fun NullableOption<String, String>.roomArchetype(): NullableOption<SegmentArchetype, SegmentArchetype> {
+    return choice(choices = SegmentArchetype.values().map { it.key }.toTypedArray())
+        .convert { SegmentArchetype.valueOf(it) }
 }
 
 /**

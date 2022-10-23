@@ -6,7 +6,7 @@ import inkapplications.shade.cli.AuthorizedShadeCommand
 import inkapplications.shade.cli.deviceResourceReferences
 import inkapplications.shade.cli.roomArchetype
 import inkapplications.shade.rooms.parameters.RoomCreateParameters
-import inkapplications.shade.structures.RoomMetadata
+import inkapplications.shade.structures.SegmentMetadata
 
 object CreateRoomCommand: AuthorizedShadeCommand(
     help = "Create a new room on the Hue bridge"
@@ -26,7 +26,7 @@ object CreateRoomCommand: AuthorizedShadeCommand(
     override suspend fun runCommand(): Int {
         val response = shade.rooms.createRoom(
             parameters = RoomCreateParameters(
-                metadata = RoomMetadata(
+                metadata = SegmentMetadata(
                     archetype = archetype,
                     name = name,
                 ),

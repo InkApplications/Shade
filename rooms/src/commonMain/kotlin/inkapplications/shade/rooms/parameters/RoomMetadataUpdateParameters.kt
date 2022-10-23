@@ -1,6 +1,6 @@
 package inkapplications.shade.rooms.parameters
 
-import inkapplications.shade.structures.RoomArchetype
+import inkapplications.shade.structures.SegmentArchetype
 import kotlinx.serialization.Serializable
 
 /**
@@ -8,12 +8,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class RoomMetadataUpdateParameters(
-    /**
+        /**
      * Configuration object for a room
      */
-    val archetype: RoomArchetype? = null,
+    val archetype: SegmentArchetype? = null,
 
-    /**
+        /**
      * Human readable name of the room.
      */
     val name: String? = null,

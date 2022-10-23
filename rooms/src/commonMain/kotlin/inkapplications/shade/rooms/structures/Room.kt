@@ -2,7 +2,7 @@ package inkapplications.shade.rooms.structures
 
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
-import inkapplications.shade.structures.RoomMetadata
+import inkapplications.shade.structures.SegmentMetadata
 import kotlinx.serialization.Serializable
 
 /**
@@ -10,12 +10,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Room(
-    /**
+        /**
      * Unique identifier representing a specific room instance.
      */
     val id: ResourceId,
 
-    /**
+        /**
      * References all services aggregating control and state of children
      * in the group.
      *
@@ -27,12 +27,12 @@ data class Room(
      */
     val services: List<ResourceReference>,
 
-    /**
+        /**
      * Configuration object for a room.
      */
-    val metadata: RoomMetadata,
+    val metadata: SegmentMetadata,
 
-    /**
+        /**
      * Devices to group by the Room.
      */
     val children: List<ResourceReference>,

@@ -2,8 +2,7 @@ package inkapplications.shade.zones.structures
 
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
-import inkapplications.shade.structures.RoomArchetype
-import inkapplications.shade.structures.RoomMetadata
+import inkapplications.shade.structures.SegmentMetadata
 import kotlinx.serialization.Serializable
 
 /**
@@ -11,12 +10,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Zone(
-    /**
+        /**
      * Unique v2 ID for the zone.
      */
     val id: ResourceId,
 
-    /**
+        /**
      * References all services aggregating control and state of children
      * in the group.
      *
@@ -28,12 +27,12 @@ data class Zone(
      */
     val services: List<ResourceReference>,
 
-    /**
+        /**
      * Configuration metatdata for the room/zone type.
      */
-    val metadata: RoomMetadata,
+    val metadata: SegmentMetadata,
 
-    /**
+        /**
      * Children devices of this zone.
      */
     val children: List<ResourceReference>,
