@@ -40,4 +40,12 @@ interface  ZoneControls {
      * @return A referenceto the newly created zone.
      */
     suspend fun createZone(parameters: ZoneCreateParameters): ResourceReference
+
+    /**
+     * Remove a Zone from the Hue Bridge.
+     *
+     * @param id the v2 resource id of the zone to be removed.
+     * @return a reference to the removed zone.
+     */
+    suspend fun deleteZone(id: ResourceId): ResourceReference
 }

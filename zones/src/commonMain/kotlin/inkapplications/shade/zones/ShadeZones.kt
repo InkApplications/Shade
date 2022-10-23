@@ -1,9 +1,6 @@
 package inkapplications.shade.zones
 
-import inkapplications.shade.internals.HueHttpClient
-import inkapplications.shade.internals.getData
-import inkapplications.shade.internals.postData
-import inkapplications.shade.internals.putData
+import inkapplications.shade.internals.*
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
 import inkapplications.shade.zones.parameters.ZoneCreateParameters
@@ -40,5 +37,9 @@ internal class ShadeZones(
         )
 
         return response.single()
+    }
+
+    override suspend fun deleteZone(id: ResourceId): ResourceReference {
+        return hueHttpClient.deleteData<List<ResourceReference>>("resource", "zone", id.value).single()
     }
 }
