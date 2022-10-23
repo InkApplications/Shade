@@ -8,6 +8,7 @@ import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
 import inkapplications.shade.cli.rooms.*
+import inkapplications.shade.cli.zones.CreateZoneCommand
 import inkapplications.shade.cli.zones.GetZoneCommand
 import inkapplications.shade.cli.zones.ListZonesCommand
 import inkapplications.shade.cli.zones.UpdateZoneCommand
@@ -18,6 +19,7 @@ class Main: NoOpCliktCommand() {
         subcommands(
             AuthorizeCommand,
             CreateRoomCommand,
+            CreateZoneCommand,
             DeleteRoomCommand,
             DiscoverCommand,
             GetLightCommand,

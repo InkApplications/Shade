@@ -1,13 +1,13 @@
-package inkapplications.shade.rooms
+package inkapplications.shade.zones
 
-import inkapplications.shade.rooms.parameters.RoomCreateParameters
 import inkapplications.shade.structures.*
+import inkapplications.shade.zones.parameters.ZoneCreateParameters
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class RoomCreateParametersSerializationTest {
+class ZoneCreateParametersSerializationTest {
     val json = Json { ignoreUnknownKeys = true; prettyPrint = true }
 
     @Test
@@ -31,7 +31,7 @@ class RoomCreateParametersSerializationTest {
             }
         """.trimIndent()
 
-        val parameters = RoomCreateParameters(
+        val parameters = ZoneCreateParameters(
             children = listOf(
                 ResourceReference(ResourceId("test-id-2"), ResourceType.Device),
                 ResourceReference(ResourceId("test-id-3"), ResourceType.Device),
@@ -60,7 +60,7 @@ class RoomCreateParametersSerializationTest {
             }
         """.trimIndent()
 
-        val parameters = RoomCreateParameters(
+        val parameters = ZoneCreateParameters(
             children = listOf(),
             metadata = SegmentMetadata(
                 name = "Hallway",
