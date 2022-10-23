@@ -77,7 +77,10 @@
         </p>
         <p>
             Request a list of local devices on the network with the
-            <code>getDevices()</code> command:
+            <a href="reference/latest/discover/inkapplications.shade.discover/-bridge-discovery/get-devices.html">
+                <code>getDevices()</code>
+            </a>
+            command:
         </p>
 <pre><code class="kotlin">val devices = shade.onlineDiscovery.getDevices()</code></pre>
     </section>
@@ -92,8 +95,11 @@
             the hue bridge using it's single button authorization.
         <p>
         <p>
-            To request a token call the <code>awaitToken()</code> method,
-            providing information about your application:
+            To request a token call the
+            <a href="reference/latest/auth/inkapplications.shade.auth/-bridge-auth/await-token.html">
+                <code>awaitToken()</code>
+            </a>
+            method, providing information about your application:
         </p>
 <pre><code class="kotlin">val token = shade.auth.awaitToken(
     appId = AppId(
@@ -103,9 +109,13 @@
 )</code></pre>
         <p>
             This will suspend until the button on the hue bridge is pressed
-            and an <code>AuthToken</code> is returned. Shade will
-            automatically set this token for use internally. However, you
-            should save the returned token for future connections.
+            and an
+            <a href="reference/latest/structures/inkapplications.shade.structures/-auth-token/index.html">
+                <code>AuthToken</code>
+            </a>
+            is returned. Shade will automatically set this token for use
+            internally. However, you should save the returned token for
+            future connections.
         <p>
         <p>
             Optionally, you may set a maximum number of retries and change
@@ -135,15 +145,22 @@
         </p>
         <ul>
             <li>
-                <code>listLights</code> To get a list of all lights on the
-                hue bridge
+                <a href="reference/latest/lights/inkapplications.shade.lights/-light-controls/list-lights.html">
+                    <code>listLights</code>
+                </a>
+                To get a list of all lights on the hue bridge
             </li>
             <li>
-                <code>getLight</code> To get information about a single light
+                <a href="reference/latest/lights/inkapplications.shade.lights/-light-controls/get-light.html">
+                    <code>getLight</code>
+                </a>
+                To get information about a single light
             </li>
             <li>
-                <code>updateLight</code> To update information about a single
-                light
+                <a href="reference/latest/lights/inkapplications.shade.lights/-light-controls/update-light.html">
+                    <code>updateLight</code>
+                </a>
+                To update information about a single light
             </li>
         </ul>
     </section>
@@ -171,21 +188,34 @@
         </p>
         <ul>
             <li>
-                <code>listRooms</code> To get a list of all rooms on the
-                hue bridge
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/list-rooms.html">
+                    <code>listRooms</code>
+                </a>
+                To get a list of all rooms on the hue bridge
             </li>
             <li>
-                <code>getRoom</code> To get information about a single room
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/get-room.html">
+                    <code>getRoom</code>
+                </a>
+                To get information about a single room
             </li>
             <li>
-                <code>updateRoom</code> To update information about a single
-                room
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/update-room.html">
+                    <code>updateRoom</code>
+                </a>
+                To update information about a single room
             </li>
             <li>
-                <code>createRoom</code> To create a new room on the hue bridge
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/create-room.html">
+                    <code>createRoom</code>
+                </a>
+                To create a new room on the hue bridge
             </li>
             <li>
-                <code>deleteRoom</code> To remove a room from the hue bridge
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/delete-room.html">
+                    <code>deleteRoom</code>
+                </a>
+                To remove a room from the hue bridge
             </li>
         </ul>
     </section>
@@ -205,20 +235,34 @@
         </p>
         <ul>
             <li>
-                <code>listZones</code> To get a list of all zones on the
-                hue bridge
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/list-zones.html">
+                    <code>listZones</code>
+                </a>
+                To get a list of all zones on the Hue bridge
             </li>
             <li>
-                <code>getZone</code> To get information about a specific zone.
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/get-zone.html">
+                    <code>getZone</code>
+                </a>
+                To get information about a specific zone.
             </li>
             <li>
-                <code>updateZone</code> To update the configuration for a zone.
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/update-zone.html">
+                    <code>updateZone</code>
+                </a>
+                To update the configuration for a zone.
             </li>
             <li>
-                <code>createZone</code> To create a new zone configuration.
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/create-zone.html">
+                    <code>createZone</code>
+                </a>
+                To create a new zone configuration.
             </li>
             <li>
-                <code>deleteZone</code> To remove a zone configuration.
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/delete-zone.html">
+                    <code>deleteZone</code>
+                </a>
+                To remove a zone configuration.
             </li>
         </ul>
     </section>
