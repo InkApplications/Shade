@@ -16,18 +16,18 @@ import kotlin.system.exitProcess
 class Main: NoOpCliktCommand() {
     init {
         subcommands(
+            AuthorizeCommand,
+            CreateRoomCommand,
+            DeleteRoomCommand,
             DiscoverCommand,
             GetLightCommand,
-            ListLightsCommand,
-            UpdateLightCommand,
-            AuthorizeCommand,
             GetRoomCommand,
-            ListRoomsCommand,
-            CreateRoomCommand,
-            UpdateRoomCommand,
-            DeleteRoomCommand,
-            ListZonesCommand,
             GetZoneCommand,
+            ListLightsCommand,
+            ListRoomsCommand,
+            ListZonesCommand,
+            UpdateLightCommand,
+            UpdateRoomCommand,
             UpdateZoneCommand,
         )
     }
