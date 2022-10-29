@@ -9,10 +9,11 @@ kotlin {
             dependencies {
                 implementation(projects.internals)
                 api(projects.auth)
-                api(projects.structures)
                 api(projects.discover)
+                api(projects.groupedLights)
                 api(projects.lights)
                 api(projects.rooms)
+                api(projects.structures)
                 api(projects.zones)
 
                 api(inkLibraries.kimchi.logger)

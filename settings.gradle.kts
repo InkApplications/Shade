@@ -19,6 +19,7 @@ dependencyResolutionManagement {
 include("auth")
 include("cli")
 include("discover")
+include("grouped-lights")
 include("internals")
 include("lights")
 include("serialization")

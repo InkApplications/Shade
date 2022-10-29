@@ -9,6 +9,9 @@ inkapplications.shade.core
 module:discover
 inkapplications.shade.discover
 inkapplications.shade.discover.structures
+module:grouped-lights
+inkapplications.shade.groupedlights
+inkapplications.shade.groupedlights.structures
 module:internals
 inkapplications.shade.internals
 module:lights

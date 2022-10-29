@@ -1,5 +1,7 @@
 package inkapplications.shade.lights.structures
 
+import inkapplications.shade.structures.AlertInfo
+import inkapplications.shade.structures.PowerInfo
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
 import kotlinx.serialization.SerialName

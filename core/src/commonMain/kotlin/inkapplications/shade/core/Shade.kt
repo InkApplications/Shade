@@ -2,6 +2,7 @@ package inkapplications.shade.core
 
 import inkapplications.shade.auth.AuthModule
 import inkapplications.shade.discover.DiscoverModule
+import inkapplications.shade.groupedlights.ShadeGroupedLightsModule
 import inkapplications.shade.internals.InternalsModule
 import inkapplications.shade.lights.ShadeLightsModule
 import inkapplications.shade.rooms.ShadeRoomsModule
@@ -49,4 +50,5 @@ class Shade(
     val lights = ShadeLightsModule(internalsModule).lights
     val rooms = ShadeRoomsModule(internalsModule).rooms
     val zones = ShadeZonesModule(internalsModule).zones
+    val groupedLights = ShadeGroupedLightsModule(internalsModule).groupedLights
 }

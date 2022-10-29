@@ -1,6 +1,7 @@
 package inkapplications.shade.lights
 
 import inkapplications.shade.lights.structures.*
+import inkapplications.shade.structures.AlertEffectType
 import inkapplications.shade.structures.ResourceType
 import inkapplications.spondee.measure.toMireds
 import inkapplications.spondee.scalar.toWholePercentage
