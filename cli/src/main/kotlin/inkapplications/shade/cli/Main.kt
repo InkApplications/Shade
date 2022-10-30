@@ -4,6 +4,7 @@ import com.github.ajalt.clikt.core.NoOpCliktCommand
 import com.github.ajalt.clikt.core.subcommands
 import inkapplications.shade.cli.connection.AuthorizeCommand
 import inkapplications.shade.cli.connection.DiscoverCommand
+import inkapplications.shade.cli.groupedlights.GetGroupedLightCommand
 import inkapplications.shade.cli.groupedlights.ListGroupedLightsCommand
 import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
@@ -21,6 +22,7 @@ class Main: NoOpCliktCommand() {
             DeleteRoomCommand,
             DeleteZoneCommand,
             DiscoverCommand,
+            GetGroupedLightCommand,
             GetLightCommand,
             GetRoomCommand,
             GetZoneCommand,
