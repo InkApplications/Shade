@@ -1,5 +1,6 @@
 package inkapplications.shade.lights.parameters
 
+import inkapplications.shade.structures.parameters.PowerParameters
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

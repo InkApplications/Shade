@@ -1,7 +1,7 @@
 package inkapplications.shade.groupedlights
 
 import inkapplications.shade.groupedlights.structures.GroupedLight
-import inkapplications.shade.structures.AlertEffectType
+import inkapplications.shade.lights.structures.AlertEffectType
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.junit.Test

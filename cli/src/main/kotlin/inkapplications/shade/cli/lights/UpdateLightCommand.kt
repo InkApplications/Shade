@@ -4,6 +4,7 @@ import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.option
 import inkapplications.shade.cli.*
 import inkapplications.shade.lights.parameters.*
+import inkapplications.shade.structures.parameters.PowerParameters
 import inkapplications.spondee.measure.mireds
 import inkapplications.spondee.scalar.toWholePercentage
 import kotlin.math.absoluteValue

@@ -1,7 +1,9 @@
 package inkapplications.shade.groupedlights
 
+import inkapplications.shade.groupedlights.parameters.GroupedLightUpdateParameters
 import inkapplications.shade.groupedlights.structures.GroupedLight
 import inkapplications.shade.structures.ResourceId
+import inkapplications.shade.structures.ResourceReference
 
 /**
  * Actions to get and control grouped lights.
@@ -21,4 +23,12 @@ interface GroupedLightControls {
      * @return State and capability information about the grouped light.
      */
     suspend fun getGroup(id: ResourceId): GroupedLight
+
+    /**
+     * Update the state or details of a grouped light
+     *
+     * @param id The v2 unique ID of the grouped light to be updated.
+     * @return a Reference to the updated grouped light
+     */
+    suspend fun updateGroup(id: ResourceId, parameters: GroupedLightUpdateParameters): ResourceReference
 }

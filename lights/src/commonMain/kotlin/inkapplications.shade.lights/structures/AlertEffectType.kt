@@ -1,4 +1,4 @@
-package inkapplications.shade.structures
+package inkapplications.shade.lights.structures
 
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline

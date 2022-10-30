@@ -6,6 +6,7 @@ import inkapplications.shade.cli.connection.AuthorizeCommand
 import inkapplications.shade.cli.connection.DiscoverCommand
 import inkapplications.shade.cli.groupedlights.GetGroupedLightCommand
 import inkapplications.shade.cli.groupedlights.ListGroupedLightsCommand
+import inkapplications.shade.cli.groupedlights.UpdateGroupedLightCommand
 import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
@@ -30,6 +31,7 @@ class Main: NoOpCliktCommand() {
             ListLightsCommand,
             ListRoomsCommand,
             ListZonesCommand,
+            UpdateGroupedLightCommand,
             UpdateLightCommand,
             UpdateRoomCommand,
             UpdateZoneCommand,

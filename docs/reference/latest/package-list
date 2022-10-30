@@ -11,6 +11,7 @@ inkapplications.shade.discover
 inkapplications.shade.discover.structures
 module:grouped-lights
 inkapplications.shade.groupedlights
+inkapplications.shade.groupedlights.parameters
 inkapplications.shade.groupedlights.structures
 module:internals
 inkapplications.shade.internals
@@ -26,6 +27,7 @@ module:serialization
 inkapplications.shade.serialization
 module:structures
 inkapplications.shade.structures
+inkapplications.shade.structures.parameters
 module:zones
 inkapplications.shade.zones
 inkapplications.shade.zones.parameters

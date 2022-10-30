@@ -12,6 +12,7 @@ kotlin {
                 implementation(projects.internals)
                 implementation(projects.serialization)
                 api(projects.structures)
+                api(projects.lights)
 
                 api(kotlinLibraries.coroutines.core)
             }

@@ -1,6 +1,6 @@
 package inkapplications.shade.groupedlights.structures
 
-import inkapplications.shade.structures.AlertInfo
+import inkapplications.shade.lights.structures.AlertInfo
 import inkapplications.shade.structures.PowerInfo
 import inkapplications.shade.structures.ResourceId
 import kotlinx.serialization.SerialName

@@ -1,6 +1,6 @@
 package inkapplications.shade.lights.parameters
 
-import inkapplications.shade.structures.AlertEffectType
+import inkapplications.shade.lights.structures.AlertEffectType
 import kotlinx.serialization.Serializable
 
 /**
@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AlertParameters(
-        /**
+    /**
      * Alert effect to set on the light.
      */
     val action: AlertEffectType,
