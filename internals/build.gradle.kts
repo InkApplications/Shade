@@ -23,6 +23,7 @@ kotlin {
             dependencies {
                 implementation(ktorLibraries.client.okhttp)
                 implementation(ktorLibraries.okhttp.tls)
+                implementation(ktorLibraries.okhttp.sse)
             }
         }
 

@@ -3,6 +3,7 @@ package inkapplications.shade.internals
 import inkapplications.shade.structures.HueConfigurationContainer
 import kimchi.logger.EmptyLogger
 import kimchi.logger.KimchiLogger
+import kotlinx.serialization.json.Json
 
 /**
  * Provides access to services in the internals module.
@@ -14,10 +15,14 @@ class InternalsModule(
     val configurationContainer: HueConfigurationContainer,
     logger: KimchiLogger = EmptyLogger,
 ) {
-    private val platformModule = PlatformModule()
+    val json = Json {
+        ignoreUnknownKeys = true
+    }
+    val platformModule = PlatformModule(configurationContainer, json, logger)
     private val configurableHttpClient = ConfigurableHttpClient(
         platformModule = platformModule,
         configurationContainer = configurationContainer,
+        json = json,
         logger = logger,
     )
 
@@ -26,4 +31,3 @@ class InternalsModule(
      */
     val hueHttpClient: HueHttpClient = configurableHttpClient
 }
-

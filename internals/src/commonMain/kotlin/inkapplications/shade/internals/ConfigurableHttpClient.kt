@@ -19,11 +19,9 @@ import kotlinx.serialization.json.Json
 internal class ConfigurableHttpClient(
     private val configurationContainer: HueConfigurationContainer,
     private val platformModule: PlatformModule,
+    private val json: Json,
     private val logger: KimchiLogger,
 ): HueHttpClient {
-    private val json = Json {
-        ignoreUnknownKeys = true
-    }
     val httpClient by CachedProperty(configurationContainer.securityStrategy::value) { key ->
         createHttpClient(key)
     }
