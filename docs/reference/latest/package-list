@@ -9,6 +9,9 @@ inkapplications.shade.core
 module:discover
 inkapplications.shade.discover
 inkapplications.shade.discover.structures
+module:events
+inkapplications.shade.events
+shade.events
 module:grouped-lights
 inkapplications.shade.groupedlights
 inkapplications.shade.groupedlights.parameters
@@ -17,6 +20,7 @@ module:internals
 inkapplications.shade.internals
 module:lights
 inkapplications.shade.lights
+inkapplications.shade.lights.events
 inkapplications.shade.lights.parameters
 inkapplications.shade.lights.structures
 module:rooms
