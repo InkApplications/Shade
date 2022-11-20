@@ -1,7 +1,7 @@
 package inkapplications.shade.core
 
-import inkapplications.shade.structures.UndocumentedApi
 import inkapplications.shade.events.Events
+import inkapplications.shade.structures.UndocumentedApi
 import shade.events.events
 
 @UndocumentedApi

@@ -1,9 +1,9 @@
 package inkapplications.shade.lights
 
+import inkapplications.shade.events.EventsModule
 import inkapplications.shade.internals.InternalsModule
 import inkapplications.shade.lights.events.LightEvent
 import inkapplications.shade.structures.UndocumentedApi
-import inkapplications.shade.events.EventsModule
 
 /**
  * Provides Access to Light control services.

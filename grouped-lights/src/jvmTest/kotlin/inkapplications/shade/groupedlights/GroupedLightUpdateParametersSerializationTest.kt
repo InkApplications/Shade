@@ -4,7 +4,7 @@ import com.github.ajalt.colormath.model.XYZ
 import com.github.ajalt.colormath.model.xyY
 import inkapplications.shade.groupedlights.parameters.GroupedLightUpdateParameters
 import inkapplications.shade.lights.parameters.*
-import inkapplications.shade.lights.structures.*
+import inkapplications.shade.lights.structures.AlertEffectType
 import inkapplications.shade.structures.parameters.PowerParameters
 import inkapplications.spondee.measure.mireds
 import inkapplications.spondee.scalar.percent

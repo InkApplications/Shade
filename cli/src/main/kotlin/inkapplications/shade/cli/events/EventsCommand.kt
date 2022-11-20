@@ -8,7 +8,6 @@ import inkapplications.shade.structures.UndocumentedApi
 import inkapplications.shade.structures.UnknownEvent
 import inkapplications.spondee.scalar.toWholePercentage
 import inkapplications.spondee.structure.format
-import shade.events.events
 
 @OptIn(UndocumentedApi::class)
 object EventsCommand: AuthorizedShadeCommand(

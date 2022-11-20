@@ -2,7 +2,6 @@ package inkapplications.shade.internals
 
 import inkapplications.shade.structures.HostnameNotSetException
 import inkapplications.shade.structures.HueConfigurationContainer
-import inkapplications.shade.structures.UndocumentedApi
 import kimchi.logger.KimchiLogger
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
