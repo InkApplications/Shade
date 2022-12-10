@@ -33,6 +33,18 @@ kotlin {
             }
         }
 
+        val nativeMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.curl)
+            }
+        }
+
+        val iosMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.darwin)
+            }
+        }
+
         val commonTest by getting {
             dependencies {
                 implementation(kotlinLibraries.test.core)

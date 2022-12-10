@@ -32,6 +32,18 @@ kotlin {
             }
         }
 
+        val nativeMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.curl)
+            }
+        }
+
+        val iosMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.darwin)
+            }
+        }
+
         val jsMain by getting {
             dependencies {
                 implementation(ktorLibraries.client.js)

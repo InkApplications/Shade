@@ -29,3 +29,11 @@ module = "com.squareup.okhttp3:okhttp-sse"
 [libraries.client-js]
 version.ref = "ktor"
 module = "io.ktor:ktor-client-js"
+
+[libraries.client-curl]
+version.ref = "ktor"
+module = "io.ktor:ktor-client-curl"
+
+[libraries.client-darwin]
+version.ref = "ktor"
+module = "io.ktor:ktor-client-darwin"
