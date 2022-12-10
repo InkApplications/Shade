@@ -34,7 +34,6 @@ kotlin {
 
     mingwX64()
 
-
     sourceSets{
         val commonMain by sourceSets.getting
 
@@ -46,9 +45,12 @@ kotlin {
         val nativeMain by sourceSets.creating {
             dependsOn(commonMain)
             linuxX64Main.dependsOn(this)
-            linuxX64Main.dependsOn(this)
             macosArm64Main.dependsOn(this)
             macosX64Main.dependsOn(this)
+        }
+
+        val windowsMain by sourceSets.creating {
+            dependsOn(commonMain)
             mingwX64Main.dependsOn(this)
         }
 

@@ -35,7 +35,13 @@ kotlin {
 
         val nativeMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.curl)
+                implementation(ktorLibraries.client.cio)
+            }
+        }
+
+        val windowsMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.winhttp)
             }
         }
 

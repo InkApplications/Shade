@@ -1,5 +1,5 @@
 [versions]
-ktor = "2.1.2"
+ktor = "2.2.1"
 okhttp = "4.9.3"
 
 [libraries.client-core]
@@ -37,3 +37,11 @@ module = "io.ktor:ktor-client-curl"
 [libraries.client-darwin]
 version.ref = "ktor"
 module = "io.ktor:ktor-client-darwin"
+
+[libraries.client-cio]
+version.ref = "ktor"
+module = "io.ktor:ktor-client-cio"
+
+[libraries.client-winhttp]
+version.ref = "ktor"
+module = "io.ktor:ktor-client-winhttp"
