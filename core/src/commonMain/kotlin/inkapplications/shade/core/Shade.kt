@@ -50,5 +50,5 @@ class Shade(
     val lights = ShadeLightsModule(internalsModule, eventsModule).lights
     val rooms = ShadeRoomsModule(internalsModule).rooms
     val zones = ShadeZonesModule(internalsModule).zones
-    val groupedLights = ShadeGroupedLightsModule(internalsModule).groupedLights
+    val groupedLights = ShadeGroupedLightsModule(internalsModule, eventsModule).groupedLights
 }
