@@ -13,7 +13,7 @@ jobs:
                 uses: actions/checkout@v2.3.4
             -
                 name: JVM Tests
-                run: ./gradlew jvmTest apiCheck
+                run: ./gradlew jvmTest
     common:
         runs-on: ubuntu-latest
         steps:
@@ -35,15 +35,6 @@ jobs:
             -
                 name: Build JS Publication
                 run: ./gradlew publishJsPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
-            -
-                name: Zip All Publications
-                run: ./gradlew zipPublications
-            -
-                name: Archive
-                uses: actions/upload-artifact@v2
-                with:
-                    name: Common Publications
-                    path: build/distributions/publications.zip
             -
                 name: Maven Publish
                 env:
@@ -76,15 +67,6 @@ jobs:
                 name: Build Linux x64 Publication
                 run: ./gradlew publishLinuxX64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
-                name: Zip All Publications
-                run: ./gradlew zipPublications
-            -
-                name: Archive
-                uses: actions/upload-artifact@v2
-                with:
-                    name: Linux Publications
-                    path: build/distributions/publications.zip
-            -
                 name: Maven Publish
                 env:
                     GITHUB_TAG: ${{ github.ref }}
@@ -114,15 +96,6 @@ jobs:
                 name: Build Windows X64 Publication
                 run: ./gradlew publishMingwX64PublicationToBuildRepository --project-prop version=${GITHUB_TAG/refs\/tags\//}
                 shell: bash
-            -
-                name: Zip All Publications
-                run: ./gradlew zipPublications
-            -
-                name: Archive
-                uses: actions/upload-artifact@v2
-                with:
-                    name: Windows Publications
-                    path: build/distributions/publications.zip
             -
                 name: Maven Publish
                 env:
@@ -181,16 +154,6 @@ jobs:
                     publishMacosX64PublicationToBuildRepository
                     publishMacosArm64PublicationToBuildRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
-
-            -
-                name: Zip All Publications
-                run: ./gradlew zipPublications
-            -
-                name: Archive
-                uses: actions/upload-artifact@v2
-                with:
-                    name: MacOS Publications
-                    path: build/distributions/publications.zip
             -
                 name: Maven Publish
                 env:
