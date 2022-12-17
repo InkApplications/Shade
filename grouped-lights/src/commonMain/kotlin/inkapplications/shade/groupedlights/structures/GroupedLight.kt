@@ -35,7 +35,7 @@ data class GroupedLight(
      * Information about the group's dimming, if supported.
      */
     @SerialName("dimming")
-    val dimmingInfo: DimmingInfo? = null,
+    val dimmingInfo: GroupDimmingInfo? = null,
 
     /**
      * Joined alert control for the light group.
