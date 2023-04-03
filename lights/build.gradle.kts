@@ -1,26 +1,28 @@
 plugins {
-    kotlin("jvm")
-    kotlin("kapt")
+    id("library")
+    kotlin("plugin.serialization")
+    id("com.inkapplications.publishing")
 }
 
-publishJava()
+kotlin {
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation(kotlinLibraries.serialization.json)
+                implementation(projects.internals)
+                implementation(projects.serialization)
+                api(projects.structures)
+                api(projects.events)
 
-dependencies {
-    compile(project(":hue-constructs"))
-    implementation(project(":hue-serialization"))
-    implementation(project(":http"))
-    compile(project(":auth"))
+                api(kotlinLibraries.coroutines.core)
+            }
+        }
 
-    compile(kotlin("stdlib"))
-    compile(coroutines())
-
-    implementation(retrofit())
-    implementation(retrofit("converter-moshi"))
-    implementation(moshi())
-    implementation(moshi("moshi-adapters"))
-    kapt(moshi("moshi-kotlin-codegen"))
-    compile(okHttp())
-    compile(threeTen())
-
-    testImplementation(jUnit())
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlinLibraries.test.core)
+                implementation(kotlinLibraries.test.annotations)
+            }
+        }
+    }
 }

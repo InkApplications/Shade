@@ -6,235 +6,300 @@
     <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kotlin SDK / Shade</title>
+    <title>Shade / Kotlin SDK</title>
 
-    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300|Open+Sans:300|Inconsolata" rel="stylesheet">
-    <link rel="stylesheet" href="css/atom-one-light.css" type="text/css" />
-    <link rel="stylesheet" href="css/atom-one-dark.css" type="text/css" media="(prefers-color-scheme:dark)" />
-    <link rel="stylesheet" href="css/main-1.1.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/dark-1.1.css" type="text/css" media="(prefers-color-scheme:dark)" />
+    <link rel="stylesheet" href="css/main-2.0.css" type="text/css" media="all" />
 
-    <script src="js/highlight.pack.js"></script>
+    <script src="https://assets.inkapplications.com/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
-<body>
-<header>
+<body class="sectioned">
+<header class="content-break">
     <a href="index.html">
-        <img src="svg/logo-full-dark.svg" class="logo only-dark" alt="Shade Logo" />
-        <img src="svg/logo-full.svg" class="logo only-light" alt="Shade Logo" />
+        <img src="svg/logo-full.svg" class="logo only-lightmode" alt="Shade Logo" />
+        <img src="svg/logo-full-dark.svg" class="logo only-darkmode" alt="Shade Logo" />
     </a>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                SDK Overview
+            </li>
+        </ul>
+    </nav>
 </header>
-<section>
-    <header>
-        <a name="sdk" href="#sdk">
-            <h1>Kotlin SDK</h1>
-        </a>
-    </header>
-    <p>
-        Shade's Kotlin SDK provides simple type-safe access to your Hue
-        lights. Shade is built using Kotlin's Coroutines to provide a simple
-        straightforward API on Android or the JVM.
-    </p>
-    <a name="sdk-intro" href="#sdk-intro">
-        <h2>Introduction</h2>
-    </a>
-    <p>
-        Shade can be used to connect and manipulate lights in Hue:
-    </p>
-    <pre><code class="kotlin">
-fun main() {
-    runBlocking {
-        println("Searching for Hue Bridges")
-        val shade = Shade()
-        val devices = shade.discovery.getDevices()
-        shade.setBaseUrl(devices.first().url)
-
-        println("Press the connect button on the hue bridge")
-        shade.auth.awaitToken()
-
-        println("Turning all the lights on!")
-        shade.groups.setState(
-            GROUP_ALL,
-            GroupStateModification(
-                on = on
-            )
-        )
-    }
-}
-        </code></pre>
-    <p>
-        Shade's Kotlin SDK currently supports controlling Lights, Groups,
-        Scenes and Schedules. With plans to support new API's as Hue
-        introduces them.
-    </p>
-
-    <article>
-        <a name="sdk-install" href="#sdk-install">
-            <h2>Installation</h2>
-        </a>
+    <section>
+        <header>
+            <a name="sdk" href="#sdk">
+                <h1>Kotlin SDK</h1>
+            </a>
+        </header>
         <p>
-            If you haven’t already, add JitPack to your gradle repositories in your build.gradle file:
+            Shade's Kotlin SDK provides simple type-safe access to your Hue
+            lights. Shade is built using Kotlin's Coroutines to provide a simple
+            straightforward API on Android or the JVM.
         </p>
-        <pre><code>
-repositories {
-    maven {
-        url "https://jitpack.io"
-    }
-}
-            </code></pre>
+        <h2>Set up the SDK in Gradle</h2>
         <p>
-            Next, add Shade as a dependency to your build.gradle file:
+            Shade's SDK is available in Maven Central, with the with the
+            following coordinates in your <code>build.gradle</code> file
         </p>
-        <pre><code>
-compile "com.github.Inkapplications.Shade:shade:+" // Replace with exact version
-            </code></pre>
-    </article>
-    <article>
-        <a name="sdk-discover" href="#sdk-discover">
-            <h2>Discover a Hue Bridge</h2>
-        </a>
+<pre><code class="kotlin">implementation("com.inkapplications.shade:core:2.+")</code></pre>
+        <h2>Create a Shade Object</h2>
         <p>
-            Before you can start discovering, you need to create an
-            uninitialized Shade instance. Just call the constructor to do
-            this:
+            All of Shade's commands can be run through the <code>Shade</code>
+            object. To use it, you can start by creating an Instance of the
+            class for your application:
         </p>
-
-        <pre><code class="kotlin">
-val shade = Shade()
-            </code></pre>
-
+<pre><code class="kotlin">val shade = Shade()</code></pre>
+        <nav>
+            <ul>
+                <li>
+                    <a href="sdk-initialization.html">Advanced Initialization</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <header>
+            <a name="discovery" href="#discovery">
+                <h1>Bridge Discovery</h1>
+            </a>
+        </header>
         <p>
-            If you know the URL/IP of the Bridge you want to connect to,
-            you can specify it with the <code>initBaseUrl</code> parameter
-            in the constructor, and skip right to controlling your lights!
-        </p>
-
-        <p>
-            Shade is broken into several modules. To find a Hue Bridge to
-            connect to, you'll use the <code>discovery</code> module. Which
-            provides a <code>getDevices()</code> method.
-        </p>
-
-        <p>
-            Because multiple Hue Bridges may be on the network, discovery
-            returns a list of devices. Each device has an ID and an
-            IP address.
-        </p>
-
-        <pre><code class="kotlin">
-shade.discovery.getDevices().forEach {
-    println("found device: ${it.id} ip: ${it.ip}")
-}
-            </code></pre>
-
-        <p>
-            Once you select a device to use, you can tell Shade to connect
-            to it using the <code>setBaseUrl</code> method. This can be
-            called at any point to change the bridge this instance of
-            Shade is connected to.
-        </p>
-
-        <pre><code class="kotlin">
-shade.setBaseUrl(device.url)
-            </code></pre>
-
-        <h3>Authenticate</h3>
-        <p>
-            The last step you need to do before you can start controlling
-            lights is to request access. Hue does this by tapping the button
-            on the top of the hub. To start this process use the
-            <code>awaitToken</code> method in <code>auth</code> module.
-        </p>
-        <pre><code class="kotlin">
-shade.auth.awaitToken()
-            </code></pre>
-        <p>
-            This method will eventually timeout after an amount of time.
-            You can change how many retries and how often the SDK will poll
-            the bridge for auth using the optional <code>retries</code>
-            and <code>timeout</code> arguments on the
-            <code>awaitToken()</code> method.
-        </p>
-    </article>
-    <article>
-        <a name="sdk-lights" href="#sdk-lights">
-            <h2>Light Controls</h2>
-        </a>
-        <p>
-            Controlling individual lights is done through the
-            <code>lights</code> module.
-        </p>
-        <h3>Get a List of Lights</h3>
-        <p>
-            You can get a list of lights using <code>getLights()</code>
-        </p>
-        <pre><code class="kotlin">
-shade.lights.getLights().forEach { (id, light) ->
-    println("Found light $id named ${light.name}")
-}
-            </code></pre>
-        <h3>Change Light State</h3>
-        <p>
-            To turn lights on/off, change their color or brightness you
-            can use the <code>setState</code> method with a
-            <code>LightStateModification</code> object.
+            The discovery process uses Hue's API to find Hue Bridges on the
+            local network. This is the only command in the SDK that requires
+            an internet connection, and is only used to find bridges. If you
+            know the IP address of the hue bridge that you want to connect to,
+            this step can be skipped.
         </p>
         <p>
-            The <code>LightStateModification</code> object is used to
-            describe properties that will be changed on the light. If a
-            property is left <code>null</code> / not specified, the current
-            state of the light will not change.
+            Request a list of local devices on the network with the
+            <a href="reference/latest/discover/inkapplications.shade.discover/-bridge-discovery/get-devices.html">
+                <code>getDevices()</code>
+            </a>
+            command:
         </p>
-        <pre><code class="kotlin">
-shade.lights.setState(id, LightStateModification(on = true, brightness = 50.percent))
-            </code></pre>
-    </article>
-    <article>
-        <a name="sdk-groups" href="#sdk-groups">
-            <h2>Group Controls</h2>
-        </a>
+<pre><code class="kotlin">val devices = shade.onlineDiscovery.getDevices()</code></pre>
+    </section>
+    <section>
+        <header>
+            <a name="authorize" href="#authorize">
+                <h1>Authorize with the Hue Bridge</h1>
+            </a>
+        </header>
         <p>
-            Groups can be accessed through the <code>groups</code> module
-            and function very similar to individual lights.
-        </p>
-        <h3>Get a List of Groups</h3>
+            Shade's Auth module can be used to obtain an access token from
+            the hue bridge using it's single button authorization.
         <p>
-            You can get a list of groups using <code>getGroups()</code>
-        </p>
-        <pre><code class="kotlin">
-shade.groups.getGroups().forEach { (id, light) ->
-    println("Found Group $id named ${light.name}")
-}
-            </code></pre>
-        <h3>Change a Group of Lights</h3>
         <p>
-            Changing a group of lights is similar to changing a light state
-            except is done with a <code>GroupStateModification</code>
-            object. Like light modifications, properties that are not set
-            on the modification object will retain its current state.
+            To request a token call the
+            <a href="reference/latest/auth/inkapplications.shade.auth/-bridge-auth/await-token.html">
+                <code>awaitToken()</code>
+            </a>
+            method, providing information about your application:
         </p>
-        <pre><code class="kotlin">
-shade.groups.setState(id, GroupStateModification(on = true, colorTemperature = 5000.kelvin))
-            </code></pre>
-    </article>
-</section>
-<section>
-    <header>
-        <a name="contributions" href="#contributions">
-            <h1>Contributions and Issues</h1>
-        </a>
-    </header>
-    <p>
-        Shade is free, <a href="https://github.com/InkApplications/Shade">Open Source</a>,
-        actively maintained, and always looking for contributions.
-    </p>
-    <p>
-        There are many Hue devices and things to do with them.<br />
-        Testing all that can be difficult.
-        If you have an issue, please
-        <a href="https://github.com/InkApplications/Shade/issues/new/choose">tell us</a>!
-    </p>
-</section>
+<pre><code class="kotlin">val token = shade.auth.awaitToken(
+    appId = AppId(
+        appName = "MyApp",
+        instanceId = "android",
+    ),
+)</code></pre>
+        <p>
+            This will suspend until the button on the hue bridge is pressed
+            and an
+            <a href="reference/latest/structures/inkapplications.shade.structures/-auth-token/index.html">
+                <code>AuthToken</code>
+            </a>
+            is returned. Shade will automatically set this token for use
+            internally. However, you should save the returned token for
+            future connections.
+        <p>
+        <p>
+            Optionally, you may set a maximum number of retries and change
+            the timeout between checks that is used for authorization by
+            including the <code>retries</code> or <code>timout</code> arguments
+            when calling <code>awaitToken</code>.
+        </p>
+    </section>
+    <section>
+        <header>
+            <a name="lights" href="#lights">
+                <h1>Control Lights</h1>
+            </a>
+        </header>
+        <p>
+            Individual lights can be controlled through the <code>lights</code>
+            module:
+        </p>
+<pre><code class="kotlin">shade.lights.updateLight(
+    id = lightId,
+    parameters = LightUpdateParameters(
+        brightness = 10.percent,
+    ),
+)</code></pre>
+        <p>
+            The lights module supports the following actions:
+        </p>
+        <ul>
+            <li>
+                <a href="reference/latest/lights/inkapplications.shade.lights/-light-controls/list-lights.html">
+                    <code>listLights</code>
+                </a>
+                To get a list of all lights on the hue bridge
+            </li>
+            <li>
+                <a href="reference/latest/lights/inkapplications.shade.lights/-light-controls/get-light.html">
+                    <code>getLight</code>
+                </a>
+                To get information about a single light
+            </li>
+            <li>
+                <a href="reference/latest/lights/inkapplications.shade.lights/-light-controls/update-light.html">
+                    <code>updateLight</code>
+                </a>
+                To update information about a single light
+            </li>
+        </ul>
+    </section>
+    <section>
+        <header>
+            <a name="rooms" href="#rooms">
+                <h1>Configure Rooms</h1>
+            </a>
+        </header>
+        <p>
+            Rooms can be created and updated through the <code>rooms</code>
+            module:
+        </p>
+<pre><code class="kotlin">shade.rooms.createRoom(
+    parameters = RoomCreateParameters(
+        metadata = RoomMetadata(
+            name = "Game Room",
+            archetype = RoomArchetype.Recreation,
+        ),
+        children = listOf(lightReference),
+    ),
+)</code></pre>
+        <p>
+            The rooms module supports the following actions:
+        </p>
+        <ul>
+            <li>
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/list-rooms.html">
+                    <code>listRooms</code>
+                </a>
+                To get a list of all rooms on the hue bridge
+            </li>
+            <li>
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/get-room.html">
+                    <code>getRoom</code>
+                </a>
+                To get information about a single room
+            </li>
+            <li>
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/update-room.html">
+                    <code>updateRoom</code>
+                </a>
+                To update information about a single room
+            </li>
+            <li>
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/create-room.html">
+                    <code>createRoom</code>
+                </a>
+                To create a new room on the hue bridge
+            </li>
+            <li>
+                <a href="reference/latest/rooms/inkapplications.shade.rooms/-room-controls/delete-room.html">
+                    <code>deleteRoom</code>
+                </a>
+                To remove a room from the hue bridge
+            </li>
+        </ul>
+    </section>
+    <section>
+        <header>
+            <a name="zones" href="#zones">
+                <h1>Configure Zones</h1>
+            </a>
+        </header>
+        <p>
+            Zones can be created and updated through the <code>zones</code>
+            module:
+        </p>
+<pre><code class="kotlin">shade.zones.listZones()</code></pre>
+        <p>
+            The zones module supports the following actions:
+        </p>
+        <ul>
+            <li>
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/list-zones.html">
+                    <code>listZones</code>
+                </a>
+                To get a list of all zones on the Hue bridge
+            </li>
+            <li>
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/get-zone.html">
+                    <code>getZone</code>
+                </a>
+                To get information about a specific zone.
+            </li>
+            <li>
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/update-zone.html">
+                    <code>updateZone</code>
+                </a>
+                To update the configuration for a zone.
+            </li>
+            <li>
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/create-zone.html">
+                    <code>createZone</code>
+                </a>
+                To create a new zone configuration.
+            </li>
+            <li>
+                <a href="reference/latest/zones/inkapplications.shade.zones/-zone-controls/delete-zone.html">
+                    <code>deleteZone</code>
+                </a>
+                To remove a zone configuration.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <header>
+            <a name="grouped-lights" href="#grouped-lights">
+                <h1>Configure Grouped Lights</h1>
+            </a>
+        </header>
+        <p>
+            Grouped Light resources can be fetched and updated <code>groupedLights</code>
+            module:
+        </p>
+<pre><code class="kotlin">shade.groupedLights.listGroups()</code></pre>
+        <p>
+            The zones module supports the following actions:
+        </p>
+        <ul>
+            <li>
+                <a href="reference/latest/grouped-lights/inkapplications.shade.groupedlights/-grouped-light-controls/list-groups.html">
+                    <code>listGroups</code>
+                </a>
+                to get a list of all grouped lights configured.
+            </li>
+            <li>
+                <a href="reference/latest/grouped-lights/inkapplications.shade.groupedlights/-grouped-light-controls/get-group.html">
+                    <code>getGroup</code>
+                </a>
+                to get information about a single grouped light.
+            </li>
+            <li>
+                <a href="reference/latest/grouped-lights/inkapplications.shade.groupedlights/-grouped-light-controls/update-group.html">
+                    <code>updateGroup</code>
+                </a>
+                to update the state of a grouped light.
+            </li>
+        </ul>
+    </section>
 </body>
 </html>

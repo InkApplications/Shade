@@ -1,21 +1,59 @@
 plugins {
-    kotlin("jvm")
-    kotlin("kapt")
+    id("library")
+    kotlin("plugin.serialization")
+    id("com.inkapplications.publishing")
 }
 
-publishJava()
+kotlin {
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation(kotlinLibraries.serialization.json)
+                api(kotlinLibraries.coroutines.core)
+                implementation(projects.serialization)
+                api(projects.structures)
 
-dependencies {
-    compile(kotlin("stdlib"))
-    compile(coroutines())
+                implementation(ktorLibraries.client.core)
+                implementation(ktorLibraries.client.contentnegotiation)
+                implementation(ktorLibraries.serialization.json)
+            }
+        }
 
-    implementation(retrofit())
-    implementation(retrofit("converter-moshi"))
-    implementation(moshi())
-    implementation(moshi("moshi-adapters"))
-    kapt(moshi("moshi-kotlin-codegen"))
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlinLibraries.test.core)
+                implementation(kotlinLibraries.test.annotations)
+            }
+        }
 
-    compile(okHttp())
+        val jvmMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.okhttp)
+            }
+        }
 
-    testImplementation(jUnit())
+        val nativeMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.cio)
+            }
+        }
+
+        val windowsMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.winhttp)
+            }
+        }
+
+        val iosMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.darwin)
+            }
+        }
+
+        val jsMain by getting {
+            dependencies {
+                implementation(ktorLibraries.client.js)
+            }
+        }
+    }
 }

@@ -8,109 +8,91 @@
 
     <title>Shade / Kotlin Hue Toolkit</title>
 
-    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300|Open+Sans:300|Inconsolata" rel="stylesheet">
-    <link rel="stylesheet" href="css/atom-one-light.css" type="text/css" />
-    <link rel="stylesheet" href="css/atom-one-dark.css" type="text/css" media="(prefers-color-scheme:dark)" />
-    <link rel="stylesheet" href="css/main-1.1.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/dark-1.1.css" type="text/css" media="(prefers-color-scheme:dark)" />
+    <link rel="stylesheet" href="css/main-2.0.css" type="text/css" media="all" />
 
-    <script src="js/highlight.pack.js"></script>
+    <script src="https://assets.inkapplications.com/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
-<body>
-    <header>
-        <img src="svg/logo-full-dark.svg" class="logo only-dark" alt="Shade Logo" />
-        <img src="svg/logo-full.svg" class="logo only-light" alt="Shade Logo" />
+<body class="sectioned">
+    <header class="content-break">
+        <img src="svg/logo-full.svg" class="logo only-lightmode" alt="Shade Logo" />
+        <img src="svg/logo-full-dark.svg" class="logo only-darkmode" alt="Shade Logo" />
     </header>
-    <section class="hero">
-        <h1>A modern toolkit for the Philips Hue API.</h1>
+    <section class="featured">
+        <h1>Hue + Kotlin Mutliplatform</h1>
+        <p>Use Shade to control Philips Hue lights and devices.</p>
         <nav>
-            <a href="https://github.com/InkApplications/Shade/releases/latest">Latest Release</a>
-            <a href="https://github.com/InkApplications/Shade">GitHub</a>
+            <a href="https://github.com/InkApplications/Shade" class="button">Github</a>
+            <a href="https://github.com/InkApplications/Shade/releases/latest" class="button">Latest Release</a>
         </nav>
+    </section>
+    <section>
+        <h1>Choose your Integration</h1>
         <article>
-            <h1>Kotlin SDK</h1>
-            <p>Control your Hue devices with a rich Coroutine API.</p>
-            <a href="sdk-overview.html">Get Started</a>
+            <h2>Cross-Platform Command Line</h2>
+            <p>
+                Shade's CLI application for Windows, MacOS and Linux provides
+                commands for controlling your lighing directly from the
+                terminal.
+            </p>
+<pre><code class="shell">$ shade update-light $lightId --brightness=10%</code></pre>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://github.com/InkApplications/Shade/releases/latest">Download</a>
+                    </li>
+                    <li>
+                        <a href="cli-overview.html">Get Started</a>
+                    </li>
+                </ul>
+            </nav>
         </article>
         <article>
-            <h1>CLI Tools</h1>
-            <p>Cross-platform command line application to control Hue devices.</p>
-            <a href="cli-overview.html">Get Started</a>
+            <h2>Kotlin Multiplatform SDK</h2>
+            <p>
+                Shade's Kotlin SDK provides API's for controlling your lighting
+                on Java, Android and Javascript platforms.
+            </p>
+<pre><code class="kotlin">shade.lights.updateLight(
+    id = lightId,
+    parameters = LightUpdateParameters(
+        brightness = 10.percent,
+    ),
+)</code></pre>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="sdk-overview.html">Get Started</a>
+                    </li>
+                    <li>
+                        <a href="reference/latest/index.html">API Reference</a>
+                    </li>
+                </ul>
+            </nav>
         </article>
     </section>
     <section>
         <article>
-            <header>
-                <a name="straightforward-api"></a>
-                <h1>Straightforward API's</h1>
-            </header>
+            <h1>Free + Open Source</h1>
             <p>
-                Shade provides API's that are intuitive, making it easy to get
-                started.
-            </p>
-
-<pre><code class="kotlin">
-suspend fun turnLightsOn() {
-    shade.groups.setState(
-        GROUP_ALL,
-        GroupStateModification(
-            on = on,
-            brightness = 50.percent,
-            colorTemperature = 5000.kelvin
-        )
-    )
-}
-
-</code></pre>
-            <p>
-                Kotlin Coroutines makes controlling your Hue lights on the JVM
-                easy, while maintaining a well-structured asynchronous API.
-            </p>
-        </article>
-        <article>
-            <header>
-                <a name="straightforward-api"></a>
-                <h1>Cross-Platform CLI</h1>
-            </header>
-            <p>
-                Shade's command line tools run on Mac, Windows or Linux. Built
-                on Shade's SDK, the CLI provides an easy way to control
-                lights in any terminal or script.
-            </p>
-
-            <pre><code class="shell">
-$ shade lights:list
-1:
-  name: Renee's Office
-  uuid: 00:19:28:37:00:a1:b9:f2-0b
-  type: Extended color light
-  firmware: 5.127.1.26581
-2:
-  name: Kitchen
-  uuid: 00:91:82:73:00:b9:c3:7a-0b
-  type: Extended color light
-  firmware: 5.127.1.26581
-
-$ shade lights:control 1 --on --brightness 50
-
-</code></pre>
-        </article>
-        <article>
-            <header>
-                <a name="straightforward-api"></a>
-                <h1>Free and Stable</h1>
-            </header>
-            <p>
-                Shade is free, <a href="https://github.com/InkApplications/Shade">Open Source</a>,
+                Shade is free under the
+                <a href="https://github.com/InkApplications/Shade/blob/master/LICENSE">MIT License</a>,
+                the project is
+                <a href="https://github.com/InkApplications/Shade">Open Source</a>,
                 actively maintained, and always looking for contributions.
             </p>
             <p>
-                There are many Hue devices and things to do with them.<br />
-                Testing all that can be difficult.
-                If you have an issue, please
-                <a href="https://github.com/InkApplications/Shade/issues/new/choose">tell us</a>!
+                 There are many Hue devices and things to do with them.
+                Testing all that can be difficult. Please
+                <a href="https://github.com/InkApplications/Shade/issues/new/choose">report</a>
+                any issues you find.
+            </p>
+        </article>
+        <article>
+            <h1>Trademarks</h1>
+            <p>
+                "Hue" and "Philips" are trademarks of Signify Holding and are
+                not affiliated with this project.
             </p>
         </article>
     </section>
