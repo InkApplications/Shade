@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-./gradlew cli:installDist --quiet && cli/build/install/shade/bin/shade "$@"
+./gradlew cli:installDist --quiet && \
+cli/build/install/shade/bin/shade "$@"

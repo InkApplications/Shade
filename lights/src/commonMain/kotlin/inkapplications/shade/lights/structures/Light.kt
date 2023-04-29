@@ -85,4 +85,15 @@ data class Light(
      */
     @SerialName("timed_effects")
     val timedEffects: TimedLightingEffectInfo? = null,
+
+    /**
+     * Signaling properties of the light.
+     */
+    val signaling: LightSignaling? = null,
+
+    /**
+     * Feature containing properties to configure powerup behaviour of
+     * a lightsource.
+     */
+    val powerup: LightPowerup? = null,
 )

@@ -1,6 +1,5 @@
 package inkapplications.shade.lights.events
 
-import inkapplications.shade.lights.structures.*
 import inkapplications.shade.structures.PowerInfo
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference

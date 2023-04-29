@@ -1,6 +1,7 @@
 package inkapplications.shade.lights
 
 import inkapplications.shade.lights.structures.*
+import inkapplications.shade.lights.structures.LightSignal.Companion.OnOff
 import inkapplications.shade.structures.ResourceType
 import inkapplications.spondee.measure.toMireds
 import inkapplications.spondee.scalar.toWholePercentage
@@ -113,7 +114,40 @@ class LightSerializationTest {
                     }],
                     "points_capable": 5
                 },
-                "signaling": {},
+                "signaling": {
+                    "status": {
+                        "signal": "on_off",
+                        "estimated_end": "2021-10-18T17:04:55Z"
+                    }
+                },
+                "powerup": {
+                    "preset": "custom",
+                    "configured": true,
+                    "on": {
+                        "mode": "on",
+                        "on": {
+                            "on": true
+                        }
+                    },
+                    "dimming": {
+                        "mode": "dimming",
+                        "dimming": {
+                            "brightness": 69
+                        }
+                    },
+                    "color": {
+                        "mode": "color",
+                        "color_temperature": {
+                            "mirek": 420
+                        },
+                        "color": {
+                            "xy": {
+                                "x": .12,
+                                "y": .34
+                            }
+                        }
+                    }
+                }
                 "type": "light"
             }
         """.trimIndent()
@@ -154,6 +188,16 @@ class LightSerializationTest {
         assertEquals(LightEffect.Candle, light.effects?.status)
         assertEquals(listOf(TimedLightEffect.None), light.timedEffects?.values)
         assertEquals(TimedLightEffect.None, light.timedEffects?.status)
+        assertEquals(OnOff, light.signaling?.status?.signal)
+        assertEquals(1634576695000, light.signaling?.status?.estimatedEnd?.toEpochMilliseconds())
+        assertEquals(true, light.powerup?.configured)
+        assertEquals(true, (light.powerup?.powerState as? PowerupPowerState.StaticPower?)?.powerValue?.on)
+        val powerup = light.powerup as LightPowerup.Custom?
+        assertEquals(69, (powerup?.dimmingState as? PowerupDimmingState.StaticBrightness?)?.dimmingValue?.brightness?.toWholePercentage()?.value?.toInt())
+        val colorState = (powerup?.colorState as? PowerupColorState.Color?)
+        assertEquals(420, colorState?.temperatureValue?.temperature?.toMireds()?.value?.toInt())
+        assertEquals(.12f, colorState?.colorValue?.color?.toXYZ()?.toCIExyY()?.x ?: 0f, 1e-16f)
+        assertEquals(.34f, colorState?.colorValue?.color?.toXYZ()?.toCIExyY()?.y ?: 0f, 1e-16f)
     }
 
     @Test
@@ -193,5 +237,7 @@ class LightSerializationTest {
         assertNull(light.gradient)
         assertNull(light.effects)
         assertNull(light.timedEffects)
+        assertNull(light.powerup)
+        assertNull(light.signaling)
     }
 }
