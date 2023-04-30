@@ -112,12 +112,12 @@ class LightUpdateParametersSerializationTest {
             gradient = GradientParameters(
                 points = listOf(
                     GradientPoint(
-                        colorInfo = GradientColorInfo(
+                        colorValue = ColorValue(
                             color = xyY(.2f, .4f).let { XYZ(x = it.X, y = it.Y, z = it.Z) },
                         )
                     ),
                     GradientPoint(
-                        colorInfo = GradientColorInfo(
+                        colorValue = ColorValue(
                             color = xyY(.8f, .4f).let { XYZ(x = it.X, y = it.Y, z = it.Z) },
                         )
                     ),
