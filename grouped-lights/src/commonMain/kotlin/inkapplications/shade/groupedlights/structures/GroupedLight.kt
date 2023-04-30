@@ -1,7 +1,6 @@
 package inkapplications.shade.groupedlights.structures
 
 import inkapplications.shade.lights.structures.AlertInfo
-import inkapplications.shade.lights.structures.DimmingInfo
 import inkapplications.shade.structures.PowerInfo
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference

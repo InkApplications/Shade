@@ -5,7 +5,7 @@ package inkapplications.shade.structures
  *
  * Since these methods don't have documentation in Hue's official docs, the
  * data types and methods may change at any time, including on the Bridge
- * iself, meaning the code may break over time. Data structures are filled in
+ * itself, meaning the code may break over time. Data structures are filled in
  * by interpreting responses and are likely incomplete and may be incorrect
  * or incomplete for different devices.
  * Changes made to methods with this annotation will NOT be considered a
