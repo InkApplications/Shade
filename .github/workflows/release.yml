@@ -46,6 +46,12 @@ jobs:
                 name: Build JS Publication
                 run: ./gradlew publishJsPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
+                name: Build Archives
+                run: ./gradlew cli:assembleDist
+            -
+                name: Prepare Archives
+                run: cp cli/build/distributions/shade-*.zip cli/build/distributions/shade.zip && cp cli/build/distributions/shade-*.tar cli/build/distributions/shade.tar
+            -
                 name: Create GitHub Release
                 id: create_release
                 uses: actions/create-release@v1.0.0
