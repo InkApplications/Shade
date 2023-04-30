@@ -1,6 +1,44 @@
 Change Log
 ==========
 
+2.0.0
+-----
+
+This major release of the SDK contains breaking changes required to support
+Kotlin Multiplatform as well as the [v2 endpoints] of the Hue API. Please
+refer to the [docs] for new setup instructions.
+
+The new SDK contains more thorough documentation as well as a published API
+reference.
+
+### Supported Modules:
+
+ - Bridge Discovery
+ - Light Control
+ - Grouped Lights
+ - Rooms
+ - Zones
+
+### Supported Platforms:
+ - jvm
+ - js (IR + Legacy)
+     - nodejs
+ -   - browser
+ - iosArm64
+ - iosX64
+ - watchosArm32
+ - watchosArm64
+ - watchosX64
+ - tvosArm64
+ - tvosX64
+ - macosX64
+ - macosArm64
+ - linuxX64
+ - mingwX64
+
+[v2 endpoints]: https://developers.meethue.com/develop/hue-api-v2/api-reference/
+[docs]: https://shade.lighting/
+
 1.2.0
 -----
 
