@@ -14,8 +14,18 @@ jobs:
             -
                 name: JVM Tests
                 run: ./gradlew jvmTest
+            -
+                name: Docs Requirements
+                run: >
+                    ./gradlew dokkaHtmlMultiModule -Pversion=latest &&
+                    if [[ $(git status --porcelain) ]]; then
+                        echo "Docs are out of date!" && exit 1;
+                    else
+                        echo "Docs are current" && exit 0;
+                    fi
     common:
         runs-on: ubuntu-latest
+        needs: tests
         steps:
             -
                 name: Checkout
@@ -36,6 +46,37 @@ jobs:
                 name: Build JS Publication
                 run: ./gradlew publishJsPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
+                name: Create GitHub Release
+                id: create_release
+                uses: actions/create-release@v1.0.0
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                with:
+                    tag_name: ${{ github.ref }}
+                    release_name: ${{ github.ref }}
+                    draft: true
+                    prerelease: false
+            -
+                name: Upload Cli Tar
+                uses: actions/upload-release-asset@v1.0.1
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                with:
+                    upload_url: ${{ steps.create_release.outputs.upload_url }}
+                    asset_path: cli/build/distributions/shade.tar
+                    asset_name: shade.tar
+                    asset_content_type: application/x-tar
+            -
+                name: Upload Cli Zip
+                uses: actions/upload-release-asset@v1.0.1
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                with:
+                    upload_url: ${{ steps.create_release.outputs.upload_url }}
+                    asset_path: cli/build/distributions/shade.zip
+                    asset_name: shade.zip
+                    asset_content_type: application/zip
+            -
                 name: Maven Publish
                 env:
                     GITHUB_TAG: ${{ github.ref }}
@@ -53,6 +94,7 @@ jobs:
 
     linux:
         runs-on: ubuntu-latest
+        needs: tests
         steps:
             -
                 name: Checkout
@@ -82,6 +124,7 @@ jobs:
 
     windows:
         runs-on: windows-latest
+        needs: tests
         steps:
             -
                 name: Checkout
@@ -112,6 +155,7 @@ jobs:
                     --project-prop version=${GITHUB_TAG/refs\/tags\//}
     macos:
         runs-on: macos-latest
+        needs: tests
         steps:
             -
                 name: Checkout
