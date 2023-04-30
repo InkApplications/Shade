@@ -1,0 +1,115 @@
+public abstract interface class inkapplications/shade/rooms/RoomControls {
+	public abstract fun createRoom (Linkapplications/shade/rooms/parameters/RoomCreateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun deleteRoom-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getRoom-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun listRooms (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun updateRoom-bKh5c1I (Ljava/lang/String;Linkapplications/shade/rooms/parameters/RoomUpdateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/rooms/ShadeRoomsModule {
+	public fun <init> (Linkapplications/shade/internals/InternalsModule;)V
+	public final fun getRooms ()Linkapplications/shade/rooms/RoomControls;
+}
+
+public final class inkapplications/shade/rooms/parameters/RoomCreateParameters {
+	public static final field Companion Linkapplications/shade/rooms/parameters/RoomCreateParameters$Companion;
+	public synthetic fun <init> (ILinkapplications/shade/structures/SegmentMetadata;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;)V
+	public final fun component1 ()Linkapplications/shade/structures/SegmentMetadata;
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;)Linkapplications/shade/rooms/parameters/RoomCreateParameters;
+	public static synthetic fun copy$default (Linkapplications/shade/rooms/parameters/RoomCreateParameters;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/rooms/parameters/RoomCreateParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChildren ()Ljava/util/List;
+	public final fun getMetadata ()Linkapplications/shade/structures/SegmentMetadata;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/rooms/parameters/RoomCreateParameters;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/rooms/parameters/RoomCreateParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/rooms/parameters/RoomCreateParameters$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/rooms/parameters/RoomCreateParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/rooms/parameters/RoomCreateParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/rooms/parameters/RoomCreateParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/rooms/parameters/RoomUpdateParameters {
+	public static final field Companion Linkapplications/shade/rooms/parameters/RoomUpdateParameters$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILinkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Linkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;)V
+	public synthetic fun <init> (Linkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Linkapplications/shade/structures/SegmentMetadataUpdate;
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (Linkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;)Linkapplications/shade/rooms/parameters/RoomUpdateParameters;
+	public static synthetic fun copy$default (Linkapplications/shade/rooms/parameters/RoomUpdateParameters;Linkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/rooms/parameters/RoomUpdateParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChildren ()Ljava/util/List;
+	public final fun getMetadata ()Linkapplications/shade/structures/SegmentMetadataUpdate;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/rooms/parameters/RoomUpdateParameters;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/rooms/parameters/RoomUpdateParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/rooms/parameters/RoomUpdateParameters$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/rooms/parameters/RoomUpdateParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/rooms/parameters/RoomUpdateParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/rooms/parameters/RoomUpdateParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/rooms/structures/Room {
+	public static final field Companion Linkapplications/shade/rooms/structures/Room$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/util/List;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-XbiYvy0 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Linkapplications/shade/structures/SegmentMetadata;
+	public final fun component4 ()Ljava/util/List;
+	public final fun copy-BS1GAoM (Ljava/lang/String;Ljava/util/List;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;)Linkapplications/shade/rooms/structures/Room;
+	public static synthetic fun copy-BS1GAoM$default (Linkapplications/shade/rooms/structures/Room;Ljava/lang/String;Ljava/util/List;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/rooms/structures/Room;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChildren ()Ljava/util/List;
+	public final fun getId-XbiYvy0 ()Ljava/lang/String;
+	public final fun getMetadata ()Linkapplications/shade/structures/SegmentMetadata;
+	public final fun getServices ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/rooms/structures/Room;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/rooms/structures/Room$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/rooms/structures/Room$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/rooms/structures/Room;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/rooms/structures/Room;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/rooms/structures/Room$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+

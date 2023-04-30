@@ -1,0 +1,165 @@
+public abstract interface class inkapplications/shade/groupedlights/GroupedLightControls {
+	public abstract fun getGroup-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun listGroups (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun updateGroup-bKh5c1I (Ljava/lang/String;Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/groupedlights/ShadeGroupedLightsModule {
+	public fun <init> (Linkapplications/shade/internals/InternalsModule;Linkapplications/shade/events/EventsModule;)V
+	public final fun getGroupedLights ()Linkapplications/shade/groupedlights/GroupedLightControls;
+}
+
+public final class inkapplications/shade/groupedlights/events/GroupedLightEvent {
+	public static final field Companion Linkapplications/shade/groupedlights/events/GroupedLightEvent$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/lights/structures/DimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;Lkotlinx/serialization/internal/SerializationConstructorMarker;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/lights/structures/DimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/lights/structures/DimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-XbiYvy0 ()Ljava/lang/String;
+	public final fun component2 ()Linkapplications/shade/structures/ResourceReference;
+	public final fun component3 ()Linkapplications/shade/structures/PowerInfo;
+	public final fun component4 ()Linkapplications/shade/lights/structures/DimmingInfo;
+	public final fun component5 ()Linkapplications/shade/lights/structures/AlertInfo;
+	public final fun copy-30mb6Lo (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/lights/structures/DimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;)Linkapplications/shade/groupedlights/events/GroupedLightEvent;
+	public static synthetic fun copy-30mb6Lo$default (Linkapplications/shade/groupedlights/events/GroupedLightEvent;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/lights/structures/DimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;ILjava/lang/Object;)Linkapplications/shade/groupedlights/events/GroupedLightEvent;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAlertInfo ()Linkapplications/shade/lights/structures/AlertInfo;
+	public final fun getDimmingInfo ()Linkapplications/shade/lights/structures/DimmingInfo;
+	public final fun getId-XbiYvy0 ()Ljava/lang/String;
+	public final fun getOwner ()Linkapplications/shade/structures/ResourceReference;
+	public final fun getPowerInfo ()Linkapplications/shade/structures/PowerInfo;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/groupedlights/events/GroupedLightEvent;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/groupedlights/events/GroupedLightEvent$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/groupedlights/events/GroupedLightEvent$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/groupedlights/events/GroupedLightEvent;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/groupedlights/events/GroupedLightEvent;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/groupedlights/events/GroupedLightEvent$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters {
+	public static final field Companion Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILinkapplications/shade/structures/parameters/PowerParameters;Linkapplications/shade/lights/parameters/DimmingParameters;Linkapplications/shade/lights/parameters/DimmingDeltaParameters;Linkapplications/shade/lights/parameters/ColorTemperatureParameters;Linkapplications/shade/lights/parameters/ColorTemperatureDeltaParameters;Linkapplications/shade/lights/parameters/ColorParameters;Linkapplications/shade/lights/parameters/AlertParameters;Linkapplications/shade/lights/parameters/DynamicsParameters;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Linkapplications/shade/structures/parameters/PowerParameters;Linkapplications/shade/lights/parameters/DimmingParameters;Linkapplications/shade/lights/parameters/DimmingDeltaParameters;Linkapplications/shade/lights/parameters/ColorTemperatureParameters;Linkapplications/shade/lights/parameters/ColorTemperatureDeltaParameters;Linkapplications/shade/lights/parameters/ColorParameters;Linkapplications/shade/lights/parameters/AlertParameters;Linkapplications/shade/lights/parameters/DynamicsParameters;)V
+	public synthetic fun <init> (Linkapplications/shade/structures/parameters/PowerParameters;Linkapplications/shade/lights/parameters/DimmingParameters;Linkapplications/shade/lights/parameters/DimmingDeltaParameters;Linkapplications/shade/lights/parameters/ColorTemperatureParameters;Linkapplications/shade/lights/parameters/ColorTemperatureDeltaParameters;Linkapplications/shade/lights/parameters/ColorParameters;Linkapplications/shade/lights/parameters/AlertParameters;Linkapplications/shade/lights/parameters/DynamicsParameters;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Linkapplications/shade/structures/parameters/PowerParameters;
+	public final fun component2 ()Linkapplications/shade/lights/parameters/DimmingParameters;
+	public final fun component3 ()Linkapplications/shade/lights/parameters/DimmingDeltaParameters;
+	public final fun component4 ()Linkapplications/shade/lights/parameters/ColorTemperatureParameters;
+	public final fun component5 ()Linkapplications/shade/lights/parameters/ColorTemperatureDeltaParameters;
+	public final fun component6 ()Linkapplications/shade/lights/parameters/ColorParameters;
+	public final fun component7 ()Linkapplications/shade/lights/parameters/AlertParameters;
+	public final fun component8 ()Linkapplications/shade/lights/parameters/DynamicsParameters;
+	public final fun copy (Linkapplications/shade/structures/parameters/PowerParameters;Linkapplications/shade/lights/parameters/DimmingParameters;Linkapplications/shade/lights/parameters/DimmingDeltaParameters;Linkapplications/shade/lights/parameters/ColorTemperatureParameters;Linkapplications/shade/lights/parameters/ColorTemperatureDeltaParameters;Linkapplications/shade/lights/parameters/ColorParameters;Linkapplications/shade/lights/parameters/AlertParameters;Linkapplications/shade/lights/parameters/DynamicsParameters;)Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters;
+	public static synthetic fun copy$default (Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters;Linkapplications/shade/structures/parameters/PowerParameters;Linkapplications/shade/lights/parameters/DimmingParameters;Linkapplications/shade/lights/parameters/DimmingDeltaParameters;Linkapplications/shade/lights/parameters/ColorTemperatureParameters;Linkapplications/shade/lights/parameters/ColorTemperatureDeltaParameters;Linkapplications/shade/lights/parameters/ColorParameters;Linkapplications/shade/lights/parameters/AlertParameters;Linkapplications/shade/lights/parameters/DynamicsParameters;ILjava/lang/Object;)Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAlert ()Linkapplications/shade/lights/parameters/AlertParameters;
+	public final fun getColor ()Linkapplications/shade/lights/parameters/ColorParameters;
+	public final fun getColorTemperature ()Linkapplications/shade/lights/parameters/ColorTemperatureParameters;
+	public final fun getColorTemperatureDelta ()Linkapplications/shade/lights/parameters/ColorTemperatureDeltaParameters;
+	public final fun getDimming ()Linkapplications/shade/lights/parameters/DimmingParameters;
+	public final fun getDimmingDelta ()Linkapplications/shade/lights/parameters/DimmingDeltaParameters;
+	public final fun getDynamics ()Linkapplications/shade/lights/parameters/DynamicsParameters;
+	public final fun getPower ()Linkapplications/shade/structures/parameters/PowerParameters;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/groupedlights/structures/GroupDimmingInfo {
+	public static final field Companion Linkapplications/shade/groupedlights/structures/GroupDimmingInfo$Companion;
+	public synthetic fun <init> (ILinkapplications/spondee/scalar/Percentage;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Linkapplications/spondee/scalar/Percentage;)V
+	public final fun component1 ()Linkapplications/spondee/scalar/Percentage;
+	public final fun copy (Linkapplications/spondee/scalar/Percentage;)Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;
+	public static synthetic fun copy$default (Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;Linkapplications/spondee/scalar/Percentage;ILjava/lang/Object;)Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBrightness ()Linkapplications/spondee/scalar/Percentage;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/groupedlights/structures/GroupDimmingInfo$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/groupedlights/structures/GroupDimmingInfo$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/groupedlights/structures/GroupDimmingInfo$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/groupedlights/structures/GroupedLight {
+	public static final field Companion Linkapplications/shade/groupedlights/structures/GroupedLight$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;Lkotlinx/serialization/internal/SerializationConstructorMarker;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-XbiYvy0 ()Ljava/lang/String;
+	public final fun component2 ()Linkapplications/shade/structures/ResourceReference;
+	public final fun component3 ()Linkapplications/shade/structures/PowerInfo;
+	public final fun component4 ()Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;
+	public final fun component5 ()Linkapplications/shade/lights/structures/AlertInfo;
+	public final fun copy-30mb6Lo (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;)Linkapplications/shade/groupedlights/structures/GroupedLight;
+	public static synthetic fun copy-30mb6Lo$default (Linkapplications/shade/groupedlights/structures/GroupedLight;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/structures/PowerInfo;Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;Linkapplications/shade/lights/structures/AlertInfo;ILjava/lang/Object;)Linkapplications/shade/groupedlights/structures/GroupedLight;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAlertInfo ()Linkapplications/shade/lights/structures/AlertInfo;
+	public final fun getDimmingInfo ()Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;
+	public final fun getId-XbiYvy0 ()Ljava/lang/String;
+	public final fun getOwner ()Linkapplications/shade/structures/ResourceReference;
+	public final fun getPowerInfo ()Linkapplications/shade/structures/PowerInfo;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/groupedlights/structures/GroupedLight;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/groupedlights/structures/GroupedLight$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/groupedlights/structures/GroupedLight$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/groupedlights/structures/GroupedLight;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/groupedlights/structures/GroupedLight;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/groupedlights/structures/GroupedLight$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+

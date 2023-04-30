@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("org.jetbrains.dokka")
     id("maven-publish")
+    id("org.jetbrains.kotlinx.binary-compatibility-validator")
 }
 
 kotlin {

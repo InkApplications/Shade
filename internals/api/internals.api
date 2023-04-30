@@ -1,0 +1,55 @@
+public final class inkapplications/shade/internals/CachedProperty : kotlin/properties/ReadOnlyProperty {
+	public fun <init> (Lkotlin/jvm/functions/Function0;ZLkotlin/jvm/functions/Function1;)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function0;ZLkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getFactory ()Lkotlin/jvm/functions/Function1;
+	public final fun getKeyProperty ()Lkotlin/jvm/functions/Function0;
+	public fun getValue (Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/internals/DummyConfigurationContainer : inkapplications/shade/structures/HueConfigurationContainer {
+	public static final field INSTANCE Linkapplications/shade/internals/DummyConfigurationContainer;
+	public fun getAuthToken ()Lkotlinx/coroutines/flow/StateFlow;
+	public fun getHostname ()Lkotlinx/coroutines/flow/StateFlow;
+	public fun getSecurityStrategy ()Lkotlinx/coroutines/flow/StateFlow;
+	public fun setAuthToken (Linkapplications/shade/structures/AuthToken;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun setHostname (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun setSecurityStrategy (Linkapplications/shade/structures/SecurityStrategy;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class inkapplications/shade/internals/HueHttpClient {
+	public abstract fun sendRequest (Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun sendV1Request (Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/internals/HueHttpClient$DefaultImpls {
+	public static synthetic fun sendRequest$default (Linkapplications/shade/internals/HueHttpClient;Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun sendV1Request$default (Linkapplications/shade/internals/HueHttpClient;Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/internals/HueStubClient : inkapplications/shade/internals/HueHttpClient {
+	public static final field INSTANCE Linkapplications/shade/internals/HueStubClient;
+	public fun sendRequest (Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendV1Request (Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/internals/InternalsModule {
+	public fun <init> (Linkapplications/shade/structures/HueConfigurationContainer;Lkimchi/logger/KimchiLogger;)V
+	public synthetic fun <init> (Linkapplications/shade/structures/HueConfigurationContainer;Lkimchi/logger/KimchiLogger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getConfigurationContainer ()Linkapplications/shade/structures/HueConfigurationContainer;
+	public final fun getHueHttpClient ()Linkapplications/shade/internals/HueHttpClient;
+	public final fun getJson ()Lkotlinx/serialization/json/Json;
+	public final fun getPlatformModule ()Linkapplications/shade/internals/PlatformModule;
+}
+
+public final class inkapplications/shade/internals/PlatformModule {
+	public fun <init> (Linkapplications/shade/structures/HueConfigurationContainer;Lkotlinx/serialization/json/Json;Lkimchi/logger/KimchiLogger;)V
+	public synthetic fun <init> (Linkapplications/shade/structures/HueConfigurationContainer;Lkotlinx/serialization/json/Json;Lkimchi/logger/KimchiLogger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun applyPlatformConfiguration (Lokhttp3/OkHttpClient$Builder;Linkapplications/shade/structures/SecurityStrategy;)Lokhttp3/OkHttpClient$Builder;
+	public final fun createEngine (Linkapplications/shade/structures/SecurityStrategy;)Lio/ktor/client/engine/HttpClientEngineFactory;
+	public final fun getSseClient ()Linkapplications/shade/internals/SseClient;
+}
+
+public abstract interface class inkapplications/shade/internals/SseClient {
+	public abstract fun openSse ([Ljava/lang/String;Lkotlinx/serialization/DeserializationStrategy;)Lkotlinx/coroutines/flow/Flow;
+}
+

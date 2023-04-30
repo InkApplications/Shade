@@ -12,4 +12,5 @@ dependencies {
     implementation(inkLibraries.publishing)
     implementation(kotlinLibraries.serialization.plugin)
     implementation(kotlinLibraries.dokka)
+    implementation(kotlinLibraries.kotlinx.binary.compatibility)
 }
