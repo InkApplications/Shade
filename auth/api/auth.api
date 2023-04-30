@@ -1,0 +1,31 @@
+public final class inkapplications/shade/auth/AuthModule {
+	public fun <init> (Linkapplications/shade/internals/InternalsModule;Lkimchi/logger/KimchiLogger;)V
+	public final fun getBridgeAuth ()Linkapplications/shade/auth/BridgeAuth;
+}
+
+public abstract interface class inkapplications/shade/auth/BridgeAuth {
+	public abstract fun awaitToken-exY8QGI (Linkapplications/shade/auth/structures/AppId;IJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/auth/BridgeAuth$DefaultImpls {
+	public static synthetic fun awaitToken-exY8QGI$default (Linkapplications/shade/auth/BridgeAuth;Linkapplications/shade/auth/structures/AppId;IJLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/auth/structures/AppId {
+	public static final field Companion Linkapplications/shade/auth/structures/AppId$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Linkapplications/shade/auth/structures/AppId;
+	public static synthetic fun copy$default (Linkapplications/shade/auth/structures/AppId;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/auth/structures/AppId;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAppName ()Ljava/lang/String;
+	public final fun getInstanceName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class inkapplications/shade/auth/structures/AppId$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+

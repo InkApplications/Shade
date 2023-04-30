@@ -1,0 +1,17 @@
+public abstract interface class inkapplications/shade/events/EventSerializerContainer {
+	public abstract fun setDeserializer (Ljava/lang/String;Lkotlinx/serialization/DeserializationStrategy;)V
+}
+
+public abstract interface class inkapplications/shade/events/Events {
+	public abstract fun bridgeEvents ()Lkotlinx/coroutines/flow/Flow;
+}
+
+public final class inkapplications/shade/events/EventsModule {
+	public fun <init> (Linkapplications/shade/internals/InternalsModule;Lkimchi/logger/KimchiLogger;)V
+	public final fun getEventSerializerContainer ()Linkapplications/shade/events/EventSerializerContainer;
+}
+
+public final class shade/events/EventsModuleKt {
+	public static final fun getEvents (Linkapplications/shade/events/EventsModule;)Linkapplications/shade/events/Events;
+}
+

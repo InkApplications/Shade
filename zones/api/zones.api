@@ -1,0 +1,115 @@
+public final class inkapplications/shade/zones/ShadeZonesModule {
+	public fun <init> (Linkapplications/shade/internals/InternalsModule;)V
+	public final fun getZones ()Linkapplications/shade/zones/ZoneControls;
+}
+
+public abstract interface class inkapplications/shade/zones/ZoneControls {
+	public abstract fun createZone (Linkapplications/shade/zones/parameters/ZoneCreateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun deleteZone-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getZone-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun listZones (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun updateZone-bKh5c1I (Ljava/lang/String;Linkapplications/shade/zones/parameters/ZoneUpdateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/zones/parameters/ZoneCreateParameters {
+	public static final field Companion Linkapplications/shade/zones/parameters/ZoneCreateParameters$Companion;
+	public synthetic fun <init> (ILinkapplications/shade/structures/SegmentMetadata;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;)V
+	public final fun component1 ()Linkapplications/shade/structures/SegmentMetadata;
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;)Linkapplications/shade/zones/parameters/ZoneCreateParameters;
+	public static synthetic fun copy$default (Linkapplications/shade/zones/parameters/ZoneCreateParameters;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/zones/parameters/ZoneCreateParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChildren ()Ljava/util/List;
+	public final fun getMetadata ()Linkapplications/shade/structures/SegmentMetadata;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/zones/parameters/ZoneCreateParameters;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/zones/parameters/ZoneCreateParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/zones/parameters/ZoneCreateParameters$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/zones/parameters/ZoneCreateParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/zones/parameters/ZoneCreateParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/zones/parameters/ZoneCreateParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/zones/parameters/ZoneUpdateParameters {
+	public static final field Companion Linkapplications/shade/zones/parameters/ZoneUpdateParameters$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILinkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Linkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;)V
+	public synthetic fun <init> (Linkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Linkapplications/shade/structures/SegmentMetadataUpdate;
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (Linkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;)Linkapplications/shade/zones/parameters/ZoneUpdateParameters;
+	public static synthetic fun copy$default (Linkapplications/shade/zones/parameters/ZoneUpdateParameters;Linkapplications/shade/structures/SegmentMetadataUpdate;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/zones/parameters/ZoneUpdateParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChildren ()Ljava/util/List;
+	public final fun getMetadata ()Linkapplications/shade/structures/SegmentMetadataUpdate;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/zones/parameters/ZoneUpdateParameters;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/zones/parameters/ZoneUpdateParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/zones/parameters/ZoneUpdateParameters$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/zones/parameters/ZoneUpdateParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/zones/parameters/ZoneUpdateParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/zones/parameters/ZoneUpdateParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/zones/structures/Zone {
+	public static final field Companion Linkapplications/shade/zones/structures/Zone$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/util/List;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-XbiYvy0 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Linkapplications/shade/structures/SegmentMetadata;
+	public final fun component4 ()Ljava/util/List;
+	public final fun copy-BS1GAoM (Ljava/lang/String;Ljava/util/List;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;)Linkapplications/shade/zones/structures/Zone;
+	public static synthetic fun copy-BS1GAoM$default (Linkapplications/shade/zones/structures/Zone;Ljava/lang/String;Ljava/util/List;Linkapplications/shade/structures/SegmentMetadata;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/zones/structures/Zone;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChildren ()Ljava/util/List;
+	public final fun getId-XbiYvy0 ()Ljava/lang/String;
+	public final fun getMetadata ()Linkapplications/shade/structures/SegmentMetadata;
+	public final fun getServices ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/zones/structures/Zone;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/zones/structures/Zone$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/zones/structures/Zone$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/zones/structures/Zone;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/zones/structures/Zone;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/zones/structures/Zone$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
