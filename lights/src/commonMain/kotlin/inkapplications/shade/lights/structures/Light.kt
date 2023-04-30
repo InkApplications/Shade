@@ -55,7 +55,7 @@ data class Light(
     /**
      * Clip v1 resource identifier.
      */
-    @Deprecated("V1 Resource")
+    @Deprecated("V1 Resource. Left for migration purposes only, may be removed at any point by API or SDK.")
     @SerialName("id_v1")
     val v1Id: String? = null,
 

@@ -954,46 +954,14 @@ public final class inkapplications/shade/lights/structures/Gradient$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class inkapplications/shade/lights/structures/GradientColorInfo {
-	public static final field Companion Linkapplications/shade/lights/structures/GradientColorInfo$Companion;
-	public synthetic fun <init> (ILcom/github/ajalt/colormath/Color;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
-	public fun <init> (Lcom/github/ajalt/colormath/Color;)V
-	public final fun component1 ()Lcom/github/ajalt/colormath/Color;
-	public final fun copy (Lcom/github/ajalt/colormath/Color;)Linkapplications/shade/lights/structures/GradientColorInfo;
-	public static synthetic fun copy$default (Linkapplications/shade/lights/structures/GradientColorInfo;Lcom/github/ajalt/colormath/Color;ILjava/lang/Object;)Linkapplications/shade/lights/structures/GradientColorInfo;
-	public fun equals (Ljava/lang/Object;)Z
-	public final fun getColor ()Lcom/github/ajalt/colormath/Color;
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
-	public static final fun write$Self (Linkapplications/shade/lights/structures/GradientColorInfo;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
-}
-
-public final class inkapplications/shade/lights/structures/GradientColorInfo$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Linkapplications/shade/lights/structures/GradientColorInfo$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/lights/structures/GradientColorInfo;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/lights/structures/GradientColorInfo;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
-public final class inkapplications/shade/lights/structures/GradientColorInfo$Companion {
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
-}
-
 public final class inkapplications/shade/lights/structures/GradientPoint {
 	public static final field Companion Linkapplications/shade/lights/structures/GradientPoint$Companion;
-	public synthetic fun <init> (ILinkapplications/shade/lights/structures/ColorValue;Linkapplications/shade/lights/structures/GradientColorInfo;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public synthetic fun <init> (ILinkapplications/shade/lights/structures/ColorValue;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Linkapplications/shade/lights/structures/ColorValue;)V
-	public fun <init> (Linkapplications/shade/lights/structures/GradientColorInfo;)V
 	public final fun component1 ()Linkapplications/shade/lights/structures/ColorValue;
 	public final fun copy (Linkapplications/shade/lights/structures/ColorValue;)Linkapplications/shade/lights/structures/GradientPoint;
 	public static synthetic fun copy$default (Linkapplications/shade/lights/structures/GradientPoint;Linkapplications/shade/lights/structures/ColorValue;ILjava/lang/Object;)Linkapplications/shade/lights/structures/GradientPoint;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getColorInfo ()Linkapplications/shade/lights/structures/GradientColorInfo;
 	public final fun getColorValue ()Linkapplications/shade/lights/structures/ColorValue;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;

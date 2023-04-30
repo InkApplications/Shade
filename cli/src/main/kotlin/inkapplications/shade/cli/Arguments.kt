@@ -150,7 +150,6 @@ fun NullableOption<String, String>.gradientPoints(): NullableOption<List<Gradien
         it.split(",")
             .map { it.trim() }
             .map { Color.parse(it) }
-            .map { GradientColorInfo(color = it) }
-            .map { GradientPoint(colorInfo = it) }
+            .map { GradientPoint(colorValue = ColorValue(it)) }
     }
 }
