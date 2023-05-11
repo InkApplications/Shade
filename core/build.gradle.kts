@@ -10,6 +10,7 @@ kotlin {
                 implementation(projects.internals)
                 api(projects.auth)
                 api(projects.discover)
+                api(projects.devices)
                 api(projects.events)
                 api(projects.groupedLights)
                 api(projects.lights)

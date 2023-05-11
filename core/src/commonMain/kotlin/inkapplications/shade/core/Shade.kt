@@ -1,6 +1,7 @@
 package inkapplications.shade.core
 
 import inkapplications.shade.auth.AuthModule
+import inkapplications.shade.devices.ShadeDevicesModule
 import inkapplications.shade.discover.DiscoverModule
 import inkapplications.shade.events.EventsModule
 import inkapplications.shade.groupedlights.ShadeGroupedLightsModule
@@ -47,6 +48,7 @@ class Shade(
         internalsModule = internalsModule,
         logger = logger,
     ).bridgeAuth
+    val devices = ShadeDevicesModule(internalsModule).devices
     val lights = ShadeLightsModule(internalsModule, eventsModule).lights
     val rooms = ShadeRoomsModule(internalsModule).rooms
     val zones = ShadeZonesModule(internalsModule).zones
