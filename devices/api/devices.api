@@ -111,6 +111,7 @@ public final class inkapplications/shade/devices/structures/ModelId$Companion {
 public final class inkapplications/shade/devices/structures/ProductArchetype {
 	public static final field Companion Linkapplications/shade/devices/structures/ProductArchetype$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/devices/structures/ProductArchetype;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z

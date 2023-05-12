@@ -8,7 +8,7 @@ import kotlin.jvm.JvmInline
  */
 @JvmInline
 @Serializable
-value class DeltaAction private constructor(val key: String) {
+value class DeltaAction(val key: String) {
     override fun toString(): String = key
 
     companion object {
@@ -16,7 +16,13 @@ value class DeltaAction private constructor(val key: String) {
         val Down = DeltaAction("down")
         val Stop = DeltaAction("stop")
 
+        @Deprecated("This is an unbounded set of values. The values provided here are not exhaustive and will be removed in a future release.")
         fun values(): Array<DeltaAction> = arrayOf(Up, Down, Stop)
+
+        @Deprecated(
+            message = "Deprecated in favor of constructor",
+            replaceWith = ReplaceWith("DeltaAction(key)"),
+        )
         fun valueOf(key: String) = values().single { it.key == key }
     }
 }

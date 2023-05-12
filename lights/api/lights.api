@@ -272,6 +272,7 @@ public final class inkapplications/shade/lights/parameters/ColorTemperatureParam
 public final class inkapplications/shade/lights/parameters/DeltaAction {
 	public static final field Companion Linkapplications/shade/lights/parameters/DeltaAction$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/lights/parameters/DeltaAction;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
@@ -549,6 +550,7 @@ public final class inkapplications/shade/lights/parameters/TimedEffectsParameter
 public final class inkapplications/shade/lights/structures/AlertEffectType {
 	public static final field Companion Linkapplications/shade/lights/structures/AlertEffectType$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/lights/structures/AlertEffectType;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
@@ -820,6 +822,7 @@ public final class inkapplications/shade/lights/structures/DimmingValue$Companio
 public final class inkapplications/shade/lights/structures/DynamicsStatus {
 	public static final field Companion Linkapplications/shade/lights/structures/DynamicsStatus$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/lights/structures/DynamicsStatus;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
@@ -889,6 +892,7 @@ public final class inkapplications/shade/lights/structures/Gamut$Companion {
 public final class inkapplications/shade/lights/structures/GamutType {
 	public static final field Companion Linkapplications/shade/lights/structures/GamutType$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/lights/structures/GamutType;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
@@ -1082,6 +1086,7 @@ public final class inkapplications/shade/lights/structures/LightDynamics$Compani
 public final class inkapplications/shade/lights/structures/LightEffect {
 	public static final field Companion Linkapplications/shade/lights/structures/LightEffect$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/lights/structures/LightEffect;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
@@ -1117,6 +1122,7 @@ public final class inkapplications/shade/lights/structures/LightEffect$Companion
 public final class inkapplications/shade/lights/structures/LightMode {
 	public static final field Companion Linkapplications/shade/lights/structures/LightMode$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/lights/structures/LightMode;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
@@ -1218,6 +1224,7 @@ public final class inkapplications/shade/lights/structures/LightPowerup$Safety :
 public final class inkapplications/shade/lights/structures/LightSignal {
 	public static final field Companion Linkapplications/shade/lights/structures/LightSignal$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/lights/structures/LightSignal;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
@@ -1460,6 +1467,7 @@ public final class inkapplications/shade/lights/structures/StandardTemperatures 
 public final class inkapplications/shade/lights/structures/TimedLightEffect {
 	public static final field Companion Linkapplications/shade/lights/structures/TimedLightEffect$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/lights/structures/TimedLightEffect;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
