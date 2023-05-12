@@ -472,6 +472,40 @@ public final class inkapplications/shade/structures/UnknownEvent {
 public class inkapplications/shade/structures/UserError : inkapplications/shade/structures/ShadeException {
 }
 
+public final class inkapplications/shade/structures/VersionString {
+	public static final field Companion Linkapplications/shade/structures/VersionString$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/structures/VersionString;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getFull ()Ljava/lang/String;
+	public static final fun getMajor-impl (Ljava/lang/String;)Lkotlin/text/MatchGroup;
+	public static final fun getMinor-impl (Ljava/lang/String;)Lkotlin/text/MatchGroup;
+	public static final fun getPatch-impl (Ljava/lang/String;)Lkotlin/text/MatchGroup;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final class inkapplications/shade/structures/VersionString$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/structures/VersionString$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun deserialize-_i4LTMc (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun serialize-pmmGkI0 (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/structures/VersionString$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
 public final class inkapplications/shade/structures/parameters/PowerParameters {
 	public static final field Companion Linkapplications/shade/structures/parameters/PowerParameters$Companion;
 	public fun <init> ()V

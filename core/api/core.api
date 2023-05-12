@@ -9,6 +9,7 @@ public final class inkapplications/shade/core/Shade {
 	public synthetic fun <init> (Ljava/lang/String;Linkapplications/shade/structures/AuthToken;Linkapplications/shade/structures/SecurityStrategy;Lkimchi/logger/KimchiLogger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getAuth ()Linkapplications/shade/auth/BridgeAuth;
 	public final fun getConfiguration ()Linkapplications/shade/structures/HueConfigurationContainer;
+	public final fun getDevices ()Linkapplications/shade/devices/DeviceControls;
 	public final fun getGroupedLights ()Linkapplications/shade/groupedlights/GroupedLightControls;
 	public final fun getLights ()Linkapplications/shade/lights/LightControls;
 	public final fun getOnlineDiscovery ()Linkapplications/shade/discover/BridgeDiscovery;

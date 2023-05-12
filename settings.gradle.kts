@@ -19,6 +19,7 @@ dependencyResolutionManagement {
 include("auth")
 include("cli")
 include("core")
+include("devices")
 include("discover")
 include("events")
 include("grouped-lights")

@@ -9,11 +9,11 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(kotlinLibraries.serialization.json)
+                implementation(projects.internals)
                 implementation(projects.serialization)
+                api(projects.structures)
+
                 api(kotlinLibraries.coroutines.core)
-                api(kotlinLibraries.datetime)
-                api(inkLibraries.spondee)
-                api("com.github.ajalt.colormath:colormath:3.2.0")
             }
         }
 
