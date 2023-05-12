@@ -8,7 +8,7 @@ import kotlin.jvm.JvmInline
  */
 @Serializable
 @JvmInline
-value class ProductArchetype private constructor(val key: String) {
+value class ProductArchetype(val key: String) {
     override fun toString(): String = key
 
     companion object {

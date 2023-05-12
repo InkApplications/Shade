@@ -219,6 +219,7 @@ public final class inkapplications/shade/structures/ResourceReference$Companion 
 public final class inkapplications/shade/structures/ResourceType {
 	public static final field Companion Linkapplications/shade/structures/ResourceType$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/structures/ResourceType;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
@@ -300,6 +301,7 @@ public final class inkapplications/shade/structures/SecurityStrategy$PlatformTru
 public final class inkapplications/shade/structures/SegmentArchetype {
 	public static final field Companion Linkapplications/shade/structures/SegmentArchetype$Companion;
 	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/structures/SegmentArchetype;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z

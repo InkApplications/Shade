@@ -8,7 +8,7 @@ import kotlin.jvm.JvmInline
  */
 @Serializable
 @JvmInline
-value class GamutType private constructor(val key: String) {
+value class GamutType(val key: String) {
     override fun toString(): String = key
 
     companion object {
@@ -32,7 +32,13 @@ value class GamutType private constructor(val key: String) {
          */
         val Other = GamutType("other")
 
+        @Deprecated("This is an unbounded set of values. The values provided here are not exhaustive and will be removed in a future release.")
         fun values(): Array<GamutType> = arrayOf(A, B, C, Other)
+
+        @Deprecated(
+            message = "Deprecated in favor of constructor",
+            replaceWith = ReplaceWith("GamutType(key)"),
+        )
         fun valueOf(key: String) = values().single { it.key == key }
     }
 }
