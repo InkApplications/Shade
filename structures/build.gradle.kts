@@ -16,5 +16,12 @@ kotlin {
                 api("com.github.ajalt.colormath:colormath:3.2.0")
             }
         }
+
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlinLibraries.test.core)
+                implementation(kotlinLibraries.test.annotations)
+            }
+        }
     }
 }

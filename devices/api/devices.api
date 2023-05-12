@@ -198,10 +198,10 @@ public final class inkapplications/shade/devices/structures/ProductData {
 	public final fun component3 ()Ljava/lang/String;
 	public final fun component4-e8renMs ()Ljava/lang/String;
 	public final fun component5 ()Z
-	public final fun component6-YKrK56Q ()Ljava/lang/String;
+	public final fun component6-kxeRP08 ()Ljava/lang/String;
 	public final fun component7-r2DV6eQ ()Ljava/lang/String;
-	public final fun copy-taa8Oao (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;)Linkapplications/shade/devices/structures/ProductData;
-	public static synthetic fun copy-taa8Oao$default (Linkapplications/shade/devices/structures/ProductData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/devices/structures/ProductData;
+	public final fun copy-2zMpv-I (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;)Linkapplications/shade/devices/structures/ProductData;
+	public static synthetic fun copy-2zMpv-I$default (Linkapplications/shade/devices/structures/ProductData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/devices/structures/ProductData;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getCertified ()Z
 	public final fun getHardwarePlatformType-r2DV6eQ ()Ljava/lang/String;
@@ -209,7 +209,7 @@ public final class inkapplications/shade/devices/structures/ProductData {
 	public final fun getModelId-uI5RZ9A ()Ljava/lang/String;
 	public final fun getProductArchetype-e8renMs ()Ljava/lang/String;
 	public final fun getProductName ()Ljava/lang/String;
-	public final fun getSoftwareVersion-YKrK56Q ()Ljava/lang/String;
+	public final fun getSoftwareVersion-kxeRP08 ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 	public static final fun write$Self (Linkapplications/shade/devices/structures/ProductData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
@@ -260,40 +260,6 @@ public final class inkapplications/shade/devices/structures/ProductMetadata$$ser
 }
 
 public final class inkapplications/shade/devices/structures/ProductMetadata$Companion {
-	public final fun serializer ()Lkotlinx/serialization/KSerializer;
-}
-
-public final class inkapplications/shade/devices/structures/VersionString {
-	public static final field Companion Linkapplications/shade/devices/structures/VersionString$Companion;
-	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/devices/structures/VersionString;
-	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
-	public fun equals (Ljava/lang/Object;)Z
-	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
-	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
-	public final fun getFull ()Ljava/lang/String;
-	public static final fun getMajor-impl (Ljava/lang/String;)Lkotlin/text/MatchGroup;
-	public static final fun getMinor-impl (Ljava/lang/String;)Lkotlin/text/MatchGroup;
-	public static final fun getPatch-impl (Ljava/lang/String;)Lkotlin/text/MatchGroup;
-	public fun hashCode ()I
-	public static fun hashCode-impl (Ljava/lang/String;)I
-	public fun toString ()Ljava/lang/String;
-	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
-	public final synthetic fun unbox-impl ()Ljava/lang/String;
-}
-
-public final class inkapplications/shade/devices/structures/VersionString$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Linkapplications/shade/devices/structures/VersionString$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun deserialize-KkFwPkI (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun serialize-yuoaLKE (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
-public final class inkapplications/shade/devices/structures/VersionString$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 

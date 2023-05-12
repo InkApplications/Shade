@@ -1,5 +1,6 @@
 package inkapplications.shade.devices.structures
 
+import inkapplications.shade.structures.VersionString
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
