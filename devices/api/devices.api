@@ -1,12 +1,79 @@
 public abstract interface class inkapplications/shade/devices/DeviceControls {
 	public abstract fun deleteDevice-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun getDevice-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun identifyDevice-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun listDevices (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun updateDevice-bKh5c1I (Ljava/lang/String;Linkapplications/shade/devices/parameters/UpdateDeviceParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class inkapplications/shade/devices/ShadeDevicesModule {
 	public fun <init> (Linkapplications/shade/internals/InternalsModule;)V
 	public final fun getDevices ()Linkapplications/shade/devices/DeviceControls;
+}
+
+public final class inkapplications/shade/devices/parameters/DeviceMetadataParameters {
+	public static final field Companion Linkapplications/shade/devices/parameters/DeviceMetadataParameters$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2-stleNoo ()Ljava/lang/String;
+	public final fun copy-QYv-fho (Ljava/lang/String;Ljava/lang/String;)Linkapplications/shade/devices/parameters/DeviceMetadataParameters;
+	public static synthetic fun copy-QYv-fho$default (Linkapplications/shade/devices/parameters/DeviceMetadataParameters;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/devices/parameters/DeviceMetadataParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getArchetype-stleNoo ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/devices/parameters/DeviceMetadataParameters;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/devices/parameters/DeviceMetadataParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/devices/parameters/DeviceMetadataParameters$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/devices/parameters/DeviceMetadataParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/devices/parameters/DeviceMetadataParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/devices/parameters/DeviceMetadataParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/devices/parameters/UpdateDeviceParameters {
+	public static final field Companion Linkapplications/shade/devices/parameters/UpdateDeviceParameters$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILinkapplications/shade/devices/parameters/DeviceMetadataParameters;Linkapplications/shade/devices/parameters/IdentifyParameters;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Linkapplications/shade/devices/parameters/DeviceMetadataParameters;)V
+	public synthetic fun <init> (Linkapplications/shade/devices/parameters/DeviceMetadataParameters;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Linkapplications/shade/devices/parameters/DeviceMetadataParameters;
+	public final fun copy (Linkapplications/shade/devices/parameters/DeviceMetadataParameters;Linkapplications/shade/devices/parameters/IdentifyParameters;)Linkapplications/shade/devices/parameters/UpdateDeviceParameters;
+	public static synthetic fun copy$default (Linkapplications/shade/devices/parameters/UpdateDeviceParameters;Linkapplications/shade/devices/parameters/DeviceMetadataParameters;Linkapplications/shade/devices/parameters/IdentifyParameters;ILjava/lang/Object;)Linkapplications/shade/devices/parameters/UpdateDeviceParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMetadata ()Linkapplications/shade/devices/parameters/DeviceMetadataParameters;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/devices/parameters/UpdateDeviceParameters;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/devices/parameters/UpdateDeviceParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/devices/parameters/UpdateDeviceParameters$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/devices/parameters/UpdateDeviceParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/devices/parameters/UpdateDeviceParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/devices/parameters/UpdateDeviceParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/devices/structures/Device {

@@ -5,7 +5,6 @@ import inkapplications.shade.devices.structures.ProductArchetype
 import inkapplications.shade.structures.ResourceType
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import kotlin.test.DefaultAsserter.assertEquals
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
