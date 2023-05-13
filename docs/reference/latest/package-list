@@ -28,6 +28,9 @@ inkapplications.shade.lights
 inkapplications.shade.lights.events
 inkapplications.shade.lights.parameters
 inkapplications.shade.lights.structures
+module:resources
+inkapplications.shade.resources
+inkapplications.shade.resources.structures
 module:rooms
 inkapplications.shade.rooms
 inkapplications.shade.rooms.parameters
