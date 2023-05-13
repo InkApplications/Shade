@@ -12,6 +12,7 @@ import inkapplications.shade.cli.groupedlights.UpdateGroupedLightCommand
 import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
+import inkapplications.shade.cli.resources.ListResourcesCommand
 import inkapplications.shade.cli.rooms.*
 import inkapplications.shade.cli.zones.*
 import kotlin.system.exitProcess
@@ -36,6 +37,7 @@ class Main: NoOpCliktCommand() {
             ListDevicesCommand,
             ListGroupedLightsCommand,
             ListLightsCommand,
+            ListResourcesCommand,
             ListRoomsCommand,
             ListZonesCommand,
             UpdateDeviceCommand,

@@ -7,6 +7,7 @@ import inkapplications.shade.events.EventsModule
 import inkapplications.shade.groupedlights.ShadeGroupedLightsModule
 import inkapplications.shade.internals.InternalsModule
 import inkapplications.shade.lights.ShadeLightsModule
+import inkapplications.shade.resources.ShadeResourcesModule
 import inkapplications.shade.rooms.ShadeRoomsModule
 import inkapplications.shade.structures.AuthToken
 import inkapplications.shade.structures.HueConfigurationContainer
@@ -53,4 +54,5 @@ class Shade(
     val rooms = ShadeRoomsModule(internalsModule).rooms
     val zones = ShadeZonesModule(internalsModule).zones
     val groupedLights = ShadeGroupedLightsModule(internalsModule, eventsModule).groupedLights
+    val resources = ShadeResourcesModule(internalsModule).resources
 }
