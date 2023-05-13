@@ -1,4 +1,5 @@
 public abstract interface class inkapplications/shade/devices/DeviceControls {
+	public abstract fun getDevice-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun listDevices (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
