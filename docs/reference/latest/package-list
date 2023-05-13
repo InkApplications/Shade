@@ -6,6 +6,10 @@ inkapplications.shade.auth
 inkapplications.shade.auth.structures
 module:core
 inkapplications.shade.core
+module:devices
+inkapplications.shade.devices
+inkapplications.shade.devices.parameters
+inkapplications.shade.devices.structures
 module:discover
 inkapplications.shade.discover
 inkapplications.shade.discover.structures
