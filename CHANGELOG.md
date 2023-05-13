@@ -7,6 +7,7 @@ Change Log
 ### Added:
 
  - Devices module for getting/updating device metadata.
+ - Resources module for listing bridge resources
 
 2.0.0
 -----
