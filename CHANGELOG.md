@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+2.1.0
+-----
+
+### Added:
+
+ - Devices module for getting/updating device metadata.
+
 2.0.0
 -----
 
