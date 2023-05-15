@@ -26,3 +26,4 @@ value class LightEffect(val key: String) {
         fun valueOf(key: String) = values().single { it.key == key }
     }
 }
+
