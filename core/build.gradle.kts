@@ -16,6 +16,7 @@ kotlin {
                 api(projects.lights)
                 api(projects.resources)
                 api(projects.rooms)
+                api(projects.scenes)
                 api(projects.structures)
                 api(projects.zones)
 

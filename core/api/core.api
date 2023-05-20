@@ -15,6 +15,7 @@ public final class inkapplications/shade/core/Shade {
 	public final fun getOnlineDiscovery ()Linkapplications/shade/discover/BridgeDiscovery;
 	public final fun getResources ()Linkapplications/shade/resources/ResourceControls;
 	public final fun getRooms ()Linkapplications/shade/rooms/RoomControls;
+	public final fun getScenes ()Linkapplications/shade/scenes/SceneControls;
 	public final fun getZones ()Linkapplications/shade/zones/ZoneControls;
 }
 
