@@ -1,3 +1,12 @@
+public abstract interface class inkapplications/shade/scenes/SceneControls {
+	public abstract fun listScenes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/scenes/ShadeScenesModule {
+	public fun <init> (Linkapplications/shade/internals/InternalsModule;)V
+	public final fun getScenes ()Linkapplications/shade/scenes/SceneControls;
+}
+
 public final class inkapplications/shade/scenes/structures/Scene {
 	public static final field Companion Linkapplications/shade/scenes/structures/Scene$Companion;
 	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/util/List;Linkapplications/shade/scenes/structures/SceneMetadata;Linkapplications/shade/structures/ResourceReference;Linkapplications/spondee/scalar/Percentage;ZLinkapplications/shade/scenes/structures/ScenePalette;Lkotlinx/serialization/internal/SerializationConstructorMarker;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
