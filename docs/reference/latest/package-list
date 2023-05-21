@@ -35,6 +35,10 @@ module:rooms
 inkapplications.shade.rooms
 inkapplications.shade.rooms.parameters
 inkapplications.shade.rooms.structures
+module:scenes
+inkapplications.shade.scenes
+inkapplications.shade.scenes.parameters
+inkapplications.shade.scenes.structures
 module:serialization
 inkapplications.shade.serialization
 module:structures
