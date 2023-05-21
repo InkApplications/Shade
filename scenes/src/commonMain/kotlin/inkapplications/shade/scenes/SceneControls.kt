@@ -41,4 +41,12 @@ interface SceneControls {
      * @return A reference to the updated scene.
      */
     suspend fun updateScene(id: ResourceId, parameters: SceneUpdateParameters): ResourceReference
+
+    /**
+     * Delete a scene from the Hue Bridge.
+     *
+     * @param id The v2 resource ID of the Scene to delete.
+     * @return A reference to the deleted scene.
+     */
+    suspend fun deleteScene(id: ResourceId): ResourceReference
 }

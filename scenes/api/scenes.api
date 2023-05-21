@@ -1,5 +1,6 @@
 public abstract interface class inkapplications/shade/scenes/SceneControls {
 	public abstract fun createScene (Linkapplications/shade/scenes/parameters/SceneCreateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun deleteScene-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun getScene-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun listScenes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun updateScene-bKh5c1I (Ljava/lang/String;Linkapplications/shade/scenes/parameters/SceneUpdateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
