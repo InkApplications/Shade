@@ -1,9 +1,6 @@
 package inkapplications.shade.scenes
 
-import inkapplications.shade.internals.HueHttpClient
-import inkapplications.shade.internals.getData
-import inkapplications.shade.internals.postData
-import inkapplications.shade.internals.putData
+import inkapplications.shade.internals.*
 import inkapplications.shade.scenes.parameters.SceneCreateParameters
 import inkapplications.shade.scenes.parameters.SceneUpdateParameters
 import inkapplications.shade.scenes.structures.Scene
@@ -35,6 +32,12 @@ internal class ShadeScenes(
             body = parameters,
             pathSegments = arrayOf("resource", "scene", id.value),
         )
+
+        return response.single()
+    }
+
+    override suspend fun deleteScene(id: ResourceId): ResourceReference {
+        val response = hueClient.deleteData<List<ResourceReference>>("resource", "scene", id.value)
 
         return response.single()
     }

@@ -14,10 +14,7 @@ import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
 import inkapplications.shade.cli.resources.ListResourcesCommand
 import inkapplications.shade.cli.rooms.*
-import inkapplications.shade.cli.scenes.CreateSceneCommand
-import inkapplications.shade.cli.scenes.GetSceneCommand
-import inkapplications.shade.cli.scenes.ListScenesCommand
-import inkapplications.shade.cli.scenes.UpdateSceneCommand
+import inkapplications.shade.cli.scenes.*
 import inkapplications.shade.cli.zones.*
 import kotlin.system.exitProcess
 
@@ -30,6 +27,7 @@ class Main: NoOpCliktCommand() {
             CreateZoneCommand,
             DeleteDeviceCommand,
             DeleteRoomCommand,
+            DeleteSceneCommand,
             DeleteZoneCommand,
             DiscoverCommand,
             EventsCommand,
