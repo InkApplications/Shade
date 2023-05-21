@@ -26,9 +26,24 @@ import kotlin.time.Duration.Companion.milliseconds
 fun ProcessedArgument<String, String>.resourceId() = convert { ResourceId(it) }
 
 /**
+ * Convert a string option into a resource ID
+ */
+fun NullableOption<String, String>.resourceId() = convert { ResourceId(it) }
+
+/**
  * Convert a comma separated list of ID strings into a list of ResourceId objects.
  */
-fun ProcessedArgument<String, String>.resourceReferences(): ProcessedArgument<List<ResourceId>, List<ResourceId>> {
+fun ProcessedArgument<String, String>.resourceIds(): ProcessedArgument<List<ResourceId>, List<ResourceId>> {
+    return convert {
+        it.split(',')
+            .map { ResourceId(it.trim()) }
+    }
+}
+
+/**
+ * Convert a comma separated list of ID strings into a list of ResourceId objects.
+ */
+fun NullableOption<String, String>.resourceIds(): NullableOption<List<ResourceId>, List<ResourceId>> {
     return convert {
         it.split(',')
             .map { ResourceId(it.trim()) }

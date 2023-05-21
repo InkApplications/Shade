@@ -17,6 +17,7 @@ import inkapplications.shade.cli.rooms.*
 import inkapplications.shade.cli.scenes.CreateSceneCommand
 import inkapplications.shade.cli.scenes.GetSceneCommand
 import inkapplications.shade.cli.scenes.ListScenesCommand
+import inkapplications.shade.cli.scenes.UpdateSceneCommand
 import inkapplications.shade.cli.zones.*
 import kotlin.system.exitProcess
 
@@ -50,6 +51,7 @@ class Main: NoOpCliktCommand() {
             UpdateGroupedLightCommand,
             UpdateLightCommand,
             UpdateRoomCommand,
+            UpdateSceneCommand,
             UpdateZoneCommand,
         )
     }

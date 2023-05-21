@@ -3,7 +3,9 @@ package inkapplications.shade.scenes
 import inkapplications.shade.internals.HueHttpClient
 import inkapplications.shade.internals.getData
 import inkapplications.shade.internals.postData
+import inkapplications.shade.internals.putData
 import inkapplications.shade.scenes.parameters.SceneCreateParameters
+import inkapplications.shade.scenes.parameters.SceneUpdateParameters
 import inkapplications.shade.scenes.structures.Scene
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
@@ -23,6 +25,15 @@ internal class ShadeScenes(
         val response: List<ResourceReference> = hueClient.postData(
             body = parameters,
             pathSegments = arrayOf("resource", "scene"),
+        )
+
+        return response.single()
+    }
+
+    override suspend fun updateScene(id: ResourceId, parameters: SceneUpdateParameters): ResourceReference {
+        val response: List<ResourceReference> = hueClient.putData(
+            body = parameters,
+            pathSegments = arrayOf("resource", "scene", id.value),
         )
 
         return response.single()
