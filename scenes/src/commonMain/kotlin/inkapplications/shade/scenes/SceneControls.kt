@@ -1,7 +1,9 @@
 package inkapplications.shade.scenes
 
+import inkapplications.shade.scenes.parameters.SceneCreateParameters
 import inkapplications.shade.scenes.structures.Scene
 import inkapplications.shade.structures.ResourceId
+import inkapplications.shade.structures.ResourceReference
 
 /**
  * Actions to get and configure Scenes on the Hue system.
@@ -21,4 +23,12 @@ interface SceneControls {
      * @return information about the scene
      */
     suspend fun getScene(id: ResourceId): Scene
+
+    /**
+     * Create a new scene on the Hue Bridge.
+     *
+     * @param parameters Configuration to define the new scene.
+     * @return A reference to the newly created scene.
+     */
+    suspend fun createScene(parameters: SceneCreateParameters): ResourceReference
 }
