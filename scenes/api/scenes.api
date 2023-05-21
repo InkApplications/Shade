@@ -2,6 +2,7 @@ public abstract interface class inkapplications/shade/scenes/SceneControls {
 	public abstract fun createScene (Linkapplications/shade/scenes/parameters/SceneCreateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun getScene-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun listScenes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun updateScene-bKh5c1I (Ljava/lang/String;Linkapplications/shade/scenes/parameters/SceneUpdateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class inkapplications/shade/scenes/ShadeScenesModule {
@@ -47,6 +48,48 @@ public final class inkapplications/shade/scenes/parameters/SceneCreateParameters
 }
 
 public final class inkapplications/shade/scenes/parameters/SceneCreateParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/scenes/parameters/SceneUpdateParameters {
+	public static final field Companion Linkapplications/shade/scenes/parameters/SceneUpdateParameters$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILjava/util/List;Linkapplications/shade/scenes/structures/SceneRecall;Linkapplications/shade/scenes/structures/SceneMetadata;Linkapplications/shade/scenes/structures/ScenePalette;Linkapplications/spondee/scalar/Percentage;Ljava/lang/Boolean;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;Linkapplications/shade/scenes/structures/SceneRecall;Linkapplications/shade/scenes/structures/SceneMetadata;Linkapplications/shade/scenes/structures/ScenePalette;Linkapplications/spondee/scalar/Percentage;Ljava/lang/Boolean;)V
+	public synthetic fun <init> (Ljava/util/List;Linkapplications/shade/scenes/structures/SceneRecall;Linkapplications/shade/scenes/structures/SceneMetadata;Linkapplications/shade/scenes/structures/ScenePalette;Linkapplications/spondee/scalar/Percentage;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Linkapplications/shade/scenes/structures/SceneRecall;
+	public final fun component3 ()Linkapplications/shade/scenes/structures/SceneMetadata;
+	public final fun component4 ()Linkapplications/shade/scenes/structures/ScenePalette;
+	public final fun component5 ()Linkapplications/spondee/scalar/Percentage;
+	public final fun component6 ()Ljava/lang/Boolean;
+	public final fun copy (Ljava/util/List;Linkapplications/shade/scenes/structures/SceneRecall;Linkapplications/shade/scenes/structures/SceneMetadata;Linkapplications/shade/scenes/structures/ScenePalette;Linkapplications/spondee/scalar/Percentage;Ljava/lang/Boolean;)Linkapplications/shade/scenes/parameters/SceneUpdateParameters;
+	public static synthetic fun copy$default (Linkapplications/shade/scenes/parameters/SceneUpdateParameters;Ljava/util/List;Linkapplications/shade/scenes/structures/SceneRecall;Linkapplications/shade/scenes/structures/SceneMetadata;Linkapplications/shade/scenes/structures/ScenePalette;Linkapplications/spondee/scalar/Percentage;Ljava/lang/Boolean;ILjava/lang/Object;)Linkapplications/shade/scenes/parameters/SceneUpdateParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getActions ()Ljava/util/List;
+	public final fun getAutoDynamic ()Ljava/lang/Boolean;
+	public final fun getMetadata ()Linkapplications/shade/scenes/structures/SceneMetadata;
+	public final fun getPalette ()Linkapplications/shade/scenes/structures/ScenePalette;
+	public final fun getRecall ()Linkapplications/shade/scenes/structures/SceneRecall;
+	public final fun getSpeed ()Linkapplications/spondee/scalar/Percentage;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/scenes/parameters/SceneUpdateParameters;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/scenes/parameters/SceneUpdateParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/scenes/parameters/SceneUpdateParameters$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/scenes/parameters/SceneUpdateParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/scenes/parameters/SceneUpdateParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/scenes/parameters/SceneUpdateParameters$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
@@ -236,6 +279,109 @@ public final class inkapplications/shade/scenes/structures/ScenePalette$$seriali
 }
 
 public final class inkapplications/shade/scenes/structures/ScenePalette$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecall {
+	public static final field Companion Linkapplications/shade/scenes/structures/SceneRecall$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Lkotlin/time/Duration;Linkapplications/shade/lights/structures/DimmingValue;Lkotlinx/serialization/internal/SerializationConstructorMarker;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;JLinkapplications/shade/lights/structures/DimmingValue;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-d-91EOo ()Ljava/lang/String;
+	public final fun component2-fJzrLS0 ()Ljava/lang/String;
+	public final fun component3-UwyO8pc ()J
+	public final fun component4 ()Linkapplications/shade/lights/structures/DimmingValue;
+	public final fun copy-ShPP3Fw (Ljava/lang/String;Ljava/lang/String;JLinkapplications/shade/lights/structures/DimmingValue;)Linkapplications/shade/scenes/structures/SceneRecall;
+	public static synthetic fun copy-ShPP3Fw$default (Linkapplications/shade/scenes/structures/SceneRecall;Ljava/lang/String;Ljava/lang/String;JLinkapplications/shade/lights/structures/DimmingValue;ILjava/lang/Object;)Linkapplications/shade/scenes/structures/SceneRecall;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAction-d-91EOo ()Ljava/lang/String;
+	public final fun getDimming ()Linkapplications/shade/lights/structures/DimmingValue;
+	public final fun getDuration-UwyO8pc ()J
+	public final fun getStatus-fJzrLS0 ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Linkapplications/shade/scenes/structures/SceneRecall;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecall$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/scenes/structures/SceneRecall$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/scenes/structures/SceneRecall;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/scenes/structures/SceneRecall;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecall$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecallAction {
+	public static final field Companion Linkapplications/shade/scenes/structures/SceneRecallAction$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/scenes/structures/SceneRecallAction;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecallAction$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/scenes/structures/SceneRecallAction$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun deserialize-NyMr8lA (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun serialize-OGvvi0c (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecallAction$Companion {
+	public final fun getActive-d-91EOo ()Ljava/lang/String;
+	public final fun getDynamicPalette-d-91EOo ()Ljava/lang/String;
+	public final fun getStatic-d-91EOo ()Ljava/lang/String;
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecallStatus {
+	public static final field Companion Linkapplications/shade/scenes/structures/SceneRecallStatus$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/scenes/structures/SceneRecallStatus;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecallStatus$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/scenes/structures/SceneRecallStatus$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun deserialize-7OOl0sM (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun serialize-9Z19W8I (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/scenes/structures/SceneRecallStatus$Companion {
+	public final fun getActive-fJzrLS0 ()Ljava/lang/String;
+	public final fun getDynamicPalette-fJzrLS0 ()Ljava/lang/String;
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
