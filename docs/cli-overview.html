@@ -95,6 +95,67 @@ Commands:
     </section>
     <section>
         <header>
+            <a name="security" href="#security">
+                <h1>Security</h1>
+            </a>
+        </header>
+        <p>
+            Shade is configured to use HTTPS by default when connecting to
+            the hue bridge. However, since connections are done on a local
+            network, the SSL certificate from the hue bridge must be trusted
+            on your system before establishing a connection.
+        </p>
+        <p>
+            For each command, you have the option to specify a security
+            scheme used for the HTTP connections.
+        </p>
+        <article>
+            <h2>Platform Trust (Default)</h2>
+            <p>
+                Platform trust is the default trust strategy for Shade.
+                This will defer validation of the HTTPS connection to your platform,
+                meaning you will have to manually install or mark the certificate
+                as trusted on your system in order to connect to the hue bridge.
+            </p>
+            <p>
+                This option requires no configuration within Shade. However,
+                it requires that the certificate be manually trusted in your
+                system.
+            </p>
+        </article>
+        <article>
+            <h2>Insecure Connection</h2>
+            <p>
+                If you trust the network that your commands are running on,
+                you can ignore the SSL connection with the <code>--insecure</code>
+                flag when running commands.
+            </p>
+            <p>
+                For security reasons it is not recommended that you use an
+                insecure connection unless you are on a trusted network.
+            </p>
+        </article>
+        <article>
+            <h2>Hue CA</h2>
+            <p>
+                The hue bridge is
+                <a href="https://developers.meethue.com/develop/application-design-guidance/using-https/">configured</a>
+                to use a custom CA in its HTTPS certificates. You can configure
+                Shade to trust this root certificate manually, by specifying
+                the IP and device ID of the bridge that were obtained during
+                discovery in the
+                <a href="reference/latest/structures/inkapplications.shade.structures/-properties-file-configuration/index.html">
+                    Properties File
+                </a>
+                located in your home directory: <code>$HOME/.shade-cli.properties</code>
+            </p>
+<pre><code class="properties">hostname=01234xxabcdef
+security=hue
+ip=192.168.1.5</code></pre>
+        </article>
+    </section>
+    <section>
+        <header>
             <a name="authorize" href="#authorize">
                 <h1>Authorize with the Hue Bridge</h1>
             </a>
