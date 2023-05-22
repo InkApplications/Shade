@@ -8,7 +8,7 @@ import kotlin.jvm.JvmInline
  */
 @JvmInline
 @Serializable
-value class SegmentArchetype private constructor(val key: String) {
+value class SegmentArchetype(val key: String) {
     override fun toString(): String = key
 
     companion object {
@@ -53,6 +53,7 @@ value class SegmentArchetype private constructor(val key: String) {
         val Pool = SegmentArchetype("pool")
         val Other = SegmentArchetype("other")
 
+        @Deprecated("This is an unbounded set of values. The values provided here are not exhaustive and will be removed in a future release.")
         fun values(): Array<SegmentArchetype> = arrayOf(
             LivingRoom,
             Kitchen,
@@ -94,6 +95,11 @@ value class SegmentArchetype private constructor(val key: String) {
             Barbecue,
             Pool,
             Other,
+        )
+
+        @Deprecated(
+            message = "Deprecated in favor of constructor.",
+            replaceWith = ReplaceWith("SegmentArchetype(key)"),
         )
         fun valueOf(key: String) = values().single { it.key == key }
     }

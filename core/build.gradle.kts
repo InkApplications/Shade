@@ -10,10 +10,13 @@ kotlin {
                 implementation(projects.internals)
                 api(projects.auth)
                 api(projects.discover)
+                api(projects.devices)
                 api(projects.events)
                 api(projects.groupedLights)
                 api(projects.lights)
+                api(projects.resources)
                 api(projects.rooms)
+                api(projects.scenes)
                 api(projects.structures)
                 api(projects.zones)
 

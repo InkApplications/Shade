@@ -1,6 +1,20 @@
 Change Log
 ==========
 
+2.1.0
+-----
+
+### Added:
+
+ - Devices module for getting/updating device metadata.
+ - Resources module for listing bridge resources
+ - Scenes module for getting/updating scenes definitions for rooms.
+
+### Deprecated:
+
+ - Deprecated value class list accessors, due to unbounded nature of collections.
+ - Deprecated value class `valueOf` methods in favor of using constructor directly.
+
 2.0.0
 -----
 

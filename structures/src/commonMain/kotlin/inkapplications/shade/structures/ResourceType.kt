@@ -8,7 +8,7 @@ import kotlin.jvm.JvmInline
  */
 @Serializable
 @JvmInline
-value class ResourceType private constructor(val key: String) {
+value class ResourceType(val key: String) {
     override fun toString(): String = key
 
     companion object {
@@ -39,7 +39,7 @@ value class ResourceType private constructor(val key: String) {
         val GeofenceClient = ResourceType("geofence_client")
         val Geolocation = ResourceType("geolocation")
 
-
+        @Deprecated("This is an unbounded set of values. The values provided here are not exhaustive and will be removed in a future release.")
         fun values(): Array<ResourceType> = arrayOf(
             Device,
             BridgeHome,
@@ -67,6 +67,11 @@ value class ResourceType private constructor(val key: String) {
             Geofence,
             GeofenceClient,
             Geolocation,
+        )
+
+        @Deprecated(
+            message = "Deprecated in favor of constructor",
+            replaceWith = ReplaceWith("ResourceType(key)"),
         )
         fun valueOf(key: String) = values().single { it.key == key }
     }

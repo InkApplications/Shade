@@ -8,14 +8,20 @@ import kotlin.jvm.JvmInline
  */
 @Serializable
 @JvmInline
-value class LightSignal private constructor(val key: String) {
+value class LightSignal(val key: String) {
     override fun toString(): String = key
 
     companion object {
         val NoSignal = LightSignal("no_signal")
         val OnOff = LightSignal("on_off")
 
+        @Deprecated("This is an unbounded set of values. The values provided here are not exhaustive and will be removed in a future release.")
         fun values(): Array<LightSignal> = arrayOf(NoSignal, OnOff)
+
+        @Deprecated(
+            message = "Deprecated in favor of constructor",
+            replaceWith = ReplaceWith("LightSignal(key)"),
+        )
         fun valueOf(key: String) = values().single { it.key == key }
     }
 }
