@@ -1,6 +1,6 @@
 plugins {
     id("library")
-    id("com.inkapplications.publishing")
+    id("ink.publishing")
 }
 
 kotlin {

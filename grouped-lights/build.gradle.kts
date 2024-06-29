@@ -1,7 +1,7 @@
 plugins {
     id("library")
     kotlin("plugin.serialization")
-    id("com.inkapplications.publishing")
+    id("ink.publishing")
 }
 
 kotlin {

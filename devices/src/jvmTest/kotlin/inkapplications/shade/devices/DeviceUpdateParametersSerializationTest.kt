@@ -41,8 +41,7 @@ class DeviceUpdateParametersSerializationTest {
     @Test
     fun serializeMinimal() {
         val data = """
-            {
-            }
+            {}
         """.trimIndent()
 
         val parameters = UpdateDeviceParameters()

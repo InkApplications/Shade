@@ -161,8 +161,7 @@ class SceneUpdateSerializerTest {
     @Test
     fun minimalJsonSerialization() {
         val expected = """
-            {
-            }
+            {}
         """.trimIndent()
 
         val parameters = SceneUpdateParameters()

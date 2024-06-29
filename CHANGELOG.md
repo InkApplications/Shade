@@ -1,6 +1,17 @@
 Change Log
 ==========
 
+2.2.0
+-----
+
+Kotlin 2.0 Upgrade
+
+### Changed:
+
+ - The library has been upgraded to use Kotlin 2.0. While there are no direct
+   API changes to the library's API, this may require upgrades to your
+   project's dependencies for compatibility.
+
 2.1.0
 -----
 

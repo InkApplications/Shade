@@ -158,8 +158,7 @@ class SceneCreateSerializerTest {
     fun minimalJsonSerialization() {
         val expected = """
             {
-                "actions": [
-                ],
+                "actions": [],
                 "metadata": {
                     "name": "Test Scene"
                 },

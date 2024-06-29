@@ -50,8 +50,7 @@ class ZoneUpdateParametersSerializationTest {
     @Test
     fun minimalSerialization() {
         val data = """
-            {
-            }
+            {}
         """.trimIndent()
 
         val parameters = ZoneUpdateParameters()

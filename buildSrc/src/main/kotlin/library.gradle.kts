@@ -1,14 +1,11 @@
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.dokka")
-    id("maven-publish")
-    id("org.jetbrains.kotlinx.binary-compatibility-validator")
 }
 
 kotlin {
     jvm()
 
-    js(BOTH) {
+    js {
         nodejs()
         browser()
     }
@@ -67,36 +64,6 @@ kotlin {
             watchosX64Main.dependsOn(this)
             tvosArm64Main.dependsOn(this)
             tvosX64Main.dependsOn(this)
-        }
-    }
-}
-
-project.extensions.configure(PublishingExtension::class.java) {
-    publications {
-        withType<MavenPublication> {
-            pom {
-                name.set("Shade - ${project.name}")
-                description.set("Multiplatform Kotlin SDK for Hue lighting controls (unofficial)")
-                url.set("https://shade.lighting")
-                licenses {
-                    license {
-                        name.set("MIT")
-                        url.set("https://choosealicense.com/licenses/mit/")
-                    }
-                }
-                developers {
-                    developer {
-                        id.set("reneevandervelde")
-                        name.set("Renee Vandervelde")
-                        email.set("Renee@InkApplications.com")
-                    }
-                }
-                scm {
-                    connection.set("scm:git:https://github.com/InkApplications/shade.git")
-                    developerConnection.set("scm:git:ssh://git@github.com:InkApplications/shade.git")
-                    url.set("https://github.com/InkApplications/shade")
-                }
-            }
         }
     }
 }

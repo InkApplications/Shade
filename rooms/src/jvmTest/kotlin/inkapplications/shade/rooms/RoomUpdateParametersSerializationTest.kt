@@ -50,8 +50,7 @@ class RoomUpdateParametersSerializationTest {
     @Test
     fun minimalSerialization() {
         val data = """
-            {
-            }
+            {}
         """.trimIndent()
 
         val parameters = RoomUpdateParameters()

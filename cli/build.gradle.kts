@@ -10,6 +10,6 @@ application {
 
 dependencies {
     implementation(libs.coroutines.core)
-    implementation("com.github.ajalt.clikt:clikt:3.4.0")
+    implementation("com.github.ajalt.clikt:clikt:4.4.0")
     implementation(projects.core)
 }

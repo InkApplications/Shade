@@ -39,14 +39,14 @@ object EventsCommand: AuthorizedShadeCommand(
         }
         event.colorTemperatureInfo?.run {
             val temperatureString = temperature?.toKelvin()?.format() ?: "--"
-            TermUi.echo("    Temperature: $temperatureString")
+            echo("    Temperature: $temperatureString")
         }
         event.dimmingInfo?.run {
-            TermUi.echo("    Brightness: ${brightness.toWholePercentage().format()}")
+            echo("    Brightness: ${brightness.toWholePercentage().format()}")
         }
         event.colorInfo?.run {
-            TermUi.echo("    Color (rgb): ${color.toSRGB().toHex()}")
-            TermUi.echo("    Color (xy): [${color.toXYZ().toCIExyY().x},${color.toXYZ().toCIExyY().y}]")
+            echo("    Color (rgb): ${color.toSRGB().toHex()}")
+            echo("    Color (xy): [${color.toXYZ().toCIExyY().x},${color.toXYZ().toCIExyY().y}]")
         }
     }
 
@@ -56,7 +56,7 @@ object EventsCommand: AuthorizedShadeCommand(
             echo("    On: $on")
         }
         event.dimmingInfo?.run {
-            TermUi.echo("    Brightness: ${brightness.toWholePercentage().format()}")
+            echo("    Brightness: ${brightness.toWholePercentage().format()}")
         }
     }
 
