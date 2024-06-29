@@ -20,7 +20,7 @@ kotlin {
                 api(projects.structures)
                 api(projects.zones)
 
-                api(inkLibraries.kimchi.logger)
+                api(libs.kimchi.logger)
             }
         }
     }

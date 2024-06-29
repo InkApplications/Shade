@@ -8,53 +8,53 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(kotlinLibraries.serialization.json)
-                implementation(ktorLibraries.client.core)
+                implementation(libs.serialization.json)
+                implementation(libs.ktor.client.core)
                 implementation(projects.serialization)
                 api(projects.structures)
-                api(inkLibraries.kimchi.logger)
+                api(libs.kimchi.logger)
 
-                implementation(ktorLibraries.client.contentnegotiation)
-                implementation(ktorLibraries.serialization.json)
+                implementation(libs.ktor.client.contentnegotiation)
+                implementation(libs.ktor.serialization.json)
             }
         }
 
         val jvmMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.okhttp)
-                implementation(ktorLibraries.okhttp.tls)
-                implementation(ktorLibraries.okhttp.sse)
+                implementation(libs.ktor.client.okhttp)
+                implementation(libs.okhttp.tls)
+                implementation(libs.okhttp.sse)
             }
         }
 
         val jsMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.js)
+                implementation(libs.ktor.client.js)
             }
         }
 
         val nativeMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.cio)
+                implementation(libs.ktor.client.cio)
             }
         }
 
         val windowsMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.winhttp)
+                implementation(libs.ktor.client.winhttp)
             }
         }
 
         val iosMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.darwin)
+                implementation(libs.ktor.client.darwin)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                implementation(kotlinLibraries.test.core)
-                implementation(kotlinLibraries.test.annotations)
+                implementation(libs.test.core)
+                implementation(libs.test.annotations)
             }
         }
     }

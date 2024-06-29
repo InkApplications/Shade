@@ -8,9 +8,9 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlinLibraries.gradle)
-    implementation(inkLibraries.publishing)
-    implementation(kotlinLibraries.serialization.plugin)
-    implementation(kotlinLibraries.dokka)
-    implementation(kotlinLibraries.kotlinx.binary.compatibility)
+    implementation(libs.gradle)
+    implementation(libs.publishing)
+    implementation(libs.serialization.plugin)
+    implementation(libs.dokka)
+    implementation(libs.kotlinx.binary.compatibility)
 }

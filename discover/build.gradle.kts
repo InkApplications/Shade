@@ -8,51 +8,51 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(kotlinLibraries.serialization.json)
-                api(kotlinLibraries.coroutines.core)
+                implementation(libs.serialization.json)
+                api(libs.coroutines.core)
                 implementation(projects.serialization)
                 api(projects.structures)
 
-                implementation(ktorLibraries.client.core)
-                implementation(ktorLibraries.client.contentnegotiation)
-                implementation(ktorLibraries.serialization.json)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.contentnegotiation)
+                implementation(libs.ktor.serialization.json)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                implementation(kotlinLibraries.test.core)
-                implementation(kotlinLibraries.test.annotations)
+                implementation(libs.test.core)
+                implementation(libs.test.annotations)
             }
         }
 
         val jvmMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.okhttp)
+                implementation(libs.ktor.client.okhttp)
             }
         }
 
         val nativeMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.cio)
+                implementation(libs.ktor.client.cio)
             }
         }
 
         val windowsMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.winhttp)
+                implementation(libs.ktor.client.winhttp)
             }
         }
 
         val iosMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.darwin)
+                implementation(libs.ktor.client.darwin)
             }
         }
 
         val jsMain by getting {
             dependencies {
-                implementation(ktorLibraries.client.js)
+                implementation(libs.ktor.client.js)
             }
         }
     }
