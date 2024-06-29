@@ -55,8 +55,7 @@ class ZoneCreateParametersSerializationTest {
                     "archetype": "other",
                     "name": "Hallway"
                 },
-                "children": [
-                ]
+                "children": []
             }
         """.trimIndent()
 

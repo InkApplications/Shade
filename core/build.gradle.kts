@@ -1,6 +1,6 @@
 plugins {
     id("library")
-    id("com.inkapplications.publishing")
+    id("ink.publishing")
 }
 
 kotlin {
@@ -20,7 +20,7 @@ kotlin {
                 api(projects.structures)
                 api(projects.zones)
 
-                api(inkLibraries.kimchi.logger)
+                api(libs.kimchi.logger)
             }
         }
     }

@@ -140,8 +140,7 @@ class LightUpdateParametersSerializationTest {
     @Test
     fun minimalJsonDeserialization() {
         val data = """
-            {
-            }
+            {}
         """.trimIndent()
 
         val serialized = json.encodeToString(LightUpdateParameters())

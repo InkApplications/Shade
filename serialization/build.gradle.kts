@@ -1,23 +1,23 @@
 plugins {
     id("library")
     kotlin("plugin.serialization")
-    id("com.inkapplications.publishing")
+    id("ink.publishing")
 }
 
 kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(kotlinLibraries.serialization.json)
-                api(inkLibraries.spondee)
+                implementation(libs.serialization.json)
+                api(libs.spondee)
             }
         }
 
         val jvmTest by getting {
             dependencies {
-                implementation(kotlinLibraries.test.core)
-                implementation(kotlinLibraries.test.junit)
-                implementation(kotlinLibraries.test.annotations)
+                implementation(libs.test.core)
+                implementation(libs.test.junit)
+                implementation(libs.test.annotations)
             }
         }
     }

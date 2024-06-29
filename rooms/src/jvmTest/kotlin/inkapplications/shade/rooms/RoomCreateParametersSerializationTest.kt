@@ -55,8 +55,7 @@ class RoomCreateParametersSerializationTest {
                     "archetype": "other",
                     "name": "Hallway"
                 },
-                "children": [
-                ]
+                "children": []
             }
         """.trimIndent()
 
