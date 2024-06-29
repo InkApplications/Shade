@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Companion</title>
-<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
@@ -16,12 +18,13 @@
         }
     }
     </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../../styles/style.css" rel="Stylesheet">
-<link href="../../../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../../../styles/main.css" rel="Stylesheet">
 <link href="../../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async></script>
@@ -29,779 +32,790 @@
 <script type="text/javascript" src="../../../../scripts/prism.js" async></script>
 <script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../../../index.html">
-<span>shade</span>            </a>    </div>
-    <div>latest
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../../index.html">
+                            shade
+                    </a>            </div>
+            <div class="library-version">latest
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":devices:dokkaHtmlPartial/commonMain">common</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="devices::inkapplications.shade.devices.structures/ProductArchetype.Companion///PointingToDeclaration//-1159863640">
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="devices::inkapplications.shade.devices.structures/ProductArchetype.Companion///PointingToDeclaration//-1159863640">
   <div class="breadcrumbs"><a href="../../../index.html">devices</a><span class="delimiter">/</span><a href="../../index.html">inkapplications.shade.devices.structures</a><span class="delimiter">/</span><a href="../index.html">ProductArchetype</a><span class="delimiter">/</span><span class="current">Companion</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Companion</span></span></h1>
     <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">Companion</a></div></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="924454230%2FProperties%2F-1159863640" anchor-label="Bollard" id="924454230%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-bollard.html"><span><span>Bollard</span></span></a></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="924454230%2FProperties%2F-1159863640" anchor-label="Bollard" id="924454230%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-bollard.html"><span><span>Bollard</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="924454230%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="924454230%2FProperties%2F-1159863640" anchor-label="Bollard" id="924454230%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-bollard.html">Bollard</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-bollard.html">Bollard</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2137472039%2FProperties%2F-1159863640" anchor-label="BridgeV2" id="-2137472039%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-bridge-v2.html"><span>Bridge</span><wbr><span><span>V2</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-bridge-v2.html"><span>Bridge</span><wbr><span><span>V2</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2137472039%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-2137472039%2FProperties%2F-1159863640" anchor-label="BridgeV2" id="-2137472039%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-bridge-v2.html">BridgeV2</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-bridge-v2.html">BridgeV2</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1171492120%2FProperties%2F-1159863640" anchor-label="CandleBulb" id="-1171492120%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-candle-bulb.html"><span>Candle</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-candle-bulb.html"><span>Candle</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1171492120%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1171492120%2FProperties%2F-1159863640" anchor-label="CandleBulb" id="-1171492120%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-candle-bulb.html">CandleBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-candle-bulb.html">CandleBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1726890715%2FProperties%2F-1159863640" anchor-label="CeilingHorizontal" id="1726890715%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-ceiling-horizontal.html"><span>Ceiling</span><wbr><span><span>Horizontal</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-ceiling-horizontal.html"><span>Ceiling</span><wbr><span><span>Horizontal</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1726890715%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1726890715%2FProperties%2F-1159863640" anchor-label="CeilingHorizontal" id="1726890715%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-ceiling-horizontal.html">CeilingHorizontal</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-ceiling-horizontal.html">CeilingHorizontal</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1554644499%2FProperties%2F-1159863640" anchor-label="CeilingRound" id="-1554644499%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-ceiling-round.html"><span>Ceiling</span><wbr><span><span>Round</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-ceiling-round.html"><span>Ceiling</span><wbr><span><span>Round</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1554644499%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1554644499%2FProperties%2F-1159863640" anchor-label="CeilingRound" id="-1554644499%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-ceiling-round.html">CeilingRound</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-ceiling-round.html">CeilingRound</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="150372610%2FProperties%2F-1159863640" anchor-label="CeilingSquare" id="150372610%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-ceiling-square.html"><span>Ceiling</span><wbr><span><span>Square</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-ceiling-square.html"><span>Ceiling</span><wbr><span><span>Square</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="150372610%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="150372610%2FProperties%2F-1159863640" anchor-label="CeilingSquare" id="150372610%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-ceiling-square.html">CeilingSquare</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-ceiling-square.html">CeilingSquare</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2013497861%2FProperties%2F-1159863640" anchor-label="CeilingTube" id="-2013497861%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-ceiling-tube.html"><span>Ceiling</span><wbr><span><span>Tube</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-ceiling-tube.html"><span>Ceiling</span><wbr><span><span>Tube</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2013497861%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-2013497861%2FProperties%2F-1159863640" anchor-label="CeilingTube" id="-2013497861%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-ceiling-tube.html">CeilingTube</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-ceiling-tube.html">CeilingTube</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1802124868%2FProperties%2F-1159863640" anchor-label="ChristmasTree" id="-1802124868%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-christmas-tree.html"><span>Christmas</span><wbr><span><span>Tree</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-christmas-tree.html"><span>Christmas</span><wbr><span><span>Tree</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1802124868%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1802124868%2FProperties%2F-1159863640" anchor-label="ChristmasTree" id="-1802124868%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-christmas-tree.html">ChristmasTree</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-christmas-tree.html">ChristmasTree</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="376847201%2FProperties%2F-1159863640" anchor-label="ClassicBulb" id="376847201%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-classic-bulb.html"><span>Classic</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-classic-bulb.html"><span>Classic</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="376847201%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="376847201%2FProperties%2F-1159863640" anchor-label="ClassicBulb" id="376847201%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-classic-bulb.html">ClassicBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-classic-bulb.html">ClassicBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1329880373%2FProperties%2F-1159863640" anchor-label="DoubleSpot" id="-1329880373%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-double-spot.html"><span>Double</span><wbr><span><span>Spot</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-double-spot.html"><span>Double</span><wbr><span><span>Spot</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1329880373%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1329880373%2FProperties%2F-1159863640" anchor-label="DoubleSpot" id="-1329880373%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-double-spot.html">DoubleSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-double-spot.html">DoubleSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="161919533%2FProperties%2F-1159863640" anchor-label="EdisonBulb" id="161919533%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-edison-bulb.html"><span>Edison</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-edison-bulb.html"><span>Edison</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="161919533%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="161919533%2FProperties%2F-1159863640" anchor-label="EdisonBulb" id="161919533%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-edison-bulb.html">EdisonBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-edison-bulb.html">EdisonBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-289068139%2FProperties%2F-1159863640" anchor-label="EllipseBulb" id="-289068139%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-ellipse-bulb.html"><span>Ellipse</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-ellipse-bulb.html"><span>Ellipse</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-289068139%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-289068139%2FProperties%2F-1159863640" anchor-label="EllipseBulb" id="-289068139%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-ellipse-bulb.html">EllipseBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-ellipse-bulb.html">EllipseBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-942021445%2FProperties%2F-1159863640" anchor-label="FlexibleLamp" id="-942021445%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-flexible-lamp.html"><span>Flexible</span><wbr><span><span>Lamp</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-flexible-lamp.html"><span>Flexible</span><wbr><span><span>Lamp</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-942021445%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-942021445%2FProperties%2F-1159863640" anchor-label="FlexibleLamp" id="-942021445%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-flexible-lamp.html">FlexibleLamp</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-flexible-lamp.html">FlexibleLamp</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1723501365%2FProperties%2F-1159863640" anchor-label="FloodBulb" id="1723501365%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-flood-bulb.html"><span>Flood</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-flood-bulb.html"><span>Flood</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1723501365%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1723501365%2FProperties%2F-1159863640" anchor-label="FloodBulb" id="1723501365%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-flood-bulb.html">FloodBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-flood-bulb.html">FloodBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-782792444%2FProperties%2F-1159863640" anchor-label="FloorLantern" id="-782792444%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-floor-lantern.html"><span>Floor</span><wbr><span><span>Lantern</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-floor-lantern.html"><span>Floor</span><wbr><span><span>Lantern</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-782792444%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-782792444%2FProperties%2F-1159863640" anchor-label="FloorLantern" id="-782792444%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-floor-lantern.html">FloorLantern</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-floor-lantern.html">FloorLantern</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-455473795%2FProperties%2F-1159863640" anchor-label="FloorShade" id="-455473795%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-floor-shade.html"><span>Floor</span><wbr><span><span>Shade</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-floor-shade.html"><span>Floor</span><wbr><span><span>Shade</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-455473795%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-455473795%2FProperties%2F-1159863640" anchor-label="FloorShade" id="-455473795%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-floor-shade.html">FloorShade</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-floor-shade.html">FloorShade</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-296720171%2FProperties%2F-1159863640" anchor-label="GroundSpot" id="-296720171%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-ground-spot.html"><span>Ground</span><wbr><span><span>Spot</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-ground-spot.html"><span>Ground</span><wbr><span><span>Spot</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-296720171%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-296720171%2FProperties%2F-1159863640" anchor-label="GroundSpot" id="-296720171%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-ground-spot.html">GroundSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-ground-spot.html">GroundSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-564098413%2FProperties%2F-1159863640" anchor-label="HueBloom" id="-564098413%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-bloom.html"><span>Hue</span><wbr><span><span>Bloom</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-bloom.html"><span>Hue</span><wbr><span><span>Bloom</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-564098413%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-564098413%2FProperties%2F-1159863640" anchor-label="HueBloom" id="-564098413%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-bloom.html">HueBloom</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-bloom.html">HueBloom</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1368581886%2FProperties%2F-1159863640" anchor-label="HueCentris" id="-1368581886%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-centris.html"><span>Hue</span><wbr><span><span>Centris</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-centris.html"><span>Hue</span><wbr><span><span>Centris</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1368581886%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1368581886%2FProperties%2F-1159863640" anchor-label="HueCentris" id="-1368581886%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-centris.html">HueCentris</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-centris.html">HueCentris</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1290457852%2FProperties%2F-1159863640" anchor-label="HueGo" id="1290457852%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-go.html"><span>Hue</span><wbr><span><span>Go</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-go.html"><span>Hue</span><wbr><span><span>Go</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1290457852%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1290457852%2FProperties%2F-1159863640" anchor-label="HueGo" id="1290457852%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-go.html">HueGo</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-go.html">HueGo</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1355748465%2FProperties%2F-1159863640" anchor-label="HueIris" id="1355748465%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-iris.html"><span>Hue</span><wbr><span><span>Iris</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-iris.html"><span>Hue</span><wbr><span><span>Iris</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1355748465%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1355748465%2FProperties%2F-1159863640" anchor-label="HueIris" id="1355748465%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-iris.html">HueIris</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-iris.html">HueIris</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="766494306%2FProperties%2F-1159863640" anchor-label="HueLightstrip" id="766494306%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-lightstrip.html"><span>Hue</span><wbr><span><span>Lightstrip</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-lightstrip.html"><span>Hue</span><wbr><span><span>Lightstrip</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="766494306%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="766494306%2FProperties%2F-1159863640" anchor-label="HueLightstrip" id="766494306%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-lightstrip.html">HueLightstrip</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-lightstrip.html">HueLightstrip</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="949097071%2FProperties%2F-1159863640" anchor-label="HueLightstripPc" id="949097071%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-lightstrip-pc.html"><span>Hue</span><wbr><span>Lightstrip</span><wbr><span><span>Pc</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-lightstrip-pc.html"><span>Hue</span><wbr><span>Lightstrip</span><wbr><span><span>Pc</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="949097071%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="949097071%2FProperties%2F-1159863640" anchor-label="HueLightstripPc" id="949097071%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-lightstrip-pc.html">HueLightstripPc</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-lightstrip-pc.html">HueLightstripPc</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1089962176%2FProperties%2F-1159863640" anchor-label="HueLightstripTv" id="1089962176%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-lightstrip-tv.html"><span>Hue</span><wbr><span>Lightstrip</span><wbr><span><span>Tv</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-lightstrip-tv.html"><span>Hue</span><wbr><span>Lightstrip</span><wbr><span><span>Tv</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1089962176%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1089962176%2FProperties%2F-1159863640" anchor-label="HueLightstripTv" id="1089962176%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-lightstrip-tv.html">HueLightstripTv</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-lightstrip-tv.html">HueLightstripTv</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="229086320%2FProperties%2F-1159863640" anchor-label="HuePlay" id="229086320%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-play.html"><span>Hue</span><wbr><span><span>Play</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-play.html"><span>Hue</span><wbr><span><span>Play</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="229086320%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="229086320%2FProperties%2F-1159863640" anchor-label="HuePlay" id="229086320%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-play.html">HuePlay</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-play.html">HuePlay</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1622909458%2FProperties%2F-1159863640" anchor-label="HueSigne" id="-1622909458%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-signe.html"><span>Hue</span><wbr><span><span>Signe</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-signe.html"><span>Hue</span><wbr><span><span>Signe</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1622909458%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1622909458%2FProperties%2F-1159863640" anchor-label="HueSigne" id="-1622909458%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-signe.html">HueSigne</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-signe.html">HueSigne</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1050082080%2FProperties%2F-1159863640" anchor-label="HueTube" id="1050082080%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-tube.html"><span>Hue</span><wbr><span><span>Tube</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-tube.html"><span>Hue</span><wbr><span><span>Tube</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1050082080%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1050082080%2FProperties%2F-1159863640" anchor-label="HueTube" id="1050082080%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-hue-tube.html">HueTube</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-hue-tube.html">HueTube</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-654178269%2FProperties%2F-1159863640" anchor-label="LargeGlobeBulb" id="-654178269%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-large-globe-bulb.html"><span>Large</span><wbr><span>Globe</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-large-globe-bulb.html"><span>Large</span><wbr><span>Globe</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-654178269%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-654178269%2FProperties%2F-1159863640" anchor-label="LargeGlobeBulb" id="-654178269%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-large-globe-bulb.html">LargeGlobeBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-large-globe-bulb.html">LargeGlobeBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1930925474%2FProperties%2F-1159863640" anchor-label="LusterBulb" id="-1930925474%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-luster-bulb.html"><span>Luster</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-luster-bulb.html"><span>Luster</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1930925474%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1930925474%2FProperties%2F-1159863640" anchor-label="LusterBulb" id="-1930925474%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-luster-bulb.html">LusterBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-luster-bulb.html">LusterBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1030758020%2FProperties%2F-1159863640" anchor-label="PendantLong" id="1030758020%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-pendant-long.html"><span>Pendant</span><wbr><span><span>Long</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pendant-long.html"><span>Pendant</span><wbr><span><span>Long</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1030758020%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1030758020%2FProperties%2F-1159863640" anchor-label="PendantLong" id="1030758020%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-pendant-long.html">PendantLong</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-pendant-long.html">PendantLong</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-584210292%2FProperties%2F-1159863640" anchor-label="PendantRound" id="-584210292%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-pendant-round.html"><span>Pendant</span><wbr><span><span>Round</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pendant-round.html"><span>Pendant</span><wbr><span><span>Round</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-584210292%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-584210292%2FProperties%2F-1159863640" anchor-label="PendantRound" id="-584210292%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-pendant-round.html">PendantRound</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-pendant-round.html">PendantRound</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1597329730%2FProperties%2F-1159863640" anchor-label="PendantSpot" id="-1597329730%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-pendant-spot.html"><span>Pendant</span><wbr><span><span>Spot</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pendant-spot.html"><span>Pendant</span><wbr><span><span>Spot</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1597329730%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1597329730%2FProperties%2F-1159863640" anchor-label="PendantSpot" id="-1597329730%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-pendant-spot.html">PendantSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-pendant-spot.html">PendantSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1350696656%2FProperties%2F-1159863640" anchor-label="Plug" id="1350696656%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-plug.html"><span><span>Plug</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-plug.html"><span><span>Plug</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1350696656%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1350696656%2FProperties%2F-1159863640" anchor-label="Plug" id="1350696656%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-plug.html">Plug</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-plug.html">Plug</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-594634605%2FProperties%2F-1159863640" anchor-label="RecessedCeiling" id="-594634605%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-recessed-ceiling.html"><span>Recessed</span><wbr><span><span>Ceiling</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-recessed-ceiling.html"><span>Recessed</span><wbr><span><span>Ceiling</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-594634605%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-594634605%2FProperties%2F-1159863640" anchor-label="RecessedCeiling" id="-594634605%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-recessed-ceiling.html">RecessedCeiling</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-recessed-ceiling.html">RecessedCeiling</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1705169124%2FProperties%2F-1159863640" anchor-label="RecessedFloor" id="1705169124%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-recessed-floor.html"><span>Recessed</span><wbr><span><span>Floor</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-recessed-floor.html"><span>Recessed</span><wbr><span><span>Floor</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1705169124%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1705169124%2FProperties%2F-1159863640" anchor-label="RecessedFloor" id="1705169124%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-recessed-floor.html">RecessedFloor</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-recessed-floor.html">RecessedFloor</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2135203404%2FProperties%2F-1159863640" anchor-label="SingleSpot" id="-2135203404%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-single-spot.html"><span>Single</span><wbr><span><span>Spot</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-single-spot.html"><span>Single</span><wbr><span><span>Spot</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2135203404%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-2135203404%2FProperties%2F-1159863640" anchor-label="SingleSpot" id="-2135203404%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-single-spot.html">SingleSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-single-spot.html">SingleSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1360236817%2FProperties%2F-1159863640" anchor-label="SmallGlobeBulb" id="-1360236817%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-small-globe-bulb.html"><span>Small</span><wbr><span>Globe</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-small-globe-bulb.html"><span>Small</span><wbr><span>Globe</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1360236817%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1360236817%2FProperties%2F-1159863640" anchor-label="SmallGlobeBulb" id="-1360236817%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-small-globe-bulb.html">SmallGlobeBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-small-globe-bulb.html">SmallGlobeBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1375297197%2FProperties%2F-1159863640" anchor-label="SpotBulb" id="-1375297197%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-spot-bulb.html"><span>Spot</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-spot-bulb.html"><span>Spot</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1375297197%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1375297197%2FProperties%2F-1159863640" anchor-label="SpotBulb" id="-1375297197%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-spot-bulb.html">SpotBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-spot-bulb.html">SpotBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="794374103%2FProperties%2F-1159863640" anchor-label="StringLight" id="794374103%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-string-light.html"><span>String</span><wbr><span><span>Light</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-string-light.html"><span>String</span><wbr><span><span>Light</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="794374103%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="794374103%2FProperties%2F-1159863640" anchor-label="StringLight" id="794374103%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-string-light.html">StringLight</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-string-light.html">StringLight</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1785088738%2FProperties%2F-1159863640" anchor-label="SultanBulb" id="-1785088738%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-sultan-bulb.html"><span>Sultan</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-sultan-bulb.html"><span>Sultan</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1785088738%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1785088738%2FProperties%2F-1159863640" anchor-label="SultanBulb" id="-1785088738%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-sultan-bulb.html">SultanBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-sultan-bulb.html">SultanBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-671113793%2FProperties%2F-1159863640" anchor-label="TableShade" id="-671113793%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-table-shade.html"><span>Table</span><wbr><span><span>Shade</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-table-shade.html"><span>Table</span><wbr><span><span>Shade</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-671113793%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-671113793%2FProperties%2F-1159863640" anchor-label="TableShade" id="-671113793%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-table-shade.html">TableShade</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-table-shade.html">TableShade</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1564072079%2FProperties%2F-1159863640" anchor-label="TableWash" id="1564072079%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-table-wash.html"><span>Table</span><wbr><span><span>Wash</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-table-wash.html"><span>Table</span><wbr><span><span>Wash</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1564072079%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1564072079%2FProperties%2F-1159863640" anchor-label="TableWash" id="1564072079%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-table-wash.html">TableWash</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-table-wash.html">TableWash</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1338696307%2FProperties%2F-1159863640" anchor-label="TriangleBulb" id="-1338696307%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-triangle-bulb.html"><span>Triangle</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-triangle-bulb.html"><span>Triangle</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1338696307%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1338696307%2FProperties%2F-1159863640" anchor-label="TriangleBulb" id="-1338696307%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-triangle-bulb.html">TriangleBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-triangle-bulb.html">TriangleBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="991694495%2FProperties%2F-1159863640" anchor-label="UnknownArchetype" id="991694495%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-unknown-archetype.html"><span>Unknown</span><wbr><span><span>Archetype</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-unknown-archetype.html"><span>Unknown</span><wbr><span><span>Archetype</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="991694495%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="991694495%2FProperties%2F-1159863640" anchor-label="UnknownArchetype" id="991694495%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-unknown-archetype.html">UnknownArchetype</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-unknown-archetype.html">UnknownArchetype</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1597318605%2FProperties%2F-1159863640" anchor-label="VintageBulb" id="1597318605%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-vintage-bulb.html"><span>Vintage</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-vintage-bulb.html"><span>Vintage</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1597318605%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1597318605%2FProperties%2F-1159863640" anchor-label="VintageBulb" id="1597318605%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-vintage-bulb.html">VintageBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-vintage-bulb.html">VintageBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1170793728%2FProperties%2F-1159863640" anchor-label="VintageCandleBulb" id="-1170793728%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-vintage-candle-bulb.html"><span>Vintage</span><wbr><span>Candle</span><wbr><span><span>Bulb</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-vintage-candle-bulb.html"><span>Vintage</span><wbr><span>Candle</span><wbr><span><span>Bulb</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1170793728%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1170793728%2FProperties%2F-1159863640" anchor-label="VintageCandleBulb" id="-1170793728%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-vintage-candle-bulb.html">VintageCandleBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-vintage-candle-bulb.html">VintageCandleBulb</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="49907424%2FProperties%2F-1159863640" anchor-label="WallLantern" id="49907424%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-wall-lantern.html"><span>Wall</span><wbr><span><span>Lantern</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-wall-lantern.html"><span>Wall</span><wbr><span><span>Lantern</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="49907424%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="49907424%2FProperties%2F-1159863640" anchor-label="WallLantern" id="49907424%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-wall-lantern.html">WallLantern</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-wall-lantern.html">WallLantern</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1218852263%2FProperties%2F-1159863640" anchor-label="WallShade" id="-1218852263%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-wall-shade.html"><span>Wall</span><wbr><span><span>Shade</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-wall-shade.html"><span>Wall</span><wbr><span><span>Shade</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1218852263%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1218852263%2FProperties%2F-1159863640" anchor-label="WallShade" id="-1218852263%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-wall-shade.html">WallShade</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-wall-shade.html">WallShade</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1038495666%2FProperties%2F-1159863640" anchor-label="WallSpot" id="1038495666%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-wall-spot.html"><span>Wall</span><wbr><span><span>Spot</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-wall-spot.html"><span>Wall</span><wbr><span><span>Spot</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1038495666%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="1038495666%2FProperties%2F-1159863640" anchor-label="WallSpot" id="1038495666%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-wall-spot.html">WallSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-wall-spot.html">WallSpot</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1993477464%2FProperties%2F-1159863640" anchor-label="WallWasher" id="-1993477464%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-wall-washer.html"><span>Wall</span><wbr><span><span>Washer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":devices:dokkaHtmlPartial/commonMain" data-filterable-set=":devices:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-wall-washer.html"><span>Wall</span><wbr><span><span>Washer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1993477464%2FProperties%2F-1159863640"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><a data-name="-1993477464%2FProperties%2F-1159863640" anchor-label="WallWasher" id="-1993477464%2FProperties%2F-1159863640" data-filterable-set=":devices:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-wall-washer.html">WallWasher</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":devices:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-wall-washer.html">WallWasher</a><span class="token operator">: </span><a href="../index.html">ProductArchetype</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -811,10 +825,11 @@
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

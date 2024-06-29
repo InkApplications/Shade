@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-2.2.0
+3.0.0
 -----
 
 Kotlin 2.0 Upgrade
@@ -11,6 +11,11 @@ Kotlin 2.0 Upgrade
  - The library has been upgraded to use Kotlin 2.0. While there are no direct
    API changes to the library's API, this may require upgrades to your
    project's dependencies for compatibility.
+
+### Removed:
+
+ - JS No longer supports the Legacy targets, as these are not compatible with K2.
+ - Due to an external dependency, WatchOS-Arm32 support was removed.
 
 2.1.0
 -----
@@ -46,12 +51,11 @@ reference.
 
 ### Supported Platforms:
  - jvm
- - js (IR + Legacy)
+ - js (IR)
      - nodejs
  -   - browser
  - iosArm64
  - iosX64
- - watchosArm32
  - watchosArm64
  - watchosX64
  - tvosArm64

@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>HueHttpClient</title>
-<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
@@ -16,12 +18,13 @@
         }
     }
     </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
-<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
@@ -29,137 +32,130 @@
 <script type="text/javascript" src="../../../scripts/prism.js" async></script>
 <script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../../index.html">
-<span>shade</span>            </a>    </div>
-    <div>latest
-    </div>
-    <div class="pull-right d-flex">
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            shade
+                    </a>            </div>
+            <div class="library-version">latest
+            </div>
+        </div>
         <div class="filter-section" id="filter-section">
                 <button class="platform-tag platform-selector common-like" data-active="" data-filter=":internals:dokkaHtmlPartial/commonMain">common</button>
         </div>
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="internals::inkapplications.shade.internals/HueHttpClient///PointingToDeclaration//-154452337">
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="internals::inkapplications.shade.internals/HueHttpClient///PointingToDeclaration//-154452337">
   <div class="breadcrumbs"><a href="../../index.html">internals</a><span class="delimiter">/</span><a href="../index.html">inkapplications.shade.internals</a><span class="delimiter">/</span><span class="current">HueHttpClient</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Hue</span><wbr><span>Http</span><wbr><span><span>Client</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">HueHttpClient</a></div><p class="paragraph">Internal client used for making authenticated requests to the Hue bridge.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">HueHttpClient</a></div><p class="paragraph">Internal client used for making authenticated requests to the Hue bridge.</p><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-hue-stub-client/index.html">HueStubClient</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Extensions">Extensions</button><button class="section-tab" data-togglable="Inheritors">Inheritors</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="-1902349604%2FFunctions%2F-154452337" anchor-label="sendRequest" id="-1902349604%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="send-request.html"><span>send</span><wbr><span><span>Request</span></span></a></div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="494414531%2FFunctions%2F-154452337" anchor-label="deleteData" id="494414531%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../delete-data.html"><span>delete</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="494414531%2FFunctions%2F-154452337"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../delete-data.html">T</a><span class="token operator">&gt; </span><a href="index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="../delete-data.html"><span class="token function">deleteData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../delete-data.html">T</a></div><div class="brief "><p class="paragraph">Make a DELETE request to the hue bridge.@author</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="19159960%2FFunctions%2F-154452337" anchor-label="getData" id="19159960%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../get-data.html"><span>get</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="19159960%2FFunctions%2F-154452337"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../get-data.html">T</a><span class="token operator">&gt; </span><a href="index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="../get-data.html"><span class="token function">getData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../get-data.html">T</a></div><div class="brief "><p class="paragraph">Make a GET request to the hue bridge.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="301715469%2FFunctions%2F-154452337" anchor-label="postData" id="301715469%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../post-data.html"><span>post</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="301715469%2FFunctions%2F-154452337"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../post-data.html">REQUEST</a><span class="token punctuation">, </span><a href="../post-data.html">RESPONSE</a><span class="token operator">&gt; </span><a href="index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="../post-data.html"><span class="token function">postData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">body<span class="token operator">: </span><a href="../post-data.html">REQUEST</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../post-data.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a POST request to the hue bridge.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1344148834%2FFunctions%2F-154452337" anchor-label="putData" id="-1344148834%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../put-data.html"><span>put</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1344148834%2FFunctions%2F-154452337"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../put-data.html">REQUEST</a><span class="token punctuation">, </span><a href="../put-data.html">RESPONSE</a><span class="token operator">&gt; </span><a href="index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="../put-data.html"><span class="token function">putData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">body<span class="token operator">: </span><a href="../put-data.html">REQUEST</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../put-data.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a PUT request to the hue bridge.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1902349604%2FFunctions%2F-154452337" anchor-label="sendRequest" id="-1902349604%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="send-request.html"><span>send</span><wbr><span><span>Request</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1902349604%2FFunctions%2F-154452337"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="send-request.html">REQUEST</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="send-request.html">RESPONSE</a><span class="token operator">&gt; </span><a href="send-request.html"><span class="token function">sendRequest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">method<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">responseSerializer<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../serialization/inkapplications.shade.serialization/-hue-response/index.html">HueResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="send-request.html">RESPONSE</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">body<span class="token operator">: </span><a href="send-request.html">REQUEST</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">requestSerializer<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="send-request.html">REQUEST</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="send-request.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a request to the hue bridge</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="send-request.html">REQUEST</a><span class="token punctuation">, </span><a href="send-request.html">RESPONSE</a><span class="token operator">&gt; </span><a href="send-request.html"><span class="token function">sendRequest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">method<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">responseSerializer<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="../../../serialization/inkapplications.shade.serialization/-hue-response/index.html">HueResponse</a><span class="token operator">&lt;</span><a href="send-request.html">RESPONSE</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">body<span class="token operator">: </span><a href="send-request.html">REQUEST</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">requestSerializer<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="send-request.html">REQUEST</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="send-request.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a request to the hue bridge</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="470942046%2FFunctions%2F-154452337" anchor-label="sendV1Request" id="470942046%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="send-v1-request.html"><span>send</span><wbr><span><span>V1Request</span></span></a></div>
+          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="send-v1-request.html"><span>send</span><wbr><span><span>V1Request</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="470942046%2FFunctions%2F-154452337"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="send-v1-request.html">REQUEST</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="send-v1-request.html">RESPONSE</a><span class="token operator">&gt; </span><a href="send-v1-request.html"><span class="token function">sendV1Request</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">method<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">responseSerializer<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../serialization/inkapplications.shade.serialization/-v1-hue-response/index.html">V1HueResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="send-v1-request.html">RESPONSE</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">body<span class="token operator">: </span><a href="send-v1-request.html">REQUEST</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">requestSerializer<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="send-v1-request.html">REQUEST</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="send-v1-request.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a request to the hue bridge as a V1 endpoint.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h2 class="">Inheritors</h2>
-      <div class="table" data-togglable="Inheritors"><a data-name="1022138943%2FInheritors%2F-154452337" anchor-label="HueStubClient" id="1022138943%2FInheritors%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="../-hue-stub-client/index.html">HueStubClient</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1022138943%2FInheritors%2F-154452337"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      <h2 class="tabbedcontent">Extensions</h2>
-      <div class="table" data-togglable="Extensions"><a data-name="494414531%2FExtensions%2F-154452337" anchor-label="deleteData" id="494414531%2FExtensions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="../delete-data.html"><span>delete</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="494414531%2FExtensions%2F-154452337"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../delete-data.html">T</a><span class="token operator">&gt; </span><a href="index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="../delete-data.html"><span class="token function">deleteData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../delete-data.html">T</a></div><div class="brief "><p class="paragraph">Make a DELETE request to the hue bridge.@author</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="19159960%2FExtensions%2F-154452337" anchor-label="getData" id="19159960%2FExtensions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="../get-data.html"><span>get</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="19159960%2FExtensions%2F-154452337"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../get-data.html">T</a><span class="token operator">&gt; </span><a href="index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="../get-data.html"><span class="token function">getData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../get-data.html">T</a></div><div class="brief "><p class="paragraph">Make a GET request to the hue bridge.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="301715469%2FExtensions%2F-154452337" anchor-label="postData" id="301715469%2FExtensions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="../post-data.html"><span>post</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="301715469%2FExtensions%2F-154452337"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../post-data.html">REQUEST</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../post-data.html">RESPONSE</a><span class="token operator">&gt; </span><a href="index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="../post-data.html"><span class="token function">postData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">body<span class="token operator">: </span><a href="../post-data.html">REQUEST</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../post-data.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a POST request to the hue bridge.</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-1344148834%2FExtensions%2F-154452337" anchor-label="putData" id="-1344148834%2FExtensions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="../put-data.html"><span>put</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1344148834%2FExtensions%2F-154452337"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../put-data.html">REQUEST</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../put-data.html">RESPONSE</a><span class="token operator">&gt; </span><a href="index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="../put-data.html"><span class="token function">putData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">body<span class="token operator">: </span><a href="../put-data.html">REQUEST</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../put-data.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a PUT request to the hue bridge.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="send-v1-request.html">REQUEST</a><span class="token punctuation">, </span><a href="send-v1-request.html">RESPONSE</a><span class="token operator">&gt; </span><a href="send-v1-request.html"><span class="token function">sendV1Request</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">method<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">responseSerializer<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../../serialization/inkapplications.shade.serialization/-v1-hue-response/index.html">V1HueResponse</a><span class="token operator">&lt;</span><a href="send-v1-request.html">RESPONSE</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">body<span class="token operator">: </span><a href="send-v1-request.html">REQUEST</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">requestSerializer<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="send-v1-request.html">REQUEST</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="send-v1-request.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a request to the hue bridge as a V1 endpoint.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -169,10 +165,11 @@
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

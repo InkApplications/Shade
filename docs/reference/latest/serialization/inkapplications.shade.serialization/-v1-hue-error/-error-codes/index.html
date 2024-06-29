@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>ErrorCodes</title>
-<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
@@ -16,12 +18,13 @@
         }
     }
     </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../../styles/style.css" rel="Stylesheet">
-<link href="../../../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../../../styles/main.css" rel="Stylesheet">
 <link href="../../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async></script>
@@ -29,434 +32,445 @@
 <script type="text/javascript" src="../../../../scripts/prism.js" async></script>
 <script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../../../index.html">
-<span>shade</span>            </a>    </div>
-    <div>latest
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../../index.html">
+                            shade
+                    </a>            </div>
+            <div class="library-version">latest
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":serialization:dokkaHtmlPartial/commonMain">common</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="serialization::inkapplications.shade.serialization/V1HueError.ErrorCodes///PointingToDeclaration//-2059110987">
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="serialization::inkapplications.shade.serialization/V1HueError.ErrorCodes///PointingToDeclaration//-2059110987">
   <div class="breadcrumbs"><a href="../../../index.html">serialization</a><span class="delimiter">/</span><a href="../../index.html">inkapplications.shade.serialization</a><span class="delimiter">/</span><a href="../index.html">V1HueError</a><span class="delimiter">/</span><span class="current">ErrorCodes</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Error</span><wbr><span><span>Codes</span></span></h1>
     <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">ErrorCodes</a></div><p class="paragraph">Error codes thrown by the Hue v1 API.</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="2085305758%2FProperties%2F-2059110987" anchor-label="BACKUP_INVALID_STATE" id="2085305758%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-b-a-c-k-u-p_-i-n-v-a-l-i-d_-s-t-a-t-e.html"><span><span>BACKUP_INVALID_STATE</span></span></a></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="2085305758%2FProperties%2F-2059110987" anchor-label="BACKUP_INVALID_STATE" id="2085305758%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-a-c-k-u-p_-i-n-v-a-l-i-d_-s-t-a-t-e.html"><span><span>BACKUP_INVALID_STATE</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2085305758%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="2085305758%2FProperties%2F-2059110987" anchor-label="BACKUP_INVALID_STATE" id="2085305758%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-a-c-k-u-p_-i-n-v-a-l-i-d_-s-t-a-t-e.html">BACKUP_INVALID_STATE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">803</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-a-c-k-u-p_-i-n-v-a-l-i-d_-s-t-a-t-e.html">BACKUP_INVALID_STATE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">803</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1053748108%2FProperties%2F-2059110987" anchor-label="BACKUP_SOURCE_FACTORY_NEW" id="1053748108%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-b-a-c-k-u-p_-s-o-u-r-c-e_-f-a-c-t-o-r-y_-n-e-w.html"><span><span>BACKUP_SOURCE_FACTORY_NEW</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-a-c-k-u-p_-s-o-u-r-c-e_-f-a-c-t-o-r-y_-n-e-w.html"><span><span>BACKUP_SOURCE_FACTORY_NEW</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1053748108%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="1053748108%2FProperties%2F-2059110987" anchor-label="BACKUP_SOURCE_FACTORY_NEW" id="1053748108%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-a-c-k-u-p_-s-o-u-r-c-e_-f-a-c-t-o-r-y_-n-e-w.html">BACKUP_SOURCE_FACTORY_NEW</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">802</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-a-c-k-u-p_-s-o-u-r-c-e_-f-a-c-t-o-r-y_-n-e-w.html">BACKUP_SOURCE_FACTORY_NEW</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">802</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1422502954%2FProperties%2F-2059110987" anchor-label="BACKUP_SOURCE_MODEL_INVALID" id="-1422502954%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-b-a-c-k-u-p_-s-o-u-r-c-e_-m-o-d-e-l_-i-n-v-a-l-i-d.html"><span><span>BACKUP_SOURCE_MODEL_INVALID</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-a-c-k-u-p_-s-o-u-r-c-e_-m-o-d-e-l_-i-n-v-a-l-i-d.html"><span><span>BACKUP_SOURCE_MODEL_INVALID</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1422502954%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-1422502954%2FProperties%2F-2059110987" anchor-label="BACKUP_SOURCE_MODEL_INVALID" id="-1422502954%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-a-c-k-u-p_-s-o-u-r-c-e_-m-o-d-e-l_-i-n-v-a-l-i-d.html">BACKUP_SOURCE_MODEL_INVALID</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">801</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-a-c-k-u-p_-s-o-u-r-c-e_-m-o-d-e-l_-i-n-v-a-l-i-d.html">BACKUP_SOURCE_MODEL_INVALID</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">801</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="2025006054%2FProperties%2F-2059110987" anchor-label="DHCP_DISABLED" id="2025006054%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-d-h-c-p_-d-i-s-a-b-l-e-d.html"><span><span>DHCP_DISABLED</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-h-c-p_-d-i-s-a-b-l-e-d.html"><span><span>DHCP_DISABLED</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2025006054%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="2025006054%2FProperties%2F-2059110987" anchor-label="DHCP_DISABLED" id="2025006054%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-d-h-c-p_-d-i-s-a-b-l-e-d.html">DHCP_DISABLED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">110</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-d-h-c-p_-d-i-s-a-b-l-e-d.html">DHCP_DISABLED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">110</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="881861259%2FProperties%2F-2059110987" anchor-label="GROUP_LIGHT_ALREADY_IN_ROOM" id="881861259%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-g-r-o-u-p_-l-i-g-h-t_-a-l-r-e-a-d-y_-i-n_-r-o-o-m.html"><span><span>GROUP_LIGHT_ALREADY_IN_ROOM</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-r-o-u-p_-l-i-g-h-t_-a-l-r-e-a-d-y_-i-n_-r-o-o-m.html"><span><span>GROUP_LIGHT_ALREADY_IN_ROOM</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="881861259%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="881861259%2FProperties%2F-2059110987" anchor-label="GROUP_LIGHT_ALREADY_IN_ROOM" id="881861259%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-g-r-o-u-p_-l-i-g-h-t_-a-l-r-e-a-d-y_-i-n_-r-o-o-m.html">GROUP_LIGHT_ALREADY_IN_ROOM</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">306</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-g-r-o-u-p_-l-i-g-h-t_-a-l-r-e-a-d-y_-i-n_-r-o-o-m.html">GROUP_LIGHT_ALREADY_IN_ROOM</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">306</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1479415488%2FProperties%2F-2059110987" anchor-label="GROUP_LIST_FULL" id="-1479415488%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-g-r-o-u-p_-l-i-s-t_-f-u-l-l.html"><span><span>GROUP_LIST_FULL</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-r-o-u-p_-l-i-s-t_-f-u-l-l.html"><span><span>GROUP_LIST_FULL</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1479415488%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-1479415488%2FProperties%2F-2059110987" anchor-label="GROUP_LIST_FULL" id="-1479415488%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-g-r-o-u-p_-l-i-s-t_-f-u-l-l.html">GROUP_LIST_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">301</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-g-r-o-u-p_-l-i-s-t_-f-u-l-l.html">GROUP_LIST_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">301</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1287789244%2FProperties%2F-2059110987" anchor-label="GROUP_UPDATE_NOT_ALLOWED" id="-1287789244%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-g-r-o-u-p_-u-p-d-a-t-e_-n-o-t_-a-l-l-o-w-e-d.html"><span><span>GROUP_UPDATE_NOT_ALLOWED</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-r-o-u-p_-u-p-d-a-t-e_-n-o-t_-a-l-l-o-w-e-d.html"><span><span>GROUP_UPDATE_NOT_ALLOWED</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1287789244%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-1287789244%2FProperties%2F-2059110987" anchor-label="GROUP_UPDATE_NOT_ALLOWED" id="-1287789244%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-g-r-o-u-p_-u-p-d-a-t-e_-n-o-t_-a-l-l-o-w-e-d.html">GROUP_UPDATE_NOT_ALLOWED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">305</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-g-r-o-u-p_-u-p-d-a-t-e_-n-o-t_-a-l-l-o-w-e-d.html">GROUP_UPDATE_NOT_ALLOWED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">305</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-499187109%2FProperties%2F-2059110987" anchor-label="LIGHT_PARAMETER_NOT_MODIFIABLE" id="-499187109%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-l-i-g-h-t_-p-a-r-a-m-e-t-e-r_-n-o-t_-m-o-d-i-f-i-a-b-l-e.html"><span><span>LIGHT_PARAMETER_NOT_MODIFIABLE</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-i-g-h-t_-p-a-r-a-m-e-t-e-r_-n-o-t_-m-o-d-i-f-i-a-b-l-e.html"><span><span>LIGHT_PARAMETER_NOT_MODIFIABLE</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-499187109%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-499187109%2FProperties%2F-2059110987" anchor-label="LIGHT_PARAMETER_NOT_MODIFIABLE" id="-499187109%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-l-i-g-h-t_-p-a-r-a-m-e-t-e-r_-n-o-t_-m-o-d-i-f-i-a-b-l-e.html">LIGHT_PARAMETER_NOT_MODIFIABLE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">201</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-l-i-g-h-t_-p-a-r-a-m-e-t-e-r_-n-o-t_-m-o-d-i-f-i-a-b-l-e.html">LIGHT_PARAMETER_NOT_MODIFIABLE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">201</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1082028814%2FProperties%2F-2059110987" anchor-label="LIGHT_RADIO_FULL" id="1082028814%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-l-i-g-h-t_-r-a-d-i-o_-f-u-l-l.html"><span><span>LIGHT_RADIO_FULL</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-i-g-h-t_-r-a-d-i-o_-f-u-l-l.html"><span><span>LIGHT_RADIO_FULL</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1082028814%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="1082028814%2FProperties%2F-2059110987" anchor-label="LIGHT_RADIO_FULL" id="1082028814%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-l-i-g-h-t_-r-a-d-i-o_-f-u-l-l.html">LIGHT_RADIO_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">203</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-l-i-g-h-t_-r-a-d-i-o_-f-u-l-l.html">LIGHT_RADIO_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">203</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-29878804%2FProperties%2F-2059110987" anchor-label="LINK_REQUIRED" id="-29878804%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-l-i-n-k_-r-e-q-u-i-r-e-d.html"><span><span>LINK_REQUIRED</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-i-n-k_-r-e-q-u-i-r-e-d.html"><span><span>LINK_REQUIRED</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-29878804%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-29878804%2FProperties%2F-2059110987" anchor-label="LINK_REQUIRED" id="-29878804%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-l-i-n-k_-r-e-q-u-i-r-e-d.html">LINK_REQUIRED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">101</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-l-i-n-k_-r-e-q-u-i-r-e-d.html">LINK_REQUIRED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">101</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="806965614%2FProperties%2F-2059110987" anchor-label="RULE_ACTION_ERROR" id="806965614%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-r-u-l-e_-a-c-t-i-o-n_-e-r-r-o-r.html"><span><span>RULE_ACTION_ERROR</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-u-l-e_-a-c-t-i-o-n_-e-r-r-o-r.html"><span><span>RULE_ACTION_ERROR</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="806965614%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="806965614%2FProperties%2F-2059110987" anchor-label="RULE_ACTION_ERROR" id="806965614%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-u-l-e_-a-c-t-i-o-n_-e-r-r-o-r.html">RULE_ACTION_ERROR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">608</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-u-l-e_-a-c-t-i-o-n_-e-r-r-o-r.html">RULE_ACTION_ERROR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">608</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-817935723%2FProperties%2F-2059110987" anchor-label="RULE_CONDITION_NOT_ALLOWED" id="-817935723%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-r-u-l-e_-c-o-n-d-i-t-i-o-n_-n-o-t_-a-l-l-o-w-e-d.html"><span><span>RULE_CONDITION_NOT_ALLOWED</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-u-l-e_-c-o-n-d-i-t-i-o-n_-n-o-t_-a-l-l-o-w-e-d.html"><span><span>RULE_CONDITION_NOT_ALLOWED</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-817935723%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-817935723%2FProperties%2F-2059110987" anchor-label="RULE_CONDITION_NOT_ALLOWED" id="-817935723%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-u-l-e_-c-o-n-d-i-t-i-o-n_-n-o-t_-a-l-l-o-w-e-d.html">RULE_CONDITION_NOT_ALLOWED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">607</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-u-l-e_-c-o-n-d-i-t-i-o-n_-n-o-t_-a-l-l-o-w-e-d.html">RULE_CONDITION_NOT_ALLOWED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">607</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1108516163%2FProperties%2F-2059110987" anchor-label="RULE_LIST_FULL" id="-1108516163%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-r-u-l-e_-l-i-s-t_-f-u-l-l.html"><span><span>RULE_LIST_FULL</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-u-l-e_-l-i-s-t_-f-u-l-l.html"><span><span>RULE_LIST_FULL</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1108516163%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-1108516163%2FProperties%2F-2059110987" anchor-label="RULE_LIST_FULL" id="-1108516163%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-u-l-e_-l-i-s-t_-f-u-l-l.html">RULE_LIST_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">601</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-u-l-e_-l-i-s-t_-f-u-l-l.html">RULE_LIST_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">601</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1444969160%2FProperties%2F-2059110987" anchor-label="RULE_NOT_ACTIVATED" id="1444969160%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-r-u-l-e_-n-o-t_-a-c-t-i-v-a-t-e-d.html"><span><span>RULE_NOT_ACTIVATED</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-u-l-e_-n-o-t_-a-c-t-i-v-a-t-e-d.html"><span><span>RULE_NOT_ACTIVATED</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1444969160%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="1444969160%2FProperties%2F-2059110987" anchor-label="RULE_NOT_ACTIVATED" id="1444969160%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-u-l-e_-n-o-t_-a-c-t-i-v-a-t-e-d.html">RULE_NOT_ACTIVATED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">609</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-u-l-e_-n-o-t_-a-c-t-i-v-a-t-e-d.html">RULE_NOT_ACTIVATED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">609</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1602712438%2FProperties%2F-2059110987" anchor-label="SCENE_GROUP_EMPTY" id="1602712438%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-e-n-e_-g-r-o-u-p_-e-m-p-t-y.html"><span><span>SCENE_GROUP_EMPTY</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-e-n-e_-g-r-o-u-p_-e-m-p-t-y.html"><span><span>SCENE_GROUP_EMPTY</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1602712438%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="1602712438%2FProperties%2F-2059110987" anchor-label="SCENE_GROUP_EMPTY" id="1602712438%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-e-n-e_-g-r-o-u-p_-e-m-p-t-y.html">SCENE_GROUP_EMPTY</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">404</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-e-n-e_-g-r-o-u-p_-e-m-p-t-y.html">SCENE_GROUP_EMPTY</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">404</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1599970285%2FProperties%2F-2059110987" anchor-label="SCENE_LIST_FULL" id="-1599970285%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-e-n-e_-l-i-s-t_-f-u-l-l.html"><span><span>SCENE_LIST_FULL</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-e-n-e_-l-i-s-t_-f-u-l-l.html"><span><span>SCENE_LIST_FULL</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1599970285%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-1599970285%2FProperties%2F-2059110987" anchor-label="SCENE_LIST_FULL" id="-1599970285%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-e-n-e_-l-i-s-t_-f-u-l-l.html">SCENE_LIST_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">402</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-e-n-e_-l-i-s-t_-f-u-l-l.html">SCENE_LIST_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">402</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-851748403%2FProperties%2F-2059110987" anchor-label="SCENE_LOCKED" id="-851748403%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-e-n-e_-l-o-c-k-e-d.html"><span><span>SCENE_LOCKED</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-e-n-e_-l-o-c-k-e-d.html"><span><span>SCENE_LOCKED</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-851748403%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-851748403%2FProperties%2F-2059110987" anchor-label="SCENE_LOCKED" id="-851748403%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-e-n-e_-l-o-c-k-e-d.html">SCENE_LOCKED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">403</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-e-n-e_-l-o-c-k-e-d.html">SCENE_LOCKED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">403</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-834554242%2FProperties%2F-2059110987" anchor-label="SCHEDULE_COMMAND_ERROR" id="-834554242%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-h-e-d-u-l-e_-c-o-m-m-a-n-d_-e-r-r-o-r.html"><span><span>SCHEDULE_COMMAND_ERROR</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-h-e-d-u-l-e_-c-o-m-m-a-n-d_-e-r-r-o-r.html"><span><span>SCHEDULE_COMMAND_ERROR</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-834554242%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-834554242%2FProperties%2F-2059110987" anchor-label="SCHEDULE_COMMAND_ERROR" id="-834554242%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-c-o-m-m-a-n-d_-e-r-r-o-r.html">SCHEDULE_COMMAND_ERROR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">706</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-c-o-m-m-a-n-d_-e-r-r-o-r.html">SCHEDULE_COMMAND_ERROR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">706</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-774527911%2FProperties%2F-2059110987" anchor-label="SCHEDULE_FULL" id="-774527911%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-h-e-d-u-l-e_-f-u-l-l.html"><span><span>SCHEDULE_FULL</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-h-e-d-u-l-e_-f-u-l-l.html"><span><span>SCHEDULE_FULL</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-774527911%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-774527911%2FProperties%2F-2059110987" anchor-label="SCHEDULE_FULL" id="-774527911%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-f-u-l-l.html">SCHEDULE_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">701</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-f-u-l-l.html">SCHEDULE_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">701</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1659164864%2FProperties%2F-2059110987" anchor-label="SCHEDULE_TAG_INVALID" id="-1659164864%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-h-e-d-u-l-e_-t-a-g_-i-n-v-a-l-i-d.html"><span><span>SCHEDULE_TAG_INVALID</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-h-e-d-u-l-e_-t-a-g_-i-n-v-a-l-i-d.html"><span><span>SCHEDULE_TAG_INVALID</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1659164864%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-1659164864%2FProperties%2F-2059110987" anchor-label="SCHEDULE_TAG_INVALID" id="-1659164864%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-t-a-g_-i-n-v-a-l-i-d.html">SCHEDULE_TAG_INVALID</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">704</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-t-a-g_-i-n-v-a-l-i-d.html">SCHEDULE_TAG_INVALID</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">704</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-246457202%2FProperties%2F-2059110987" anchor-label="SCHEDULE_TIME_AMBIGUOUS" id="-246457202%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-h-e-d-u-l-e_-t-i-m-e_-a-m-b-i-g-u-o-u-s.html"><span><span>SCHEDULE_TIME_AMBIGUOUS</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-h-e-d-u-l-e_-t-i-m-e_-a-m-b-i-g-u-o-u-s.html"><span><span>SCHEDULE_TIME_AMBIGUOUS</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-246457202%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-246457202%2FProperties%2F-2059110987" anchor-label="SCHEDULE_TIME_AMBIGUOUS" id="-246457202%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-t-i-m-e_-a-m-b-i-g-u-o-u-s.html">SCHEDULE_TIME_AMBIGUOUS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">703</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-t-i-m-e_-a-m-b-i-g-u-o-u-s.html">SCHEDULE_TIME_AMBIGUOUS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">703</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="821428366%2FProperties%2F-2059110987" anchor-label="SCHEDULE_TIME_PAST" id="821428366%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-h-e-d-u-l-e_-t-i-m-e_-p-a-s-t.html"><span><span>SCHEDULE_TIME_PAST</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-h-e-d-u-l-e_-t-i-m-e_-p-a-s-t.html"><span><span>SCHEDULE_TIME_PAST</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="821428366%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="821428366%2FProperties%2F-2059110987" anchor-label="SCHEDULE_TIME_PAST" id="821428366%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-t-i-m-e_-p-a-s-t.html">SCHEDULE_TIME_PAST</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">705</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-t-i-m-e_-p-a-s-t.html">SCHEDULE_TIME_PAST</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">705</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1658001687%2FProperties%2F-2059110987" anchor-label="SCHEDULE_TIMEZONE_INVALID" id="1658001687%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-c-h-e-d-u-l-e_-t-i-m-e-z-o-n-e_-i-n-v-a-l-i-d.html"><span><span>SCHEDULE_TIMEZONE_INVALID</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-c-h-e-d-u-l-e_-t-i-m-e-z-o-n-e_-i-n-v-a-l-i-d.html"><span><span>SCHEDULE_TIMEZONE_INVALID</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1658001687%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="1658001687%2FProperties%2F-2059110987" anchor-label="SCHEDULE_TIMEZONE_INVALID" id="1658001687%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-t-i-m-e-z-o-n-e_-i-n-v-a-l-i-d.html">SCHEDULE_TIMEZONE_INVALID</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">702</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-c-h-e-d-u-l-e_-t-i-m-e-z-o-n-e_-i-n-v-a-l-i-d.html">SCHEDULE_TIMEZONE_INVALID</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">702</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="696424959%2FProperties%2F-2059110987" anchor-label="SENSOR_LIST_FULL" id="696424959%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-e-n-s-o-r_-l-i-s-t_-f-u-l-l.html"><span><span>SENSOR_LIST_FULL</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-e-n-s-o-r_-l-i-s-t_-f-u-l-l.html"><span><span>SENSOR_LIST_FULL</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="696424959%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="696424959%2FProperties%2F-2059110987" anchor-label="SENSOR_LIST_FULL" id="696424959%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-e-n-s-o-r_-l-i-s-t_-f-u-l-l.html">SENSOR_LIST_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">502</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-e-n-s-o-r_-l-i-s-t_-f-u-l-l.html">SENSOR_LIST_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">502</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="684694675%2FProperties%2F-2059110987" anchor-label="SENSOR_NOT_ALLOWED" id="684694675%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-e-n-s-o-r_-n-o-t_-a-l-l-o-w-e-d.html"><span><span>SENSOR_NOT_ALLOWED</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-e-n-s-o-r_-n-o-t_-a-l-l-o-w-e-d.html"><span><span>SENSOR_NOT_ALLOWED</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="684694675%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="684694675%2FProperties%2F-2059110987" anchor-label="SENSOR_NOT_ALLOWED" id="684694675%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-e-n-s-o-r_-n-o-t_-a-l-l-o-w-e-d.html">SENSOR_NOT_ALLOWED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">501</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-e-n-s-o-r_-n-o-t_-a-l-l-o-w-e-d.html">SENSOR_NOT_ALLOWED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">501</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="812309272%2FProperties%2F-2059110987" anchor-label="SENSOR_RADIO_FULL" id="812309272%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-s-e-n-s-o-r_-r-a-d-i-o_-f-u-l-l.html"><span><span>SENSOR_RADIO_FULL</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-e-n-s-o-r_-r-a-d-i-o_-f-u-l-l.html"><span><span>SENSOR_RADIO_FULL</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="812309272%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="812309272%2FProperties%2F-2059110987" anchor-label="SENSOR_RADIO_FULL" id="812309272%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-e-n-s-o-r_-r-a-d-i-o_-f-u-l-l.html">SENSOR_RADIO_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">503</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-e-n-s-o-r_-r-a-d-i-o_-f-u-l-l.html">SENSOR_RADIO_FULL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">503</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1300778825%2FProperties%2F-2059110987" anchor-label="UPDATE_INVALID_STATE" id="-1300778825%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-u-p-d-a-t-e_-i-n-v-a-l-i-d_-s-t-a-t-e.html"><span><span>UPDATE_INVALID_STATE</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-p-d-a-t-e_-i-n-v-a-l-i-d_-s-t-a-t-e.html"><span><span>UPDATE_INVALID_STATE</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1300778825%2FProperties%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><a data-name="-1300778825%2FProperties%2F-2059110987" anchor-label="UPDATE_INVALID_STATE" id="-1300778825%2FProperties%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-u-p-d-a-t-e_-i-n-v-a-l-i-d_-s-t-a-t-e.html">UPDATE_INVALID_STATE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">111</span></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-u-p-d-a-t-e_-i-n-v-a-l-i-d_-s-t-a-t-e.html">UPDATE_INVALID_STATE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">111</span></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -466,10 +480,11 @@
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 
