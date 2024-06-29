@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>StandardTemperatures</title>
-<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
@@ -16,12 +18,13 @@
         }
     }
     </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
-<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
@@ -29,329 +32,340 @@
 <script type="text/javascript" src="../../../scripts/prism.js" async></script>
 <script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../../index.html">
-<span>shade</span>            </a>    </div>
-    <div>latest
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            shade
+                    </a>            </div>
+            <div class="library-version">latest
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":lights:dokkaHtmlPartial/commonMain">common</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="lights::inkapplications.shade.lights.structures/StandardTemperatures///PointingToDeclaration//1435263766">
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="lights::inkapplications.shade.lights.structures/StandardTemperatures///PointingToDeclaration//1435263766">
   <div class="breadcrumbs"><a href="../../index.html">lights</a><span class="delimiter">/</span><a href="../index.html">inkapplications.shade.lights.structures</a><span class="delimiter">/</span><span class="current">StandardTemperatures</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Standard</span><wbr><span><span>Temperatures</span></span></h1>
     <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">StandardTemperatures</a></div><p class="paragraph">Commonly used reference temperatures.</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="1169690347%2FProperties%2F1435263766" anchor-label="A" id="1169690347%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-a.html"><span><span>A</span></span></a></div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1169690347%2FProperties%2F1435263766" anchor-label="A" id="1169690347%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a.html"><span><span>A</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1169690347%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="1169690347%2FProperties%2F1435263766" anchor-label="A" id="1169690347%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-a.html">A</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="1169690347%2FProperties%2F1435263766" anchor-label="A" id="1169690347%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Incandescent / Tungsten</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-a.html">A</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Incandescent / Tungsten</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1200710154%2FProperties%2F1435263766" anchor-label="B" id="1200710154%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-b.html"><span><span>B</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b.html"><span><span>B</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1200710154%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="1200710154%2FProperties%2F1435263766" anchor-label="B" id="1200710154%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-b.html">B</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="1200710154%2FProperties%2F1435263766" anchor-label="B" id="1200710154%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Direct sunlight at noon</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-b.html">B</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Direct sunlight at noon</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1231729961%2FProperties%2F1435263766" anchor-label="C" id="1231729961%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-c.html"><span><span>C</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c.html"><span><span>C</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1231729961%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="1231729961%2FProperties%2F1435263766" anchor-label="C" id="1231729961%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-c.html">C</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="1231729961%2FProperties%2F1435263766" anchor-label="C" id="1231729961%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Average / North sky Daylight</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-c.html">C</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Average / North sky Daylight</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-666558643%2FProperties%2F1435263766" anchor-label="D50" id="-666558643%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-d50.html"><span><span>D50</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d50.html"><span><span>D50</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-666558643%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="-666558643%2FProperties%2F1435263766" anchor-label="D50" id="-666558643%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-d50.html">D50</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="-666558643%2FProperties%2F1435263766" anchor-label="D50" id="-666558643%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Horizon Light. ICC profile PCS</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-d50.html">D50</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Horizon Light. ICC profile PCS</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-511459608%2FProperties%2F1435263766" anchor-label="D55" id="-511459608%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-d55.html"><span><span>D55</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d55.html"><span><span>D55</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-511459608%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="-511459608%2FProperties%2F1435263766" anchor-label="D55" id="-511459608%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-d55.html">D55</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="-511459608%2FProperties%2F1435263766" anchor-label="D55" id="-511459608%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Mid-morning / Mid-afternoon Daylight</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-d55.html">D55</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Mid-morning / Mid-afternoon Daylight</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="450154409%2FProperties%2F1435263766" anchor-label="D65" id="450154409%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-d65.html"><span><span>D65</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d65.html"><span><span>D65</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="450154409%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="450154409%2FProperties%2F1435263766" anchor-label="D65" id="450154409%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-d65.html">D65</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="450154409%2FProperties%2F1435263766" anchor-label="D65" id="450154409%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Noon Daylight: Television, sRGB color space</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-d65.html">D65</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Noon Daylight: Television, sRGB color space</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1411768426%2FProperties%2F1435263766" anchor-label="D75" id="1411768426%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-d75.html"><span><span>D75</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d75.html"><span><span>D75</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1411768426%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="1411768426%2FProperties%2F1435263766" anchor-label="D75" id="1411768426%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-d75.html">D75</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="1411768426%2FProperties%2F1435263766" anchor-label="D75" id="1411768426%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">North sky Daylight</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-d75.html">D75</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">North sky Daylight</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1293769575%2FProperties%2F1435263766" anchor-label="E" id="1293769575%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-e.html"><span><span>E</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e.html"><span><span>E</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1293769575%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="1293769575%2FProperties%2F1435263766" anchor-label="E" id="1293769575%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-e.html">E</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="1293769575%2FProperties%2F1435263766" anchor-label="E" id="1293769575%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Equal Energy</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-e.html">E</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Equal Energy</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1932712707%2FProperties%2F1435263766" anchor-label="F1" id="1932712707%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f1.html"><span><span>F1</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f1.html"><span><span>F1</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1932712707%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="1932712707%2FProperties%2F1435263766" anchor-label="F1" id="1932712707%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f1.html">F1</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="1932712707%2FProperties%2F1435263766" anchor-label="F1" id="1932712707%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Daylight Fluorescent</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f1.html">F1</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Daylight Fluorescent</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-727520505%2FProperties%2F1435263766" anchor-label="F10" id="-727520505%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f10.html"><span><span>F10</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f10.html"><span><span>F10</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-727520505%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="-727520505%2FProperties%2F1435263766" anchor-label="F10" id="-727520505%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f10.html">F10</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="-727520505%2FProperties%2F1435263766" anchor-label="F10" id="-727520505%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Philips TL85, Ultralume 50</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f10.html">F10</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Philips TL85, Ultralume 50</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-696500698%2FProperties%2F1435263766" anchor-label="F11" id="-696500698%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f11.html"><span><span>F11</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f11.html"><span><span>F11</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-696500698%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="-696500698%2FProperties%2F1435263766" anchor-label="F11" id="-696500698%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f11.html">F11</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="-696500698%2FProperties%2F1435263766" anchor-label="F11" id="-696500698%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Philips TL84, Ultralume 40</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f11.html">F11</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Philips TL84, Ultralume 40</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-665480891%2FProperties%2F1435263766" anchor-label="F12" id="-665480891%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f12.html"><span><span>F12</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f12.html"><span><span>F12</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-665480891%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="-665480891%2FProperties%2F1435263766" anchor-label="F12" id="-665480891%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f12.html">F12</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="-665480891%2FProperties%2F1435263766" anchor-label="F12" id="-665480891%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Philips TL83, Ultralume 30</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f12.html">F12</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Philips TL83, Ultralume 30</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1963732514%2FProperties%2F1435263766" anchor-label="F2" id="1963732514%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f2.html"><span><span>F2</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f2.html"><span><span>F2</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1963732514%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="1963732514%2FProperties%2F1435263766" anchor-label="F2" id="1963732514%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f2.html">F2</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="1963732514%2FProperties%2F1435263766" anchor-label="F2" id="1963732514%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Cool White Fluorescent</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f2.html">F2</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Cool White Fluorescent</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1994752321%2FProperties%2F1435263766" anchor-label="F3" id="1994752321%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f3.html"><span><span>F3</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f3.html"><span><span>F3</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1994752321%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="1994752321%2FProperties%2F1435263766" anchor-label="F3" id="1994752321%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f3.html">F3</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="1994752321%2FProperties%2F1435263766" anchor-label="F3" id="1994752321%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">White Fluorescent</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f3.html">F3</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">White Fluorescent</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="2025772128%2FProperties%2F1435263766" anchor-label="F4" id="2025772128%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f4.html"><span><span>F4</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f4.html"><span><span>F4</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2025772128%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="2025772128%2FProperties%2F1435263766" anchor-label="F4" id="2025772128%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f4.html">F4</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="2025772128%2FProperties%2F1435263766" anchor-label="F4" id="2025772128%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Warm White Fluorescent</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f4.html">F4</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Warm White Fluorescent</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="2056791935%2FProperties%2F1435263766" anchor-label="F5" id="2056791935%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f5.html"><span><span>F5</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f5.html"><span><span>F5</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2056791935%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="2056791935%2FProperties%2F1435263766" anchor-label="F5" id="2056791935%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f5.html">F5</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="2056791935%2FProperties%2F1435263766" anchor-label="F5" id="2056791935%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Daylight Fluorescent</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f5.html">F5</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Daylight Fluorescent</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="2087811742%2FProperties%2F1435263766" anchor-label="F6" id="2087811742%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f6.html"><span><span>F6</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f6.html"><span><span>F6</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2087811742%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="2087811742%2FProperties%2F1435263766" anchor-label="F6" id="2087811742%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f6.html">F6</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="2087811742%2FProperties%2F1435263766" anchor-label="F6" id="2087811742%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Lite White Fluorescent</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f6.html">F6</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Lite White Fluorescent</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="2118831549%2FProperties%2F1435263766" anchor-label="F7" id="2118831549%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f7.html"><span><span>F7</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f7.html"><span><span>F7</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2118831549%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="2118831549%2FProperties%2F1435263766" anchor-label="F7" id="2118831549%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f7.html">F7</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="2118831549%2FProperties%2F1435263766" anchor-label="F7" id="2118831549%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">D65 simulator, Daylight simulator</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f7.html">F7</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">D65 simulator, Daylight simulator</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2145115940%2FProperties%2F1435263766" anchor-label="F8" id="-2145115940%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f8.html"><span><span>F8</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f8.html"><span><span>F8</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2145115940%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="-2145115940%2FProperties%2F1435263766" anchor-label="F8" id="-2145115940%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f8.html">F8</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="-2145115940%2FProperties%2F1435263766" anchor-label="F8" id="-2145115940%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">D50 simulator, Sylvania F40 Design 50</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f8.html">F8</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">D50 simulator, Sylvania F40 Design 50</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2114096133%2FProperties%2F1435263766" anchor-label="F9" id="-2114096133%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-f9.html"><span><span>F9</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f9.html"><span><span>F9</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2114096133%2FProperties%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><a data-name="-2114096133%2FProperties%2F1435263766" anchor-label="F9" id="-2114096133%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-f9.html">F9</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><a data-name="-2114096133%2FProperties%2F1435263766" anchor-label="F9" id="-2114096133%2FProperties%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Cool White Deluxe Fluorescent</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="-f9.html">F9</a><span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></div><div class="brief "><p class="paragraph">Cool White Deluxe Fluorescent</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -361,10 +375,11 @@
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

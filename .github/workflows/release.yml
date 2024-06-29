@@ -6,14 +6,14 @@ env:
     GITHUB_TAG: ${{ github.ref }}
 jobs:
     tests:
+        name: Test
+        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@1.0.3
+    verify-docs:
         runs-on: ubuntu-latest
         steps:
             -
                 name: Checkout
-                uses: actions/checkout@v2.3.4
-            -
-                name: JVM Tests
-                run: ./gradlew jvmTest
+                uses: actions/checkout@v2.4.0
             -
                 name: Docs Requirements
                 run: >
@@ -23,28 +23,31 @@ jobs:
                     else
                         echo "Docs are current" && exit 0;
                     fi
-    common:
+    publish:
+        name: Publish to Maven Central
+        needs: [tests, verify-docs]
+        secrets: inherit
+        uses: inkapplications/.github/.github/workflows/kmp-maven-publish.yml@1.0.3
+        with:
+            version: ${{ github.ref_name }}
+            publish-linux-arm64: false
+            publish-android-native-arm32: false
+            publish-android-native-arm64: false
+            publish-android-native-x86: false
+            publish-android-native-x64: false
+            publish-ios-simulator-arm64: false
+            publish-watchos-simulator-arm64: false
+            publish-watchos-arm32: false
+            publish-tvos-simulator-arm64: false
+            publish-watchos-device-arm64: false
+    draft-release:
+        name: Draft Github Release
+        needs: [publish]
         runs-on: ubuntu-latest
-        needs: tests
         steps:
             -
                 name: Checkout
                 uses: actions/checkout@v2.3.4
-            -
-                name: Configure Java
-                uses: actions/setup-java@v2
-                with:
-                    java-version: 11
-                    distribution: adopt-openj9
-            -
-                name: Build Metadata Publication
-                run: ./gradlew publishKotlinMultiplatformPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
-            -
-                name: Build JVM Publication
-                run: ./gradlew publishJvmPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
-            -
-                name: Build JS Publication
-                run: ./gradlew publishJsPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
                 name: Build Archives
                 run: ./gradlew cli:assembleDist
@@ -52,16 +55,17 @@ jobs:
                 name: Prepare Archives
                 run: cp cli/build/distributions/shade-*.zip cli/build/distributions/shade.zip && cp cli/build/distributions/shade-*.tar cli/build/distributions/shade.tar
             -
-                name: Create GitHub Release
+                name: Create Release
                 id: create_release
-                uses: actions/create-release@v1.0.0
+                uses: actions/create-release@v1.1.4
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:
                     tag_name: ${{ github.ref }}
-                    release_name: ${{ github.ref }}
+                    release_name: ${{ github.ref_name }}
                     draft: true
                     prerelease: false
+                    body: "See CHANGELOG.md for details"
             -
                 name: Upload Cli Tar
                 uses: actions/upload-release-asset@v1.0.1
@@ -82,146 +86,3 @@ jobs:
                     asset_path: cli/build/distributions/shade.zip
                     asset_name: shade.zip
                     asset_content_type: application/zip
-            -
-                name: Maven Publish
-                env:
-                    GITHUB_TAG: ${{ github.ref }}
-                    ORG_GRADLE_PROJECT_mavenUser: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-                    ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-                    ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.PGP_INK_CI_KEYID }}
-                    ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
-                    ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
-                run: >
-                    ./gradlew
-                    publishKotlinMultiplatformPublicationToMavenCentralRepository
-                    publishJvmPublicationToMavenCentralRepository
-                    publishJsPublicationToMavenCentralRepository
-                    -Pversion=${GITHUB_TAG/refs\/tags\//}
-
-    linux:
-        runs-on: ubuntu-latest
-        needs: tests
-        steps:
-            -
-                name: Checkout
-                uses: actions/checkout@v2.3.4
-            -
-                name: Configure Java
-                uses: actions/setup-java@v2
-                with:
-                    java-version: 11
-                    distribution: adopt-openj9
-            -
-                name: Build Linux x64 Publication
-                run: ./gradlew publishLinuxX64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
-            -
-                name: Maven Publish
-                env:
-                    GITHUB_TAG: ${{ github.ref }}
-                    ORG_GRADLE_PROJECT_mavenUser: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-                    ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-                    ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.PGP_INK_CI_KEYID }}
-                    ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
-                    ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
-                run: >
-                    ./gradlew
-                    publishLinuxX64PublicationToMavenCentralRepository
-                    -Pversion=${GITHUB_TAG/refs\/tags\//}
-
-    windows:
-        runs-on: windows-latest
-        needs: tests
-        steps:
-            -
-                name: Checkout
-                uses: actions/checkout@v2.3.4
-            -
-                name: Configure Java
-                uses: actions/setup-java@v2
-                with:
-                    java-version: 11
-                    distribution: adopt-openj9
-            -
-                name: Build Windows X64 Publication
-                run: ./gradlew publishMingwX64PublicationToBuildRepository --project-prop version=${GITHUB_TAG/refs\/tags\//}
-                shell: bash
-            -
-                name: Maven Publish
-                env:
-                    GITHUB_TAG: ${{ github.ref }}
-                    ORG_GRADLE_PROJECT_mavenUser: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-                    ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-                    ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.PGP_INK_CI_KEYID }}
-                    ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
-                    ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
-                shell: bash
-                run: >
-                    ./gradlew
-                    publishMingwX64PublicationToMavenCentralRepository
-                    --project-prop version=${GITHUB_TAG/refs\/tags\//}
-    macos:
-        runs-on: macos-latest
-        needs: tests
-        steps:
-            -
-                name: Checkout
-                uses: actions/checkout@v2.3.4
-            -
-                name: Configure Java
-                uses: actions/setup-java@v2
-                with:
-                    java-version: 11
-                    distribution: adopt-openj9
-            -
-                name: Build iOS Publication
-                run: >
-                    ./gradlew
-                    publishIosArm64PublicationToBuildRepository
-                    publishIosX64PublicationToBuildRepository
-                    -Pversion=${GITHUB_TAG/refs\/tags\//}
-
-            -
-                name: Build watchOS Publication
-                run: >
-                    ./gradlew
-                    publishWatchosArm32PublicationToBuildRepository
-                    publishWatchosArm64PublicationToBuildRepository
-                    publishWatchosX64PublicationToBuildRepository
-                    -Pversion=${GITHUB_TAG/refs\/tags\//}
-
-            -
-                name: Build tvOS Publication
-                run: >
-                    ./gradlew
-                    publishTvosArm64PublicationToBuildRepository
-                    publishTvosX64PublicationToBuildRepository
-                    -Pversion=${GITHUB_TAG/refs\/tags\//}
-
-            -
-                name: Build MacOS Publication
-                run: >
-                    ./gradlew
-                    publishMacosX64PublicationToBuildRepository
-                    publishMacosArm64PublicationToBuildRepository
-                    -Pversion=${GITHUB_TAG/refs\/tags\//}
-            -
-                name: Maven Publish
-                env:
-                    GITHUB_TAG: ${{ github.ref }}
-                    ORG_GRADLE_PROJECT_mavenUser: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-                    ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-                    ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.PGP_INK_CI_KEYID }}
-                    ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
-                    ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
-                run: >
-                    ./gradlew
-                    publishIosArm64PublicationToMavenCentralRepository
-                    publishIosX64PublicationToMavenCentralRepository
-                    publishWatchosArm32PublicationToMavenCentralRepository
-                    publishWatchosArm64PublicationToMavenCentralRepository
-                    publishWatchosX64PublicationToMavenCentralRepository
-                    publishTvosArm64PublicationToMavenCentralRepository
-                    publishTvosX64PublicationToMavenCentralRepository
-                    publishMacosX64PublicationToMavenCentralRepository
-                    publishMacosArm64PublicationToMavenCentralRepository
-                    -Pversion=${GITHUB_TAG/refs\/tags\//}

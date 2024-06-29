@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>inkapplications.shade.lights.structures</title>
-<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
@@ -16,12 +18,13 @@
         }
     }
     </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../styles/style.css" rel="Stylesheet">
-<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
@@ -29,523 +32,534 @@
 <script type="text/javascript" src="../../scripts/prism.js" async></script>
 <script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../index.html">
-<span>shade</span>            </a>    </div>
-    <div>latest
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../index.html">
+                            shade
+                    </a>            </div>
+            <div class="library-version">latest
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":lights:dokkaHtmlPartial/commonMain">common</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="lights::inkapplications.shade.lights.structures////PointingToDeclaration//1435263766">
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="lights::inkapplications.shade.lights.structures////PointingToDeclaration//1435263766">
   <div class="breadcrumbs"><a href="../index.html">lights</a><span class="delimiter">/</span><span class="current">inkapplications.shade.lights.structures</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Types</h2>
-      <div class="table" data-togglable="Types"><a data-name="520652142%2FClasslikes%2F1435263766" anchor-label="AlertEffectType" id="520652142%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-alert-effect-type/index.html"><span>Alert</span><wbr><span>Effect</span><wbr><span><span>Type</span></span></a></div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="520652142%2FClasslikes%2F1435263766" anchor-label="AlertEffectType" id="520652142%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-alert-effect-type/index.html"><span>Alert</span><wbr><span>Effect</span><wbr><span><span>Type</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="520652142%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-alert-effect-type/index.html">AlertEffectType</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Wraps alert effects for lighting</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-alert-effect-type/index.html">AlertEffectType</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Wraps alert effects for lighting</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1143339893%2FClasslikes%2F1435263766" anchor-label="AlertInfo" id="-1143339893%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-alert-info/index.html"><span>Alert</span><wbr><span><span>Info</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-alert-info/index.html"><span>Alert</span><wbr><span><span>Info</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1143339893%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-alert-info/index.html">AlertInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>actionValues<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-alert-effect-type/index.html">AlertEffectType</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Information on Alert effects for a light</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-alert-info/index.html">AlertInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>actionValues<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-alert-effect-type/index.html">AlertEffectType</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Information on Alert effects for a light</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="685690852%2FClasslikes%2F1435263766" anchor-label="ColorInfo" id="685690852%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-color-info/index.html"><span>Color</span><wbr><span><span>Info</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-info/index.html"><span>Color</span><wbr><span><span>Info</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="685690852%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-info/index.html">ColorInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>color<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath/Color///PointingToDeclaration/">Color</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gamutType<span class="token operator">: </span><a href="-gamut-type/index.html">GamutType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gamut<span class="token operator">: </span><a href="-gamut/index.html">Gamut</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Information about a light's color and color capabilities.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-info/index.html">ColorInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>color<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath/Color///PointingToDeclaration/">Color</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gamutType<span class="token operator">: </span><a href="-gamut-type/index.html">GamutType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gamut<span class="token operator">: </span><a href="-gamut/index.html">Gamut</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Information about a light's color and color capabilities.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-2140798507%2FClasslikes%2F1435263766" anchor-label="ColorPalette" id="-2140798507%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-color-palette/index.html"><span>Color</span><wbr><span><span>Palette</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-palette/index.html"><span>Color</span><wbr><span><span>Palette</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2140798507%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-palette/index.html">ColorPalette</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>color<span class="token operator">: </span><a href="-color-value/index.html">ColorValue</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dimming<span class="token operator">: </span><a href="-dimming-value/index.html">DimmingValue</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Color/brightness pair reference.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-palette/index.html">ColorPalette</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>color<span class="token operator">: </span><a href="-color-value/index.html">ColorValue</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dimming<span class="token operator">: </span><a href="-dimming-value/index.html">DimmingValue</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Color/brightness pair reference.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1815732974%2FClasslikes%2F1435263766" anchor-label="ColorTemperatureInfo" id="1815732974%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-color-temperature-info/index.html"><span>Color</span><wbr><span>Temperature</span><wbr><span><span>Info</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-temperature-info/index.html"><span>Color</span><wbr><span>Temperature</span><wbr><span><span>Info</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1815732974%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-temperature-info/index.html">ColorTemperatureInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>temperature<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>valid<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>range<span class="token operator">: </span><a href="-color-temperature-range/index.html">ColorTemperatureRange</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Information about the bulb's color temperature and capabilities.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-temperature-info/index.html">ColorTemperatureInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>temperature<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>valid<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>range<span class="token operator">: </span><a href="-color-temperature-range/index.html">ColorTemperatureRange</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Information about the bulb's color temperature and capabilities.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1009608053%2FClasslikes%2F1435263766" anchor-label="ColorTemperaturePalette" id="-1009608053%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-color-temperature-palette/index.html"><span>Color</span><wbr><span>Temperature</span><wbr><span><span>Palette</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-temperature-palette/index.html"><span>Color</span><wbr><span>Temperature</span><wbr><span><span>Palette</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1009608053%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-temperature-palette/index.html">ColorTemperaturePalette</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>colorTemperature<span class="token operator">: </span><a href="-color-temperature-value/index.html">ColorTemperatureValue</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dimming<span class="token operator">: </span><a href="-dimming-value/index.html">DimmingValue</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Color temperature/brightness pair reference.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-temperature-palette/index.html">ColorTemperaturePalette</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>colorTemperature<span class="token operator">: </span><a href="-color-temperature-value/index.html">ColorTemperatureValue</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dimming<span class="token operator">: </span><a href="-dimming-value/index.html">DimmingValue</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Color temperature/brightness pair reference.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1521660087%2FClasslikes%2F1435263766" anchor-label="ColorTemperatureRange" id="-1521660087%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-color-temperature-range/index.html"><span>Color</span><wbr><span>Temperature</span><wbr><span><span>Range</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-temperature-range/index.html"><span>Color</span><wbr><span>Temperature</span><wbr><span><span>Range</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1521660087%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-temperature-range/index.html">ColorTemperatureRange</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>coolest<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>warmest<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents a range of color temperatures.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-temperature-range/index.html">ColorTemperatureRange</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>coolest<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>warmest<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents a range of color temperatures.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-389228139%2FClasslikes%2F1435263766" anchor-label="ColorTemperatureValue" id="-389228139%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-color-temperature-value/index.html"><span>Color</span><wbr><span>Temperature</span><wbr><span><span>Value</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-temperature-value/index.html"><span>Color</span><wbr><span>Temperature</span><wbr><span><span>Value</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-389228139%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-temperature-value/index.html">ColorTemperatureValue</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>temperature<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Describes the current color temperature of a light.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-temperature-value/index.html">ColorTemperatureValue</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>temperature<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Describes the current color temperature of a light.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1060795553%2FClasslikes%2F1435263766" anchor-label="ColorValue" id="-1060795553%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-color-value/index.html"><span>Color</span><wbr><span><span>Value</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-value/index.html"><span>Color</span><wbr><span><span>Value</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1060795553%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-value/index.html">ColorValue</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>color<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath/Color///PointingToDeclaration/">Color</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Information about a light's color.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-color-value/index.html">ColorValue</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>color<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath/Color///PointingToDeclaration/">Color</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Information about a light's color.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-970587222%2FClasslikes%2F1435263766" anchor-label="DimmingInfo" id="-970587222%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-dimming-info/index.html"><span>Dimming</span><wbr><span><span>Info</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-dimming-info/index.html"><span>Dimming</span><wbr><span><span>Info</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-970587222%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-dimming-info/index.html">DimmingInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>brightness<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>minimum<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Info about a light's dimming status and capabilities.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-dimming-info/index.html">DimmingInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>brightness<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>minimum<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Info about a light's dimming status and capabilities.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-865808295%2FClasslikes%2F1435263766" anchor-label="DimmingValue" id="-865808295%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-dimming-value/index.html"><span>Dimming</span><wbr><span><span>Value</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-dimming-value/index.html"><span>Dimming</span><wbr><span><span>Value</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-865808295%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-dimming-value/index.html">DimmingValue</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>brightness<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Info about a light's dimming status.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-dimming-value/index.html">DimmingValue</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>brightness<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Info about a light's dimming status.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1992250119%2FClasslikes%2F1435263766" anchor-label="DynamicsStatus" id="1992250119%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-dynamics-status/index.html"><span>Dynamics</span><wbr><span><span>Status</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-dynamics-status/index.html"><span>Dynamics</span><wbr><span><span>Status</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1992250119%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-dynamics-status/index.html">DynamicsStatus</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Wraps potential values for <a href="-light-dynamics/index.html">LightDynamics</a> state.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-dynamics-status/index.html">DynamicsStatus</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Wraps potential values for <a href="-light-dynamics/index.html">LightDynamics</a> state.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1295748867%2FClasslikes%2F1435263766" anchor-label="Gamut" id="1295748867%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-gamut/index.html"><span><span>Gamut</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gamut/index.html"><span><span>Gamut</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1295748867%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gamut/index.html">Gamut</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>red<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath.model/xyY///PointingToDeclaration/">xyY</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>green<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath.model/xyY///PointingToDeclaration/">xyY</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>blue<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath.model/xyY///PointingToDeclaration/">xyY</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">RGB Chromaticity values defining a color space gamut</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gamut/index.html">Gamut</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>red<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath.model/xyY///PointingToDeclaration/">xyY</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>green<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath.model/xyY///PointingToDeclaration/">xyY</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>blue<span class="token operator">: </span><span data-unresolved-link="com.github.ajalt.colormath.model/xyY///PointingToDeclaration/">xyY</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">RGB Chromaticity values defining a color space gamut</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1935184919%2FClasslikes%2F1435263766" anchor-label="GamutType" id="-1935184919%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-gamut-type/index.html"><span>Gamut</span><wbr><span><span>Type</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gamut-type/index.html"><span>Gamut</span><wbr><span><span>Type</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1935184919%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-gamut-type/index.html">GamutType</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Simple Gamut Type definition used by Hue products.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-gamut-type/index.html">GamutType</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Simple Gamut Type definition used by Hue products.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-621216451%2FClasslikes%2F1435263766" anchor-label="Gradient" id="-621216451%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-gradient/index.html"><span><span>Gradient</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gradient/index.html"><span><span>Gradient</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-621216451%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gradient/index.html">Gradient</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>points<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-gradient-point/index.html">GradientPoint</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pointsCapable<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Basic feature containing gradient properties.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gradient/index.html">Gradient</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>points<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-gradient-point/index.html">GradientPoint</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pointsCapable<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Basic feature containing gradient properties.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-871834918%2FClasslikes%2F1435263766" anchor-label="GradientMode" id="-871834918%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-gradient-mode/index.html"><span>Gradient</span><wbr><span><span>Mode</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gradient-mode/index.html"><span>Gradient</span><wbr><span><span>Mode</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-871834918%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-gradient-mode/index.html">GradientMode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Mode in which gradient points are currently being deployed.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-gradient-mode/index.html">GradientMode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Mode in which gradient points are currently being deployed.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1812647733%2FClasslikes%2F1435263766" anchor-label="GradientPoint" id="1812647733%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-gradient-point/index.html"><span>Gradient</span><wbr><span><span>Point</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gradient-point/index.html"><span>Gradient</span><wbr><span><span>Point</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1812647733%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gradient-point/index.html">GradientPoint</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>colorValue<span class="token operator">: </span><a href="-color-value/index.html">ColorValue</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Contains information on a single gradient point.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gradient-point/index.html">GradientPoint</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>colorValue<span class="token operator">: </span><a href="-color-value/index.html">ColorValue</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Contains information on a single gradient point.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1973879412%2FClasslikes%2F1435263766" anchor-label="GradientValue" id="1973879412%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-gradient-value/index.html"><span>Gradient</span><wbr><span><span>Value</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gradient-value/index.html"><span>Gradient</span><wbr><span><span>Value</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1973879412%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gradient-value/index.html">GradientValue</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>points<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-gradient-point/index.html">GradientPoint</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>mode<span class="token operator">: </span><a href="-gradient-mode/index.html">GradientMode</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Basic feature containing gradient properties.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gradient-value/index.html">GradientValue</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>points<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-gradient-point/index.html">GradientPoint</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>mode<span class="token operator">: </span><a href="-gradient-mode/index.html">GradientMode</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Basic feature containing gradient properties.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="219547423%2FClasslikes%2F1435263766" anchor-label="Light" id="219547423%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light/index.html"><span><span>Light</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light/index.html"><span><span>Light</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="219547423%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-light/index.html">Light</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>id<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-resource-id/index.html">ResourceId</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>owner<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-resource-reference/index.html">ResourceReference</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>powerInfo<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-power-info/index.html">PowerInfo</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>mode<span class="token operator">: </span><a href="-light-mode/index.html">LightMode</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dimmingInfo<span class="token operator">: </span><a href="-dimming-info/index.html">DimmingInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>colorTemperatureInfo<span class="token operator">: </span><a href="-color-temperature-info/index.html">ColorTemperatureInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>colorInfo<span class="token operator">: </span><a href="-color-info/index.html">ColorInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>v1Id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dynamics<span class="token operator">: </span><a href="-light-dynamics/index.html">LightDynamics</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>alertInfo<span class="token operator">: </span><a href="-alert-info/index.html">AlertInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gradient<span class="token operator">: </span><a href="-gradient/index.html">Gradient</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>effects<span class="token operator">: </span><a href="-lighting-effect-info/index.html">LightingEffectInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>timedEffects<span class="token operator">: </span><a href="-timed-lighting-effect-info/index.html">TimedLightingEffectInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>signaling<span class="token operator">: </span><a href="-light-signaling/index.html">LightSignaling</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>powerup<span class="token operator">: </span><a href="-light-powerup/index.html">LightPowerup</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">State and capabilities of a light resource.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-light/index.html">Light</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>id<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-resource-id/index.html">ResourceId</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>owner<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-resource-reference/index.html">ResourceReference</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>powerInfo<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-power-info/index.html">PowerInfo</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>mode<span class="token operator">: </span><a href="-light-mode/index.html">LightMode</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dimmingInfo<span class="token operator">: </span><a href="-dimming-info/index.html">DimmingInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>colorTemperatureInfo<span class="token operator">: </span><a href="-color-temperature-info/index.html">ColorTemperatureInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>colorInfo<span class="token operator">: </span><a href="-color-info/index.html">ColorInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>v1Id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dynamics<span class="token operator">: </span><a href="-light-dynamics/index.html">LightDynamics</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>alertInfo<span class="token operator">: </span><a href="-alert-info/index.html">AlertInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gradient<span class="token operator">: </span><a href="-gradient/index.html">Gradient</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>effects<span class="token operator">: </span><a href="-lighting-effect-info/index.html">LightingEffectInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>timedEffects<span class="token operator">: </span><a href="-timed-lighting-effect-info/index.html">TimedLightingEffectInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>signaling<span class="token operator">: </span><a href="-light-signaling/index.html">LightSignaling</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>powerup<span class="token operator">: </span><a href="-light-powerup/index.html">LightPowerup</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">State and capabilities of a light resource.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-78737557%2FClasslikes%2F1435263766" anchor-label="LightDynamics" id="-78737557%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-dynamics/index.html"><span>Light</span><wbr><span><span>Dynamics</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-dynamics/index.html"><span>Light</span><wbr><span><span>Dynamics</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-78737557%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-light-dynamics/index.html">LightDynamics</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="-dynamics-status/index.html">DynamicsStatus</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>statusValues<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-dynamics-status/index.html">DynamicsStatus</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>speed<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>speedValid<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Dynamic Lighting Effects information</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-light-dynamics/index.html">LightDynamics</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="-dynamics-status/index.html">DynamicsStatus</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>statusValues<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-dynamics-status/index.html">DynamicsStatus</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>speed<span class="token operator">: </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>speedValid<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Dynamic Lighting Effects information</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1740140530%2FClasslikes%2F1435263766" anchor-label="LightEffect" id="-1740140530%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-effect/index.html"><span>Light</span><wbr><span><span>Effect</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-effect/index.html"><span>Light</span><wbr><span><span>Effect</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1740140530%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-light-effect/index.html">LightEffect</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Static effect applied to a light.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-light-effect/index.html">LightEffect</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Static effect applied to a light.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-380431422%2FClasslikes%2F1435263766" anchor-label="LightingEffectInfo" id="-380431422%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-lighting-effect-info/index.html"><span>Lighting</span><wbr><span>Effect</span><wbr><span><span>Info</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-lighting-effect-info/index.html"><span>Lighting</span><wbr><span>Effect</span><wbr><span><span>Info</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-380431422%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-lighting-effect-info/index.html">LightingEffectInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="-light-effect/index.html">LightEffect</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>values<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-light-effect/index.html">LightEffect</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Basic feature containing effect properties.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-lighting-effect-info/index.html">LightingEffectInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="-light-effect/index.html">LightEffect</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>values<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-light-effect/index.html">LightEffect</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Basic feature containing effect properties.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="854205372%2FClasslikes%2F1435263766" anchor-label="LightMode" id="854205372%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-mode/index.html"><span>Light</span><wbr><span><span>Mode</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-mode/index.html"><span>Light</span><wbr><span><span>Mode</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="854205372%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-light-mode/index.html">LightMode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Wrap's a light mode flag/values</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-light-mode/index.html">LightMode</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Wrap's a light mode flag/values</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1569874755%2FClasslikes%2F1435263766" anchor-label="LightPowerup" id="1569874755%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-powerup/index.html"><span>Light</span><wbr><span><span>Powerup</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-powerup/index.html"><span>Light</span><wbr><span><span>Powerup</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1569874755%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../lights/inkapplications.shade.lights.structures/-light-powerup/-serializer/index.html">LightPowerup.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-light-powerup/index.html">LightPowerup</a></div><div class="brief "><p class="paragraph">Properties to configure powerup behaviour of a lightsource.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../lights/inkapplications.shade.lights.structures/-light-powerup/-serializer/index.html">LightPowerup.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-light-powerup/index.html">LightPowerup</a></div><div class="brief "><p class="paragraph">Properties to configure powerup behaviour of a lightsource.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-565906729%2FClasslikes%2F1435263766" anchor-label="LightSignal" id="-565906729%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-signal/index.html"><span>Light</span><wbr><span><span>Signal</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-signal/index.html"><span>Light</span><wbr><span><span>Signal</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-565906729%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-light-signal/index.html">LightSignal</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Indicates which signal is currently active for a light signal.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-light-signal/index.html">LightSignal</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Indicates which signal is currently active for a light signal.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1535597097%2FClasslikes%2F1435263766" anchor-label="LightSignaling" id="1535597097%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-signaling/index.html"><span>Light</span><wbr><span><span>Signaling</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-signaling/index.html"><span>Light</span><wbr><span><span>Signaling</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1535597097%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-light-signaling/index.html">LightSignaling</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="-light-signal-status/index.html">LightSignalStatus</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Signaling properties for a light.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-light-signaling/index.html">LightSignaling</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="-light-signal-status/index.html">LightSignalStatus</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Signaling properties for a light.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="780860037%2FClasslikes%2F1435263766" anchor-label="LightSignalStatus" id="780860037%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-light-signal-status/index.html"><span>Light</span><wbr><span>Signal</span><wbr><span><span>Status</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-light-signal-status/index.html"><span>Light</span><wbr><span>Signal</span><wbr><span><span>Status</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="780860037%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-light-signal-status/index.html">LightSignalStatus</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>signal<span class="token operator">: </span><a href="-light-signal/index.html">LightSignal</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>estimatedEnd<span class="token operator">: </span><span data-unresolved-link="kotlinx.datetime/Instant///PointingToDeclaration/">Instant</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Status of active light signal.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-light-signal-status/index.html">LightSignalStatus</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>signal<span class="token operator">: </span><a href="-light-signal/index.html">LightSignal</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>estimatedEnd<span class="token operator">: </span><span data-unresolved-link="kotlinx.datetime/Instant///PointingToDeclaration/">Instant</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Status of active light signal.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-843321401%2FClasslikes%2F1435263766" anchor-label="PowerupColorState" id="-843321401%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-powerup-color-state/index.html"><span>Powerup</span><wbr><span>Color</span><wbr><span><span>State</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-powerup-color-state/index.html"><span>Powerup</span><wbr><span>Color</span><wbr><span><span>State</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-843321401%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../lights/inkapplications.shade.lights.structures/-powerup-color-state/-serializer/index.html">PowerupColorState.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-powerup-color-state/index.html">PowerupColorState</a></div><div class="brief "><p class="paragraph">Color state properties for powerup.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../lights/inkapplications.shade.lights.structures/-powerup-color-state/-serializer/index.html">PowerupColorState.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-powerup-color-state/index.html">PowerupColorState</a></div><div class="brief "><p class="paragraph">Color state properties for powerup.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="770994881%2FClasslikes%2F1435263766" anchor-label="PowerupDimmingState" id="770994881%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-powerup-dimming-state/index.html"><span>Powerup</span><wbr><span>Dimming</span><wbr><span><span>State</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-powerup-dimming-state/index.html"><span>Powerup</span><wbr><span>Dimming</span><wbr><span><span>State</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="770994881%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../lights/inkapplications.shade.lights.structures/-powerup-dimming-state/-serializer/index.html">PowerupDimmingState.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-powerup-dimming-state/index.html">PowerupDimmingState</a></div><div class="brief "><p class="paragraph">Dimming/Brightness state to be activated on powerup.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../lights/inkapplications.shade.lights.structures/-powerup-dimming-state/-serializer/index.html">PowerupDimmingState.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-powerup-dimming-state/index.html">PowerupDimmingState</a></div><div class="brief "><p class="paragraph">Dimming/Brightness state to be activated on powerup.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="488653289%2FClasslikes%2F1435263766" anchor-label="PowerupPowerState" id="488653289%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-powerup-power-state/index.html"><span>Powerup</span><wbr><span>Power</span><wbr><span><span>State</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-powerup-power-state/index.html"><span>Powerup</span><wbr><span>Power</span><wbr><span><span>State</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="488653289%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../lights/inkapplications.shade.lights.structures/-powerup-power-state/-serializer/index.html">PowerupPowerState.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-powerup-power-state/index.html">PowerupPowerState</a></div><div class="brief "><p class="paragraph">Power state to restore on light powerup.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../lights/inkapplications.shade.lights.structures/-powerup-power-state/-serializer/index.html">PowerupPowerState.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-powerup-power-state/index.html">PowerupPowerState</a></div><div class="brief "><p class="paragraph">Power state to restore on light powerup.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1315195665%2FClasslikes%2F1435263766" anchor-label="StandardTemperatures" id="1315195665%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-standard-temperatures/index.html"><span>Standard</span><wbr><span><span>Temperatures</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-standard-temperatures/index.html"><span>Standard</span><wbr><span><span>Temperatures</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1315195665%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-standard-temperatures/index.html">StandardTemperatures</a></div><div class="brief "><p class="paragraph">Commonly used reference temperatures.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-standard-temperatures/index.html">StandardTemperatures</a></div><div class="brief "><p class="paragraph">Commonly used reference temperatures.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1024882211%2FClasslikes%2F1435263766" anchor-label="TimedLightEffect" id="-1024882211%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-timed-light-effect/index.html"><span>Timed</span><wbr><span>Light</span><wbr><span><span>Effect</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-timed-light-effect/index.html"><span>Timed</span><wbr><span>Light</span><wbr><span><span>Effect</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1024882211%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-timed-light-effect/index.html">TimedLightEffect</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Timed Effect applied to a light</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html"><span class="token annotation builtin">JvmInline</span></a></div><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">value </span><span class="token keyword">class </span><a href="-timed-light-effect/index.html">TimedLightEffect</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Timed Effect applied to a light</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-1152761069%2FClasslikes%2F1435263766" anchor-label="TimedLightingEffectInfo" id="-1152761069%2FClasslikes%2F1435263766" data-filterable-set=":lights:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-timed-lighting-effect-info/index.html"><span>Timed</span><wbr><span>Lighting</span><wbr><span>Effect</span><wbr><span><span>Info</span></span></a></div>
+          <div class="table-row" data-filterable-current=":lights:dokkaHtmlPartial/commonMain" data-filterable-set=":lights:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-timed-lighting-effect-info/index.html"><span>Timed</span><wbr><span>Lighting</span><wbr><span>Effect</span><wbr><span><span>Info</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1152761069%2FClasslikes%2F1435263766"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-timed-lighting-effect-info/index.html">TimedLightingEffectInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="-timed-light-effect/index.html">TimedLightEffect</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>values<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-timed-light-effect/index.html">TimedLightEffect</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Basic feature containing timed effect properties.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lights:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-timed-lighting-effect-info/index.html">TimedLightingEffectInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="-timed-light-effect/index.html">TimedLightEffect</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>values<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-timed-light-effect/index.html">TimedLightEffect</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Basic feature containing timed effect properties.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -555,10 +569,11 @@
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 

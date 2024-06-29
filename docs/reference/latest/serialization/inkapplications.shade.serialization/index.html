@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>inkapplications.shade.serialization</title>
-<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
@@ -16,12 +18,13 @@
         }
     }
     </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../styles/style.css" rel="Stylesheet">
-<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
@@ -29,178 +32,189 @@
 <script type="text/javascript" src="../../scripts/prism.js" async></script>
 <script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../index.html">
-<span>shade</span>            </a>    </div>
-    <div>latest
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../index.html">
+                            shade
+                    </a>            </div>
+            <div class="library-version">latest
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":serialization:dokkaHtmlPartial/commonMain">common</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="serialization::inkapplications.shade.serialization////PointingToDeclaration//-2059110987">
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="serialization::inkapplications.shade.serialization////PointingToDeclaration//-2059110987">
   <div class="breadcrumbs"><a href="../index.html">serialization</a><span class="delimiter">/</span><span class="current">inkapplications.shade.serialization</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Types</h2>
-      <div class="table" data-togglable="Types"><a data-name="-1585712395%2FClasslikes%2F-2059110987" anchor-label="DelegateSerializer" id="-1585712395%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-delegate-serializer/index.html"><span>Delegate</span><wbr><span><span>Serializer</span></span></a></div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-1585712395%2FClasslikes%2F-2059110987" anchor-label="DelegateSerializer" id="-1585712395%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-delegate-serializer/index.html"><span>Delegate</span><wbr><span><span>Serializer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1585712395%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-delegate-serializer/index.html">SERIALIZED</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="-delegate-serializer/index.html">DESERIALIZED</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">delegate<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-delegate-serializer/index.html">SERIALIZED</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-delegate-serializer/index.html">DESERIALIZED</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Delegates kotlin serialization to a backing type for simpler encoding.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><a href="-delegate-serializer/index.html">SERIALIZED</a><span class="token punctuation">, </span><a href="-delegate-serializer/index.html">DESERIALIZED</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">delegate<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="-delegate-serializer/index.html">SERIALIZED</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="-delegate-serializer/index.html">DESERIALIZED</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Delegates kotlin serialization to a backing type for simpler encoding.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="172220547%2FClasslikes%2F-2059110987" anchor-label="ExplicitMiredSerializer" id="172220547%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-explicit-mired-serializer/index.html"><span>Explicit</span><wbr><span>Mired</span><wbr><span><span>Serializer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-explicit-mired-serializer/index.html"><span>Explicit</span><wbr><span>Mired</span><wbr><span><span>Serializer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="172220547%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-explicit-mired-serializer/index.html">ExplicitMiredSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="inkapplications.spondee.measure/Mireds///PointingToDeclaration/">Mireds</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Convert a mired color temperature to/from an int value</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-explicit-mired-serializer/index.html">ExplicitMiredSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span data-unresolved-link="inkapplications.spondee.measure/Mireds///PointingToDeclaration/">Mireds</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Convert a mired color temperature to/from an int value</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-409625453%2FClasslikes%2F-2059110987" anchor-label="FractionalPercentageSerializer" id="-409625453%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-fractional-percentage-serializer/index.html"><span>Fractional</span><wbr><span>Percentage</span><wbr><span><span>Serializer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-fractional-percentage-serializer/index.html"><span>Fractional</span><wbr><span>Percentage</span><wbr><span><span>Serializer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-409625453%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-fractional-percentage-serializer/index.html">FractionalPercentageSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serialize a percentage as a fraction of of a decimal (0.0-1.0)</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-fractional-percentage-serializer/index.html">FractionalPercentageSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serialize a percentage as a fraction of of a decimal (0.0-1.0)</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="-510543908%2FClasslikes%2F-2059110987" anchor-label="HueError" id="-510543908%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-error/index.html"><span>Hue</span><wbr><span><span>Error</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-error/index.html"><span>Hue</span><wbr><span><span>Error</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-510543908%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-hue-error/index.html">HueError</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>description<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Error from the hue API</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-hue-error/index.html">HueError</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>description<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Error from the hue API</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1080664445%2FClasslikes%2F-2059110987" anchor-label="HueResponse" id="1080664445%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-hue-response/index.html"><span>Hue</span><wbr><span><span>Response</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-hue-response/index.html"><span>Hue</span><wbr><span><span>Response</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1080664445%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-hue-response/index.html">HueResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-hue-response/index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Wrapper around responses from the Hue API</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../serialization/inkapplications.shade.serialization/-hue-response/-serializer/index.html">HueResponse.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-hue-response/index.html">HueResponse</a><span class="token operator">&lt;</span><a href="-hue-response/index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Wrapper around responses from the Hue API</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="163735727%2FClasslikes%2F-2059110987" anchor-label="MillisecondDurationSerializer" id="163735727%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-millisecond-duration-serializer/index.html"><span>Millisecond</span><wbr><span>Duration</span><wbr><span><span>Serializer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-millisecond-duration-serializer/index.html"><span>Millisecond</span><wbr><span>Duration</span><wbr><span><span>Serializer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="163735727%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-millisecond-duration-serializer/index.html">MillisecondDurationSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-duration/index.html">Duration</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serialize a Duration as a Long in milliseconds.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-millisecond-duration-serializer/index.html">MillisecondDurationSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-duration/index.html">Duration</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serialize a Duration as a Long in milliseconds.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1317842735%2FClasslikes%2F-2059110987" anchor-label="MiredSerializer" id="1317842735%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-mired-serializer/index.html"><span>Mired</span><wbr><span><span>Serializer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mired-serializer/index.html"><span>Mired</span><wbr><span><span>Serializer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1317842735%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-mired-serializer/index.html">MiredSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Convert standard ColorTemperatures to/from Mireds</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-mired-serializer/index.html">MiredSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span data-unresolved-link="inkapplications.spondee.measure/ColorTemperature///PointingToDeclaration/">ColorTemperature</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Convert standard ColorTemperatures to/from Mireds</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="989243873%2FClasslikes%2F-2059110987" anchor-label="V1HueError" id="989243873%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-v1-hue-error/index.html"><span>V1Hue</span><wbr><span><span>Error</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-v1-hue-error/index.html"><span>V1Hue</span><wbr><span><span>Error</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="989243873%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-v1-hue-error/index.html">V1HueError</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>type<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>address<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>description<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Errors returned by V1 Endpoints.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-v1-hue-error/index.html">V1HueError</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>type<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>address<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>description<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Errors returned by V1 Endpoints.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="713667928%2FClasslikes%2F-2059110987" anchor-label="V1HueResponse" id="713667928%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-v1-hue-response/index.html"><span>V1Hue</span><wbr><span><span>Response</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-v1-hue-response/index.html"><span>V1Hue</span><wbr><span><span>Response</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="713667928%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-v1-hue-response/index.html">V1HueResponse</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-v1-hue-response/index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Wrapper around responses from V1 endpoints in the Hue API</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="../../serialization/inkapplications.shade.serialization/-v1-hue-response/-serializer/index.html">V1HueResponse.Serializer::class</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-v1-hue-response/index.html">V1HueResponse</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-v1-hue-response/index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Wrapper around responses from V1 endpoints in the Hue API</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 <a data-name="1951883571%2FClasslikes%2F-2059110987" anchor-label="WholePercentageSerializer" id="1951883571%2FClasslikes%2F-2059110987" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain"></a>
-        <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="-whole-percentage-serializer/index.html"><span>Whole</span><wbr><span>Percentage</span><wbr><span><span>Serializer</span></span></a></div>
+          <div class="table-row" data-filterable-current=":serialization:dokkaHtmlPartial/commonMain" data-filterable-set=":serialization:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-whole-percentage-serializer/index.html"><span>Whole</span><wbr><span>Percentage</span><wbr><span><span>Serializer</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1951883571%2FClasslikes%2F-2059110987"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-whole-percentage-serializer/index.html">WholePercentageSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serialize a percentage value as an integer.</p></div></div></div>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":serialization:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-whole-percentage-serializer/index.html">WholePercentageSerializer</a> : <a href="-delegate-serializer/index.html">DelegateSerializer</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span><span data-unresolved-link="inkapplications.spondee.scalar/Percentage///PointingToDeclaration/">Percentage</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serialize a percentage value as an integer.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -210,10 +224,11 @@
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 
