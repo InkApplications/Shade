@@ -5,7 +5,7 @@ plugins {
 
 application {
     applicationName = "shade"
-    mainClassName = "inkapplications.shade.cli.MainKt"
+    mainClass.set("inkapplications.shade.cli.MainKt")
 }
 
 dependencies {
