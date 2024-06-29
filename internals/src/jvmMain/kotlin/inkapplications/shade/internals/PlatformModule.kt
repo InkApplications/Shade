@@ -8,10 +8,15 @@ import kimchi.logger.KimchiLogger
 import kotlinx.serialization.json.Json
 import okhttp3.Dns
 import okhttp3.OkHttpClient
+import okhttp3.internal.platform.Platform
 import okhttp3.tls.HandshakeCertificates
 import okhttp3.tls.decodeCertificatePem
 import java.net.InetAddress
+import java.security.SecureRandom
+import java.security.cert.X509Certificate
 import java.util.concurrent.TimeUnit
+import javax.net.ssl.TrustManager
+import javax.net.ssl.X509TrustManager
 
 actual class PlatformModule actual constructor(
     private val configurationContainer: HueConfigurationContainer,
@@ -42,11 +47,21 @@ actual class PlatformModule actual constructor(
     private fun OkHttpClient.Builder.insecure(strategy: SecurityStrategy.Insecure) {
         val certificates = HandshakeCertificates.Builder()
             .addInsecureHost(strategy.hostname)
-            .addPlatformTrustedCertificates()
             .build()
         hostnameVerifier { hostname, session -> hostname == strategy.hostname }
 
-        sslSocketFactory(certificates.sslSocketFactory(), certificates.trustManager)
+        val trustManager = object: X509TrustManager {
+            override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
+            override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
+            override fun getAcceptedIssuers(): Array<X509Certificate> {
+                return certificates.trustManager.acceptedIssuers
+            }
+        }
+        val socketFactory = Platform.get().newSSLContext().apply {
+            init(arrayOf(certificates.keyManager), arrayOf<TrustManager>(trustManager), SecureRandom())
+        }.socketFactory
+
+        sslSocketFactory(socketFactory, trustManager)
     }
 
     private fun OkHttpClient.Builder.withSecurity(strategy: SecurityStrategy.CustomCa) {
