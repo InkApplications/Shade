@@ -49,6 +49,7 @@ kotlin {
 
         val iosArm64Main by sourceSets.getting
         val iosX64Main by sourceSets.getting
+        val watchosArm32Main by sourceSets.getting
         val watchosArm64Main by sourceSets.getting
         val watchosX64Main by sourceSets.getting
         val tvosArm64Main by sourceSets.getting
@@ -58,6 +59,7 @@ kotlin {
             dependsOn(commonMain)
             iosArm64Main.dependsOn(this)
             iosX64Main.dependsOn(this)
+            watchosArm32Main.dependsOn(this)
             watchosArm64Main.dependsOn(this)
             watchosX64Main.dependsOn(this)
             tvosArm64Main.dependsOn(this)
