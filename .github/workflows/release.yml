@@ -7,7 +7,7 @@ env:
 jobs:
     tests:
         name: Test
-        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@1.0.3
+        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@1.1.0
     verify-docs:
         runs-on: ubuntu-latest
         steps:
@@ -27,9 +27,10 @@ jobs:
         name: Publish to Maven Central
         needs: [tests, verify-docs]
         secrets: inherit
-        uses: inkapplications/.github/.github/workflows/kmp-maven-publish.yml@1.0.3
+        uses: inkapplications/.github/.github/workflows/kmp-maven-publish.yml@1.1.0
         with:
             version: ${{ github.ref_name }}
+            draft-release: false
             publish-linux-arm64: false
             publish-android-native-arm32: false
             publish-android-native-arm64: false
@@ -55,6 +56,9 @@ jobs:
                 name: Prepare Archives
                 run: cp cli/build/distributions/shade-*.zip cli/build/distributions/shade.zip && cp cli/build/distributions/shade-*.tar cli/build/distributions/shade.tar
             -
+                name: Prepare Changelog Text
+                run: mkdir -p build && sed '1,/---/d' CHANGELOG.md | awk '/---/{exit}1' | sed '$d' > build/RELEASE.md
+            -
                 name: Create Release
                 id: create_release
                 uses: actions/create-release@v1.1.4
@@ -65,7 +69,7 @@ jobs:
                     release_name: ${{ github.ref_name }}
                     draft: true
                     prerelease: false
-                    body: "See CHANGELOG.md for details"
+                    body_path: build/RELEASE.md
             -
                 name: Upload Cli Tar
                 uses: actions/upload-release-asset@v1.0.2

@@ -1,4 +1,4 @@
 on: [pull_request]
 jobs:
     tests:
-        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@1.0.3
+        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@1.1.0
