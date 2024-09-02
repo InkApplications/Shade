@@ -20,13 +20,13 @@ jobs:
                 run: cp cli/build/distributions/shade-*.zip cli/build/distributions/shade.zip && cp cli/build/distributions/shade-*.tar cli/build/distributions/shade.tar
             -
                 name: Archive CLI Tar
-                uses: actions/upload-artifact@v4.3.6
+                uses: actions/upload-artifact@v4.4.0
                 with:
                     name: shade.tar
                     path: cli/build/distributions/shade.tar
             -
                 name: Archive CLI Zip
-                uses: actions/upload-artifact@v4.3.6
+                uses: actions/upload-artifact@v4.4.0
                 with:
                     name: shade.zip
                     path: cli/build/distributions/shade.zip
