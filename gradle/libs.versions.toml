@@ -1,5 +1,5 @@
 [versions]
-kotlin = "2.0.10"
+kotlin = "2.0.20"
 coroutines = "1.9.0"
 ktor = "2.3.12"
 okhttp = "4.12.0"
