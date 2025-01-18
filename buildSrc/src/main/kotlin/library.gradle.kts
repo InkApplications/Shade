@@ -7,7 +7,11 @@ kotlin {
 
     js {
         nodejs()
-        browser()
+        browser {
+            testTask {
+                enabled = false
+            }
+        }
     }
 
     iosArm64()

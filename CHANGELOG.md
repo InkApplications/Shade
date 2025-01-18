@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+2.2.1
+-----
+
+Dependency updates
+
+### Changed:
+
+ - Update Kotlin dependency to 2.1.0
+ - Update Ktor dependency to 3.0.3
+
 2.2.0
 -----
 
