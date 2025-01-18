@@ -33,7 +33,6 @@ public synthetic class inkapplications/shade/zones/parameters/ZoneCreateParamete
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/zones/parameters/ZoneCreateParameters;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/zones/parameters/ZoneCreateParameters$Companion {
@@ -64,7 +63,6 @@ public synthetic class inkapplications/shade/zones/parameters/ZoneUpdateParamete
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/zones/parameters/ZoneUpdateParameters;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/zones/parameters/ZoneUpdateParameters$Companion {
@@ -97,7 +95,6 @@ public synthetic class inkapplications/shade/zones/structures/Zone$$serializer :
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/zones/structures/Zone;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/zones/structures/Zone$Companion {

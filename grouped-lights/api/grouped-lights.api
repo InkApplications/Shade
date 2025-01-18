@@ -38,7 +38,6 @@ public synthetic class inkapplications/shade/groupedlights/events/GroupedLightEv
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/groupedlights/events/GroupedLightEvent;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/groupedlights/events/GroupedLightEvent$Companion {
@@ -81,7 +80,6 @@ public synthetic class inkapplications/shade/groupedlights/parameters/GroupedLig
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/groupedlights/parameters/GroupedLightUpdateParameters$Companion {
@@ -108,7 +106,6 @@ public synthetic class inkapplications/shade/groupedlights/structures/GroupDimmi
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/groupedlights/structures/GroupDimmingInfo;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/groupedlights/structures/GroupDimmingInfo$Companion {
@@ -144,7 +141,6 @@ public synthetic class inkapplications/shade/groupedlights/structures/GroupedLig
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/groupedlights/structures/GroupedLight;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/groupedlights/structures/GroupedLight$Companion {
