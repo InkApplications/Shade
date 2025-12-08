@@ -13,7 +13,7 @@ jobs:
         steps:
             -
                 name: Checkout
-                uses: actions/checkout@v5.0.0
+                uses: actions/checkout@v6.0.1
             -
                 name: Docs Requirements
                 run: >
@@ -48,7 +48,7 @@ jobs:
         steps:
             -
                 name: Checkout
-                uses: actions/checkout@v5.0.0
+                uses: actions/checkout@v6.0.1
             -
                 name: Build Archives
                 run: ./gradlew cli:assembleDist -Pversion=${{ github.ref_name }}
