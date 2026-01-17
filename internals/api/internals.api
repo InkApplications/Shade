@@ -18,7 +18,9 @@ public final class inkapplications/shade/internals/DummyConfigurationContainer :
 
 public abstract interface class inkapplications/shade/internals/HueHttpClient {
 	public abstract fun sendRequest (Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun sendRequest$default (Linkapplications/shade/internals/HueHttpClient;Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 	public abstract fun sendV1Request (Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun sendV1Request$default (Linkapplications/shade/internals/HueHttpClient;Ljava/lang/String;[Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;Lkotlinx/serialization/KSerializer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 }
 
 public final class inkapplications/shade/internals/HueHttpClient$DefaultImpls {

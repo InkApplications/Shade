@@ -31,7 +31,7 @@ public final class inkapplications/shade/serialization/HueError {
 	public fun toString ()Ljava/lang/String;
 }
 
-public synthetic class inkapplications/shade/serialization/HueError$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+public final synthetic class inkapplications/shade/serialization/HueError$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Linkapplications/shade/serialization/HueError$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/serialization/HueError;
@@ -39,6 +39,7 @@ public synthetic class inkapplications/shade/serialization/HueError$$serializer 
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/serialization/HueError;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/serialization/HueError$Companion {
@@ -105,7 +106,7 @@ public final class inkapplications/shade/serialization/V1HueError {
 	public fun toString ()Ljava/lang/String;
 }
 
-public synthetic class inkapplications/shade/serialization/V1HueError$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+public final synthetic class inkapplications/shade/serialization/V1HueError$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Linkapplications/shade/serialization/V1HueError$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/serialization/V1HueError;
@@ -113,6 +114,7 @@ public synthetic class inkapplications/shade/serialization/V1HueError$$serialize
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/serialization/V1HueError;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/serialization/V1HueError$Companion {
@@ -170,7 +172,7 @@ public final class inkapplications/shade/serialization/V1HueResponse$Error : ink
 	public fun toString ()Ljava/lang/String;
 }
 
-public synthetic class inkapplications/shade/serialization/V1HueResponse$Error$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+public final synthetic class inkapplications/shade/serialization/V1HueResponse$Error$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Linkapplications/shade/serialization/V1HueResponse$Error$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/serialization/V1HueResponse$Error;
@@ -178,6 +180,7 @@ public synthetic class inkapplications/shade/serialization/V1HueResponse$Error$$
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/serialization/V1HueResponse$Error;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/serialization/V1HueResponse$Error$Companion {
@@ -196,7 +199,7 @@ public final class inkapplications/shade/serialization/V1HueResponse$Success : i
 	public fun toString ()Ljava/lang/String;
 }
 
-public synthetic class inkapplications/shade/serialization/V1HueResponse$Success$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+public final synthetic class inkapplications/shade/serialization/V1HueResponse$Success$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public fun <init> (Lkotlinx/serialization/KSerializer;)V
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/serialization/V1HueResponse$Success;

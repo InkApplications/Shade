@@ -9,6 +9,11 @@ Change Log
  - Native targets now use Curl based Http client, which should support HTTPS
    connections now.
 
+### Changed:
+
+ - Update Ktor to 3.3.3
+ - Update Kotlin to 2.3.0
+
 2.2.1
 -----
 
