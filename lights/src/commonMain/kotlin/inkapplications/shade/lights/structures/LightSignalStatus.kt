@@ -1,9 +1,8 @@
 package inkapplications.shade.lights.structures
 
-import kotlinx.datetime.Instant
-import kotlinx.datetime.serializers.InstantIso8601Serializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlin.time.Instant
 
 /**
  * Status of active light signal.
@@ -19,6 +18,5 @@ data class LightSignalStatus(
      * Value is not set if there is no_signal
      */
     @SerialName("estimated_end")
-    @Serializable(with = InstantIso8601Serializer::class)
     val estimatedEnd: Instant? = null,
 )

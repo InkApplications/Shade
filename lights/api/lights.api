@@ -1290,14 +1290,14 @@ public final class inkapplications/shade/lights/structures/LightSignal$Companion
 
 public final class inkapplications/shade/lights/structures/LightSignalStatus {
 	public static final field Companion Linkapplications/shade/lights/structures/LightSignalStatus$Companion;
-	public synthetic fun <init> (Ljava/lang/String;Lkotlinx/datetime/Instant;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public synthetic fun <init> (Ljava/lang/String;Lkotlinx/datetime/Instant;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/time/Instant;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/time/Instant;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1-G1Yi2OQ ()Ljava/lang/String;
-	public final fun component2 ()Lkotlinx/datetime/Instant;
-	public final fun copy-w33Ff0w (Ljava/lang/String;Lkotlinx/datetime/Instant;)Linkapplications/shade/lights/structures/LightSignalStatus;
-	public static synthetic fun copy-w33Ff0w$default (Linkapplications/shade/lights/structures/LightSignalStatus;Ljava/lang/String;Lkotlinx/datetime/Instant;ILjava/lang/Object;)Linkapplications/shade/lights/structures/LightSignalStatus;
+	public final fun component2 ()Lkotlin/time/Instant;
+	public final fun copy-w33Ff0w (Ljava/lang/String;Lkotlin/time/Instant;)Linkapplications/shade/lights/structures/LightSignalStatus;
+	public static synthetic fun copy-w33Ff0w$default (Linkapplications/shade/lights/structures/LightSignalStatus;Ljava/lang/String;Lkotlin/time/Instant;ILjava/lang/Object;)Linkapplications/shade/lights/structures/LightSignalStatus;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getEstimatedEnd ()Lkotlinx/datetime/Instant;
+	public final fun getEstimatedEnd ()Lkotlin/time/Instant;
 	public final fun getSignal-G1Yi2OQ ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;

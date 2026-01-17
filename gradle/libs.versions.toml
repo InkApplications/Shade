@@ -22,11 +22,11 @@ version.ref = "kotlin"
 module = "org.jetbrains.kotlin:kotlin-serialization"
 
 [libraries.serialization-json]
-version = "1.8.0"
+version = "1.9.0"
 module = "org.jetbrains.kotlinx:kotlinx-serialization-json"
 
 [libraries.datetime]
-version = "0.6.1"
+version = "0.7.1"
 module = "org.jetbrains.kotlinx:kotlinx-datetime"
 
 [libraries.test-junit]

@@ -14,6 +14,8 @@ Change Log
  - Update Ktor to 3.3.3
  - Update Kotlin to 2.3.0
  - Update OkHttp to 5.3.2
+ - Update kotlinx.datetime to 0.7.1
+ - Update kotlinx.serialization to 1.9.0
 
 2.2.1
 -----
