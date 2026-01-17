@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+2.3.0
+-----
+
+### Fixed:
+
+ - Native targets now use Curl based Http client, which should support HTTPS
+   connections now.
+
 2.2.1
 -----
 
