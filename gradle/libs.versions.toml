@@ -46,7 +46,7 @@ version = "2.1.0"
 module = "org.jetbrains.dokka:dokka-gradle-plugin"
 
 [libraries.kotlinx-binary-compatibility]
-version = "0.17.0"
+version = "0.18.1"
 module = "org.jetbrains.kotlinx:binary-compatibility-validator"
 
 [libraries.ktor-client-core]
