@@ -24,7 +24,7 @@ public final class inkapplications/shade/discover/structures/Bridge {
 	public fun toString ()Ljava/lang/String;
 }
 
-public synthetic class inkapplications/shade/discover/structures/Bridge$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+public final synthetic class inkapplications/shade/discover/structures/Bridge$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Linkapplications/shade/discover/structures/Bridge$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/discover/structures/Bridge;
@@ -32,6 +32,7 @@ public synthetic class inkapplications/shade/discover/structures/Bridge$$seriali
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/discover/structures/Bridge;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/discover/structures/Bridge$Companion {
@@ -53,7 +54,7 @@ public final class inkapplications/shade/discover/structures/BridgeId {
 	public final synthetic fun unbox-impl ()Ljava/lang/String;
 }
 
-public synthetic class inkapplications/shade/discover/structures/BridgeId$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+public final synthetic class inkapplications/shade/discover/structures/BridgeId$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Linkapplications/shade/discover/structures/BridgeId$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -61,6 +62,7 @@ public synthetic class inkapplications/shade/discover/structures/BridgeId$$seria
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
 	public final fun serialize-EDn_Yg4 (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/discover/structures/BridgeId$Companion {

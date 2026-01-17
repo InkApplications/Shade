@@ -24,7 +24,7 @@ public final class inkapplications/shade/resources/structures/Resource {
 	public fun toString ()Ljava/lang/String;
 }
 
-public synthetic class inkapplications/shade/resources/structures/Resource$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+public final synthetic class inkapplications/shade/resources/structures/Resource$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Linkapplications/shade/resources/structures/Resource$$serializer;
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/resources/structures/Resource;
@@ -32,6 +32,7 @@ public synthetic class inkapplications/shade/resources/structures/Resource$$seri
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/resources/structures/Resource;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
 public final class inkapplications/shade/resources/structures/Resource$Companion {

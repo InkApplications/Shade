@@ -5,6 +5,7 @@ public final class inkapplications/shade/auth/AuthModule {
 
 public abstract interface class inkapplications/shade/auth/BridgeAuth {
 	public abstract fun awaitToken-exY8QGI (Linkapplications/shade/auth/structures/AppId;IJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun awaitToken-exY8QGI$default (Linkapplications/shade/auth/BridgeAuth;Linkapplications/shade/auth/structures/AppId;IJLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 }
 
 public final class inkapplications/shade/auth/BridgeAuth$DefaultImpls {
