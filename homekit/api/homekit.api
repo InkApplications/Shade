@@ -1,0 +1,135 @@
+public abstract interface class inkapplications/shade/homekit/HomekitControls {
+	public abstract fun getHomekit-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun listHomekit (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun updateHomekit-bKh5c1I (Ljava/lang/String;Linkapplications/shade/homekit/parameters/HomekitUpdateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/homekit/ShadeHomekitModule {
+	public fun <init> (Linkapplications/shade/internals/InternalsModule;)V
+	public final fun getHomekit ()Linkapplications/shade/homekit/HomekitControls;
+}
+
+public final class inkapplications/shade/homekit/parameters/HomekitUpdateParameters {
+	public static final field Companion Linkapplications/shade/homekit/parameters/HomekitUpdateParameters$Companion;
+	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-135DQNc ()Ljava/lang/String;
+	public final fun copy-R0FzwdQ (Ljava/lang/String;)Linkapplications/shade/homekit/parameters/HomekitUpdateParameters;
+	public static synthetic fun copy-R0FzwdQ$default (Linkapplications/shade/homekit/parameters/HomekitUpdateParameters;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/homekit/parameters/HomekitUpdateParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAction-135DQNc ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/homekit/parameters/HomekitUpdateParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/homekit/parameters/HomekitUpdateParameters$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/homekit/parameters/HomekitUpdateParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/homekit/parameters/HomekitUpdateParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/homekit/parameters/HomekitUpdateParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/homekit/structures/Homekit {
+	public static final field Companion Linkapplications/shade/homekit/structures/Homekit$Companion;
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-XbiYvy0 ()Ljava/lang/String;
+	public final fun component2-1y3a6N0 ()Ljava/lang/String;
+	public final fun component3-iTYh7UM ()Ljava/lang/String;
+	public final fun copy-r9E5AgY (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Linkapplications/shade/homekit/structures/Homekit;
+	public static synthetic fun copy-r9E5AgY$default (Linkapplications/shade/homekit/structures/Homekit;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/homekit/structures/Homekit;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId-XbiYvy0 ()Ljava/lang/String;
+	public final fun getStatus-iTYh7UM ()Ljava/lang/String;
+	public final fun getType-1y3a6N0 ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/homekit/structures/Homekit$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/homekit/structures/Homekit$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/homekit/structures/Homekit;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/homekit/structures/Homekit;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/homekit/structures/Homekit$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/homekit/structures/HomekitAction {
+	public static final field Companion Linkapplications/shade/homekit/structures/HomekitAction$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/homekit/structures/HomekitAction;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/homekit/structures/HomekitAction$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/homekit/structures/HomekitAction$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize-_n2LV64 (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize-gK-Otuo (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/homekit/structures/HomekitAction$Companion {
+	public final fun getReset-_IGrqpU ()Ljava/lang/String;
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/homekit/structures/HomekitStatus {
+	public static final field Companion Linkapplications/shade/homekit/structures/HomekitStatus$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/homekit/structures/HomekitStatus;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/homekit/structures/HomekitStatus$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/homekit/structures/HomekitStatus$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize-5d-ibaU (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize-4oD0JvU (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/homekit/structures/HomekitStatus$Companion {
+	public final fun getPaired-iTYh7UM ()Ljava/lang/String;
+	public final fun getPairing-iTYh7UM ()Ljava/lang/String;
+	public final fun getUnpaired-iTYh7UM ()Ljava/lang/String;
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+

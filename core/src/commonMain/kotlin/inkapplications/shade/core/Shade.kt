@@ -5,6 +5,7 @@ import inkapplications.shade.devices.ShadeDevicesModule
 import inkapplications.shade.discover.DiscoverModule
 import inkapplications.shade.events.EventsModule
 import inkapplications.shade.groupedlights.ShadeGroupedLightsModule
+import inkapplications.shade.homekit.ShadeHomekitModule
 import inkapplications.shade.internals.InternalsModule
 import inkapplications.shade.lights.ShadeLightsModule
 import inkapplications.shade.resources.ShadeResourcesModule
@@ -57,4 +58,5 @@ class Shade(
     val groupedLights = ShadeGroupedLightsModule(internalsModule, eventsModule).groupedLights
     val resources = ShadeResourcesModule(internalsModule).resources
     val scenes = ShadeScenesModule(internalsModule).scenes
+    val homekit = ShadeHomekitModule(internalsModule).homekit
 }

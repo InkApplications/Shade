@@ -11,6 +11,7 @@ public final class inkapplications/shade/core/Shade {
 	public final fun getConfiguration ()Linkapplications/shade/structures/HueConfigurationContainer;
 	public final fun getDevices ()Linkapplications/shade/devices/DeviceControls;
 	public final fun getGroupedLights ()Linkapplications/shade/groupedlights/GroupedLightControls;
+	public final fun getHomekit ()Linkapplications/shade/homekit/HomekitControls;
 	public final fun getLights ()Linkapplications/shade/lights/LightControls;
 	public final fun getOnlineDiscovery ()Linkapplications/shade/discover/BridgeDiscovery;
 	public final fun getResources ()Linkapplications/shade/resources/ResourceControls;
