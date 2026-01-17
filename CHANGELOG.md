@@ -13,6 +13,7 @@ Change Log
 
  - Update Ktor to 3.3.3
  - Update Kotlin to 2.3.0
+ - Update OkHttp to 5.3.2
 
 2.2.1
 -----
