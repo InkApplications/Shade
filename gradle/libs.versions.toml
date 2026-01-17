@@ -42,7 +42,7 @@ version.ref = "kotlin"
 module = "org.jetbrains.kotlin:kotlin-test-annotations-common"
 
 [libraries.dokka]
-version = "2.0.0"
+version = "2.1.0"
 module = "org.jetbrains.dokka:dokka-gradle-plugin"
 
 [libraries.kotlinx-binary-compatibility]
