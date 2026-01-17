@@ -4,6 +4,10 @@ Change Log
 2.3.0
 -----
 
+## Added:
+
+ - HomeKit module for integrating with HomeKit ecosystem.
+
 ### Fixed:
 
  - Native targets now use Curl based Http client, which should support HTTPS
