@@ -1,22 +1,22 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>inkapplications.shade.internals</title>
-<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
 <script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
@@ -24,79 +24,77 @@
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../scripts/main.js" defer></script>
 <script type="text/javascript" src="../../scripts/prism.js" async></script>
-<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer></script>
-<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer></script></head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-<a class="library-name--link" href="../../index.html">
-                    shade
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../index.html" tabindex="1">
+                    Shade
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">latest
         </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":internals:dokkaHtmlPartial/commonMain">common</button>
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":internals:dokkaHtmlPartial/iosMain">ios</button>
-                <button class="platform-tag platform-selector js-like" data-active="" data-filter=":internals:dokkaHtmlPartial/jsMain">js</button>
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":internals:dokkaHtmlPartial/jvmMain">jvm</button>
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":internals:dokkaHtmlPartial/nativeMain">native</button>
-                <button class="platform-tag platform-selector native-like" data-active="" data-filter=":internals:dokkaHtmlPartial/windowsMain">windows</button>
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":internals/commonMain">common</button>
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":internals/iosMain">ios</button>
+                <button class="platform-tag platform-selector js-like" data-active="" aria-pressed="true" data-filter=":internals/jsMain">js</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":internals/jvmMain">jvm</button>
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":internals/nativeMain">native</button>
+                <button class="platform-tag platform-selector native-like" data-active="" aria-pressed="true" data-filter=":internals/windowsMain">windows</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals:dokkaHtmlPartial/commonMain" data-filter=":internals:dokkaHtmlPartial/commonMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/commonMain" data-filter=":internals/commonMain">
                                 <span class="checkbox--icon"></span>
                                 common
                             </label>
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals:dokkaHtmlPartial/iosMain" data-filter=":internals:dokkaHtmlPartial/iosMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/iosMain" data-filter=":internals/iosMain">
                                 <span class="checkbox--icon"></span>
                                 ios
                             </label>
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option js-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals:dokkaHtmlPartial/jsMain" data-filter=":internals:dokkaHtmlPartial/jsMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/jsMain" data-filter=":internals/jsMain">
                                 <span class="checkbox--icon"></span>
                                 js
                             </label>
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals:dokkaHtmlPartial/jvmMain" data-filter=":internals:dokkaHtmlPartial/jvmMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/jvmMain" data-filter=":internals/jvmMain">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals:dokkaHtmlPartial/nativeMain" data-filter=":internals:dokkaHtmlPartial/nativeMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/nativeMain" data-filter=":internals/nativeMain">
                                 <span class="checkbox--icon"></span>
                                 native
                             </label>
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option native-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals:dokkaHtmlPartial/windowsMain" data-filter=":internals:dokkaHtmlPartial/windowsMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/windowsMain" data-filter=":internals/windowsMain">
                                 <span class="checkbox--icon"></span>
                                 windows
                             </label>
@@ -104,33 +102,35 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
             </button>
             <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
-                                    shade
+                                    Shade
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
-<div class="main-content" data-page-type="package" id="content" pageids="internals::inkapplications.shade.internals////PointingToDeclaration//-1920298878">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageids="internals::inkapplications.shade.internals////PointingToDeclaration//2009501932">
   <div class="breadcrumbs"><a href="../index.html">internals</a><span class="delimiter">/</span><span class="current">inkapplications.shade.internals</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
@@ -139,110 +139,110 @@
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="TYPE">
-        <h2 class="">Types</h2>
-        <div class="table"><a data-name="1508388027%2FClasslikes%2F-154452337" anchor-label="CachedProperty" id="1508388027%2FClasslikes%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="1508388027%2FClasslikes%2F-833552241" anchor-label="CachedProperty" id="1508388027%2FClasslikes%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-cached-property/index.html"><span>Cached</span><wbr><span><span>Property</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1508388027%2FClasslikes%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1508388027%2FClasslikes%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-cached-property/index.html">CachedProperty</a><span class="token operator">&lt;</span><a href="-cached-property/index.html">KEY</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="-cached-property/index.html">VALUE</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>keyProperty<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="-cached-property/index.html">KEY</a><span class="token punctuation">, </span></span><span class="parameter ">lazy<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>factory<span class="token operator">: </span><span class="token punctuation">(</span><a href="-cached-property/index.html">KEY</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="-cached-property/index.html">VALUE</a></span></span><span class="token punctuation">)</span> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.properties/-read-only-property/index.html">ReadOnlyProperty</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token punctuation">, </span><a href="-cached-property/index.html">VALUE</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Caches a property value until a key changes.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-cached-property/index.html">CachedProperty</a><span class="token operator">&lt;</span><a href="-cached-property/index.html">KEY</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="-cached-property/index.html">VALUE</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>keyProperty<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="-cached-property/index.html">KEY</a><span class="token punctuation">, </span></span><span class="parameter ">lazy<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>factory<span class="token operator">: </span><span class="token punctuation">(</span><a href="-cached-property/index.html">KEY</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="-cached-property/index.html">VALUE</a></span></span><span class="token punctuation">)</span> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.properties/-read-only-property/index.html">ReadOnlyProperty</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token punctuation">, </span><a href="-cached-property/index.html">VALUE</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Caches a property value until a key changes.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1642041219%2FClasslikes%2F-154452337" anchor-label="DummyConfigurationContainer" id="-1642041219%2FClasslikes%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+<a data-name="-1642041219%2FClasslikes%2F-833552241" anchor-label="DummyConfigurationContainer" id="-1642041219%2FClasslikes%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-dummy-configuration-container/index.html"><span>Dummy</span><wbr><span>Configuration</span><wbr><span><span>Container</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1642041219%2FClasslikes%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1642041219%2FClasslikes%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-dummy-configuration-container/index.html">DummyConfigurationContainer</a> : <a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a></div><div class="brief "><p class="paragraph">An empty implementation of the configuration container.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-dummy-configuration-container/index.html">DummyConfigurationContainer</a> : <a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a></div><div class="brief "><p class="paragraph">An empty implementation of the configuration container.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-966254811%2FClasslikes%2F-154452337" anchor-label="HueHttpClient" id="-966254811%2FClasslikes%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+<a data-name="-966254811%2FClasslikes%2F-833552241" anchor-label="HueHttpClient" id="-966254811%2FClasslikes%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-hue-http-client/index.html"><span>Hue</span><wbr><span>Http</span><wbr><span><span>Client</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-966254811%2FClasslikes%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-966254811%2FClasslikes%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-hue-http-client/index.html">HueHttpClient</a></div><div class="brief "><p class="paragraph">Internal client used for making authenticated requests to the Hue bridge.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-hue-http-client/index.html">HueHttpClient</a></div><div class="brief "><p class="paragraph">Internal client used for making authenticated requests to the Hue bridge.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1022138943%2FClasslikes%2F-154452337" anchor-label="HueStubClient" id="1022138943%2FClasslikes%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+<a data-name="1022138943%2FClasslikes%2F-833552241" anchor-label="HueStubClient" id="1022138943%2FClasslikes%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-hue-stub-client/index.html"><span>Hue</span><wbr><span>Stub</span><wbr><span><span>Client</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1022138943%2FClasslikes%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1022138943%2FClasslikes%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-hue-stub-client/index.html">HueStubClient</a> : <a href="-hue-http-client/index.html">HueHttpClient</a></div><div class="brief "><p class="paragraph">A stubbed out client used for testing delegation</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-hue-stub-client/index.html">HueStubClient</a> : <a href="-hue-http-client/index.html">HueHttpClient</a></div><div class="brief "><p class="paragraph">A stubbed out client used for testing delegation</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1483093358%2FClasslikes%2F-154452337" anchor-label="InternalsModule" id="1483093358%2FClasslikes%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+<a data-name="1483093358%2FClasslikes%2F-833552241" anchor-label="InternalsModule" id="1483093358%2FClasslikes%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-internals-module/index.html"><span>Internals</span><wbr><span><span>Module</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1483093358%2FClasslikes%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1483093358%2FClasslikes%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-internals-module/index.html">InternalsModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>configurationContainer<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span><span class="token operator"> = </span>EmptyLogger</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Provides access to services in the internals module.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-internals-module/index.html">InternalsModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>configurationContainer<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span><span class="token operator"> = </span>EmptyLogger</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Provides access to services in the internals module.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="270352915%2FClasslikes%2F-1920298878" anchor-label="PlatformModule" id="270352915%2FClasslikes%2F-1920298878" data-filterable-set=":internals:dokkaHtmlPartial/commonMain,:internals:dokkaHtmlPartial/iosMain,:internals:dokkaHtmlPartial/jsMain,:internals:dokkaHtmlPartial/jvmMain,:internals:dokkaHtmlPartial/nativeMain,:internals:dokkaHtmlPartial/windowsMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain,:internals:dokkaHtmlPartial/iosMain,:internals:dokkaHtmlPartial/jsMain,:internals:dokkaHtmlPartial/jvmMain,:internals:dokkaHtmlPartial/nativeMain,:internals:dokkaHtmlPartial/windowsMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain,:internals:dokkaHtmlPartial/iosMain,:internals:dokkaHtmlPartial/jsMain,:internals:dokkaHtmlPartial/jvmMain,:internals:dokkaHtmlPartial/nativeMain,:internals:dokkaHtmlPartial/windowsMain">
+<a data-name="270352915%2FClasslikes%2F2009501932" anchor-label="PlatformModule" id="270352915%2FClasslikes%2F2009501932" data-filterable-set=":internals/commonMain,:internals/iosMain,:internals/jsMain,:internals/jvmMain,:internals/nativeMain,:internals/windowsMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain,:internals/iosMain,:internals/jsMain,:internals/jvmMain,:internals/nativeMain,:internals/windowsMain" data-filterable-set=":internals/commonMain,:internals/iosMain,:internals/jsMain,:internals/jvmMain,:internals/nativeMain,:internals/windowsMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-platform-module/index.html"><span>Platform</span><wbr><span><span>Module</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="270352915%2FClasslikes%2F-1920298878"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="270352915%2FClasslikes%2F2009501932"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":internals:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":internals:dokkaHtmlPartial/iosMain" data-filterable-set=":internals:dokkaHtmlPartial/iosMain" data-toggle=":internals:dokkaHtmlPartial/iosMain">ios</button><button class="platform-bookmark" data-filterable-current=":internals:dokkaHtmlPartial/jsMain" data-filterable-set=":internals:dokkaHtmlPartial/jsMain" data-toggle=":internals:dokkaHtmlPartial/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":internals:dokkaHtmlPartial/jvmMain" data-filterable-set=":internals:dokkaHtmlPartial/jvmMain" data-toggle=":internals:dokkaHtmlPartial/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":internals:dokkaHtmlPartial/nativeMain" data-filterable-set=":internals:dokkaHtmlPartial/nativeMain" data-toggle=":internals:dokkaHtmlPartial/nativeMain">native</button><button class="platform-bookmark" data-filterable-current=":internals:dokkaHtmlPartial/windowsMain" data-filterable-set=":internals:dokkaHtmlPartial/windowsMain" data-toggle=":internals:dokkaHtmlPartial/windowsMain">windows</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configurationContainer<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">json<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization.json/Json///PointingToDeclaration/">Json</span><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span><span class="token operator"> = </span>EmptyLogger</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Provides platform-specific dependencies for the SDK.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":internals:dokkaHtmlPartial/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configurationContainer<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">json<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization.json/Json///PointingToDeclaration/">Json</span><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span></span></span><span class="token punctuation">)</span></div></div><div class="content sourceset-dependent-content" data-togglable=":internals:dokkaHtmlPartial/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configurationContainer<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">json<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization.json/Json///PointingToDeclaration/">Json</span><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span></span></span><span class="token punctuation">)</span></div></div><div class="content sourceset-dependent-content" data-togglable=":internals:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configurationContainer<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">json<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization.json/Json///PointingToDeclaration/">Json</span><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span></span></span><span class="token punctuation">)</span></div></div><div class="content sourceset-dependent-content" data-togglable=":internals:dokkaHtmlPartial/nativeMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configurationContainer<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">json<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization.json/Json///PointingToDeclaration/">Json</span><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span></span></span><span class="token punctuation">)</span></div></div><div class="content sourceset-dependent-content" data-togglable=":internals:dokkaHtmlPartial/windowsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configurationContainer<span class="token operator">: </span><a href="../../structures/inkapplications.shade.structures/-hue-configuration-container/index.html">HueConfigurationContainer</a><span class="token punctuation">, </span></span><span class="parameter ">json<span class="token operator">: </span><span data-unresolved-link="kotlinx.serialization.json/Json///PointingToDeclaration/">Json</span><span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><span data-unresolved-link="kimchi.logger/KimchiLogger///PointingToDeclaration/">KimchiLogger</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain" data-active="" data-toggle=":internals/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":internals/iosMain" data-filterable-set=":internals/iosMain" data-toggle=":internals/iosMain">ios</button><button class="platform-bookmark" data-filterable-current=":internals/jsMain" data-filterable-set=":internals/jsMain" data-toggle=":internals/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":internals/jvmMain" data-filterable-set=":internals/jvmMain" data-toggle=":internals/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":internals/nativeMain" data-filterable-set=":internals/nativeMain" data-toggle=":internals/nativeMain">native</button><button class="platform-bookmark" data-filterable-current=":internals/windowsMain" data-filterable-set=":internals/windowsMain" data-toggle=":internals/windowsMain">windows</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a></div><div class="brief "><p class="paragraph">Provides platform-specific dependencies for the SDK.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":internals/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a></div></div><div class="content sourceset-dependent-content" data-togglable=":internals/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a></div></div><div class="content sourceset-dependent-content" data-togglable=":internals/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a></div></div><div class="content sourceset-dependent-content" data-togglable=":internals/nativeMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a></div></div><div class="content sourceset-dependent-content" data-togglable=":internals/windowsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-platform-module/index.html">PlatformModule</a></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="677400992%2FClasslikes%2F-154452337" anchor-label="SseClient" id="677400992%2FClasslikes%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+<a data-name="677400992%2FClasslikes%2F-833552241" anchor-label="SseClient" id="677400992%2FClasslikes%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-sse-client/index.html"><span>Sse</span><wbr><span><span>Client</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="677400992%2FClasslikes%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="677400992%2FClasslikes%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-sse-client/index.html">SseClient</a></div><div class="brief "><p class="paragraph">Internal client used for listening to event streams from the Hue bridge.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-sse-client/index.html">SseClient</a></div><div class="brief "><p class="paragraph">Internal client used for listening to event streams from the Hue bridge.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -250,63 +250,63 @@
         </div>
       </div>
       <div data-togglable="EXTENSION_FUNCTION">
-        <h2 class="">Functions</h2>
-        <div class="table"><a data-name="494414531%2FFunctions%2F-154452337" anchor-label="deleteData" id="494414531%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-1873568269%2FFunctions%2F-833552241" anchor-label="deleteData" id="-1873568269%2FFunctions%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="delete-data.html"><span>delete</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="494414531%2FFunctions%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1873568269%2FFunctions%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="delete-data.html">T</a><span class="token operator">&gt; </span><a href="-hue-http-client/index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="delete-data.html"><span class="token function">deleteData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="delete-data.html">T</a></div><div class="brief "><p class="paragraph">Make a DELETE request to the hue bridge.@author</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="delete-data.html">T</a><span class="token operator">&gt; </span><a href="-hue-http-client/index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="delete-data.html"><span class="token function">deleteData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="delete-data.html">T</a></div><div class="brief "><p class="paragraph">Make a DELETE request to the hue bridge.@author</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="19159960%2FFunctions%2F-154452337" anchor-label="getData" id="19159960%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+<a data-name="1042986888%2FFunctions%2F-833552241" anchor-label="getData" id="1042986888%2FFunctions%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="get-data.html"><span>get</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="19159960%2FFunctions%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1042986888%2FFunctions%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="get-data.html">T</a><span class="token operator">&gt; </span><a href="-hue-http-client/index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="get-data.html"><span class="token function">getData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="get-data.html">T</a></div><div class="brief "><p class="paragraph">Make a GET request to the hue bridge.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="get-data.html">T</a><span class="token operator">&gt; </span><a href="-hue-http-client/index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="get-data.html"><span class="token function">getData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="get-data.html">T</a></div><div class="brief "><p class="paragraph">Make a GET request to the hue bridge.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="301715469%2FFunctions%2F-154452337" anchor-label="postData" id="301715469%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+<a data-name="1322642621%2FFunctions%2F-833552241" anchor-label="postData" id="1322642621%2FFunctions%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="post-data.html"><span>post</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="301715469%2FFunctions%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1322642621%2FFunctions%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="post-data.html">REQUEST</a><span class="token punctuation">, </span><a href="post-data.html">RESPONSE</a><span class="token operator">&gt; </span><a href="-hue-http-client/index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="post-data.html"><span class="token function">postData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">body<span class="token operator">: </span><a href="post-data.html">REQUEST</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="post-data.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a POST request to the hue bridge.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="post-data.html">REQUEST</a><span class="token punctuation">, </span><a href="post-data.html">RESPONSE</a><span class="token operator">&gt; </span><a href="-hue-http-client/index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="post-data.html"><span class="token function">postData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">body<span class="token operator">: </span><a href="post-data.html">REQUEST</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="post-data.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a POST request to the hue bridge.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1344148834%2FFunctions%2F-154452337" anchor-label="putData" id="-1344148834%2FFunctions%2F-154452337" data-filterable-set=":internals:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":internals:dokkaHtmlPartial/commonMain" data-filterable-set=":internals:dokkaHtmlPartial/commonMain">
+<a data-name="-2108135154%2FFunctions%2F-833552241" anchor-label="putData" id="-2108135154%2FFunctions%2F-833552241" data-filterable-set=":internals/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":internals/commonMain" data-filterable-set=":internals/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="put-data.html"><span>put</span><wbr><span><span>Data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1344148834%2FFunctions%2F-154452337"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2108135154%2FFunctions%2F-833552241"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="put-data.html">REQUEST</a><span class="token punctuation">, </span><a href="put-data.html">RESPONSE</a><span class="token operator">&gt; </span><a href="-hue-http-client/index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="put-data.html"><span class="token function">putData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">body<span class="token operator">: </span><a href="put-data.html">REQUEST</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="put-data.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a PUT request to the hue bridge.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":internals/commonMain"><div class="symbol monospace"><span class="token keyword">inline suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="put-data.html">REQUEST</a><span class="token punctuation">, </span><a href="put-data.html">RESPONSE</a><span class="token operator">&gt; </span><a href="-hue-http-client/index.html">HueHttpClient</a><span class="token punctuation">.</span><a href="put-data.html"><span class="token function">putData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">body<span class="token operator">: </span><a href="put-data.html">REQUEST</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>pathSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="put-data.html">RESPONSE</a></div><div class="brief "><p class="paragraph">Make a PUT request to the hue bridge.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -317,17 +317,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>© 2025 Copyright</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,22 +1,22 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>PropertiesFileConfiguration</title>
-<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
 <script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
@@ -24,39 +24,37 @@
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
 <script type="text/javascript" src="../../../scripts/prism.js" async></script>
-<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script>
-<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-<a class="library-name--link" href="../../../index.html">
-                    shade
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Shade
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">latest
         </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":structures:dokkaHtmlPartial/jvmMain">jvm</button>
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":structures/jvmMain">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":structures:dokkaHtmlPartial/jvmMain" data-filter=":structures:dokkaHtmlPartial/jvmMain">
+                                <input type="checkbox" class="checkbox--input" id=":structures/jvmMain" data-filter=":structures/jvmMain">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -64,69 +62,71 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
             </button>
             <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
-                                    shade
+                                    Shade
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="structures::inkapplications.shade.structures/PropertiesFileConfiguration///PointingToDeclaration//1212480099">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="structures::inkapplications.shade.structures/PropertiesFileConfiguration///PointingToDeclaration//1368481579">
   <div class="breadcrumbs"><a href="../../index.html">structures</a><span class="delimiter">/</span><a href="../index.html">inkapplications.shade.structures</a><span class="delimiter">/</span><span class="current">PropertiesFileConfiguration</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Properties</span><wbr><span>File</span><wbr><span><span>Configuration</span></span></h1>
     <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain" data-active="" data-toggle=":structures:dokkaHtmlPartial/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PropertiesFileConfiguration</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">file<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a><span class="token operator"> = </span>File(
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain" data-active="" data-toggle=":structures/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures/jvmMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PropertiesFileConfiguration</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">file<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator"> = </span>File(
         System.getProperty("user.home")
             .takeIf { it.isNullOrEmpty() == false },
         ".shade-cli.properties"
     )</span></span><span class="token punctuation">)</span> : <a href="../-hue-configuration-container/index.html">HueConfigurationContainer</a></div><p class="paragraph">Load and save Hue configuration and authentication to a file.</p><h1 class="">File Format</h1><h2 class="">Keys</h2><p class="paragraph">To assign a known application key in your file specify the <code class="lang-kotlin">application_key</code> and optionally <code class="lang-kotlin">client_key</code> properties:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">application_key=abcd1234
-client_key=defg5678</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class="">Hostname</h2><p class="paragraph">To configure the Hue bridge's hostname, specify the <code class="lang-kotlin">hostname</code> parameter. This is typically an IP address, but can be any valid hostname. Do not include the protocol (<code class="lang-kotlin">https://</code>) as this is configured by the security strategy.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">hostname=192.168.1.5</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class="">Security Strategy</h2><p class="paragraph">To configure a security strategy, specify the <code class="lang-kotlin">security</code> parameter, and its associated parameters for that type. The available types are:</p><h3 class="">Platform Security</h3><p class="paragraph">This is the default security type, but can also be explicitly specified in the properties file, and requires no extra parameters:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">security=platform</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Insecure</h3><p class="paragraph">To use an insecure connection, specify the security as <code class="lang-kotlin">insecure</code> and the <code class="lang-kotlin">hostname</code> of the hue bridge will be allow-listed for insecure http connections:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">hostname=192.168.1.5
-security=insecure</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Hue CA</h3><p class="paragraph">To use Hue's Certificate Authority for TLS security, specify the security as <code class="lang-kotlin">hue</code>. Hue's security uses the Device ID as the <code class="lang-kotlin">hostname</code> parameter, and requires an <code class="lang-kotlin">ip</code> to resolve that hostname to:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">hostname=01234xxabcdef
+client_key=defg5678</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h2 class="">Hostname</h2><p class="paragraph">To configure the Hue bridge's hostname, specify the <code class="lang-kotlin">hostname</code> parameter. This is typically an IP address, but can be any valid hostname. Do not include the protocol (<code class="lang-kotlin">https://</code>) as this is configured by the security strategy.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">hostname=192.168.1.5</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h2 class="">Security Strategy</h2><p class="paragraph">To configure a security strategy, specify the <code class="lang-kotlin">security</code> parameter, and its associated parameters for that type. The available types are:</p><h3 class="">Platform Security</h3><p class="paragraph">This is the default security type, but can also be explicitly specified in the properties file, and requires no extra parameters:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">security=platform</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h3 class="">Insecure</h3><p class="paragraph">To use an insecure connection, specify the security as <code class="lang-kotlin">insecure</code> and the <code class="lang-kotlin">hostname</code> of the hue bridge will be allow-listed for insecure http connections:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">hostname=192.168.1.5
+security=insecure</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h3 class="">Hue CA</h3><p class="paragraph">To use Hue's Certificate Authority for TLS security, specify the security as <code class="lang-kotlin">hue</code>. Hue's security uses the Device ID as the <code class="lang-kotlin">hostname</code> parameter, and requires an <code class="lang-kotlin">ip</code> to resolve that hostname to:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">hostname=01234xxabcdef
 security=hue
-ip=192.168.1.5</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Custom CA</h3><p class="paragraph">To use your own custom CA configuration, specify the security as <code class="lang-kotlin">custom</code> The CA file can be specified with the <code class="lang-kotlin">certificate_pem_file</code>, along with the <code class="lang-kotlin">hostname</code> and <code class="lang-kotlin">ip</code> to resolve the host to.</p><p class="paragraph">Note that Custom CA's do not support modifying the certificate data from the SDK.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">hostname=myhue.localdomain
+ip=192.168.1.5</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h3 class="">Custom CA</h3><p class="paragraph">To use your own custom CA configuration, specify the security as <code class="lang-kotlin">custom</code> The CA file can be specified with the <code class="lang-kotlin">certificate_pem_file</code>, along with the <code class="lang-kotlin">hostname</code> and <code class="lang-kotlin">ip</code> to resolve the host to.</p><p class="paragraph">Note that Custom CA's do not support modifying the certificate data from the SDK.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">hostname=myhue.localdomain
 security=custom
 ip=192.168.1.5
-certificate_pem_file=/var/shade/custom_cert.pem</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>file</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The properties file to load or save data from.</p></div></div></div></div></div></div>    </div>
+certificate_pem_file=/var/shade/custom_cert.pem</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>file</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The properties file to load or save data from.</p></div></div></div></div></div></div>    </div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
-        <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="-256121489%2FConstructors%2F1212480099" anchor-label="PropertiesFileConfiguration" id="-256121489%2FConstructors%2F1212480099" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain"></a>
-          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-256121489%2FConstructors%2F1368481579" anchor-label="PropertiesFileConfiguration" id="-256121489%2FConstructors%2F1368481579" data-filterable-set=":structures/jvmMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-properties-file-configuration.html"><span>Properties</span><wbr><span>File</span><wbr><span><span>Configuration</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-256121489%2FConstructors%2F1212480099"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-256121489%2FConstructors%2F1368481579"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain" data-active="" data-toggle=":structures:dokkaHtmlPartial/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">file<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a><span class="token operator"> = </span>File(
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain" data-active="" data-toggle=":structures/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures/jvmMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">file<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator"> = </span>File(
         System.getProperty("user.home")
             .takeIf { it.isNullOrEmpty() == false },
         ".shade-cli.properties"
@@ -138,54 +138,54 @@ certificate_pem_file=/var/shade/custom_cert.pem</code></pre><span class="top-rig
         </div>
       </div>
       <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
-        <div class="table"><a data-name="1094252317%2FProperties%2F1212480099" anchor-label="authToken" id="1094252317%2FProperties%2F1212480099" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain"></a>
-          <div class="table-row" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="1094252317%2FProperties%2F1368481579" anchor-label="authToken" id="1094252317%2FProperties%2F1368481579" data-filterable-set=":structures/jvmMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="auth-token.html"><span>auth</span><wbr><span><span>Token</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1094252317%2FProperties%2F1212480099"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1094252317%2FProperties%2F1368481579"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain" data-active="" data-toggle=":structures:dokkaHtmlPartial/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="auth-token.html">authToken</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><a href="../-auth-token/index.html">AuthToken</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Auth token used in authenticated requests to the hue bridge</p></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain" data-active="" data-toggle=":structures/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="auth-token.html">authToken</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><a href="../-auth-token/index.html">AuthToken</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Auth token used in authenticated requests to the hue bridge</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1355949401%2FProperties%2F1212480099" anchor-label="hostname" id="1355949401%2FProperties%2F1212480099" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain"></a>
-          <div class="table-row" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain">
+<a data-name="1355949401%2FProperties%2F1368481579" anchor-label="hostname" id="1355949401%2FProperties%2F1368481579" data-filterable-set=":structures/jvmMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="hostname.html"><span><span>hostname</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1355949401%2FProperties%2F1212480099"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1355949401%2FProperties%2F1368481579"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain" data-active="" data-toggle=":structures:dokkaHtmlPartial/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="hostname.html">hostname</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">The Hue IP or hostname to communicate with.</p></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain" data-active="" data-toggle=":structures/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="hostname.html">hostname</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">The Hue IP or hostname to communicate with.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1180080057%2FProperties%2F1212480099" anchor-label="securityStrategy" id="1180080057%2FProperties%2F1212480099" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain"></a>
-          <div class="table-row" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain">
+<a data-name="1180080057%2FProperties%2F1368481579" anchor-label="securityStrategy" id="1180080057%2FProperties%2F1368481579" data-filterable-set=":structures/jvmMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="security-strategy.html"><span>security</span><wbr><span><span>Strategy</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1180080057%2FProperties%2F1212480099"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1180080057%2FProperties%2F1368481579"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain" data-active="" data-toggle=":structures:dokkaHtmlPartial/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="security-strategy.html">securityStrategy</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><a href="../-security-strategy/index.html">SecurityStrategy</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">TLS configuration strategy.</p></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain" data-active="" data-toggle=":structures/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="security-strategy.html">securityStrategy</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><a href="../-security-strategy/index.html">SecurityStrategy</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">TLS configuration strategy.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -193,54 +193,54 @@ certificate_pem_file=/var/shade/custom_cert.pem</code></pre><span class="top-rig
         </div>
       </div>
       <div data-togglable="FUNCTION">
-        <h2 class="">Functions</h2>
-        <div class="table"><a data-name="1210988559%2FFunctions%2F1212480099" anchor-label="setAuthToken" id="1210988559%2FFunctions%2F1212480099" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain"></a>
-          <div class="table-row" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="1210988559%2FFunctions%2F1368481579" anchor-label="setAuthToken" id="1210988559%2FFunctions%2F1368481579" data-filterable-set=":structures/jvmMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="set-auth-token.html"><span>set</span><wbr><span>Auth</span><wbr><span><span>Token</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1210988559%2FFunctions%2F1212480099"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1210988559%2FFunctions%2F1368481579"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain" data-active="" data-toggle=":structures:dokkaHtmlPartial/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">suspend override </span><span class="token keyword">fun </span><a href="set-auth-token.html"><span class="token function">setAuthToken</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">key<span class="token operator">: </span><a href="../-auth-token/index.html">AuthToken</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Set the application key/token to use when communicating with the Hue bridge.</p></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain" data-active="" data-toggle=":structures/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">suspend override </span><span class="token keyword">fun </span><a href="set-auth-token.html"><span class="token function">setAuthToken</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">key<span class="token operator">: </span><a href="../-auth-token/index.html">AuthToken</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Set the application key/token to use when communicating with the Hue bridge.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-605877128%2FFunctions%2F1212480099" anchor-label="setHostname" id="-605877128%2FFunctions%2F1212480099" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain"></a>
-          <div class="table-row" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain">
+<a data-name="-605877128%2FFunctions%2F1368481579" anchor-label="setHostname" id="-605877128%2FFunctions%2F1368481579" data-filterable-set=":structures/jvmMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="set-hostname.html"><span>set</span><wbr><span><span>Hostname</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-605877128%2FFunctions%2F1212480099"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-605877128%2FFunctions%2F1368481579"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain" data-active="" data-toggle=":structures:dokkaHtmlPartial/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">suspend override </span><span class="token keyword">fun </span><a href="set-hostname.html"><span class="token function">setHostname</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">hostname<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">he Hue IP or hostname to communicate with. eg "192.168.1.5"</p></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain" data-active="" data-toggle=":structures/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">suspend override </span><span class="token keyword">fun </span><a href="set-hostname.html"><span class="token function">setHostname</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">hostname<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">he Hue IP or hostname to communicate with. eg "192.168.1.5"</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="840886702%2FFunctions%2F1212480099" anchor-label="setSecurityStrategy" id="840886702%2FFunctions%2F1212480099" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain"></a>
-          <div class="table-row" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain">
+<a data-name="840886702%2FFunctions%2F1368481579" anchor-label="setSecurityStrategy" id="840886702%2FFunctions%2F1368481579" data-filterable-set=":structures/jvmMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="set-security-strategy.html"><span>set</span><wbr><span>Security</span><wbr><span><span>Strategy</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="840886702%2FFunctions%2F1212480099"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="840886702%2FFunctions%2F1368481579"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures:dokkaHtmlPartial/jvmMain" data-filterable-set=":structures:dokkaHtmlPartial/jvmMain" data-active="" data-toggle=":structures:dokkaHtmlPartial/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">suspend override </span><span class="token keyword">fun </span><a href="set-security-strategy.html"><span class="token function">setSecurityStrategy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">securityStrategy<span class="token operator">: </span><a href="../-security-strategy/index.html">SecurityStrategy</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">TLS configuration strategy.</p></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":structures/jvmMain" data-filterable-set=":structures/jvmMain" data-active="" data-toggle=":structures/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":structures/jvmMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">suspend override </span><span class="token keyword">fun </span><a href="set-security-strategy.html"><span class="token function">setSecurityStrategy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">securityStrategy<span class="token operator">: </span><a href="../-security-strategy/index.html">SecurityStrategy</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">TLS configuration strategy.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -251,17 +251,21 @@ certificate_pem_file=/var/shade/custom_cert.pem</code></pre><span class="top-rig
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>© 2025 Copyright</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
