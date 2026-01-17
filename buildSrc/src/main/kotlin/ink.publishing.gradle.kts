@@ -5,12 +5,14 @@ plugins {
     id("org.jetbrains.kotlinx.binary-compatibility-validator")
 }
 
-val dokkaHtml by tasks.getting(org.jetbrains.dokka.gradle.DokkaTask::class)
+dokka {
+    moduleName.set(project.name)
+}
 
 val javadocJar: TaskProvider<Jar> by tasks.registering(Jar::class) {
-    dependsOn(dokkaHtml)
+    dependsOn(tasks.named("dokkaGeneratePublicationHtml"))
     archiveClassifier.set("javadoc")
-    from(dokkaHtml.outputDirectory)
+    from(layout.buildDirectory.dir("dokka/html"))
 }
 
 apiValidation {

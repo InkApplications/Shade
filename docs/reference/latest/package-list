@@ -21,6 +21,10 @@ inkapplications.shade.groupedlights
 inkapplications.shade.groupedlights.events
 inkapplications.shade.groupedlights.parameters
 inkapplications.shade.groupedlights.structures
+module:homekit
+inkapplications.shade.homekit
+inkapplications.shade.homekit.parameters
+inkapplications.shade.homekit.structures
 module:internals
 inkapplications.shade.internals
 module:lights
