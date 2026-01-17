@@ -19,6 +19,7 @@ kotlin {
                 api(projects.scenes)
                 api(projects.structures)
                 api(projects.zones)
+                api(projects.homekit)
 
                 api(libs.kimchi.logger)
             }
