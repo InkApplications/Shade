@@ -17,7 +17,7 @@ jobs:
             -
                 name: Docs Requirements
                 run: >
-                    ./gradlew dokkaHtmlMultiModule -Pversion=latest &&
+                    ./gradlew dokkaGeneratePublicationHtml -Pversion=latest &&
                     if [[ $(git status --porcelain) ]]; then
                         echo "Docs are out of date!" && exit 1;
                     else
