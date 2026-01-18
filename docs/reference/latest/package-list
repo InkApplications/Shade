@@ -31,6 +31,10 @@ inkapplications.shade.homekit.parameters
 inkapplications.shade.homekit.structures
 module:internals
 inkapplications.shade.internals
+module:lightlevel
+inkapplications.shade.lightlevel
+inkapplications.shade.lightlevel.parameters
+inkapplications.shade.lightlevel.structures
 module:lights
 inkapplications.shade.lights
 inkapplications.shade.lights.events

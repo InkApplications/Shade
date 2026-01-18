@@ -19,6 +19,7 @@ dependencies {
     dokka(project(":homekit"))
     dokka(project(":internals"))
     dokka(project(":lights"))
+    dokka(project(":lightlevel"))
     dokka(project(":resources"))
     dokka(project(":rooms"))
     dokka(project(":scenes"))
