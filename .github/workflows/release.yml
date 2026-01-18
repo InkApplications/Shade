@@ -7,13 +7,22 @@ env:
 jobs:
     tests:
         name: Test
-        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@1.2.0
+        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@2794fc60080c36a29a3c039e96c142c920d3c746
+        with:
+            java-version: 17
+            java-distribution: temurin
     verify-docs:
         runs-on: ubuntu-latest
         steps:
             -
                 name: Checkout
-                uses: actions/checkout@v5.0.0
+                uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+            -
+                name: Configure Java
+                uses: actions/setup-java@f2beeb24e141e01a676f977032f5a29d81c9e27e
+                with:
+                    java-version: 17
+                    distribution: temurin
             -
                 name: Docs Requirements
                 run: >
@@ -27,9 +36,11 @@ jobs:
         name: Publish to Maven Central
         needs: [tests, verify-docs]
         secrets: inherit
-        uses: inkapplications/.github/.github/workflows/kmp-maven-publish.yml@1.2.0
+        uses: inkapplications/.github/.github/workflows/kmp-maven-publish.yml@2794fc60080c36a29a3c039e96c142c920d3c746
         with:
             version: ${{ github.ref_name }}
+            java-version: 17
+            java-distribution: temurin
             draft-release: false
             publish-linux-arm64: false
             publish-android-native-arm32: false
@@ -48,7 +59,13 @@ jobs:
         steps:
             -
                 name: Checkout
-                uses: actions/checkout@v5.0.0
+                uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+            -
+                name: Configure Java
+                uses: actions/setup-java@f2beeb24e141e01a676f977032f5a29d81c9e27e
+                with:
+                    java-version: 17
+                    distribution: temurin
             -
                 name: Build Archives
                 run: ./gradlew cli:assembleDist -Pversion=${{ github.ref_name }}
@@ -61,7 +78,7 @@ jobs:
             -
                 name: Create Release
                 id: create_release
-                uses: actions/create-release@v1.1.4
+                uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:
@@ -72,7 +89,7 @@ jobs:
                     body_path: build/RELEASE.md
             -
                 name: Upload Cli Tar
-                uses: actions/upload-release-asset@v1.0.2
+                uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:
@@ -82,7 +99,7 @@ jobs:
                     asset_content_type: application/x-tar
             -
                 name: Upload Cli Zip
-                uses: actions/upload-release-asset@v1.0.2
+                uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:

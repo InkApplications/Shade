@@ -4,14 +4,23 @@ on:
         branches: [master]
 jobs:
     tests:
-        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@1.2.0
+        uses: inkapplications/.github/.github/workflows/kmp-checks.yml@2794fc60080c36a29a3c039e96c142c920d3c746
+        with:
+            java-version: 17
+            java-distribution: temurin
     build:
         needs: [tests]
         runs-on: ubuntu-latest
         steps:
             - 
                 name: Checkout
-                uses: actions/checkout@v5.0.0
+                uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+            -
+                name: Configure Java
+                uses: actions/setup-java@f2beeb24e141e01a676f977032f5a29d81c9e27e
+                with:
+                    java-version: 17
+                    distribution: temurin
             -
                 name: Assemble
                 run: ./gradlew assembleDist
@@ -20,13 +29,13 @@ jobs:
                 run: cp cli/build/distributions/shade-*.zip cli/build/distributions/shade.zip && cp cli/build/distributions/shade-*.tar cli/build/distributions/shade.tar
             -
                 name: Archive CLI Tar
-                uses: actions/upload-artifact@v4.6.2
+                uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
                 with:
                     name: shade.tar
                     path: cli/build/distributions/shade.tar
             -
                 name: Archive CLI Zip
-                uses: actions/upload-artifact@v4.6.2
+                uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
                 with:
                     name: shade.zip
                     path: cli/build/distributions/shade.zip
