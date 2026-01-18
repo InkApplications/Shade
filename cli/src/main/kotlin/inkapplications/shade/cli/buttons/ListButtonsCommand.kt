@@ -14,4 +14,3 @@ object ListButtonsCommand: AuthorizedShadeCommand(
         return 0
     }
 }
-

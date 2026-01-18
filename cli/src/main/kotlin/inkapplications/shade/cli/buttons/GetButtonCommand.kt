@@ -18,4 +18,3 @@ object GetButtonCommand: AuthorizedShadeCommand(
         return 0
     }
 }
-

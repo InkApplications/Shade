@@ -8,4 +8,3 @@ fun CliktCommand.echoHomekit(homekit: Homekit) {
     echo("    Type: ${homekit.type}")
     echo("    Status: ${homekit.status}")
 }
-

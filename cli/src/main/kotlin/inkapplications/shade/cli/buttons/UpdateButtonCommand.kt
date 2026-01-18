@@ -26,4 +26,3 @@ object UpdateButtonCommand: AuthorizedShadeCommand(
         return 0
     }
 }
-

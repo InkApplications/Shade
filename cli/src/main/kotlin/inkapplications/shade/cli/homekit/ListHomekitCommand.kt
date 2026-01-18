@@ -14,4 +14,3 @@ object ListHomekitCommand: AuthorizedShadeCommand(
         return 0
     }
 }
-

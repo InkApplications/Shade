@@ -18,4 +18,3 @@ object GetHomekitCommand: AuthorizedShadeCommand(
         return 0
     }
 }
-

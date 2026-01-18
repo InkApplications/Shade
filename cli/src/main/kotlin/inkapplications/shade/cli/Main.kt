@@ -11,6 +11,7 @@ import inkapplications.shade.cli.groupedlights.GetGroupedLightCommand
 import inkapplications.shade.cli.groupedlights.ListGroupedLightsCommand
 import inkapplications.shade.cli.groupedlights.UpdateGroupedLightCommand
 import inkapplications.shade.cli.homekit.*
+import inkapplications.shade.cli.lightlevels.*
 import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
@@ -38,6 +39,7 @@ class Main: NoOpCliktCommand() {
             GetGroupedLightCommand,
             GetHomekitCommand,
             GetLightCommand,
+            GetLightLevelCommand,
             GetRoomCommand,
             GetSceneCommand,
             GetZoneCommand,
@@ -47,6 +49,7 @@ class Main: NoOpCliktCommand() {
             ListGroupedLightsCommand,
             ListHomekitCommand,
             ListLightsCommand,
+            ListLightLevelsCommand,
             ListResourcesCommand,
             ListRoomsCommand,
             ListScenesCommand,
@@ -56,6 +59,7 @@ class Main: NoOpCliktCommand() {
             UpdateGroupedLightCommand,
             UpdateHomekitCommand,
             UpdateLightCommand,
+            UpdateLightLevelCommand,
             UpdateRoomCommand,
             UpdateSceneCommand,
             UpdateZoneCommand,

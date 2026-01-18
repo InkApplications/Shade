@@ -21,4 +21,3 @@ fun CliktCommand.echoButton(button: Button) {
         echo("     - $event")
     }
 }
-
