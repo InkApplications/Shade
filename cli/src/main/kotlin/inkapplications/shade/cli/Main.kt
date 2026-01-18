@@ -10,6 +10,7 @@ import inkapplications.shade.cli.events.EventsCommand
 import inkapplications.shade.cli.groupedlights.GetGroupedLightCommand
 import inkapplications.shade.cli.groupedlights.ListGroupedLightsCommand
 import inkapplications.shade.cli.groupedlights.UpdateGroupedLightCommand
+import inkapplications.shade.cli.homekit.*
 import inkapplications.shade.cli.lights.GetLightCommand
 import inkapplications.shade.cli.lights.ListLightsCommand
 import inkapplications.shade.cli.lights.UpdateLightCommand
@@ -35,6 +36,7 @@ class Main: NoOpCliktCommand() {
             GetButtonCommand,
             GetDeviceCommand,
             GetGroupedLightCommand,
+            GetHomekitCommand,
             GetLightCommand,
             GetRoomCommand,
             GetSceneCommand,
@@ -43,6 +45,7 @@ class Main: NoOpCliktCommand() {
             ListButtonsCommand,
             ListDevicesCommand,
             ListGroupedLightsCommand,
+            ListHomekitCommand,
             ListLightsCommand,
             ListResourcesCommand,
             ListRoomsCommand,
@@ -51,6 +54,7 @@ class Main: NoOpCliktCommand() {
             UpdateButtonCommand,
             UpdateDeviceCommand,
             UpdateGroupedLightCommand,
+            UpdateHomekitCommand,
             UpdateLightCommand,
             UpdateRoomCommand,
             UpdateSceneCommand,
