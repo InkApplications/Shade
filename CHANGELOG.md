@@ -10,8 +10,8 @@ Change Log
 
 ### Fixed:
 
- - Native targets now use Curl based Http client, which should support HTTPS
-   connections now.
+ - Linux and MacOS now use the Curl and Darwin engines for HTTP requests,
+   allowing SSL requests on both platforms through platform trusted certificates.
 
 ### Changed:
 
