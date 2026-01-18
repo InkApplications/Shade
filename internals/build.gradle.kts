@@ -6,56 +6,42 @@ plugins {
 
 kotlin {
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(libs.serialization.json)
-                implementation(libs.ktor.client.core)
-                implementation(projects.serialization)
-                api(projects.structures)
-                api(libs.kimchi.logger)
+        commonMain.dependencies {
+            implementation(libs.serialization.json)
+            implementation(libs.ktor.client.core)
+            implementation(projects.serialization)
+            api(projects.structures)
+            api(libs.kimchi.logger)
 
-                implementation(libs.ktor.client.contentnegotiation)
-                implementation(libs.ktor.serialization.json)
-            }
+            implementation(libs.ktor.client.contentnegotiation)
+            implementation(libs.ktor.serialization.json)
         }
 
-        val jvmMain by getting {
-            dependencies {
-                implementation(libs.ktor.client.okhttp)
-                implementation(libs.okhttp.tls)
-                implementation(libs.okhttp.sse)
-            }
+        commonTest.dependencies {
+            implementation(libs.test.core)
+            implementation(libs.test.annotations)
         }
 
-        val jsMain by getting {
-            dependencies {
-                implementation(libs.ktor.client.js)
-            }
+        jvmMain.dependencies {
+            implementation(libs.ktor.client.okhttp)
+            implementation(libs.okhttp.tls)
+            implementation(libs.okhttp.sse)
         }
 
-        val nativeMain by getting {
-            dependencies {
-                implementation(libs.ktor.client.curl)
-            }
+        jsMain.dependencies {
+            implementation(libs.ktor.client.js)
         }
 
-        val windowsMain by getting {
-            dependencies {
-                implementation(libs.ktor.client.winhttp)
-            }
+        linuxMain.dependencies {
+            implementation(libs.ktor.client.curl)
         }
 
-        val iosMain by getting {
-            dependencies {
-                implementation(libs.ktor.client.darwin)
-            }
+        mingwMain.dependencies {
+            implementation(libs.ktor.client.winhttp)
         }
 
-        val commonTest by getting {
-            dependencies {
-                implementation(libs.test.core)
-                implementation(libs.test.annotations)
-            }
+        appleMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
