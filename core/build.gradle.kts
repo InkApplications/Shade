@@ -14,6 +14,7 @@ kotlin {
                 api(projects.events)
                 api(projects.groupedLights)
                 api(projects.lights)
+                api(projects.lightlevel)
                 api(projects.resources)
                 api(projects.rooms)
                 api(projects.scenes)

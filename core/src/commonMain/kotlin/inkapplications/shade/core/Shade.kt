@@ -7,6 +7,7 @@ import inkapplications.shade.events.EventsModule
 import inkapplications.shade.groupedlights.ShadeGroupedLightsModule
 import inkapplications.shade.homekit.ShadeHomekitModule
 import inkapplications.shade.internals.InternalsModule
+import inkapplications.shade.lightlevel.ShadeLightLevelModule
 import inkapplications.shade.lights.ShadeLightsModule
 import inkapplications.shade.resources.ShadeResourcesModule
 import inkapplications.shade.rooms.ShadeRoomsModule
@@ -53,6 +54,7 @@ class Shade(
     ).bridgeAuth
     val devices = ShadeDevicesModule(internalsModule).devices
     val lights = ShadeLightsModule(internalsModule, eventsModule).lights
+    val lightLevels = ShadeLightLevelModule(internalsModule).lightLevels
     val rooms = ShadeRoomsModule(internalsModule).rooms
     val zones = ShadeZonesModule(internalsModule).zones
     val groupedLights = ShadeGroupedLightsModule(internalsModule, eventsModule).groupedLights
