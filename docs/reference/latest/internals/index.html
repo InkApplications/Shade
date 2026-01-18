@@ -43,12 +43,12 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":internals/appleMain">apple</button>
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":internals/commonMain">common</button>
-                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":internals/iosMain">ios</button>
                 <button class="platform-tag platform-selector js-like" data-active="" aria-pressed="true" data-filter=":internals/jsMain">js</button>
                 <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":internals/jvmMain">jvm</button>
-                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":internals/nativeMain">native</button>
-                <button class="platform-tag platform-selector native-like" data-active="" aria-pressed="true" data-filter=":internals/windowsMain">windows</button>
+                <button class="platform-tag platform-selector native-like" data-active="" aria-pressed="true" data-filter=":internals/linuxMain">linux</button>
+                <button class="platform-tag platform-selector native-like" data-active="" aria-pressed="true" data-filter=":internals/mingwMain">mingw</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -59,16 +59,16 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals/commonMain" data-filter=":internals/commonMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/appleMain" data-filter=":internals/appleMain">
                                 <span class="checkbox--icon"></span>
-                                common
+                                apple
                             </label>
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals/iosMain" data-filter=":internals/iosMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/commonMain" data-filter=":internals/commonMain">
                                 <span class="checkbox--icon"></span>
-                                ios
+                                common
                             </label>
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option js-like" tabindex="0">
@@ -85,18 +85,18 @@
                                 jvm
                             </label>
                         </li>
-                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                        <li role="option" class="dropdown--option platform-selector-option native-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals/nativeMain" data-filter=":internals/nativeMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/linuxMain" data-filter=":internals/linuxMain">
                                 <span class="checkbox--icon"></span>
-                                native
+                                linux
                             </label>
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option native-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":internals/windowsMain" data-filter=":internals/windowsMain">
+                                <input type="checkbox" class="checkbox--input" id=":internals/mingwMain" data-filter=":internals/mingwMain">
                                 <span class="checkbox--icon"></span>
-                                windows
+                                mingw
                             </label>
                         </li>
                 </ul>
@@ -130,29 +130,29 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" id="content" pageids="internals::////PointingToDeclaration//2009501932">
+<div class="main-content" id="content" pageids="internals::////PointingToDeclaration//1734129610">
   <div class="breadcrumbs"></div>
   <div class="cover ">
     <h1 class="cover"><span><span>internals</span></span></h1>
   </div>
   <h2 class="">Packages</h2>
-  <div class="table"><a data-name="1776528338%2FPackages%2F2009501932" anchor-label="inkapplications.shade.internals" id="1776528338%2FPackages%2F2009501932" data-filterable-set=":internals/commonMain,:internals/iosMain,:internals/jsMain,:internals/jvmMain,:internals/nativeMain,:internals/windowsMain"></a>
-    <div class="table-row table-row_platform-tagged" data-filterable-current=":internals/commonMain,:internals/iosMain,:internals/jsMain,:internals/jvmMain,:internals/nativeMain,:internals/windowsMain" data-filterable-set=":internals/commonMain,:internals/iosMain,:internals/jsMain,:internals/jvmMain,:internals/nativeMain,:internals/windowsMain">
+  <div class="table"><a data-name="1776528338%2FPackages%2F1734129610" anchor-label="inkapplications.shade.internals" id="1776528338%2FPackages%2F1734129610" data-filterable-set=":internals/commonMain,:internals/appleMain,:internals/jsMain,:internals/jvmMain,:internals/linuxMain,:internals/mingwMain"></a>
+    <div class="table-row table-row_platform-tagged" data-filterable-current=":internals/commonMain,:internals/appleMain,:internals/jsMain,:internals/jvmMain,:internals/linuxMain,:internals/mingwMain" data-filterable-set=":internals/commonMain,:internals/appleMain,:internals/jsMain,:internals/jvmMain,:internals/linuxMain,:internals/mingwMain">
       <div>
         <div class="main-subrow ">
           <div class=""><span class="inline-flex">
               <div><a href="inkapplications.shade.internals/index.html">inkapplications.shade.internals</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1776528338%2FPackages%2F2009501932"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1776528338%2FPackages%2F1734129610"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
           <div class="pull-right platform-tags--wrapper">
             <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">apple</div>
               <div class="platform-tag common-like">common</div>
-              <div class="platform-tag common-like">ios</div>
               <div class="platform-tag js-like">js</div>
               <div class="platform-tag jvm-like">jvm</div>
-              <div class="platform-tag common-like">native</div>
-              <div class="platform-tag native-like">windows</div>
+              <div class="platform-tag native-like">linux</div>
+              <div class="platform-tag native-like">mingw</div>
             </div>
           </div>
         </div>
