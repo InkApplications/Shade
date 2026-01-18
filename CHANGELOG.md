@@ -7,6 +7,7 @@ Change Log
 ## Added:
 
  - HomeKit module for integrating with HomeKit ecosystem.
+ - Button module for controlling and receiving from devices with buttons.
 
 ### Fixed:
 

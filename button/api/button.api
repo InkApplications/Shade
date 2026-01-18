@@ -1,0 +1,200 @@
+public abstract interface class inkapplications/shade/button/ButtonControls {
+	public abstract fun getButton-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun listButtons (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun updateButton-bKh5c1I (Ljava/lang/String;Linkapplications/shade/button/parameters/ButtonUpdateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class inkapplications/shade/button/ShadeButtonsModule {
+	public fun <init> (Linkapplications/shade/internals/InternalsModule;)V
+	public final fun getButtons ()Linkapplications/shade/button/ButtonControls;
+}
+
+public final class inkapplications/shade/button/parameters/ButtonUpdateParameters {
+	public static final field Companion Linkapplications/shade/button/parameters/ButtonUpdateParameters$Companion;
+	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-belEJAY ()Ljava/lang/String;
+	public final fun copy-lCH7uGg (Ljava/lang/String;)Linkapplications/shade/button/parameters/ButtonUpdateParameters;
+	public static synthetic fun copy-lCH7uGg$default (Linkapplications/shade/button/parameters/ButtonUpdateParameters;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/button/parameters/ButtonUpdateParameters;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getType-belEJAY ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/button/parameters/ButtonUpdateParameters$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/button/parameters/ButtonUpdateParameters$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/button/parameters/ButtonUpdateParameters;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/button/parameters/ButtonUpdateParameters;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/parameters/ButtonUpdateParameters$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/Button {
+	public static final field Companion Linkapplications/shade/button/structures/Button$Companion;
+	public synthetic fun <init> (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/button/structures/ButtonMetadata;Linkapplications/shade/button/structures/ButtonState;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/button/structures/ButtonMetadata;Linkapplications/shade/button/structures/ButtonState;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-XbiYvy0 ()Ljava/lang/String;
+	public final fun component2 ()Linkapplications/shade/structures/ResourceReference;
+	public final fun component3 ()Linkapplications/shade/button/structures/ButtonMetadata;
+	public final fun component4 ()Linkapplications/shade/button/structures/ButtonState;
+	public final fun component5-1y3a6N0 ()Ljava/lang/String;
+	public final fun copy-qm0Ps9A (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/button/structures/ButtonMetadata;Linkapplications/shade/button/structures/ButtonState;Ljava/lang/String;)Linkapplications/shade/button/structures/Button;
+	public static synthetic fun copy-qm0Ps9A$default (Linkapplications/shade/button/structures/Button;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/button/structures/ButtonMetadata;Linkapplications/shade/button/structures/ButtonState;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/button/structures/Button;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getButton ()Linkapplications/shade/button/structures/ButtonState;
+	public final fun getId-XbiYvy0 ()Ljava/lang/String;
+	public final fun getMetadata ()Linkapplications/shade/button/structures/ButtonMetadata;
+	public final fun getOwner ()Linkapplications/shade/structures/ResourceReference;
+	public final fun getType-1y3a6N0 ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/button/structures/Button$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/button/structures/Button$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/button/structures/Button;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/button/structures/Button;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/Button$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/ButtonEvent {
+	public static final field Companion Linkapplications/shade/button/structures/ButtonEvent$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/button/structures/ButtonEvent;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/button/structures/ButtonEvent$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/button/structures/ButtonEvent$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize-3l1rWYw (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize-Blt4aU4 (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/ButtonEvent$Companion {
+	public final fun getDoubleShortRelease-xqYliYo ()Ljava/lang/String;
+	public final fun getInitialPress-xqYliYo ()Ljava/lang/String;
+	public final fun getLongPress-xqYliYo ()Ljava/lang/String;
+	public final fun getLongRelease-xqYliYo ()Ljava/lang/String;
+	public final fun getRepeat-xqYliYo ()Ljava/lang/String;
+	public final fun getShortRelease-xqYliYo ()Ljava/lang/String;
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/ButtonMetadata {
+	public static final field Companion Linkapplications/shade/button/structures/ButtonMetadata$Companion;
+	public fun <init> (I)V
+	public final fun component1 ()I
+	public final fun copy (I)Linkapplications/shade/button/structures/ButtonMetadata;
+	public static synthetic fun copy$default (Linkapplications/shade/button/structures/ButtonMetadata;IILjava/lang/Object;)Linkapplications/shade/button/structures/ButtonMetadata;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getControlId ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/button/structures/ButtonMetadata$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/button/structures/ButtonMetadata$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/button/structures/ButtonMetadata;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/button/structures/ButtonMetadata;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/ButtonMetadata$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/ButtonReport {
+	public static final field Companion Linkapplications/shade/button/structures/ButtonReport$Companion;
+	public synthetic fun <init> (Lkotlin/time/Instant;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lkotlin/time/Instant;
+	public final fun component2-xqYliYo ()Ljava/lang/String;
+	public final fun copy-Blt4aU4 (Lkotlin/time/Instant;Ljava/lang/String;)Linkapplications/shade/button/structures/ButtonReport;
+	public static synthetic fun copy-Blt4aU4$default (Linkapplications/shade/button/structures/ButtonReport;Lkotlin/time/Instant;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/button/structures/ButtonReport;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEvent-xqYliYo ()Ljava/lang/String;
+	public final fun getUpdated ()Lkotlin/time/Instant;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/button/structures/ButtonReport$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/button/structures/ButtonReport$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/button/structures/ButtonReport;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/button/structures/ButtonReport;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/ButtonReport$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/ButtonState {
+	public static final field Companion Linkapplications/shade/button/structures/ButtonState$Companion;
+	public fun <init> ()V
+	public fun <init> (Linkapplications/shade/button/structures/ButtonReport;Ljava/lang/Integer;Ljava/util/List;)V
+	public synthetic fun <init> (Linkapplications/shade/button/structures/ButtonReport;Ljava/lang/Integer;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Linkapplications/shade/button/structures/ButtonReport;
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun component3 ()Ljava/util/List;
+	public final fun copy (Linkapplications/shade/button/structures/ButtonReport;Ljava/lang/Integer;Ljava/util/List;)Linkapplications/shade/button/structures/ButtonState;
+	public static synthetic fun copy$default (Linkapplications/shade/button/structures/ButtonState;Linkapplications/shade/button/structures/ButtonReport;Ljava/lang/Integer;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/button/structures/ButtonState;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getButtonReport ()Linkapplications/shade/button/structures/ButtonReport;
+	public final fun getEventValues ()Ljava/util/List;
+	public final fun getRepeatInterval ()Ljava/lang/Integer;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/button/structures/ButtonState$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/button/structures/ButtonState$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/button/structures/ButtonState;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/button/structures/ButtonState;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/button/structures/ButtonState$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+

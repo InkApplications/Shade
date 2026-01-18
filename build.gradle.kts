@@ -10,6 +10,7 @@ repositories {
 
 dependencies {
     dokka(project(":auth"))
+    dokka(project(":button"))
     dokka(project(":core"))
     dokka(project(":devices"))
     dokka(project(":discover"))

@@ -4,6 +4,10 @@ $dokka.linkExtension:html
 module:auth
 inkapplications.shade.auth
 inkapplications.shade.auth.structures
+module:button
+inkapplications.shade.button
+inkapplications.shade.button.parameters
+inkapplications.shade.button.structures
 module:core
 inkapplications.shade.core
 module:devices

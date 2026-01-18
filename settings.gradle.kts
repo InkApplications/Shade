@@ -2,6 +2,7 @@ rootProject.name = "shade"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include("auth")
+include("button")
 include("cli")
 include("core")
 include("devices")
