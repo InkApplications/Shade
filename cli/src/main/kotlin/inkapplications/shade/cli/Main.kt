@@ -2,6 +2,7 @@ package inkapplications.shade.cli
 
 import com.github.ajalt.clikt.core.NoOpCliktCommand
 import com.github.ajalt.clikt.core.subcommands
+import inkapplications.shade.cli.buttons.*
 import inkapplications.shade.cli.connection.AuthorizeCommand
 import inkapplications.shade.cli.connection.DiscoverCommand
 import inkapplications.shade.cli.devices.*
@@ -31,6 +32,7 @@ class Main: NoOpCliktCommand() {
             DeleteZoneCommand,
             DiscoverCommand,
             EventsCommand,
+            GetButtonCommand,
             GetDeviceCommand,
             GetGroupedLightCommand,
             GetLightCommand,
@@ -38,6 +40,7 @@ class Main: NoOpCliktCommand() {
             GetSceneCommand,
             GetZoneCommand,
             IdentifyDeviceCommand,
+            ListButtonsCommand,
             ListDevicesCommand,
             ListGroupedLightsCommand,
             ListLightsCommand,
@@ -45,6 +48,7 @@ class Main: NoOpCliktCommand() {
             ListRoomsCommand,
             ListScenesCommand,
             ListZonesCommand,
+            UpdateButtonCommand,
             UpdateDeviceCommand,
             UpdateGroupedLightCommand,
             UpdateLightCommand,
