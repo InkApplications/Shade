@@ -3,7 +3,6 @@ package inkapplications.shade.button.structures
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
 import inkapplications.shade.structures.ResourceType
-import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
@@ -31,7 +30,7 @@ data class Button(
     /**
      * Button state and configuration.
      */
-    val button: ButtonState,
+    val state: ButtonState,
 
     /**
      * Type of the supported resources.

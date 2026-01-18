@@ -1,7 +1,6 @@
 package inkapplications.shade.cli.rooms
 
 import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.output.TermUi
 import inkapplications.shade.rooms.structures.Room
 
 fun CliktCommand.echoRoom(room: Room) {

@@ -49,10 +49,10 @@ public final class inkapplications/shade/button/structures/Button {
 	public final fun copy-qm0Ps9A (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/button/structures/ButtonMetadata;Linkapplications/shade/button/structures/ButtonState;Ljava/lang/String;)Linkapplications/shade/button/structures/Button;
 	public static synthetic fun copy-qm0Ps9A$default (Linkapplications/shade/button/structures/Button;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/button/structures/ButtonMetadata;Linkapplications/shade/button/structures/ButtonState;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/button/structures/Button;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getButton ()Linkapplications/shade/button/structures/ButtonState;
 	public final fun getId-XbiYvy0 ()Ljava/lang/String;
 	public final fun getMetadata ()Linkapplications/shade/button/structures/ButtonMetadata;
 	public final fun getOwner ()Linkapplications/shade/structures/ResourceReference;
+	public final fun getState ()Linkapplications/shade/button/structures/ButtonState;
 	public final fun getType-1y3a6N0 ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
@@ -167,18 +167,17 @@ public final class inkapplications/shade/button/structures/ButtonReport$Companio
 
 public final class inkapplications/shade/button/structures/ButtonState {
 	public static final field Companion Linkapplications/shade/button/structures/ButtonState$Companion;
-	public fun <init> ()V
-	public fun <init> (Linkapplications/shade/button/structures/ButtonReport;Ljava/lang/Integer;Ljava/util/List;)V
-	public synthetic fun <init> (Linkapplications/shade/button/structures/ButtonReport;Ljava/lang/Integer;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Linkapplications/shade/button/structures/ButtonReport;Lkotlin/time/Duration;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Linkapplications/shade/button/structures/ButtonReport;Lkotlin/time/Duration;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Linkapplications/shade/button/structures/ButtonReport;
-	public final fun component2 ()Ljava/lang/Integer;
+	public final fun component2-FghU774 ()Lkotlin/time/Duration;
 	public final fun component3 ()Ljava/util/List;
-	public final fun copy (Linkapplications/shade/button/structures/ButtonReport;Ljava/lang/Integer;Ljava/util/List;)Linkapplications/shade/button/structures/ButtonState;
-	public static synthetic fun copy$default (Linkapplications/shade/button/structures/ButtonState;Linkapplications/shade/button/structures/ButtonReport;Ljava/lang/Integer;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/button/structures/ButtonState;
+	public final fun copy-Kx4hsE0 (Linkapplications/shade/button/structures/ButtonReport;Lkotlin/time/Duration;Ljava/util/List;)Linkapplications/shade/button/structures/ButtonState;
+	public static synthetic fun copy-Kx4hsE0$default (Linkapplications/shade/button/structures/ButtonState;Linkapplications/shade/button/structures/ButtonReport;Lkotlin/time/Duration;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/button/structures/ButtonState;
 	public fun equals (Ljava/lang/Object;)Z
-	public final fun getButtonReport ()Linkapplications/shade/button/structures/ButtonReport;
-	public final fun getEventValues ()Ljava/util/List;
-	public final fun getRepeatInterval ()Ljava/lang/Integer;
+	public final fun getEvents ()Ljava/util/List;
+	public final fun getRepeatInterval-FghU774 ()Lkotlin/time/Duration;
+	public final fun getReport ()Linkapplications/shade/button/structures/ButtonReport;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
