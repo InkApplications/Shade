@@ -42,6 +42,33 @@ public final class inkapplications/shade/structures/AuthorizationTimeoutExceptio
 	public static final field INSTANCE Linkapplications/shade/structures/AuthorizationTimeoutException;
 }
 
+public final class inkapplications/shade/structures/FootCandles : inkapplications/shade/structures/Illuminance, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/shade/structures/FootCandles;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toLux-bPG8OSU ()Ljava/lang/Number;
+	public static fun toLux-bPG8OSU (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-N83p2f4 (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-N83p2f4 (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/shade/structures/FootCandlesKt {
+	public static final fun getFootCandle ()Ljava/lang/Number;
+	public static final fun getFootCandles (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toFootCandle (Linkapplications/shade/structures/Illuminance;)Ljava/lang/Number;
+}
+
 public final class inkapplications/shade/structures/HostnameNotSetException : inkapplications/shade/structures/UserError {
 	public static final field INSTANCE Linkapplications/shade/structures/HostnameNotSetException;
 }
@@ -53,6 +80,10 @@ public abstract interface class inkapplications/shade/structures/HueConfiguratio
 	public abstract fun setAuthToken (Linkapplications/shade/structures/AuthToken;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun setHostname (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun setSecurityStrategy (Linkapplications/shade/structures/SecurityStrategy;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class inkapplications/shade/structures/Illuminance {
+	public abstract fun toLux-bPG8OSU ()Ljava/lang/Number;
 }
 
 public final class inkapplications/shade/structures/InMemoryConfigurationContainer : inkapplications/shade/structures/HueConfigurationContainer {
@@ -72,6 +103,31 @@ public class inkapplications/shade/structures/InternalErrorException : inkapplic
 
 public final class inkapplications/shade/structures/InvalidConfigurationException : inkapplications/shade/structures/UserError {
 	public fun <init> (Ljava/lang/String;)V
+}
+
+public final class inkapplications/shade/structures/Lux : inkapplications/shade/structures/Illuminance, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/shade/structures/Lux;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toLux-bPG8OSU ()Ljava/lang/Number;
+	public static fun toLux-bPG8OSU (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-maF8XeE (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-maF8XeE (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/shade/structures/LuxKt {
+	public static final fun getLux (Ljava/lang/Number;)Ljava/lang/Number;
 }
 
 public final class inkapplications/shade/structures/NetworkException : inkapplications/shade/structures/ShadeException {
@@ -259,6 +315,41 @@ public final class inkapplications/shade/structures/ResourceType$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 	public final fun valueOf-drbNmWc (Ljava/lang/String;)Ljava/lang/String;
 	public final fun values ()[Linkapplications/shade/structures/ResourceType;
+}
+
+public final class inkapplications/shade/structures/ScaledLux : inkapplications/shade/structures/Illuminance, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/shade/structures/ScaledLux;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toLux-bPG8OSU ()Ljava/lang/Number;
+	public static fun toLux-bPG8OSU (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-V6cn6iE (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-V6cn6iE (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/shade/structures/ScaledLuxKt {
+	public static final fun getScaledLux (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toScaledLux (Linkapplications/shade/structures/Illuminance;)Ljava/lang/Number;
+}
+
+public final class inkapplications/shade/structures/ScaledLuxSerializer : kotlinx/serialization/KSerializer {
+	public static final field INSTANCE Linkapplications/shade/structures/ScaledLuxSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun deserialize-V6cn6iE (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Number;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/structures/Illuminance;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
 }
 
 public class inkapplications/shade/structures/SecurityStrategy {

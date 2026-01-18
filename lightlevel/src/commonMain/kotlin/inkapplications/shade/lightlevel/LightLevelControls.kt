@@ -1,7 +1,9 @@
 package inkapplications.shade.lightlevel
 
+import inkapplications.shade.lightlevel.parameters.LightLevelUpdateParameters
 import inkapplications.shade.lightlevel.structures.LightLevel
 import inkapplications.shade.structures.ResourceId
+import inkapplications.shade.structures.ResourceReference
 
 /**
  * Actions to get light level sensor data from the hue system.
@@ -21,4 +23,13 @@ interface LightLevelControls {
      * @return State and capability information about the light level sensor.
      */
     suspend fun getLightLevel(id: ResourceId): LightLevel
+
+    /**
+     * Update a light level sensor on the hue bridge.
+     *
+     * @param id The resource ID of the light level sensor to be updated.
+     * @param parameters Data about the light level sensor to be updated.
+     * @return A reference to the updated resource.
+     */
+    suspend fun updateLightLevel(id: ResourceId, parameters: LightLevelUpdateParameters): ResourceReference
 }
