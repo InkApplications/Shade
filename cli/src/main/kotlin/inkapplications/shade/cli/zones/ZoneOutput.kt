@@ -1,7 +1,6 @@
 package inkapplications.shade.cli.zones
 
 import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.output.TermUi
 import inkapplications.shade.zones.structures.Zone
 
 fun CliktCommand.echoZone(zone: Zone) {

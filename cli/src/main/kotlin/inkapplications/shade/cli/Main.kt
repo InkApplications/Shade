@@ -1,6 +1,7 @@
 package inkapplications.shade.cli
 
 import com.github.ajalt.clikt.core.NoOpCliktCommand
+import com.github.ajalt.clikt.core.main
 import com.github.ajalt.clikt.core.subcommands
 import inkapplications.shade.cli.buttons.*
 import inkapplications.shade.cli.connection.AuthorizeCommand

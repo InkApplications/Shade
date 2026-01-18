@@ -1,7 +1,6 @@
 package inkapplications.shade.cli.lights
 
 import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.output.TermUi
 import inkapplications.shade.lights.structures.Light
 import inkapplications.spondee.scalar.toWholePercentage
 import inkapplications.spondee.structure.format

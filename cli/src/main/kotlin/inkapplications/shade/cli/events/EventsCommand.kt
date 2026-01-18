@@ -1,6 +1,5 @@
 package inkapplications.shade.cli.events
 
-import com.github.ajalt.clikt.output.TermUi
 import inkapplications.shade.cli.AuthorizedShadeCommand
 import inkapplications.shade.core.events
 import inkapplications.shade.groupedlights.events.GroupedLightEvent
