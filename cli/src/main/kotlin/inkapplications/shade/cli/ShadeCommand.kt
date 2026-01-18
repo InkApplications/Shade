@@ -1,6 +1,7 @@
 package inkapplications.shade.cli
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.core.Context
 import com.github.ajalt.clikt.core.ProgramResult
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
@@ -12,11 +13,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.runBlocking
 
 abstract class ShadeCommand(
-    help: String,
+    private val help: String,
     protected val fileProperties: HueConfigurationContainer = PropertiesFileConfiguration(),
-): CliktCommand(
-    help = help,
-), HueConfigurationContainer by fileProperties {
+): CliktCommand(), HueConfigurationContainer by fileProperties {
     private val host by option(
         help = "Hostname of the Hue bridge. "
     )
@@ -64,6 +63,10 @@ abstract class ShadeCommand(
             configuration = this,
             logger = logger,
         )
+    }
+
+    override fun help(context: Context): String {
+        return help
     }
 
     final override fun run() {

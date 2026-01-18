@@ -1,7 +1,6 @@
 package inkapplications.shade.cli.devices
 
 import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.output.TermUi
 import inkapplications.shade.devices.structures.Device
 
 /**

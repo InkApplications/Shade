@@ -1,7 +1,6 @@
 package inkapplications.shade.cli.scenes
 
 import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.output.TermUi
 import inkapplications.shade.scenes.structures.Scene
 import inkapplications.spondee.scalar.toWholePercentage
 import inkapplications.spondee.structure.format
