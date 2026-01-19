@@ -7,6 +7,7 @@ import inkapplications.shade.cli.buttons.*
 import inkapplications.shade.cli.connection.AuthorizeCommand
 import inkapplications.shade.cli.connection.DiscoverCommand
 import inkapplications.shade.cli.devices.*
+import inkapplications.shade.cli.entertainment.*
 import inkapplications.shade.cli.events.EventsCommand
 import inkapplications.shade.cli.groupedlights.GetGroupedLightCommand
 import inkapplications.shade.cli.groupedlights.ListGroupedLightsCommand
@@ -47,6 +48,7 @@ class Main: NoOpCliktCommand() {
             IdentifyDeviceCommand,
             ListButtonsCommand,
             ListDevicesCommand,
+            ListEntertainmentCommand,
             ListGroupedLightsCommand,
             ListHomekitCommand,
             ListLightsCommand,

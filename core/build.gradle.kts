@@ -11,6 +11,7 @@ kotlin {
                 api(projects.auth)
                 api(projects.button)
                 api(projects.discover)
+                api(projects.entertainment)
                 api(projects.devices)
                 api(projects.events)
                 api(projects.groupedLights)
