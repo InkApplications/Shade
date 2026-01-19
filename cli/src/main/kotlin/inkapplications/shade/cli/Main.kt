@@ -7,6 +7,7 @@ import inkapplications.shade.cli.buttons.*
 import inkapplications.shade.cli.connection.AuthorizeCommand
 import inkapplications.shade.cli.connection.DiscoverCommand
 import inkapplications.shade.cli.devices.*
+import inkapplications.shade.cli.entertainment.*
 import inkapplications.shade.cli.events.EventsCommand
 import inkapplications.shade.cli.groupedlights.GetGroupedLightCommand
 import inkapplications.shade.cli.groupedlights.ListGroupedLightsCommand
@@ -26,10 +27,12 @@ class Main: NoOpCliktCommand() {
     init {
         subcommands(
             AuthorizeCommand,
+            CreateEntertainmentConfigurationCommand,
             CreateRoomCommand,
             CreateSceneCommand,
             CreateZoneCommand,
             DeleteDeviceCommand,
+            DeleteEntertainmentConfigurationCommand,
             DeleteRoomCommand,
             DeleteSceneCommand,
             DeleteZoneCommand,
@@ -37,6 +40,7 @@ class Main: NoOpCliktCommand() {
             EventsCommand,
             GetButtonCommand,
             GetDeviceCommand,
+            GetEntertainmentConfigurationCommand,
             GetGroupedLightCommand,
             GetHomekitCommand,
             GetLightCommand,
@@ -47,6 +51,8 @@ class Main: NoOpCliktCommand() {
             IdentifyDeviceCommand,
             ListButtonsCommand,
             ListDevicesCommand,
+            ListEntertainmentCommand,
+            ListEntertainmentConfigurationsCommand,
             ListGroupedLightsCommand,
             ListHomekitCommand,
             ListLightsCommand,
@@ -57,6 +63,7 @@ class Main: NoOpCliktCommand() {
             ListZonesCommand,
             UpdateButtonCommand,
             UpdateDeviceCommand,
+            UpdateEntertainmentConfigurationCommand,
             UpdateGroupedLightCommand,
             UpdateHomekitCommand,
             UpdateLightCommand,

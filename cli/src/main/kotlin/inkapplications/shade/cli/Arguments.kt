@@ -8,6 +8,8 @@ import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.int
 import com.github.ajalt.colormath.Color
 import com.github.ajalt.colormath.parse
+import inkapplications.shade.entertainment.parameters.ServiceLocationCreateParameters
+import inkapplications.shade.entertainment.parameters.ServiceLocationUpdateParameters
 import inkapplications.shade.lights.structures.*
 import inkapplications.shade.structures.*
 import inkapplications.spondee.measure.ColorTemperature
@@ -278,5 +280,56 @@ fun NullableOption<String, String>.durations(): NullableOption<List<Duration?>, 
             .map { it.takeUnless { it.equals("null", ignoreCase = true) } }
             .map { it?.toLong() }
             .map { it?.milliseconds }
+    }
+}
+
+
+/**
+ * Convert a string option into a list of service location create parameters.
+ *
+ * Format: id:x,y,z;id:x,y,z
+ * Example: abc-123:0.5,0.5,0.0;def-456:-0.5,0.5,0.0
+ */
+fun NullableOption<String, String>.entertainmentServiceLocations(): NullableOption<List<ServiceLocationCreateParameters>, List<ServiceLocationCreateParameters>> {
+    return convert {
+        it.split(";")
+            .map { location ->
+                val parts = location.split(":")
+                val id = parts[0].trim()
+                val coords = parts[1].split(",").map { c -> c.trim().toDouble() }
+                ServiceLocationCreateParameters(
+                    service = ResourceReference(
+                        id = ResourceId(id),
+                        type = ResourceType.Entertainment,
+                    ),
+                    positions = listOf(Position(x = coords[0], y = coords[1], z = coords[2])),
+                )
+            }
+    }
+}
+
+/**
+ * Convert a string option into a list of service location update parameters.
+ *
+ * Format: id:x,y,z[:equalizationFactor];id:x,y,z[:equalizationFactor]
+ * Example: abc-123:0.5,0.5,0.0;def-456:-0.5,0.5,0.0:0.8
+ */
+fun NullableOption<String, String>.entertainmentServiceLocationsUpdate(): NullableOption<List<ServiceLocationUpdateParameters>, List<ServiceLocationUpdateParameters>> {
+    return convert {
+        it.split(";")
+            .map { location ->
+                val mainParts = location.split(":")
+                val id = mainParts[0].trim()
+                val coords = mainParts[1].split(",").map { c -> c.trim().toDouble() }
+                val equalizationFactor = if (mainParts.size > 2) mainParts[2].trim().toFloat() else null
+                ServiceLocationUpdateParameters(
+                    service = ResourceReference(
+                        id = ResourceId(id),
+                        type = ResourceType.Entertainment,
+                    ),
+                    positions = listOf(Position(x = coords[0], y = coords[1], z = coords[2])),
+                    equalizationFactor = equalizationFactor,
+                )
+            }
     }
 }

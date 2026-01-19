@@ -4,6 +4,7 @@ import inkapplications.shade.auth.AuthModule
 import inkapplications.shade.button.ShadeButtonsModule
 import inkapplications.shade.devices.ShadeDevicesModule
 import inkapplications.shade.discover.DiscoverModule
+import inkapplications.shade.entertainment.ShadeEntertainmentModule
 import inkapplications.shade.events.EventsModule
 import inkapplications.shade.groupedlights.ShadeGroupedLightsModule
 import inkapplications.shade.homekit.ShadeHomekitModule
@@ -46,6 +47,7 @@ class Shade(
         configurationContainer = configuration,
         logger = logger,
     )
+    private val entertainmentModule = ShadeEntertainmentModule(internalsModule)
     internal val eventsModule = EventsModule(internalsModule, logger)
 
     val onlineDiscovery = DiscoverModule().onlineDiscovery
@@ -55,6 +57,8 @@ class Shade(
     ).bridgeAuth
     val buttons = ShadeButtonsModule(internalsModule).buttons
     val devices = ShadeDevicesModule(internalsModule).devices
+    val entertainment = entertainmentModule.entertainment
+    val entertainmentConfig = entertainmentModule.configurations
     val lights = ShadeLightsModule(internalsModule, eventsModule).lights
     val lightLevels = ShadeLightLevelModule(internalsModule).lightLevels
     val rooms = ShadeRoomsModule(internalsModule).rooms
