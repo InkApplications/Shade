@@ -1,4 +1,5 @@
 public abstract interface class inkapplications/shade/entertainment/EntertainmentConfigurationControls {
+	public abstract fun getConfiguration-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun listConfigurations (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 

@@ -38,6 +38,7 @@ class Main: NoOpCliktCommand() {
             EventsCommand,
             GetButtonCommand,
             GetDeviceCommand,
+            GetEntertainmentConfigurationCommand,
             GetGroupedLightCommand,
             GetHomekitCommand,
             GetLightCommand,
