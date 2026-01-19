@@ -4,6 +4,7 @@ import inkapplications.shade.entertainment.parameters.EntertainmentConfiguration
 import inkapplications.shade.entertainment.parameters.EntertainmentConfigurationUpdateParameters
 import inkapplications.shade.entertainment.structures.EntertainmentConfiguration
 import inkapplications.shade.internals.HueHttpClient
+import inkapplications.shade.internals.deleteData
 import inkapplications.shade.internals.getData
 import inkapplications.shade.internals.postData
 import inkapplications.shade.internals.putData
@@ -38,5 +39,9 @@ internal class ShadeEntertainmentConfigurations(
             pathSegments = arrayOf("resource", "entertainment_configuration", id.value),
         )
         return response.single()
+    }
+
+    override suspend fun deleteConfiguration(id: ResourceId): ResourceReference {
+        return hueHttpClient.deleteData<List<ResourceReference>>("resource", "entertainment_configuration", id.value).single()
     }
 }

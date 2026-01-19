@@ -41,4 +41,12 @@ interface EntertainmentConfigurationControls {
      * @return A reference to the updated resource.
      */
     suspend fun updateConfiguration(id: ResourceId, parameters: EntertainmentConfigurationUpdateParameters): ResourceReference
+
+    /**
+     * Delete an existing entertainment configuration from the hue bridge.
+     *
+     * @param id The resource ID of the entertainment configuration to delete.
+     * @return A reference to the deleted resource.
+     */
+    suspend fun deleteConfiguration(id: ResourceId): ResourceReference
 }

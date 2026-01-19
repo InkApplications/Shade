@@ -32,6 +32,7 @@ class Main: NoOpCliktCommand() {
             CreateSceneCommand,
             CreateZoneCommand,
             DeleteDeviceCommand,
+            DeleteEntertainmentConfigurationCommand,
             DeleteRoomCommand,
             DeleteSceneCommand,
             DeleteZoneCommand,

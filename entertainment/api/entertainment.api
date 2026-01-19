@@ -1,5 +1,6 @@
 public abstract interface class inkapplications/shade/entertainment/EntertainmentConfigurationControls {
 	public abstract fun createConfiguration (Linkapplications/shade/entertainment/parameters/EntertainmentConfigurationCreateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun deleteConfiguration-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun getConfiguration-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun listConfigurations (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun updateConfiguration-bKh5c1I (Ljava/lang/String;Linkapplications/shade/entertainment/parameters/EntertainmentConfigurationUpdateParameters;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
