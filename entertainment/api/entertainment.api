@@ -1,3 +1,7 @@
+public abstract interface class inkapplications/shade/entertainment/EntertainmentConfigurationControls {
+	public abstract fun listConfigurations (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
 public abstract interface class inkapplications/shade/entertainment/EntertainmentControls {
 	public abstract fun getEntertainment-klA6Vuc (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun listEntertainment (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -5,6 +9,7 @@ public abstract interface class inkapplications/shade/entertainment/Entertainmen
 
 public final class inkapplications/shade/entertainment/ShadeEntertainmentModule {
 	public fun <init> (Linkapplications/shade/internals/InternalsModule;)V
+	public final fun getConfigurations ()Linkapplications/shade/entertainment/EntertainmentConfigurationControls;
 	public final fun getEntertainment ()Linkapplications/shade/entertainment/EntertainmentControls;
 }
 
@@ -50,6 +55,261 @@ public final class inkapplications/shade/entertainment/structures/Entertainment$
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class inkapplications/shade/entertainment/structures/EntertainmentChannel {
+	public static final field Companion Linkapplications/shade/entertainment/structures/EntertainmentChannel$Companion;
+	public synthetic fun <init> (ILinkapplications/shade/structures/Position;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-twErxHc ()I
+	public final fun component2 ()Linkapplications/shade/structures/Position;
+	public final fun component3 ()Ljava/util/List;
+	public final fun copy-YUQ_Hnk (ILinkapplications/shade/structures/Position;Ljava/util/List;)Linkapplications/shade/entertainment/structures/EntertainmentChannel;
+	public static synthetic fun copy-YUQ_Hnk$default (Linkapplications/shade/entertainment/structures/EntertainmentChannel;ILinkapplications/shade/structures/Position;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/entertainment/structures/EntertainmentChannel;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChannelId-twErxHc ()I
+	public final fun getMembers ()Ljava/util/List;
+	public final fun getPosition ()Linkapplications/shade/structures/Position;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/EntertainmentChannel$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/EntertainmentChannel$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/entertainment/structures/EntertainmentChannel;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/entertainment/structures/EntertainmentChannel;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentChannel$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentChannelId {
+	public static final field Companion Linkapplications/shade/entertainment/structures/EntertainmentChannelId$Companion;
+	public static final synthetic fun box-impl (I)Linkapplications/shade/entertainment/structures/EntertainmentChannelId;
+	public static fun constructor-impl (I)I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (ILjava/lang/Object;)Z
+	public static final fun equals-impl0 (II)Z
+	public final fun getValue ()I
+	public fun hashCode ()I
+	public static fun hashCode-impl (I)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()I
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/EntertainmentChannelId$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/EntertainmentChannelId$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize-RRhryiY (Lkotlinx/serialization/encoding/Decoder;)I
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize-d8FbzAc (Lkotlinx/serialization/encoding/Encoder;I)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentChannelId$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentConfiguration {
+	public static final field Companion Linkapplications/shade/entertainment/structures/EntertainmentConfiguration$Companion;
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;Ljava/lang/String;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/entertainment/structures/StreamProxy;Ljava/util/List;Linkapplications/shade/entertainment/structures/EntertainmentLocations;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;Ljava/lang/String;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/entertainment/structures/StreamProxy;Ljava/util/List;Linkapplications/shade/entertainment/structures/EntertainmentLocations;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-XbiYvy0 ()Ljava/lang/String;
+	public final fun component2-1y3a6N0 ()Ljava/lang/String;
+	public final fun component3 ()Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;
+	public final fun component4-kXrv_eM ()Ljava/lang/String;
+	public final fun component5-mS-bnQ4 ()Ljava/lang/String;
+	public final fun component6 ()Linkapplications/shade/structures/ResourceReference;
+	public final fun component7 ()Linkapplications/shade/entertainment/structures/StreamProxy;
+	public final fun component8 ()Ljava/util/List;
+	public final fun component9 ()Linkapplications/shade/entertainment/structures/EntertainmentLocations;
+	public final fun copy-KnIyEFU (Ljava/lang/String;Ljava/lang/String;Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;Ljava/lang/String;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/entertainment/structures/StreamProxy;Ljava/util/List;Linkapplications/shade/entertainment/structures/EntertainmentLocations;)Linkapplications/shade/entertainment/structures/EntertainmentConfiguration;
+	public static synthetic fun copy-KnIyEFU$default (Linkapplications/shade/entertainment/structures/EntertainmentConfiguration;Ljava/lang/String;Ljava/lang/String;Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;Ljava/lang/String;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Linkapplications/shade/entertainment/structures/StreamProxy;Ljava/util/List;Linkapplications/shade/entertainment/structures/EntertainmentLocations;ILjava/lang/Object;)Linkapplications/shade/entertainment/structures/EntertainmentConfiguration;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getActiveStreamer ()Linkapplications/shade/structures/ResourceReference;
+	public final fun getChannels ()Ljava/util/List;
+	public final fun getConfigurationType-kXrv_eM ()Ljava/lang/String;
+	public final fun getId-XbiYvy0 ()Ljava/lang/String;
+	public final fun getLocations ()Linkapplications/shade/entertainment/structures/EntertainmentLocations;
+	public final fun getMetadata ()Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;
+	public final fun getStatus-mS-bnQ4 ()Ljava/lang/String;
+	public final fun getStreamProxy ()Linkapplications/shade/entertainment/structures/StreamProxy;
+	public final fun getType-1y3a6N0 ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/EntertainmentConfiguration$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/EntertainmentConfiguration$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/entertainment/structures/EntertainmentConfiguration;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/entertainment/structures/EntertainmentConfiguration;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentConfiguration$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata {
+	public static final field Companion Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata$Companion;
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;
+	public static synthetic fun copy$default (Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;Ljava/lang/String;ILjava/lang/Object;)Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentConfigurationMetadata$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentConfigurationType {
+	public static final field Companion Linkapplications/shade/entertainment/structures/EntertainmentConfigurationType$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/entertainment/structures/EntertainmentConfigurationType;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/EntertainmentConfigurationType$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/EntertainmentConfigurationType$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize-8nU9UCc (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize-6tj8LoY (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentConfigurationType$Companion {
+	public final fun getMonitor-kXrv_eM ()Ljava/lang/String;
+	public final fun getMusic-kXrv_eM ()Ljava/lang/String;
+	public final fun getOther-kXrv_eM ()Ljava/lang/String;
+	public final fun getScreen-kXrv_eM ()Ljava/lang/String;
+	public final fun getThreeDSpace-kXrv_eM ()Ljava/lang/String;
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentLocations {
+	public static final field Companion Linkapplications/shade/entertainment/structures/EntertainmentLocations$Companion;
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Linkapplications/shade/entertainment/structures/EntertainmentLocations;
+	public static synthetic fun copy$default (Linkapplications/shade/entertainment/structures/EntertainmentLocations;Ljava/util/List;ILjava/lang/Object;)Linkapplications/shade/entertainment/structures/EntertainmentLocations;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getServiceLocations ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/EntertainmentLocations$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/EntertainmentLocations$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/entertainment/structures/EntertainmentLocations;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/entertainment/structures/EntertainmentLocations;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentLocations$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentStatus {
+	public static final field Companion Linkapplications/shade/entertainment/structures/EntertainmentStatus$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/entertainment/structures/EntertainmentStatus;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/EntertainmentStatus$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/EntertainmentStatus$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize-YzT9aGw (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize-MvHtn9U (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/EntertainmentStatus$Companion {
+	public final fun getActive-mS-bnQ4 ()Ljava/lang/String;
+	public final fun getInactive-mS-bnQ4 ()Ljava/lang/String;
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/SegmentReference {
+	public static final field Companion Linkapplications/shade/entertainment/structures/SegmentReference$Companion;
+	public fun <init> (Linkapplications/shade/structures/ResourceReference;I)V
+	public final fun component1 ()Linkapplications/shade/structures/ResourceReference;
+	public final fun component2 ()I
+	public final fun copy (Linkapplications/shade/structures/ResourceReference;I)Linkapplications/shade/entertainment/structures/SegmentReference;
+	public static synthetic fun copy$default (Linkapplications/shade/entertainment/structures/SegmentReference;Linkapplications/shade/structures/ResourceReference;IILjava/lang/Object;)Linkapplications/shade/entertainment/structures/SegmentReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getIndex ()I
+	public final fun getService ()Linkapplications/shade/structures/ResourceReference;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/SegmentReference$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/SegmentReference$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/entertainment/structures/SegmentReference;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/entertainment/structures/SegmentReference;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/SegmentReference$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
 public final class inkapplications/shade/entertainment/structures/Segments {
 	public static final field Companion Linkapplications/shade/entertainment/structures/Segments$Companion;
 	public fun <init> (ZILjava/util/List;)V
@@ -78,6 +338,98 @@ public final synthetic class inkapplications/shade/entertainment/structures/Segm
 }
 
 public final class inkapplications/shade/entertainment/structures/Segments$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/ServiceLocation {
+	public static final field Companion Linkapplications/shade/entertainment/structures/ServiceLocation$Companion;
+	public fun <init> (Linkapplications/shade/structures/ResourceReference;Ljava/util/List;D)V
+	public final fun component1 ()Linkapplications/shade/structures/ResourceReference;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()D
+	public final fun copy (Linkapplications/shade/structures/ResourceReference;Ljava/util/List;D)Linkapplications/shade/entertainment/structures/ServiceLocation;
+	public static synthetic fun copy$default (Linkapplications/shade/entertainment/structures/ServiceLocation;Linkapplications/shade/structures/ResourceReference;Ljava/util/List;DILjava/lang/Object;)Linkapplications/shade/entertainment/structures/ServiceLocation;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEqualizationFactor ()D
+	public final fun getPositions ()Ljava/util/List;
+	public final fun getService ()Linkapplications/shade/structures/ResourceReference;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/ServiceLocation$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/ServiceLocation$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/entertainment/structures/ServiceLocation;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/entertainment/structures/ServiceLocation;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/ServiceLocation$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/StreamProxy {
+	public static final field Companion Linkapplications/shade/entertainment/structures/StreamProxy$Companion;
+	public synthetic fun <init> (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1--4vbXQY ()Ljava/lang/String;
+	public final fun component2 ()Linkapplications/shade/structures/ResourceReference;
+	public final fun copy-uLJ9sGg (Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;)Linkapplications/shade/entertainment/structures/StreamProxy;
+	public static synthetic fun copy-uLJ9sGg$default (Linkapplications/shade/entertainment/structures/StreamProxy;Ljava/lang/String;Linkapplications/shade/structures/ResourceReference;ILjava/lang/Object;)Linkapplications/shade/entertainment/structures/StreamProxy;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMode--4vbXQY ()Ljava/lang/String;
+	public final fun getNode ()Linkapplications/shade/structures/ResourceReference;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/StreamProxy$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/StreamProxy$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Linkapplications/shade/entertainment/structures/StreamProxy;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Linkapplications/shade/entertainment/structures/StreamProxy;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/StreamProxy$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/StreamProxyMode {
+	public static final field Companion Linkapplications/shade/entertainment/structures/StreamProxyMode$Companion;
+	public static final synthetic fun box-impl (Ljava/lang/String;)Linkapplications/shade/entertainment/structures/StreamProxyMode;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final synthetic class inkapplications/shade/entertainment/structures/StreamProxyMode$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Linkapplications/shade/entertainment/structures/StreamProxyMode$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize-p6WEcZI (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/String;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize-na0l960 (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/String;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class inkapplications/shade/entertainment/structures/StreamProxyMode$Companion {
+	public final fun getAuto--4vbXQY ()Ljava/lang/String;
+	public final fun getManual--4vbXQY ()Ljava/lang/String;
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
