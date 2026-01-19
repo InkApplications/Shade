@@ -14,6 +14,7 @@ dependencies {
     dokka(project(":core"))
     dokka(project(":devices"))
     dokka(project(":discover"))
+    dokka(project(":entertainment"))
     dokka(project(":events"))
     dokka(project(":grouped-lights"))
     dokka(project(":homekit"))

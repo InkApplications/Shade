@@ -17,6 +17,10 @@ inkapplications.shade.devices.structures
 module:discover
 inkapplications.shade.discover
 inkapplications.shade.discover.structures
+module:entertainment
+inkapplications.shade.entertainment
+inkapplications.shade.entertainment.parameters
+inkapplications.shade.entertainment.structures
 module:events
 inkapplications.shade.events
 shade.events
