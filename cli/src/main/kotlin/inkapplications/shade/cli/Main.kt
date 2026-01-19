@@ -27,6 +27,7 @@ class Main: NoOpCliktCommand() {
     init {
         subcommands(
             AuthorizeCommand,
+            CreateEntertainmentConfigurationCommand,
             CreateRoomCommand,
             CreateSceneCommand,
             CreateZoneCommand,
