@@ -49,6 +49,7 @@ class Main: NoOpCliktCommand() {
             ListButtonsCommand,
             ListDevicesCommand,
             ListEntertainmentCommand,
+            ListEntertainmentConfigurationsCommand,
             ListGroupedLightsCommand,
             ListHomekitCommand,
             ListLightsCommand,

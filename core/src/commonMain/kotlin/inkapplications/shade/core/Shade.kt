@@ -47,6 +47,7 @@ class Shade(
         configurationContainer = configuration,
         logger = logger,
     )
+    private val entertainmentModule = ShadeEntertainmentModule(internalsModule)
     internal val eventsModule = EventsModule(internalsModule, logger)
 
     val onlineDiscovery = DiscoverModule().onlineDiscovery
@@ -56,7 +57,8 @@ class Shade(
     ).bridgeAuth
     val buttons = ShadeButtonsModule(internalsModule).buttons
     val devices = ShadeDevicesModule(internalsModule).devices
-    val entertainment = ShadeEntertainmentModule(internalsModule).entertainment
+    val entertainment = entertainmentModule.entertainment
+    val entertainmentConfig = entertainmentModule.configurations
     val lights = ShadeLightsModule(internalsModule, eventsModule).lights
     val lightLevels = ShadeLightLevelModule(internalsModule).lightLevels
     val rooms = ShadeRoomsModule(internalsModule).rooms
