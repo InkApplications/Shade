@@ -62,6 +62,7 @@ class Main: NoOpCliktCommand() {
             ListZonesCommand,
             UpdateButtonCommand,
             UpdateDeviceCommand,
+            UpdateEntertainmentConfigurationCommand,
             UpdateGroupedLightCommand,
             UpdateHomekitCommand,
             UpdateLightCommand,

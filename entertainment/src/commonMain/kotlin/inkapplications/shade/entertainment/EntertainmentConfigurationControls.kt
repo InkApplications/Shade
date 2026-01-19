@@ -1,6 +1,7 @@
 package inkapplications.shade.entertainment
 
 import inkapplications.shade.entertainment.parameters.EntertainmentConfigurationCreateParameters
+import inkapplications.shade.entertainment.parameters.EntertainmentConfigurationUpdateParameters
 import inkapplications.shade.entertainment.structures.EntertainmentConfiguration
 import inkapplications.shade.structures.ResourceId
 import inkapplications.shade.structures.ResourceReference
@@ -31,4 +32,13 @@ interface EntertainmentConfigurationControls {
      * @return A reference to the newly created resource.
      */
     suspend fun createConfiguration(parameters: EntertainmentConfigurationCreateParameters): ResourceReference
+
+    /**
+     * Update an existing entertainment configuration on the hue bridge.
+     *
+     * @param id The resource ID of the entertainment configuration to update.
+     * @param parameters Data to update on the entertainment configuration.
+     * @return A reference to the updated resource.
+     */
+    suspend fun updateConfiguration(id: ResourceId, parameters: EntertainmentConfigurationUpdateParameters): ResourceReference
 }

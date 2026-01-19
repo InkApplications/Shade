@@ -52,4 +52,3 @@ object CreateEntertainmentConfigurationCommand: AuthorizedShadeCommand(
         Other(EntertainmentConfigurationType.Other),
     }
 }
-
