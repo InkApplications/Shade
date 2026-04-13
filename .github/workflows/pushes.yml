@@ -29,13 +29,13 @@ jobs:
                 run: cp cli/build/distributions/shade-*.zip cli/build/distributions/shade.zip && cp cli/build/distributions/shade-*.tar cli/build/distributions/shade.tar
             -
                 name: Archive CLI Tar
-                uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+                uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
                 with:
                     name: shade.tar
                     path: cli/build/distributions/shade.tar
             -
                 name: Archive CLI Zip
-                uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+                uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
                 with:
                     name: shade.zip
                     path: cli/build/distributions/shade.zip
